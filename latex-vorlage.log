@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  8 OCT 2025 09:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  8 OCT 2025 15:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1007,47 +1007,49 @@ chapter 4.
 ]
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
 
-
-[8]
-Overfull \hbox (14.69896pt too wide) in paragraph at lines 68--69
+Overfull \hbox (14.69896pt too wide) in paragraph at lines 91--92
 \T1/cmr/m/n/10.95 Die Er-geb-nis-se wer-den in ei-ner Ta-bel-le \T1/cmtt/m/n/10.95 results_df \T1/cmr/m/n/10.95 ge-spei-chert mit den Spal-ten \T1/cmtt/m/n/10.95 Modellordner\T1/cmr/m/n/10.95 ,
  []
 
 
-Overfull \hbox (0.8495pt too wide) in paragraph at lines 74--76
+Overfull \hbox (0.8495pt too wide) in paragraph at lines 97--99
 \T1/cmr/m/n/10.95 Mit-tel-wert die-ser bei-den Rän-ge wird ei-ne fi-na-le Lis-te der fünf bes-ten Mo-del-le (\T1/cmtt/m/n/10.95 rankings_df\T1/cmr/m/n/10.95 )
  []
 
 ) (./includes/chapter/5_rigor_cycle.tex
 
 [9]
+
+[10]
 chapter 5.
 ) (./includes/chapter/6_ergebnisse_diskussion.tex
 
-[10
+[11
 
 ]
 chapter 6.
 ) (./includes/chapter/7_explainable_ai.tex
 
-[11
+[12
 
 ]
 chapter 7.
 ) (./includes/chapter/8_Fazit_Ausblick.tex
 
-[12
+[13
 
 ]
 chapter 8.
 ) (./includes/anhang.tex
 
-[13
+[14
 
 ] (./latex-vorlage.app)
 \tf@app=\write8
@@ -1055,7 +1057,7 @@ chapter 8.
 
 
 
-[14
+[15
 
 ] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
@@ -1079,11 +1081,9 @@ File: lstlang3.sty 2024/09/23 1.10c listings language file
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 ) (./includes/transkripte.tex
 
-[15
+[16
 
 ]
-
-[16]
 
 [17]
 
@@ -1109,16 +1109,18 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 
 [28]
 
-[29]))
+[29]
 
-[30]
+[30]))
 
-[31
+[31]
+
+[32
 
 
 ]
 
-[32] (./includes/erklaerung_ki.tex
+[33] (./includes/erklaerung_ki.tex
 Overfull \hbox (1.558pt too wide) in paragraph at lines 132--132
 []\T1/cmr/m/n/10.95 mich ak-tiv über die Leis-tungs-fä-hig-keit und Be-schrän-kun-gen der oben ge-nann-ten KI-Systeme
  []
@@ -1135,15 +1137,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--132
 
 
 
-[33
+[34
 
 
 
 ]) (./template/_dhbw_erklaerung.tex
 
-[34])
+[35])
 
-[35
+[36
 
 ] (./latex-vorlage.aux)
  ***********
@@ -1157,18 +1159,18 @@ Package logreq Info: Writing requests to 'latex-vorlage.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28745 strings out of 473190
- 570022 string characters out of 5715800
+ 28746 strings out of 473190
+ 570029 string characters out of 5715800
  1564723 words of memory out of 5000000
  51419 multiletter control sequences out of 15000+600000
  580311 words of font info for 84 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,18n,127p,10950b,2385s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on latex-vorlage.pdf (41 pages, 485848 bytes).
+Output written on latex-vorlage.pdf (42 pages, 488722 bytes).
 PDF statistics:
- 629 PDF objects out of 1000 (max. 8388607)
- 538 compressed objects within 6 object streams
- 149 named destinations out of 1000 (max. 500000)
+ 633 PDF objects out of 1000 (max. 8388607)
+ 541 compressed objects within 6 object streams
+ 150 named destinations out of 1000 (max. 500000)
  329 words of extra memory for PDF output out of 10000 (max. 10000000)
 

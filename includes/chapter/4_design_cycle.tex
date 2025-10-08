@@ -4,6 +4,29 @@ Die Entwicklung des Artefakts folgte einem strukturierten Prozess, der sicherste
 
 \section{Datensammlung und Analyse}
 
+- Daten stammen aus Porsche Motorsport Cloud Plattform (ADX)
+- Zugriff auf alle Sessions der Jahre 2023 bis 2025 der IMSA und WEC 
+- Nur Rennsessions (keine Trainings- oder Qualifikationssessions), weil Reduzierung von Varianz durch unterschiedliche Fahrsituationen
+- Zudem Filterung auf Runden mit trockenreifen ebenfalls zur Reduzierung von Varianz da Regenreifen andere Balance-Eigenschaften haben
+- Diese Filterung erfolgt beim Abruf der Daten mittels ADX Kusto Query Language (KQL)
+- Parameter: kontinuierliche und kategoriale Features
+- Parameter: 
+Kontinuierlich: Umgebungstemperatur, Streckentemperatur, Windgeschwindigkeit, Reifentemperatur (für jeden Reifen einzeln), Reifendruck (für jeden Reifen einzeln), Fuel Load, Tyre Mileage Laps
+kategorisch: Mechanical Balance (Anti-Roll-Bar-Front/Rear), Brake Balance, Traction Control, Driver Type, Tyre Compound, Track
+- Zielvariable: aUndersteer\_AVG (Durchschnittlicher Wert pro Runde, $>0$ = Understeer, $<0$ = Oversteer)
+- Alle Parameter werden über eine Runde gemittelt und ergeben so einen Datenpunkt pro Runde
+- So ergibt sich ein Datensatz mit 17735 Runden (Datenpunkte) und 15 Features (12 kontinuierliche, 3 kategoriale)
+
+- Explorative Datenanalyse (EDA) mittels Notebooks
+- Untersuchung der Verteilung der Rennrunden über die Events
+- Untersuchung der Verteilung der Zielvariable
+- Untersuchung der Verteilung der Features wie Reifentemperaturen, Reifendruck, Fuel Load
+- Festlegung von Thresholds für Ausreißer für Features
+- Durch sehr unregelmäßigen Zielvariablen graph beschluss verschiedene Glättungen mittels gleitender Durchschnitte (Fenstergrößen 2, 3, 5, 8) und ohne zu testen
+
+- Daraus ergeben sich 10 Trainingsdatensätze: Mit und ohne kategoriale Features, jeweils mit 5 verschiedenen Glättungen (keine, 2, 3, 5, 8)
+
+
 \section{Datenvorbereitung und Feature-Engineering}
 
 Ausgangspunkt waren Telemetrie-Zeitreihen und die aggregierten Runsheet-Metriken, die Performance Engineers als entscheidend für die Fahrzeugbalance identifiziert haben\footnote{Eigene Experteninterviews 29.08.2025 und 12.09.2025, Anhang A.1}. Diese umfassen unter anderem mittlere Streckentemperatur pro Runde (CalculatedTrackTemperature), durchschnittliche Windgeschwindigkeit pro Runde (CalculatedWindSpeed), Rundenanzahl pro Reifenmischung (TyreMileageLaps), das Verhältnis von Lenkwinkel zu Gierrate (\texttt{aUndersteer\_AVG}, Zielvariable), Reifentemperatur und -druck, MechanicalBalance, BrakeBalance, TractionControl und FuelLoad.
