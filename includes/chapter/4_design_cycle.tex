@@ -1,0 +1,79 @@
+\chapter{Artefakt-Design und Entwicklung}
+
+Die Entwicklung des Artefakts folgte einem strukturierten Prozess, der sicherstellt, dass jede technische Entscheidung sowohl praxisnah als auch wissenschaftlich fundiert ist. In diesem Kapitel werden die Schritte zur Datenvorbereitung, Implementierung der Trainingspipeline und Hyperparameter-Optimierung detailliert diskutiert und begründet.
+
+\section{Datensammlung und Analyse}
+
+\section{Datenvorbereitung und Feature-Engineering}
+
+Ausgangspunkt waren Telemetrie-Zeitreihen und die aggregierten Runsheet-Metriken, die Performance Engineers als entscheidend für die Fahrzeugbalance identifiziert haben\footnote{Eigene Experteninterviews 29.08.2025 und 12.09.2025, Anhang A.1}. Diese umfassen unter anderem mittlere Streckentemperatur pro Runde (CalculatedTrackTemperature), durchschnittliche Windgeschwindigkeit pro Runde (CalculatedWindSpeed), Rundenanzahl pro Reifenmischung (TyreMileageLaps), das Verhältnis von Lenkwinkel zu Gierrate (\texttt{aUndersteer\_AVG}, Zielvariable), Reifentemperatur und -druck, MechanicalBalance, BrakeBalance, TractionControl und FuelLoad.
+
+Für die systematische Untersuchung ihres Einflusses wurden die Daten zunächst zur Reduktion kurzfristiger Ausreißer mittels gleitender Durchschnitte (Fenstergrößen 2, 3, 5) auf das Zielmerkmal \texttt{aUndersteer\_AVG} geglättet\footnote{Vgl. Smith, Steven W. 1997. The Scientist and Engineer's Guide to Digital Signal Processing. 1. Aufl. San Diego California Technical Publishing, S. 277-284}. Gleitende Durchschnitte reduzieren das Rauschen um den Faktor der Quadratwurzel der Anzahl der Punkte im Durchschnitt und sind optimal für die Reduktion von Zufallsrauschen bei gleichzeitiger Erhaltung scharfer Sprungverhalten\footnote{Vgl. ebd., S. 277}. 
+
+Fehlende Werte wurden entfernt, um Verzerrungen durch komplexe Imputationsverfahren zu vermeiden\footnote{Vgl. García, Salvador; Luengo, Julián; Herrera, Francisco 2015. Data Preprocessing in Data Mining. Heidelberg Springer, S. 59-98}. Anschließend harmonisierte ein Preprocessing-Skript Zeitstempel und indexierte alle Datensätze auf Rundenebene, sodass je Variante (mit/ohne kategoriale Features und unterschiedlichen Glättungen) ein aufbereiteter DataFrame vorlag. Feature Engineering ist ein iterativer Prozess, der Rohdaten in für maschinelles Lernen geeignete Features umwandelt und dabei wesentliche Informationen erhält\footnote{Vgl. Zheng, Alice; Casari, Amanda 2018. Feature Engineering for Machine Learning. Principles and Techniques for Data Scientists. 1. Aufl. Sebastopol O'Reilly Media, S. 1-25}.
+
+\section{Implementierung der Trainingspipeline}
+
+Die Architektur besteht aus zwei Modulen:
+
+\begin{itemize}
+  \item \texttt{main.py}: Orchestriert den Ablauf, parst Kommandozeilenargumente, lädt den ausgewählten Datensatz und ruft das Preprocessing-Modul auf.
+  \item \texttt{train\_model.py}: Führt den Modellaufbau und das Training durch.
+\end{itemize}
+
+Im Gegensatz zur ursprünglichen Beschreibung werden die Modellparameter nicht über Konfigurationsdateien geladen, sondern direkt im Code definiert. Dadurch lässt sich der Parameter-Scope zur Laufzeit einfacher anpassen und ist direkt versioniert. Nach dem Preprocessing werden die Daten in ein Trainings- und ein Validierungs-Set im Verhältnis \textbf{70 \% zu 30 \%} aufgeteilt\footnote{Vgl. Hastie, Trevor; Tibshirani, Robert; Friedman, Jerome 2017. The Elements of Statistical Learning. Data Mining, Inference, and Prediction. 2. Aufl. New York Springer, S. 241-249}. Eine gängige Aufteilung ist 70\% Training, 15\% Validierung und 15\% Test, wobei diese Verhältnisse je nach Datensatzgröße und -beschaffenheit variieren können\footnote{Vgl. Géron, Aurélien 2019. Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow. 2. Aufl. Sebastopol O'Reilly Media, S. 65-67}.
+
+\begin{itemize}
+  \item Mit dem \textbf{Trainingsdatenset} wird wie beschrieben verfahren: Aufteilung in Trainings- und Test-Teil (innerhalb der 70 \%), Trainingsdurchläufe mit XGBoost und LightGBM, Ergebnisprotokollierung und Hyperparameter-Optimierung im Grid-Search-Verfahren.
+  \item Das \textbf{Validierungsdatenset} (30 \%) bleibt bis Kapitel 4.4 ungesehen und dient dort als Grundlage für ein dediziertes Jupyter-Notebook, in dem die finalen Modelle evaluiert und vergleichbar gemacht werden.
+\end{itemize}
+
+Diese Trennung ist essentiell, um eine unvoreingenommene Bewertung der Modellleistung auf neuen Daten zu gewährleisten und Overfitting zu vermeiden\footnote{Vgl. Goodfellow, Ian; Bengio, Yoshua; Courville, Aaron 2016. Deep Learning. Cambridge MIT Press, S. 117-122}.
+
+Nach jedem Trainingslauf werden das trainierte Modell sowie Kennzahlen (R², MAE, RMSE) im JSON-Format abgelegt, um die Vergleichbarkeit zwischen den neun DataFrame-Varianten sicherzustellen.
+
+\section{Hyperparameter-Optimierung}
+
+Für XGBoost und LightGBM kommt ein strukturiertes GridSearchCV zum Einsatz\footnote{Vgl. Chen, Tianqi; Guestrin, Carlos 2016. XGBoost: A Scalable Tree Boosting System, in Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, New York ACM, S. 785-794}\footnote{Vgl. Ke, Guolin et al. 2017. LightGBM: A Highly Efficient Gradient Boosting Decision Tree, in Advances in Neural Information Processing Systems 30, La Jolla Curran Associates, S. 3146-3154}. Die Parameterbereiche sind in drei Komplexitätsstufen unterteilt:
+
+\begin{itemize}
+  \item \textbf{Shallow:} 50–100 Bäume, \texttt{max\_depth} 3–4
+  \item \textbf{Medium:} 100–500 Bäume, \texttt{max\_depth} 5–9
+  \item \textbf{Deep:} 300–700 Bäume, \texttt{max\_depth} 10–12
+\end{itemize}
+
+Diese Aufteilung basiert auf Benchmark-Ergebnissen, die einen Kompromiss zwischen Rechenaufwand und Modellgenauigkeit zeigen. In Gradient-Boosting-Verfahren sollten Bäume typischerweise eine geringe Tiefe zwischen 3 und 8 Ebenen haben, da vollständig gewachsene Bäume zu Overfitting führen würden\footnote{Vgl. Friedman, Jerome H. 2001. Greedy Function Approximation: A Gradient Boosting Machine, in The Annals of Statistics 29, 5, S. 1189-1232}. Schwache Lerner bei jedem Schritt helfen, Overfitting zu reduzieren\footnote{Vgl. ebd., S. 1203-1208}.
+
+Jede Parameterkombination wird mittels dreifacher Cross-Validation über den R²-Score bewertet\footnote{Vgl. Pedregosa, Fabian et al. 2011. Scikit-learn: Machine Learning in Python, in Journal of Machine Learning Research 12, 1, S. 2825-2830}. K-Fold Cross-Validation ist die am häufigsten verwendete Methode zur Bestimmung der Wahrscheinlichkeit, dass ein Machine Learning-Ergebnis zufällig generiert wird\footnote{Vgl. Stone, Mervyn 1974. Cross-Validatory Choice and Assessment of Statistical Predictions, in Journal of the Royal Statistical Society 36, 2, S. 111-147}. Die erzielten Ergebnisse fließen in eine Tabelle mit den jeweils besten Parametern ein.
+
+\section{Validierung und Modellvergleich}
+
+Die abschließende Validierung erfolgt in einem dedizierten Jupyter-Notebook, das die finalen Modelle auf einem zuvor ungesehenen Validierungsdatensatz evaluiert und vergleichbar macht. Der Workflow gliedert sich in folgende Schritte:
+
+\begin{itemize}
+  \item \textbf{Verzeichnisstruktur und Dateipfade}\\
+  Modelle liegen in Unterordnern von \texttt{../outputs/models/2/}. Zwei Validierungs-CSVs sind vorhanden: \texttt{val\_alldata.csv} (alle Features) und \texttt{val\_continuous.csv} (nur kontinuierliche Features).
+  
+  \item \textbf{Laden der Validierungsdaten}\\
+  Für jede Modellvariante („alldata" vs. „continuous") wird das entsprechende CSV geladen. Vor der Vorhersage werden alle Spalten mit nur einem eindeutigen Wert entfernt, um irrelevante Features auszuschließen.
+  
+  \item \textbf{Modell-Loading und Vorhersage}\\
+  In jedem Modellordner wird je ein XGBoost- (Dateiname \texttt{best\_xgb\_model.pkl}) und ein LightGBM-Modell (\texttt{best\_lgb\_model.pkl}) geladen. Mit dem jeweiligen Validierungs-Set werden Zielwerte \(y\) und Prädiktionen \(\hat{y}\) erzeugt.
+  
+  \item \textbf{Berechnung der Metriken}\\
+  \begin{itemize}
+    \item Mean Absolute Error (MAE)
+    \item R²-Score (Bestimmtheitsmaß)
+  \end{itemize}
+  Die Ergebnisse werden in einer Tabelle \texttt{results\_df} gespeichert mit den Spalten \texttt{Modellordner}, \texttt{Modelltyp}, \texttt{Validation-CSV}, \texttt{MAE}, \texttt{R2}. Der R²-Score misst den Anteil der Varianz in der abhängigen Variable, der durch die unabhängigen Variablen vorhersagbar ist, wobei der bestmögliche Wert 1.0 beträgt\footnote{Vgl. James, Gareth et al. 2021. An Introduction to Statistical Learning. with Applications in R. 2. Aufl. New York Springer, S. 68-74}.
+  
+  \item \textbf{Top-5-Auswahl nach R² und MAE}\\
+  \texttt{top\_r2}: die fünf besten Modelle nach absteigendem R²\\
+  \texttt{top\_mae}: die fünf besten Modelle nach aufsteigendem MAE
+  
+  \item \textbf{Konsolidierte Rangfolge}\\
+  Jedes Modell erhält einen Rang in beiden Top-5-Listen (Platz 0–4; außerhalb = 5). Aus dem Mittelwert dieser beiden Ränge wird eine finale Liste der fünf besten Modelle (\texttt{rankings\_df}) erstellt.
+\end{itemize}
+
+\noindent
+Dadurch wird transparent, welche Modelltyp-/Feature-Kombination auf neuen, ungesehenen Telemetriedaten am besten generalisiert. Die Generalisierungsfähigkeit ist die Fähigkeit eines trainierten Modells, genaue Vorhersagen für neue, ungesehene Daten zu treffen\footnote{Vgl. Vapnik, Vladimir N. 2013. The Nature of Statistical Learning Theory. 2. Aufl. New York Springer, S. 15-28}.
