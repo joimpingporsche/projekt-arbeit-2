@@ -7,55 +7,58 @@ Die Entwicklung des Artefakts folgte einem strukturierten Prozess, der sicherste
 - Daten stammen aus Porsche Motorsport Cloud Plattform (ADX)
 - Zugriff auf alle Sessions der Jahre 2023 bis 2025 der IMSA und WEC 
 - Nur Rennsessions (keine Trainings- oder Qualifikationssessions), weil Reduzierung von Varianz durch unterschiedliche Fahrsituationen
-- Zudem Filterung auf Runden mit trockenreifen ebenfalls zur Reduzierung von Varianz da Regenreifen andere Balance-Eigenschaften haben
+- Zudem Filterung auf Runden mit trockenreifen ebenfalls zur Reduzierung von Varianz da Regenbedingunen andere Einflussfaktoren haben
 - Diese Filterung erfolgt beim Abruf der Daten mittels ADX Kusto Query Language (KQL)
+- Folgende Parameter wurden in dem Interview mit dem Performance Engineer als relevant identifiziert und werden deshalb als Features für das ML Modell verwendet:
 - Parameter: kontinuierliche und kategoriale Features
 - Parameter: 
-Kontinuierlich: Umgebungstemperatur, Streckentemperatur, Windgeschwindigkeit, Reifentemperatur (für jeden Reifen einzeln), Reifendruck (für jeden Reifen einzeln), Fuel Load, Tyre Mileage Laps
-kategorisch: Mechanical Balance (Anti-Roll-Bar-Front/Rear), Brake Balance, Traction Control, Driver Type, Tyre Compound, Track
+Kontinuierlich: Umgebungstemperatur, Streckentemperatur, Windgeschwindigkeit, Reifentemperatur (für jeden Reifen einzeln), Reifendruck (für jeden Reifen einzeln), Fuel Load, Tyre Mileage Laps(für jeden Reifen einzeln)
+kategorisch: Mechanical Balance (Anti-Roll-Bar-Front/Rear), Brake Balance, Traction Control, Tyre Compound, Track
 - Zielvariable: aUndersteer\_AVG (Durchschnittlicher Wert pro Runde, $>0$ = Understeer, $<0$ = Oversteer)
 - Alle Parameter werden über eine Runde gemittelt und ergeben so einen Datenpunkt pro Runde
-- So ergibt sich ein Datensatz mit 17735 Runden (Datenpunkte) und 15 Features (12 kontinuierliche, 3 kategoriale)
 
-- Explorative Datenanalyse (EDA) mittels Notebooks
+
+- So ergibt sich ein Roh-Datensatz im CSV-Format mit 17735 Runden (Datenpunkte) 
+
+- Explorative Datenanalyse (EDA) mittels Notebooks und Plots 
 - Untersuchung der Verteilung der Rennrunden über die Events
 - Untersuchung der Verteilung der Zielvariable
 - Untersuchung der Verteilung der Features wie Reifentemperaturen, Reifendruck, Fuel Load
-- Festlegung von Thresholds für Ausreißer für Features
-- Durch sehr unregelmäßigen Zielvariablen graph beschluss verschiedene Glättungen mittels gleitender Durchschnitte (Fenstergrößen 2, 3, 5, 8) und ohne zu testen
+- Untersuchung von Korrelationen zwischen Features
 
-- Daraus ergeben sich 10 Trainingsdatensätze: Mit und ohne kategoriale Features, jeweils mit 5 verschiedenen Glättungen (keine, 2, 3, 5, 8)
+
+
 
 
 \section{Datenvorbereitung und Feature-Engineering}
 
-Ausgangspunkt waren Telemetrie-Zeitreihen und die aggregierten Runsheet-Metriken, die Performance Engineers als entscheidend für die Fahrzeugbalance identifiziert haben\footnote{Eigene Experteninterviews 29.08.2025 und 12.09.2025, Anhang A.1}. Diese umfassen unter anderem mittlere Streckentemperatur pro Runde (CalculatedTrackTemperature), durchschnittliche Windgeschwindigkeit pro Runde (CalculatedWindSpeed), Rundenanzahl pro Reifenmischung (TyreMileageLaps), das Verhältnis von Lenkwinkel zu Gierrate (\texttt{aUndersteer\_AVG}, Zielvariable), Reifentemperatur und -druck, MechanicalBalance, BrakeBalance, TractionControl und FuelLoad.
+- Aus den Erkenntnisses der EDA werden verschiedene Vorverarbeitungsschritte abgeleitet
+- Entfernung von redundanten Features (Reifentemperaturen, Reifendruck) anhand der Korrelationsmatrix und Erstellung von neuen abgeleiteten Features
+- Festlegung von Thresholds für Ausreißer für Features
+- Durch sehr unregelmäßigen Zielvariablen graph beschluss verschiedene Glättungen mittels gleitender Durchschnitte (Fenstergrößen 2, 3, 5, 8) und ohne zu testen
+- Begründung der Glättungsentscheidungen: Die Wahl der Fenstergrößen basiert auf der Analyse der Zeitreihenstruktur der Zielvariablen. Kleinere Fenster erfassen kurzfristige Schwankungen, während größere Fenster langfristige Trends glätten.
+- Umsetzung: Diese Vorverarbeitungsschritte werden in einem Skript \texttt{preprocess\_all\_events.py} implementiert.
+- Der Track (Alphabestisch) zu TrackCode (numerische Codierung) und eine Mapping-Datei wird erstellt.
+- One-Hot-Encoding nicht notwendig, da Baum-basierte Modelle wie XGBoost und LightGBM kategoriale Features nativ unterstützen\footnote{Vgl. Chen, Tianqi; Guestrin, Carlos 2016. XGBoost: A Scalable Tree Boosting System, in Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, New York ACM, S. 785-794}\footnote{Vgl. Ke, Guolin et al. 2017. LightGBM: A Highly Efficient Gradient Boosting Decision Tree, in Advances in Neural Information Processing Systems 30, La Jolla Curran Associates, S. 3146-3154}.
+- Für die in Kapitel \ref{sec:validierung_modellvergleich} behandelte Validierung der Modelle werden separate Validierungsdatensätze erstellt:
+- Dafür wird ein gesamtes Event nach der Leave-One-Out-Methode separiert
+- Danach werden aus dem verbleibenden Datensatz 10\% zufällig ausgewählt und als Validierungsdatensatz verwendet.
+- Beide Validierungsdatensätze hat das Model dem Training nicht gesehen.
+- Resultierende Datensätze nach Vorverarbeitung und Aufteilung: 
+- Daraus ergeben sich 10 Trainingsdatensätze: Mit und ohne kategoriale Features, jeweils mit 5 verschiedenen Glättungen (keine, 2, 3, 5, 8)
+- Und 4 Validierungsdatensätze: Mit und ohne kategoriale Features, jeweils einmal für das Event und für den Zufallsdatensatz
+- Resultierenden Datensatzgrößen:
+- Trainingsdatensätze jeweils: ca. 9000 Runden (Datenpunkte)
+- Validierungsdatensätze: Event: ca. 75 Runden (Datenpunkte) \& Zufallsdatensatz: ca. 1000 Runden (Datenpunkte)
 
-Für die systematische Untersuchung ihres Einflusses wurden die Daten zunächst zur Reduktion kurzfristiger Ausreißer mittels gleitender Durchschnitte (Fenstergrößen 2, 3, 5) auf das Zielmerkmal \texttt{aUndersteer\_AVG} geglättet\footnote{Vgl. Smith, Steven W. 1997. The Scientist and Engineer's Guide to Digital Signal Processing. 1. Aufl. San Diego California Technical Publishing, S. 277-284}. Gleitende Durchschnitte reduzieren das Rauschen um den Faktor der Quadratwurzel der Anzahl der Punkte im Durchschnitt und sind optimal für die Reduktion von Zufallsrauschen bei gleichzeitiger Erhaltung scharfer Sprungverhalten\footnote{Vgl. ebd., S. 277}. 
+\section{Modelltraining und Hyperparameter-Optimierung}
 
-Fehlende Werte wurden entfernt, um Verzerrungen durch komplexe Imputationsverfahren zu vermeiden\footnote{Vgl. García, Salvador; Luengo, Julián; Herrera, Francisco 2015. Data Preprocessing in Data Mining. Heidelberg Springer, S. 59-98}. Anschließend harmonisierte ein Preprocessing-Skript Zeitstempel und indexierte alle Datensätze auf Rundenebene, sodass je Variante (mit/ohne kategoriale Features und unterschiedlichen Glättungen) ein aufbereiteter DataFrame vorlag. Feature Engineering ist ein iterativer Prozess, der Rohdaten in für maschinelles Lernen geeignete Features umwandelt und dabei wesentliche Informationen erhält\footnote{Vgl. Zheng, Alice; Casari, Amanda 2018. Feature Engineering for Machine Learning. Principles and Techniques for Data Scientists. 1. Aufl. Sebastopol O'Reilly Media, S. 1-25}.
+- Modelle: LightGBM (LGBMRegressor) und XGBoost (XGBRegressor)
+- Begründung: Beide Algorithmen sind leistungsstarke, effiziente und weit verbreitete Implementierungen von Gradient Boosting Decision Trees, die sich besonders gut für strukturierte Daten eignen\footnote{Vgl. Chen, Tianqi; Guestrin, Carlos 2016. XGBoost: A Scalable Tree Boosting System, in Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, New York ACM, S. 785-794}\footnote{Vgl. Ke, Guolin et al. 2017. LightGBM: A Highly Efficient Gradient Boosting Decision Tree, in Advances in Neural Information Processing Systems 30, La Jolla Curran Associates, S. 3146-3154}.
+- Beide Algorithmen unterstützen nativ die Verarbeitung von Kategorischen Features, was die Notwendigkeit für aufwändiges One-Hot-Encoding eliminiert und die Modellkomplexität reduziert
+- Implementierung der Trainingspipeline in einem Skript \texttt{train\_model.py}
+- 
 
-\section{Implementierung der Trainingspipeline}
-
-Die Architektur besteht aus zwei Modulen:
-
-\begin{itemize}
-  \item \texttt{main.py}: Orchestriert den Ablauf, parst Kommandozeilenargumente, lädt den ausgewählten Datensatz und ruft das Preprocessing-Modul auf.
-  \item \texttt{train\_model.py}: Führt den Modellaufbau und das Training durch.
-\end{itemize}
-
-Im Gegensatz zur ursprünglichen Beschreibung werden die Modellparameter nicht über Konfigurationsdateien geladen, sondern direkt im Code definiert. Dadurch lässt sich der Parameter-Scope zur Laufzeit einfacher anpassen und ist direkt versioniert. Nach dem Preprocessing werden die Daten in ein Trainings- und ein Validierungs-Set im Verhältnis \textbf{70 \% zu 30 \%} aufgeteilt\footnote{Vgl. Hastie, Trevor; Tibshirani, Robert; Friedman, Jerome 2017. The Elements of Statistical Learning. Data Mining, Inference, and Prediction. 2. Aufl. New York Springer, S. 241-249}. Eine gängige Aufteilung ist 70\% Training, 15\% Validierung und 15\% Test, wobei diese Verhältnisse je nach Datensatzgröße und -beschaffenheit variieren können\footnote{Vgl. Géron, Aurélien 2019. Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow. 2. Aufl. Sebastopol O'Reilly Media, S. 65-67}.
-
-\begin{itemize}
-  \item Mit dem \textbf{Trainingsdatenset} wird wie beschrieben verfahren: Aufteilung in Trainings- und Test-Teil (innerhalb der 70 \%), Trainingsdurchläufe mit XGBoost und LightGBM, Ergebnisprotokollierung und Hyperparameter-Optimierung im Grid-Search-Verfahren.
-  \item Das \textbf{Validierungsdatenset} (30 \%) bleibt bis Kapitel 4.4 ungesehen und dient dort als Grundlage für ein dediziertes Jupyter-Notebook, in dem die finalen Modelle evaluiert und vergleichbar gemacht werden.
-\end{itemize}
-
-Diese Trennung ist essentiell, um eine unvoreingenommene Bewertung der Modellleistung auf neuen Daten zu gewährleisten und Overfitting zu vermeiden\footnote{Vgl. Goodfellow, Ian; Bengio, Yoshua; Courville, Aaron 2016. Deep Learning. Cambridge MIT Press, S. 117-122}.
-
-Nach jedem Trainingslauf werden das trainierte Modell sowie Kennzahlen (R², MAE, RMSE) im JSON-Format abgelegt, um die Vergleichbarkeit zwischen den neun DataFrame-Varianten sicherzustellen.
-
-\section{Hyperparameter-Optimierung}
 
 Für XGBoost und LightGBM kommt ein strukturiertes GridSearchCV zum Einsatz\footnote{Vgl. Chen, Tianqi; Guestrin, Carlos 2016. XGBoost: A Scalable Tree Boosting System, in Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, New York ACM, S. 785-794}\footnote{Vgl. Ke, Guolin et al. 2017. LightGBM: A Highly Efficient Gradient Boosting Decision Tree, in Advances in Neural Information Processing Systems 30, La Jolla Curran Associates, S. 3146-3154}. Die Parameterbereiche sind in drei Komplexitätsstufen unterteilt:
 
@@ -70,6 +73,7 @@ Diese Aufteilung basiert auf Benchmark-Ergebnissen, die einen Kompromiss zwische
 Jede Parameterkombination wird mittels dreifacher Cross-Validation über den R²-Score bewertet\footnote{Vgl. Pedregosa, Fabian et al. 2011. Scikit-learn: Machine Learning in Python, in Journal of Machine Learning Research 12, 1, S. 2825-2830}. K-Fold Cross-Validation ist die am häufigsten verwendete Methode zur Bestimmung der Wahrscheinlichkeit, dass ein Machine Learning-Ergebnis zufällig generiert wird\footnote{Vgl. Stone, Mervyn 1974. Cross-Validatory Choice and Assessment of Statistical Predictions, in Journal of the Royal Statistical Society 36, 2, S. 111-147}. Die erzielten Ergebnisse fließen in eine Tabelle mit den jeweils besten Parametern ein.
 
 \section{Validierung und Modellvergleich}
+\label{sec:validierung_modellvergleich}
 
 Die abschließende Validierung erfolgt in einem dedizierten Jupyter-Notebook, das die finalen Modelle auf einem zuvor ungesehenen Validierungsdatensatz evaluiert und vergleichbar macht. Der Workflow gliedert sich in folgende Schritte:
 
