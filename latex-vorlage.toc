@@ -18,28 +18,28 @@
 \contentsline {section}{\numberline {3.3}Abgrenzung des DSR-Artefakts}{5}{section.27}%
 \contentsline {chapter}{\numberline {4}Artefakt-Design und Entwicklung}{6}{chapter.28}%
 \contentsline {section}{\numberline {4.1}Datensammlung und Analyse}{6}{section.29}%
-\contentsline {section}{\numberline {4.2}Datenvorbereitung und Feature-Engineering}{6}{section.30}%
-\contentsline {section}{\numberline {4.3}Modelltraining und Hyperparameter-Optimierung}{7}{section.33}%
-\contentsline {section}{\numberline {4.4}Validierung und Modellvergleich}{8}{section.42}%
-\contentsline {chapter}{\numberline {5}Evaluation des Vorhersagemodells}{10}{chapter.45}%
-\contentsline {section}{\numberline {5.1}Quantitative Modellbewertung}{10}{section.46}%
-\contentsline {section}{\numberline {5.2}Varianz-Erklärung durch Top-Features}{10}{section.47}%
-\contentsline {section}{\numberline {5.3}Robustheit und Stabilitätstests}{10}{section.48}%
-\contentsline {chapter}{\numberline {6}Modell-Artefakt und Lessons Learned}{11}{chapter.49}%
-\contentsline {section}{\numberline {6.1}Zusammenfassung der Modellperformance}{11}{section.50}%
-\contentsline {section}{\numberline {6.2}Reflexion der Design-Entscheidungen}{11}{section.51}%
-\contentsline {section}{\numberline {6.3}Einschränkungen und Verbesserungspotenziale}{11}{section.52}%
-\contentsline {chapter}{\numberline {7}Explainable AI für Erkenntnisgewinn}{12}{chapter.53}%
-\contentsline {section}{\numberline {7.1}Einführung in SHAP und Interpretationsmethoden}{12}{section.54}%
-\contentsline {section}{\numberline {7.2}SHAP-Analyse des Modells}{12}{section.55}%
-\contentsline {section}{\numberline {7.3}Erkenntnisse zu Einflussfaktoren}{12}{section.56}%
-\contentsline {section}{\numberline {7.4}Praktischer Nutzen für Ingenieure}{12}{section.57}%
-\contentsline {chapter}{\numberline {8}Fazit und Ausblick}{13}{chapter.58}%
-\contentsline {section}{\numberline {8.1}Beantwortung der Forschungsfragen}{13}{section.59}%
-\contentsline {section}{\numberline {8.2}Kritische Selbsteinschätzung}{13}{section.60}%
-\contentsline {section}{\numberline {8.3}Empfehlungen für Folgestudien}{13}{section.61}%
-\contentsline {chapter}{Anhang}{14}{chapter*.62}%
-\contentsline {subsubsection}{\nonumberline Erstes Meeting mit Performance-Ingenieur (29.08.2025)}{15}{subsubsection*.69}%
-\contentsline {subsubsection}{\nonumberline Zweites Meeting mit Performance-Ingenieur (12.09.2025)}{21}{subsubsection*.71}%
-\contentsline {subsubsection}{\nonumberline Methodische Anmerkungen zu den Interviews}{30}{subsubsection*.73}%
-\contentsline {chapter}{Literaturverzeichnis}{31}{section*.80}%
+\contentsline {section}{\numberline {4.2}Datenvorbereitung und Feature-Engineering}{9}{section.36}%
+\contentsline {section}{\numberline {4.3}Modelltraining und Hyperparameter-Optimierung}{10}{section.39}%
+\contentsline {section}{\numberline {4.4}Validierung und Modellvergleich}{11}{section.48}%
+\contentsline {chapter}{\numberline {5}Evaluation des Vorhersagemodells}{13}{chapter.51}%
+\contentsline {section}{\numberline {5.1}Quantitative Modellbewertung}{13}{section.52}%
+\contentsline {section}{\numberline {5.2}Varianz-Erklärung durch Top-Features}{13}{section.53}%
+\contentsline {section}{\numberline {5.3}Robustheit und Stabilitätstests}{13}{section.54}%
+\contentsline {chapter}{\numberline {6}Modell-Artefakt und Lessons Learned}{14}{chapter.55}%
+\contentsline {section}{\numberline {6.1}Zusammenfassung der Modellperformance}{14}{section.56}%
+\contentsline {section}{\numberline {6.2}Reflexion der Design-Entscheidungen}{14}{section.57}%
+\contentsline {section}{\numberline {6.3}Einschränkungen und Verbesserungspotenziale}{14}{section.58}%
+\contentsline {chapter}{\numberline {7}Explainable AI für Erkenntnisgewinn}{15}{chapter.59}%
+\contentsline {section}{\numberline {7.1}Einführung in SHAP und Interpretationsmethoden}{15}{section.60}%
+\contentsline {section}{\numberline {7.2}SHAP-Analyse des Modells}{15}{section.61}%
+\contentsline {section}{\numberline {7.3}Erkenntnisse zu Einflussfaktoren}{15}{section.62}%
+\contentsline {section}{\numberline {7.4}Praktischer Nutzen für Ingenieure}{15}{section.63}%
+\contentsline {chapter}{\numberline {8}Fazit und Ausblick}{16}{chapter.64}%
+\contentsline {section}{\numberline {8.1}Beantwortung der Forschungsfragen}{16}{section.65}%
+\contentsline {section}{\numberline {8.2}Kritische Selbsteinschätzung}{16}{section.66}%
+\contentsline {section}{\numberline {8.3}Empfehlungen für Folgestudien}{16}{section.67}%
+\contentsline {chapter}{Anhang}{17}{chapter*.68}%
+\contentsline {subsubsection}{\nonumberline Erstes Meeting mit Performance-Ingenieur (29.08.2025)}{18}{subsubsection*.75}%
+\contentsline {subsubsection}{\nonumberline Zweites Meeting mit Performance-Ingenieur (12.09.2025)}{24}{subsubsection*.77}%
+\contentsline {subsubsection}{\nonumberline Methodische Anmerkungen zu den Interviews}{33}{subsubsection*.79}%
+\contentsline {chapter}{Literaturverzeichnis}{34}{section*.86}%

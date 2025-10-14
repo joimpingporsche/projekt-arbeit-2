@@ -4,30 +4,47 @@ Die Entwicklung des Artefakts folgte einem strukturierten Prozess, der sicherste
 
 \section{Datensammlung und Analyse}
 
-- Daten stammen aus Porsche Motorsport Cloud Plattform (ADX)
-- Zugriff auf alle Sessions der Jahre 2023 bis 2025 der IMSA und WEC 
-- Nur Rennsessions (keine Trainings- oder Qualifikationssessions), weil Reduzierung von Varianz durch unterschiedliche Fahrsituationen
-- Zudem Filterung auf Runden mit trockenreifen ebenfalls zur Reduzierung von Varianz da Regenbedingunen andere Einflussfaktoren haben
-- Diese Filterung erfolgt beim Abruf der Daten mittels ADX Kusto Query Language (KQL)
-- Folgende Parameter wurden in dem Interview mit dem Performance Engineer als relevant identifiziert und werden deshalb als Features für das ML Modell verwendet:
-- Parameter: kontinuierliche und kategoriale Features
-- Parameter: 
-Kontinuierlich: Umgebungstemperatur, Streckentemperatur, Windgeschwindigkeit, Reifentemperatur (für jeden Reifen einzeln), Reifendruck (für jeden Reifen einzeln), Fuel Load, Tyre Mileage Laps(für jeden Reifen einzeln)
-kategorisch: Mechanical Balance (Anti-Roll-Bar-Front/Rear), Brake Balance, Traction Control, Tyre Compound, Track
-- Zielvariable: aUndersteer\_AVG (Durchschnittlicher Wert pro Runde, $>0$ = Understeer, $<0$ = Oversteer)
-- \textbf{Berechnung der Metrik aUndersteer\_AVG}
-- Alle Parameter werden über eine Runde gemittelt und ergeben so einen Datenpunkt pro Runde
+  Die vorliegende Arbeit nutzt Telemetriedaten aus der Porsche Motorsport Cloud Plattform (ADX). Es wurden sämtliche Rennsessions der IMSA- und WEC-Meisterschaften der Jahre 2023 bis 2025 extrahiert. Zur Minimierung von Varianz durch unterschiedliche Fahrsituationen beschränkt sich die Auswahl auf Rennsessions, während Trainings- und Qualifikationssessions ausgeschlossen wurden. Zusätzlich erfolgte eine Filterung auf Runden mit Trockenreifen, da Regenbedingungen weitere Einflussfaktoren einführen. Die Datenselektion wurde direkt beim Abruf mittels der ADX-Kusto Query Language (KQL) vorgenommen, wodurch ein Rohdatensatz im CSV-Format mit 17 735 Runden (Datenpunkten) resultierte.
+
+  Im Rahmen eines Experteninterviews mit dem Performance Engineer wurden jene Parameter identifiziert, die als Merkmale (Features) in das Machine-Learning-Modell eingehen.\footnote{Vgl. Experteninterview 2 (12.09.2025)} Die Merkmale gliedern sich in kontinuierliche und kategoriale Features. Zu den kontinuierlichen Merkmalen zählen Umgebungstemperatur, Reifentemperatur je Rad, Reifendruck je Rad, Fuel Load und Tyre Mileage Laps je Rad. Kategoriale Merkmale umfassen Mechanical Balance (Anti-Roll-Bar-Front/Rear), Brake Balance, Traction Control, Tyre Compound und Track. 
+  Als Zielvariable dient der durchschnittliche Untersteer-Wert pro Runde (aUndersteer\_AVG) \textbf{Berechnung in DP ergänzen}, wobei Werte über Null Untersteer und Werte unter Null Übersteer anzeigen. Alle Parameter und die Zielvariable wurden rundenmittelnd aggregiert, sodass jeder Datensatzpunkt einer einzelnen Rennrunde entspricht.
+
+Die explorative Datenanalyse (EDA) wurde durchgeführt, um die Dateneigenschaften zu untersuchen und potenzielle Datenqualitätsprobleme zu identifizieren. Zunächst wurde die Verteilung der Zielvariable aUndersteer\_AVG untersucht. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{graphics/understeer_nonfilt.png}
+  \caption{Ausschnitt der Werte der Zielvariable aUndersteer\_AVG.}
+  \label{fig:understeer_distribution}
+\end{figure}
+Der in Abbildung \ref{fig:understeer_distribution} dargestellte Verlauf des Understeer-Channels ist auffällig, denn obwohl es sich bereits um Durchschnitte über jeweils eine Runde handelt, weist der Graph eine hohe Volatilität auf.
+Diese Erkenntnis sollte in der Modellierung der Vorverarbeitungsschritte berücksichtigt werden, um die Robustheit des Modells zu erhöhen.
+
+Die Verteilungen der zentralen kontinuierlichen Features wurden ebenfalls untersucht. Abbildung \ref{fig:temp_distribution} zeigt exemplarisch die Verteilung der Reifentemperatur hinten-rechts. Dabei sind sowohl realistische, aber extreme Werte unter 40 Grad Celsius als auch auffällige, unrealistische Ausreißer über 300 Grad Celsius zu erkennen.\footnote{Vgl. Experteninterview 1 (29.08.2025)} Diese Ausreißer deuten auf potenzielle Sensorfehler oder Datenqualitätsprobleme hin und werden in der Datenvorbereitung entsprechend gefiltert.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{graphics/TempPlot.png}
+  \caption{Plot der Reifentemperatur hinten-rechts.}
+  \label{fig:temp_distribution}
+\end{figure}
+
+Auch bei den Werten des Reifendrucks scheint es auffällige Ausreißer zu geben. Abbildung \ref{fig:druck_distribution} zeigt die Verteilung des Reifendrucks vorne-links. Hier sind ebenfalls unrealistische Werte zu erkennen, die auf mögliche Datenqualitätsprobleme hinweisen und in der Vorverarbeitung entsprechend berücksichtigt werden müssen.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{graphics/DruckPlot.png}
+  \caption{Plot des Reifendrucks vorne-links.}
+  \label{fig:druck_distribution}
+\end{figure}
+
+Abschließend wurde mittels Korrelationsmatrix die Stärke der Zusammenhänge aller Merkmale untersucht. Dabei ergaben sich insbesondere enge Korrelationen zwischen den Reifentemperatur- und Reifendrucksensoren sowie zwischen der Kraftstoffmenge und der Anzahl der Runden pro Reifenlaufleistung. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{graphics/korrelations_matrix_top.png}
+  \caption{Korrelationsmatrix der 15 wichtigsten Parameter.}
+  \label{fig:korrelations_matrix}
+\end{figure}
 
 
-- So ergibt sich ein Roh-Datensatz im CSV-Format mit 17735 Runden (Datenpunkte) 
-
-- Explorative Datenanalyse (EDA) mittels Notebooks und Plots 
-- Untersuchung der Verteilung der Rennrunden über die Events
-- Untersuchung der Verteilung der Zielvariable
-- Untersuchung der Verteilung der Features wie Reifentemperaturen, Reifendruck, Fuel Load
-- Untersuchung von Korrelationen zwischen Features
-
-
+Die explorative Analyse zeigte (i) stark schwankende Zielgrößen trotz Rundenglättung, (ii) evidente Ausreißer und Sensorartefakte bei Temperatur und Druck, sowie (iii) hohe Redundanzen in korrelierten Messkanälen (Reifen- und Drucksensorik, Fuel Load vs. Tyre Mileage). Im nächsten Abschnitt werden die daraus abgeleiteten Vorverarbeitungsschritte und das Feature-Engineering formalisiert und implementierungsorientiert beschrieben.
 
 
 
@@ -37,7 +54,7 @@ kategorisch: Mechanical Balance (Anti-Roll-Bar-Front/Rear), Brake Balance, Tract
 - Ziel der Vorverarbeitung ist die Bereinigung und Optimierung des Datensatzes für das Modelltraining
 - Filter kommen zum Einsatz um Sensorfehler und Extremereignisse zu entfernen
 - Vorverarbeitungsschritte:
-- Entfernung von Runden bei denen die Rundenzeit +- 40 Sekunden (ca. eine Standardabweichung) vom Mittelwert abweicht
+- Entfernung von Runden bei denen die Rundenzeit +- 40 Sekunden (ca. eine Standardabweichung) vom Mittelwert abweicht, weitere Reduzierung der Varianz
 - Entfernung von redundanten Features (Reifentemperaturen, Reifendruck) anhand der Korrelationsmatrix und Erstellung von neuen abgeleiteten Features
 - Festlegung von Thresholds für Ausreißer für Features
 - Durch sehr unregelmäßigen Zielvariablen graph beschluss verschiedene Glättungen mittels gleitender Durchschnitte (Fenstergrößen 2, 3, 5, 8) und ohne zu testen
