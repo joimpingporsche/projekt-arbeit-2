@@ -15,6 +15,7 @@ Die Entwicklung des Artefakts folgte einem strukturierten Prozess, der sicherste
 Kontinuierlich: Umgebungstemperatur, Streckentemperatur, Windgeschwindigkeit, Reifentemperatur (für jeden Reifen einzeln), Reifendruck (für jeden Reifen einzeln), Fuel Load, Tyre Mileage Laps(für jeden Reifen einzeln)
 kategorisch: Mechanical Balance (Anti-Roll-Bar-Front/Rear), Brake Balance, Traction Control, Tyre Compound, Track
 - Zielvariable: aUndersteer\_AVG (Durchschnittlicher Wert pro Runde, $>0$ = Understeer, $<0$ = Oversteer)
+- \textbf{Berechnung der Metrik aUndersteer\_AVG}
 - Alle Parameter werden über eine Runde gemittelt und ergeben so einen Datenpunkt pro Runde
 
 
@@ -33,6 +34,10 @@ kategorisch: Mechanical Balance (Anti-Roll-Bar-Front/Rear), Brake Balance, Tract
 \section{Datenvorbereitung und Feature-Engineering}
 
 - Aus den Erkenntnisses der EDA werden verschiedene Vorverarbeitungsschritte abgeleitet
+- Ziel der Vorverarbeitung ist die Bereinigung und Optimierung des Datensatzes für das Modelltraining
+- Filter kommen zum Einsatz um Sensorfehler und Extremereignisse zu entfernen
+- Vorverarbeitungsschritte:
+- Entfernung von Runden bei denen die Rundenzeit +- 40 Sekunden (ca. eine Standardabweichung) vom Mittelwert abweicht
 - Entfernung von redundanten Features (Reifentemperaturen, Reifendruck) anhand der Korrelationsmatrix und Erstellung von neuen abgeleiteten Features
 - Festlegung von Thresholds für Ausreißer für Features
 - Durch sehr unregelmäßigen Zielvariablen graph beschluss verschiedene Glättungen mittels gleitender Durchschnitte (Fenstergrößen 2, 3, 5, 8) und ohne zu testen
