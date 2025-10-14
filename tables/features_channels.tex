@@ -1,0 +1,71 @@
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \begin{tabular}{|p{4.5cm}|p{3.5cm}|p{6cm}|}
+    \hline
+    \textbf{Feature Name} & \textbf{Channel Name} & \textbf{Erklärung} \\
+    \hline
+    \multicolumn{3}{|l|}{\textbf{Kontinuierliche Features}} \\
+    \hline
+    Umgebungstemperatur & TAmbientVms\_AVG & Lufttemperatur der Umgebung \\
+    \hline
+    Reifentemperatur VL & TTyreIRFLavg & Temperatur des vorderen linken Reifens (Innenrand) \\
+    \hline
+    Reifentemperatur VR & TTyreIRFRavg & Temperatur des vorderen rechten Reifens (Innenrand) \\
+    \hline
+    Reifentemperatur HL & TTyreIRRLavg & Temperatur des hinteren linken Reifens (Innenrand) \\
+    \hline
+    Reifentemperatur HR & TTyreIRRRavg & Temperatur des hinteren rechten Reifens (Innenrand) \\
+    \hline
+    Reifendruck VL & pTyreFL\_avg & Luftdruck des vorderen linken Reifens \\
+    \hline
+    Reifendruck VR & pTyreFR\_avg & Luftdruck des vorderen rechten Reifens \\
+    \hline
+    Reifendruck HL & pTyreRL\_avg & Luftdruck des hinteren linken Reifens \\
+    \hline
+    Reifendruck HR & pTyreRR\_avg & Luftdruck des hinteren rechten Reifens \\
+    \hline
+    Fuel Load & mFuelMass\_AVG & Aktuelle Kraftstoffmasse im Tank \\
+    \hline
+    Tyre Mileage VL & TyreMilage\_FL & Laufleistung des vorderen linken Reifens \\
+    \hline
+    Tyre Mileage VR & TyreMilage\_FR & Laufleistung des vorderen rechten Reifens \\
+    \hline
+    Tyre Mileage HL & TyreMilage\_RL & Laufleistung des hinteren linken Reifens \\
+    \hline
+    Tyre Mileage HR & TyreMilage\_RR & Laufleistung des hinteren rechten Reifens \\
+    \hline
+    Reifendruck Asymmetrie & tire\_pressure\_asymmetry & Asymmetrie zwischen linken und rechten Reifen \\
+    \hline
+    Reifendruck Balance & tire\_pressure\_balance & Balance zwischen Vorder- und Hinterachse \\
+    \hline
+    Reifendruck Spread & tire\_pressure\_spread & Spreizung der Reifendruckwerte \\
+    \hline
+    Reifen-Umgebungstemperatur Delta & tire\_temp\_ambient\_delta & Temperaturdifferenz Reifen zu Umgebung \\
+    \hline
+    Reifentemperatur Gradient Max & tire\_temp\_gradient\_max & Maximaler Temperaturgradient zwischen Reifen \\
+    \hline
+    \multicolumn{3}{|l|}{\textbf{Kategoriale Features}} \\
+    \hline
+    Mechanical Balance Front & NDriverARBSettingFAvg & Einstellung der vorderen Stabilisatorsteifigkeit \\
+    \hline
+    Mechanical Balance Rear & NDriverARBSettingRAvg & Einstellung der hinteren Stabilisatorsteifigkeit \\
+    \hline
+    Brake Balance & rBrakeBiasOffsetRequest\_AVG & Bremskraftverteilung Vorder-/Hinterachse \\
+    \hline
+    Traction Control Longitudinal & NTCLongitudinal\_AVG & Traktionskontrolle längs \\
+    \hline
+    Traction Control Lateral & NTCLateral\_AVG & Traktionskontrolle quer \\
+    \hline
+    Tyre State & NTyreState\_AVG & Reifenmischung(hart/medium/soft) \\
+    \hline
+    Event Category & eventCategory & Rennstrecke \\
+    \hline
+    \multicolumn{3}{|l|}{\textbf{Zielvariable}} \\
+    \hline
+    Understeer Average & aUndersteer\_AVG & Durchschnittlicher Untersteer-Wert pro Runde \\
+    \hline
+  \end{tabular}
+  \caption{Übersicht der verwendeten Features und deren Channel-Namen}
+  \label{tab:features_channels}
+\end{table}
