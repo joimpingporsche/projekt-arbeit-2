@@ -13,11 +13,101 @@ Ziel der Unterhaltungen war es,
 
 Obwohl auf einen festen Leitfaden verzichtet wurde, entstanden klare Hinweise darauf, dass die manuelle Sichtung von Metriken mehrere Stunden pro Rennwochenende beansprucht und komplexe Zusammenhänge zwischen Parametern selten systematisch erfasst werden. Diese Erkenntnisse legen den Grundstein für die Anforderungsableitung in Kapitel 3.  
 
+\begin{itemize}
+  \item Methodologische Grundlagen qualitativer Experteninterviews
+  \item Expertenauswahl und Sampling basierend auf Domänenwissen (Motorsport-Engineering)
+  \item Durchführung und Dokumentation (Unstrukturierte Interviews, Transkription, ethische Aspekte)
+  \item Auswertung und Integration ins Artefakt-Design (z.B. Feature-Auswahl, Threshold-Definition)
+\end{itemize}
 
-Die vollständige Transkription ist im ~\ref{subsec:transkript-meeting1} verfügbar.
+Die vollständige Transkription ist im ~\ref{Transkripte} verfügbar.
 
 
+\textbf{Siehe Davids kapitel}
+
+
+
+\section{Design Science Research Methodologie}
+\begin{itemize}
+  \item Einführung in Design Science Research (DSR)
+  \begin{itemize}
+    \item Definition und Abgrenzung zu behavioralen Forschungsansätzen
+    \item Ziel: Entwicklung und Evaluation von Artefakten zur Lösung praktischer Probleme
+    \item Relevanz für Wirtschaftsinformatik und angewandte Forschung
+  \end{itemize}
+  \item DSR-Framework nach Hevner et al. (2004)
+  \begin{itemize}
+    \item Die sieben Richtlinien von Hevner et al.
+    \item Relevance Cycle: Anforderungen aus der Problemdomäne
+    \item Rigor Cycle: Fundierung durch wissenschaftliche Wissensbasis
+    \item Design Cycle: Iterative Build-Evaluate-Phasen
+  \end{itemize}
+  \item DSR-Phasen und Prozessmodell
+  \begin{itemize}
+    \item Problem Identification \& Motivation
+    \item Definition of Objectives
+    \item Design \& Development (Build)
+    \item Demonstration
+    \item Evaluation
+    \item Communication
+  \end{itemize}
+  \item Artefakt-Typen in DSR
+  \begin{itemize}
+    \item Constructs (Konzepte, Vokabular)
+    \item Models (Abstraktionen, Repräsentationen)
+    \item Methods (Algorithmen, Praktiken)
+    \item \textbf{Instantiations} (Implementierungen, Prototypen) -- relevant für ML-Pipeline
+  \end{itemize}
+  \item Evaluation in DSR
+  \begin{itemize}
+    \item Evaluationsmethoden: Observational, Analytical, Experimental, Testing, Descriptive
+    \item Metriken zur Artefakt-Bewertung
+    \item Iteration und Verfeinerung basierend auf Evaluationsergebnissen
+  \end{itemize}
+\end{itemize}
 
 
 \section{Maschinelle Lernverfahren für Regression}
-\section{Modellinterpretation und Explainable AI}
+\begin{itemize}
+  \item Grundlagen Maschinelles Lernen (Supervised vs. Unsupervised, Regression vs. Klassifikation, Bias-Variance Trade-off)
+  \item Datenvorverarbeitung
+  \begin{itemize}
+    \item Exploratory Data Analysis (EDA): Verteilung, Korrelation, Ausreißer
+    \item Data Cleaning: Missing Values, Outlier Detection, Threshold-Filtering
+    \item Feature Engineering: Feature Selection, Aggregation, Encoding kategorialer Variablen, Dimensionsreduktion
+    \item Zeitreihen-Glättung: Moving Averages
+  \end{itemize}
+  \item Überblick Regressionsalgorithmen
+  \begin{itemize}
+    \item Lineare Modelle: Linear Regression, Ridge, Lasso
+    \item Support Vector Regression (SVR)
+    \item Tree-based Models: Decision Trees, Random Forest
+    \item Ensemble-Methoden: Bagging, Boosting
+    \item Neuronale Netze (MLP) für tabulare Daten
+  \end{itemize}
+  \item Gradient Boosting Decision Trees (GBDT)
+  \begin{itemize}
+    \item Prinzipien: Sequential Ensemble, Residual Learning, Loss-Funktion, Gradient Descent
+    \item Entscheidungsbäume als Basis: Split-Kriterien, Baumtiefe, Leaf-wise vs. Level-wise Growth
+    \item XGBoost: Regulierung, Histogramm-Splitting, Native kategorische Feature-Unterstützung
+    \item LightGBM: Leaf-wise Growth, GOSS, Exclusive Feature Bundling, schnelleres Training
+    \item Vergleich XGBoost vs. LightGBM: Geschwindigkeit, Overfitting, Anwendungen
+    \item Empirische Performance auf strukturierten Daten
+  \end{itemize}
+  \item Hyperparameter-Tuning
+  \begin{itemize}
+    \item Bedeutung von Hyperparametern, Grid Search, Random Search, Bayesian Opt.
+    \item Cross-Validation (k-fold, stratified, leave-one-out)
+    \item Wichtige GBDT-Hyperparameter: n\_estimators, learning\_rate, max\_depth/num\_leaves, sample, reg\_lambda, min\_child\_weight
+  \end{itemize}
+  \item Trainings- und Validierungsdatensplit
+  \begin{itemize}
+    \item Standard-Splits, Zeitreihen-Splits, Leave-One-Group-Out
+    \item Strukturkonsistenz der Datensätze
+  \end{itemize}
+  \item Evaluationsmetriken
+  \begin{itemize}
+    \item MSE, RMSE, MAE, R², MAPE
+  \end{itemize}
+\end{itemize}
+

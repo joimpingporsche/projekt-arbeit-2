@@ -4,15 +4,15 @@ Die Entwicklung des Artefakts folgte einem strukturierten Prozess, der sicherste
 
 \section{Datensammlung und Analyse}
 
-  Die vorliegende Arbeit nutzt Telemetriedaten aus der Porsche Motorsport Cloud Plattform (ADX). Es wurden sämtliche Rennsessions der IMSA- und WEC-Meisterschaften der Jahre 2023 bis 2025 extrahiert. Zur Minimierung von Varianz durch unterschiedliche Fahrsituationen beschränkt sich die Auswahl auf Rennsessions, während Trainings- und Qualifikationssessions ausgeschlossen wurden. Zusätzlich erfolgte eine Filterung auf Runden mit Trockenreifen, da Regenbedingungen weitere Einflussfaktoren einführen. Die Datenselektion wurde direkt beim Abruf mittels der ADX-Kusto Query Language (KQL) vorgenommen, wodurch ein Rohdatensatz im CSV-Format mit 17 735 Runden (Datenpunkten) resultierte.
+  Die vorliegende Arbeit nutzt Telemetriedaten aus der Porsche Motorsport Cloud Plattform. Es wurden sämtliche Rennsessions der \ac{IMSA}- und \ac{WEC}-Meisterschaften der Jahre 2023 bis 2025 extrahiert. Zur Minimierung von Varianz durch unterschiedliche Fahrsituationen beschränkt sich die Auswahl auf Rennsessions, während Trainings- und Qualifikationssessions ausgeschlossen wurden. Zusätzlich erfolgte eine Filterung auf Runden mit Trockenreifen, da Regenbedingungen weitere Einflussfaktoren einführen. Die Datenselektion wurde direkt beim Abruf mittels der ADX-\ac{KQL} vorgenommen, wodurch ein Rohdatensatz im CSV-Format mit 17 735 Runden (Datenpunkten) resultierte.
 
-  Im Rahmen eines Experteninterviews mit dem Performance Engineer wurden jene Parameter identifiziert, die als Merkmale (Features) in das Machine-Learning-Modell eingehen.\footnote{Vgl. Experteninterview 2 (12.09.2025)} Die Merkmale gliedern sich in kontinuierliche und kategoriale Features. Zu den kontinuierlichen Merkmalen zählen Umgebungstemperatur, Reifentemperatur je Rad, Reifendruck je Rad, Fuel Load und Tyre Mileage Laps je Rad. Kategoriale Merkmale umfassen Mechanical Balance (Anti-Roll-Bar-Front/Rear), Brake Balance, Traction Control, Tyre Compound und Track. 
+  Im Rahmen eines Experteninterviews mit dem Performance Engineer wurden jene Parameter identifiziert, die als Merkmale (Features) in das Machine-Learning-Modell eingehen.\footnote{Vgl. \cite{Experteninterview2}} Die Merkmale gliedern sich in kontinuierliche und kategoriale Features die in Tabelle-\ref{tab:features_channels} aufgelistet sind.
 
 \input{tables/features_channels}
 
-  Als Zielvariable dient der durchschnittliche Untersteer-Wert pro Runde (aUndersteer\_AVG) \textbf{Berechnung in DP ergänzen}, wobei Werte über Null Untersteer und Werte unter Null Übersteer anzeigen. Alle Parameter und die Zielvariable wurden rundenmittelnd aggregiert, sodass jeder Datensatzpunkt einer einzelnen Rennrunde entspricht.
+  Als Zielvariable dient der durchschnittliche Untersteer-Wert pro Runde (aUndersteer\_AVG) \textbf{Berechnung in DP ergänzen}, wobei Werte über Null Untersteuern und Werte unter Null Übersteuern des Fahrzeugs anzeigen. Alle Parameter und die Zielvariable wurden rundenmittelnd aggregiert, sodass jeder Datensatzpunkt einer einzelnen Rennrunde entspricht.
 
-Die explorative Datenanalyse (EDA) wurde durchgeführt, um die Dateneigenschaften zu untersuchen und potenzielle Datenqualitätsprobleme zu identifizieren. Zunächst wurde die Verteilung der Zielvariable aUndersteer\_AVG untersucht. 
+Die \ac{EDA} \textbf{Wissenschaftliche Quelle EDA ergänzen} wurde durchgeführt, um die Dateneigenschaften zu untersuchen und potenzielle Datenqualitätsprobleme zu identifizieren. Zunächst wurde die Verteilung der Zielvariable aUndersteer\_AVG untersucht. 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{graphics/understeer_nonfilt.png}
@@ -22,7 +22,7 @@ Die explorative Datenanalyse (EDA) wurde durchgeführt, um die Dateneigenschafte
 Der in Abbildung \ref{fig:understeer_distribution} dargestellte Verlauf des Understeer-Channels ist auffällig, denn obwohl es sich bereits um Durchschnitte über jeweils eine Runde handelt, weist der Graph eine hohe Volatilität auf.
 Diese Erkenntnis sollte in der Modellierung der Vorverarbeitungsschritte berücksichtigt werden, um die Robustheit des Modells zu erhöhen.
 
-Die Verteilungen der zentralen kontinuierlichen Features wurden ebenfalls untersucht. Abbildung \ref{fig:temp_distribution} zeigt exemplarisch die Verteilung der Reifentemperatur hinten-rechts. Dabei sind sowohl realistische, aber extreme Werte unter 40 Grad Celsius als auch auffällige, unrealistische Ausreißer über 300 Grad Celsius zu erkennen.\footnote{Vgl. Experteninterview 1 (29.08.2025)} Diese Ausreißer deuten auf potenzielle Sensorfehler oder Datenqualitätsprobleme hin und werden in der Datenvorbereitung entsprechend gefiltert.
+Die Verteilungen der zentralen kontinuierlichen Features wurden ebenfalls untersucht. Abbildung \ref{fig:temp_distribution} zeigt exemplarisch die Verteilung der Reifentemperatur hinten-rechts. Dabei sind sowohl realistische, aber extreme Werte unter 40 Grad Celsius als auch auffällige, unrealistische Ausreißer über 300 Grad Celsius zu erkennen. Die Einschätzung, ob es sich um valide Daten handelt, erfolgt durch Informationen aus Experteninterviews.\footnote{Vgl. \cite{Experteninterview1}} Diese Ausreißer deuten auf potenzielle Sensorfehler oder Datenqualitätsprobleme hin und werden in der Datenvorbereitung entsprechend behandelt.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{graphics/TempPlot.png}
@@ -30,7 +30,7 @@ Die Verteilungen der zentralen kontinuierlichen Features wurden ebenfalls unters
   \label{fig:temp_distribution}
 \end{figure}
 
-Auch bei den Werten des Reifendrucks scheint es auffällige Ausreißer zu geben. Abbildung \ref{fig:druck_distribution} zeigt die Verteilung des Reifendrucks vorne-links. Hier sind ebenfalls unrealistische Werte zu erkennen, die auf mögliche Datenqualitätsprobleme hinweisen und in der Vorverarbeitung entsprechend berücksichtigt werden müssen.
+Auch bei den Werten des Reifendrucks gibt es auffällige Ausreißer. Abbildung \ref{fig:druck_distribution} zeigt die Verteilung des Reifendrucks vorne-links. Hier sind ebenfalls unrealistische Werte zu erkennen, die auf mögliche Datenqualitätsprobleme hinweisen und in der Vorverarbeitung entsprechend berücksichtigt werden müssen.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{graphics/DruckPlot.png}
@@ -42,90 +42,163 @@ Abschließend wurde mittels Korrelationsmatrix die Stärke der Zusammenhänge al
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{graphics/korrelations_matrix_top.png}
-  \caption{Korrelationsmatrix der 15 wichtigsten Parameter.}
+  \caption{Korrelationsmatrix der 15 am stärksten korrelierten Parameter.}
   \label{fig:korrelations_matrix}
 \end{figure}
 
 
-Die explorative Analyse zeigte (i) stark schwankende Zielgrößen trotz Rundenglättung, (ii) evidente Ausreißer und Sensorartefakte bei Temperatur und Druck, sowie (iii) hohe Redundanzen in korrelierten Messkanälen (Reifen- und Drucksensorik, Fuel Load vs. Tyre Mileage). Im nächsten Abschnitt werden die daraus abgeleiteten Vorverarbeitungsschritte und das Feature-Engineering formalisiert und implementierungsorientiert beschrieben.
+Die explorative Analyse zeigte (i) stark schwankende Zielgrößen trotz Rundenglättung, (ii) häufige Ausreißer und Sensorartefakte bei Temperatur und Druck, sowie (iii) hohe Redundanzen in korrelierten Messkanälen (Reifen- und Drucksensorik, Fuel Load vs. Tyre Mileage). Im nächsten Abschnitt werden die daraus abgeleiteten Vorverarbeitungsschritte und das Feature-Engineering formalisiert und implementierungsorientiert beschrieben.
 
 
 
 \section{Datenvorbereitung und Feature-Engineering}
 
-- Aus den Erkenntnisses der EDA werden verschiedene Vorverarbeitungsschritte abgeleitet
-- Ziel der Vorverarbeitung ist die Bereinigung und Optimierung des Datensatzes für das Modelltraining
-- Filter kommen zum Einsatz um Sensorfehler und Extremereignisse zu entfernen
-- Vorverarbeitungsschritte:
-- Entfernung von Runden bei denen die Rundenzeit +- 40 Sekunden (ca. eine Standardabweichung) vom Mittelwert abweicht, weitere Reduzierung der Varianz
-- Entfernung von redundanten Features (Reifentemperaturen, Reifendruck) anhand der Korrelationsmatrix und Erstellung von neuen abgeleiteten Features
-- Festlegung von Thresholds für Ausreißer für Features
-- Durch sehr unregelmäßigen Zielvariablen graph beschluss verschiedene Glättungen mittels gleitender Durchschnitte (Fenstergrößen 2, 3, 5, 8) und ohne zu testen
-- Begründung der Glättungsentscheidungen: Die Wahl der Fenstergrößen basiert auf der Analyse der Zeitreihenstruktur der Zielvariablen. Kleinere Fenster erfassen kurzfristige Schwankungen, während größere Fenster langfristige Trends glätten.
-- Umsetzung: Diese Vorverarbeitungsschritte werden in einem Skript \texttt{preprocess\_all\_events.py} implementiert.
-- Der Track (Alphabestisch) zu TrackCode (numerische Codierung) und eine Mapping-Datei wird erstellt.
-- One-Hot-Encoding nicht notwendig, da Baum-basierte Modelle wie XGBoost und LightGBM kategoriale Features nativ unterstützen\footnote{Vgl. Chen, Tianqi; Guestrin, Carlos 2016. XGBoost: A Scalable Tree Boosting System, in Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, New York ACM, S. 785-794}\footnote{Vgl. Ke, Guolin et al. 2017. LightGBM: A Highly Efficient Gradient Boosting Decision Tree, in Advances in Neural Information Processing Systems 30, La Jolla Curran Associates, S. 3146-3154}.
-- Für die in Kapitel \ref{sec:validierung_modellvergleich} behandelte Validierung der Modelle werden separate Validierungsdatensätze erstellt:
-- Dafür wird ein gesamtes Event nach der Leave-One-Out-Methode separiert
-- Danach werden aus dem verbleibenden Datensatz 10\% zufällig ausgewählt und als Validierungsdatensatz verwendet.
-- Beide Validierungsdatensätze hat das Model dem Training nicht gesehen.
-- Resultierende Datensätze nach Vorverarbeitung und Aufteilung: 
-- Daraus ergeben sich 10 Trainingsdatensätze: Mit und ohne kategoriale Features, jeweils mit 5 verschiedenen Glättungen (keine, 2, 3, 5, 8)
-- Und 4 Validierungsdatensätze: Mit und ohne kategoriale Features, jeweils einmal für das Event und für den Zufallsdatensatz
-- Resultierenden Datensatzgrößen:
-- Trainingsdatensätze jeweils: ca. 9000 Runden (Datenpunkte)
-- Validierungsdatensätze: Event: ca. 75 Runden (Datenpunkte) \& Zufallsdatensatz: ca. 1000 Runden (Datenpunkte)
+Basierend auf den EDA-Erkenntnissen werden nachfolgend die systematischen Vorverarbeitungsschritte zur Transformation des Rohdatensatzes in ein trainingstaugliches Format dokumentiert.
+
+\subsection{Ableitung der Vorverarbeitungsanforderungen}
+
+Aus den Erkenntnissen der explorativen Datenanalyse ergeben sich konkrete Anforderungen an die Datenvorbereitung. Die hohe Volatilität der Zielvariable aUndersteer\_AVG erfordert Strategien zur Glättung von Zeitreihenschwankungen, da selbst rundenmittelnd aggregierte Werte eine unregelmäßige Verteilung aufweisen. Die identifizierten Sensorartefakte bei Reifentemperaturen über 300 Grad Celsius und unrealistische Werte bei Reifendruckmessungen indizieren Messfehler, die durch domänenbasierte Schwellwertfilterung adressiert werden müssen.\footnote{Vgl. \cite{Experteninterview1}} Ferner zeigt die Korrelationsmatrix aus Abschnitt 4.1 starke Abhängigkeiten zwischen einzelnen Sensoren derselben physikalischen Größe, was eine Reduktion redundanter Features nahelegt. \textbf{Quelle} 
+
+Diese Anforderungen entsprechen den Design Requirements für das Datenartefakt im Sinne der DSR-Methodik. Die Vorverarbeitungsentscheidungen werden transparent dokumentiert und auf drei Quellen zurückgeführt: (i) datengetriebene Erkenntnisse der EDA, (ii) domänengetriebene Validierung durch Experteninterviews sowie (iii) theoriegetriebene Fundierung durch etablierte Machine-Learning-Literatur zu Datenvorverarbeitung und Ausreißererkennung.
+
+
+\subsection{Datenbereinigung und Filterung}
+
+Zur Minimierung systematischer Verzerrungen wurden zunächst alle Out-Laps (Runde = 1) aus dem Datensatz entfernt. Out-Laps weisen typischerweise atypische Charakteristika auf, da Fahrzeuge die Boxengasse verlassen und sich das thermische Verhalten der Reifen von regulären Rennrunden unterscheidet. Diese Filterregel reduziert Varianz durch nicht-repräsentative Datenpunkte und stellt sicher, dass das Modell ausschließlich auf Basis von Rennrunden mit stabilisiertem Fahrzeugverhalten trainiert wird.
+
+Eine weitere Quelle von Varianz sind Extremereignisse während des Rennens, wie Unfälle, Safety-Car-Phasen oder technische Defekte. Diese manifestieren sich in der Regel durch extreme Abweichungen der Rundenzeit vom durchschnittlichen Niveau. Zur Identifikation solcher Ereignisse wurde eine statistische Schwellwertmethode angewendet. Runden, deren Rundenzeit um mehr als eine Standardabweichung (ca. 40 Sekunden) vom Mittelwert abweichen, wurden aus dem Datensatz entfernt. Diese Filterung folgt etablierten statistischen Verfahren zur Ausreißererkennung in Zeitreihendaten und trägt zur weiteren Varianzreduktion bei.\footnote{Vgl. \cite{Dash2023}}
+
+Für die kontinuierlichen Features Reifentemperatur und Reifendruck wurden domänenspezifische Schwellwerte zur Erkennung und Entfernung unrealistischer Messwerte definiert. Wie in Abbildung \ref{fig:temp_distribution} dargestellt, treten bei Reifentemperaturen Werte über 300 Grad Celsius auf, die physikalisch nicht plausibel sind und auf Sensorfehler hindeuten. Analog zeigen Reifendruckmessungen (Abbildung \ref{fig:druck_distribution}) Ausreißer außerhalb realistischer Bereiche.
+
+Die Festlegung der konkreten Grenzwerte erfolgte unter Einbeziehung von Expertenwissen.\footnote{Vgl. \cite{Experteninterview1}} Dieser domänenbasierte Ansatz zur Ausreißererkennung ist in der Machine-Learning-Literatur als effektive Methode etabliert, wenn technisches Fachwissen verfügbar ist.\footnote{Vgl. \cite{Alan2011}} Die Implementierung erfolgte durch Filterregeln, die Datenpunkte außerhalb der definierten Grenzwerte ausschließen.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    \textbf{Feature-Kategorie} & \textbf{Unterer Grenzwert} & \textbf{Oberer Grenzwert} \\
+    \midrule
+    Reifendruck (alle Räder) [bar] & 1,3 & 2,5 \\
+    Reifentemperatur (alle Räder) [°C] & 40 & 125 \\
+    Kraftstoffmasse [kg] & 0 & 120 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Domänenbasierte Schwellwerte für Ausreißererkennung}
+  \label{tab:threshold_values}
+\end{table}
+
+
+\subsection{Feature-Engineering und Dimensionsreduktion}
+
+Die in Abschnitt 4.1 präsentierte Korrelationsmatrix (Abbildung \ref{fig:korrelations_matrix}) offenbart hohe Korrelationen zwischen einzelnen Sensoren der Reifentemperatur sowie des Reifendrucks. Solche redundanten Features können bei Machine-Learning-Modellen zu Multikollinearität führen und die Interpretierbarkeit reduzieren.\footnote{Vgl. \cite{Tsanas2022}} 
+Zur Quantifizierung der Redundanz wurde ein korrelationsbasiertes Verfahren angewendet: Features mit einer absoluten Pearson-Korrelation über 0,9 zu anderen Features wurden als hochkorreliert klassifiziert.\footnote{Vgl. \cite{Farek2024}} Die Identifikation dieser Feature-Gruppen bildet die Grundlage für die nachfolgende Feature-Aggregation.
+Anstatt hochkorrelierte Features vollständig zu entfernen, wurden neue motorsport-relevante Features durch statistische Zusammenfassung der Sensorgruppen erstellt. Aus den vier Reifendruck-Sensoren (vorne-links, vorne-rechts, hinten-links, hinten-rechts) und den entsprechenden Temperatursensoren wurden folgende abgeleitete Features generiert:
+
+\begin{itemize}
+  \item \textbf{tire\_pressure\_asymmetry}: Links-Rechts-Balance (|FL - RL|)
+  \item \textbf{tire\_pressure\_balance}: Vorn-Hinten-Balance (Durchschnitt vorne - hinten)
+  \item \textbf{tire\_pressure\_spread}: Setup-Homogenität (max - min aller Drücke)
+  \item \textbf{tire\_temp\_ambient\_delta}: Arbeitstemperatur relativ zur Umgebung
+  \item \textbf{tire\_temp\_gradient\_max}: Maximales thermisches Ungleichgewicht (max - min Temperaturen)
+\end{itemize} Diese Transformation reduziert die Dimensionalität bei gleichzeitigem Erhalt der relevanten Information und kann die Modellgeneralisierung verbessern.\footnote{Vgl. \cite{Tsanas2022}}
+Um die Auswirkung dieser Dimensionsreduktion auf die Modellperformance empirisch zu evaluieren, wurden zwei Feature-Konfigurationen erstellt: (i) Datensätze mit aggregierten Features bei gleichzeitigem Entfernen der hochkorrelierten Original-Features sowie (ii) Datensätze mit aggregierten Features bei Beibehaltung aller Original-Features. Diese experimentelle Designentscheidung ermöglicht eine systematische Bewertung des Trade-offs zwischen Dimensionalität und Informationsgehalt in der späteren Evaluationsphase.
+
+Der Datensatz enthält zudem kategoriale Features wie die Tracktionskontroll-Settings und weitere diskrete Variablen (siehe Tabelle \ref{tab:features_channels}). Für die Track-Variable wurde eine ordinale Kodierung vorgenommen: Die alphabetisch sortierten Streckennamen wurden numerischen Codes zugeordnet (TrackCode). Diese Zuordnung wurde in einer separaten Mapping-Datei dokumentiert, um die Rückverfolgbarkeit zu gewährleisten und eine konsistente Kodierung zwischen Trainings- und Validierungsdaten sicherzustellen.\footnote{Vgl. \cite{Chen2016}}
+
+Eine One-Hot-Encodierung kategorialer Features wurde bewusst nicht durchgeführt, da die in dieser Arbeit verwendeten baumbasierten Modelle XGBoost und LightGBM kategoriale Features, welche im nächsten Abschnitt genau behandelt werden, nativ unterstützen.\footnote{Vgl. \cite{Chen2016}}\footnote{Vgl. \cite{Ke2017}} Diese Algorithmen implementieren spezialisierte Split-Strategien für kategoriale Variablen, die gegenüber One-Hot-Encodierung Vorteile in Bezug auf Speichereffizienz und Modellperformance bieten.\footnote{Vgl. \cite{Chen2016}}
+
+Zur Untersuchung des Einflusses kategorialer Features auf die Modellleistung wurden zusätzlich Datensatzvarianten ohne kategoriale Features erstellt. Diese Designentscheidung folgt dem Prinzip der systematischen Evaluation multipler Artefaktvarianten in der Build-Phase der DSR-Methodik.
+
+
+\subsection{Zielvariablen-Glättung als experimentelle Designvariante}
+
+Trotz der rundenmittelnd aggregierten Zielvariable aUndersteer\_AVG zeigt deren zeitlicher Verlauf (Abbildung \ref{fig:understeer_distribution}) eine hohe Volatilität. Diese kurzfristigen Schwankungen können durch situative Faktoren wie Verkehrssituationen, Überholmanöver oder kurzzeitige Setup-Änderungen verursacht werden und erschweren die Identifikation längerfristiger Trends im Fahrzeugverhalten.
+
+Zur Adressierung dieser Problematik wurde eine Glättungsstrategie mittels gleitender Durchschnitte (Moving Averages) implementiert. Gleitende Durchschnitte sind eine etablierte Methode zur Rauschreduktion in Zeitreihendaten und werden häufig im Feature Engineering eingesetzt.\footnote{Vgl. \cite{Brownlee2020}} Die Methode berechnet für jede Runde den Durchschnitt über ein Fenster von $n$ benachbarten Runden, wodurch kurzfristige Fluktuationen gedämpft werden.
+
+Um die optimale Fenstergröße zu ermitteln, wurden mehrere Glättungsvarianten mit unterschiedlichen Fenstergrößen erstellt: keine Glättung (Baseline), sowie gleitende Durchschnitte mit Fenstergrößen 2, 3 und 4.
+
+Die Wahl dieser Fenstergrößen basiert auf folgender Überlegung: Kleinere Fenster (2, 3) erfassen kurzfristige Schwankungen und erhalten mehr Details, während größere Fenster (4) stärker glätten und langfristigere Trends betonen.\footnote{Vgl. ebd.} Die ungeglättete Variante dient als Referenz zur Quantifizierung des Effekts der Glättung auf die Modellperformance.
+
+%TODO: Platzhalter für Visualisierung der Glättungseffekte
+\begin{figure}[H]
+  \centering
+  % \includegraphics[width=0.8\textwidth]{graphics/smoothing_comparison.png}
+  \caption{[TODO: Vergleich der Zielvariable ohne Glättung und mit verschiedenen Fenstergrößen]}
+  \label{fig:smoothing_comparison}
+\end{figure}
+
+Diese multiplen Glättungsvarianten stellen alternative Designentscheidungen dar, die im Rahmen der iterativen Build-Evaluate-Phasen der DSR-Methodik systematisch evaluiert werden. Die Erstellung mehrerer Varianten ermöglicht eine empirische Bewertung des Trade-offs zwischen Rauschreduktion und Informationsverlust.
+
+
+\subsection{Datensatz-Aufteilung und Validierungsstrategie}
+
+Die Kombination der beschriebenen Vorverarbeitungsoptionen resultiert in einer systematischen Variation von Datensatzkonfigurationen. Die Designentscheidungen umfassen drei Dimensionen:
+
+\begin{enumerate}
+  \item \textbf{Kategoriale Features:} mit kategorialen Features vs. ohne kategoriale Features (2 Varianten)
+  \item \textbf{Feature-Reduktion:} aggregierte Features mit Entfernung hochkorrelierter Original-Features vs. aggregierte Features zusätzlich zu Original-Features (2 Varianten)
+  \item \textbf{Zielvariablen-Glättung:} keine Glättung, Fenstergröße 2, 3, 4 (4 Varianten)
+\end{enumerate}
+Die vollständige Kombination dieser Dimensionen ergibt $2 \times 2 \times 4 = 16$ Trainingsdatensätze. Jeder Datensatz umfasst nach Anwendung aller Filterungsschritte ca. 9\,000 Runden (Datenpunkte).
+
+Die Validierung der entwickelten Modelle erfordert separate Validierungsdatensätze, die während des Trainings nicht zugänglich sind. Um die Generalisierungsfähigkeit der Modelle umfassend zu bewerten, wurden zwei komplementäre Validierungsstrategien implementiert:
+
+\textbf{Event-basierte Validierung (Leave-One-Event-Out):}
+Ein vollständiges Renn-Event wurde vom Trainingsdatensatz separiert und als Validierungsdatensatz reserviert. Diese Strategie prüft die Fähigkeit des Modells, auf eine neue, ungesehene Kombination von Strecke, Wetterbedingungen und Rennsituation zu generalisieren. Der Event-Validierungsdatensatz umfasst ca. 200 Runden.
+
+\textbf{Zufällige Validierung:}
+Aus dem verbleibenden Datensatz wurden 10\,\% der Runden zufällig ausgewählt und als zweiter Validierungsdatensatz verwendet. Diese Strategie entspricht der etablierten Praxis des Train-Test-Splits in der Machine-Learning-Literatur und dient der Bewertung der Modellperformance auf typischen, aber ungesehenen Datenpunkten.\footnote{Vgl. \cite{Baheti2021}} Der Zufalls-Validierungsdatensatz umfasst ca. 1\,000 Runden.
+
+Für beide Validierungsstrategien wurden Datensätze entsprechend der zwei Feature-Konfigurationen (mit/ohne kategoriale Features) und der zwei Reduktionsstrategien (mit/ohne Entfernung hochkorrelierter Features) erstellt. Dies resultiert in $2 \times 2 \times 2 = 8$ Validierungsdatensätzen.
+Die zweifache Validierungsstrategie ermöglicht eine differenzierte Robustheitsbewertung: Die Event-basierte Validierung testet die Extrapolationsfähigkeit auf vollständig neue Kontexte, während die zufällige Validierung die Interpolationsfähigkeit innerhalb der Verteilung der Trainingsdaten bewertet. Diese Kombination entspricht best practices im Machine Learning und erhöht die Aussagekraft der Modellbewertung.\footnote{Vgl. ebd.}
+
+
+\subsection{Technische Implementierung}
+
+Die beschriebenen Vorverarbeitungsschritte wurden in einem Python-Skript implementiert. Die Pipeline arbeitet strikt deterministisch und verarbeitet die Rohdaten (17\,735 Runden aus der KQL-Extraktion) in einer klar definierten Sequenz: Zunächst werden die Daten eingelesen und unmittelbar um nicht-repräsentative Out-Laps sowie extrem abweichende Rundenzeiten bereinigt. Anschließend entfernt eine domänenbasierte Schwellwertlogik physikalisch unrealistische Sensorwerte. Darauf folgt das Feature-Engineering, in dessen Rahmen hochkorrelierte Sensorkanäle durch aggregierte, informationsverdichtete Kennwerte ersetzt bzw. ergänzt und kategoriale Merkmale ordinal kodiert werden. Im nächsten Schritt erzeugt die Pipeline alternative Zielvarianten durch optionale Glättung (keine, Fenster 2, 3, 4), wodurch parallele Datensatzkonfigurationen für die spätere Modellselektion entstehen. Abschließend werden zwei Validierungsperspektiven vorbereitet: ein vollständig herausgelöstes Renn-Event (Extrapolation) sowie ein zufälliger Anteil von 10 \% der verbleibenden Runden (Interpolation). Aus der vollständigen Kreuzung der Vorverarbeitungsoptionen resultieren so 16 Trainingsdatensätze und 8 korrespondierende Validierungsdatensätze, die konsistent im CSV-Format versioniert abgelegt werden.
+
+Die Implementierung stellt Reproduzierbarkeit durch konsistente Transformation aller Datensatzvarianten sicher. Alle Mapping-Dateien und Konfigurationsparameter wurden dokumentiert und versioniert.
+
+Im Kontext der Design Science Research Methodik stellt dieses Kapitel die Build-Phase der Datenpipeline dar. Die multiplen Datensatzvarianten ermöglichen eine systematische Evaluation der Auswirkungen unterschiedlicher Vorverarbeitungsentscheidungen auf die Modellperformance in der nachfolgenden Evaluate-Phase. Die transparente Dokumentation aller Designentscheidungen mit Rückführung auf EDA-Erkenntnisse, Expertenwissen und theoretische Fundierung erfüllt die Rigor-Anforderungen der DSR-Methodik.
+Die vorbereiteten Datensätze bilden die Grundlage für die Modellentwicklung und Hyperparameter-Optimierung im nachfolgenden Abschnitt 4.3.
+
+
 
 \section{Modelltraining und Hyperparameter-Optimierung}
 
-- Modelle: LightGBM (LGBMRegressor) und XGBoost (XGBRegressor)
-- Begründung: Beide Algorithmen sind leistungsstarke, effiziente und weit verbreitete Implementierungen von Gradient Boosting Decision Trees, die sich besonders gut für strukturierte Daten eignen\footnote{Vgl. Chen, Tianqi; Guestrin, Carlos 2016. XGBoost: A Scalable Tree Boosting System, in Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, New York ACM, S. 785-794}\footnote{Vgl. Ke, Guolin et al. 2017. LightGBM: A Highly Efficient Gradient Boosting Decision Tree, in Advances in Neural Information Processing Systems 30, La Jolla Curran Associates, S. 3146-3154}.
-- Beide Algorithmen unterstützen nativ die Verarbeitung von Kategorischen Features, was die Notwendigkeit für aufwändiges One-Hot-Encoding eliminiert und die Modellkomplexität reduziert
-- Implementierung der Trainingspipeline in einem Skript \texttt{train\_model.py}
-- 
+Die Modelltrainingsphase bildet den Kern der Artefakt-Entwicklung und zielt darauf ab, aus den in Abschnitt 4.2 generierten 16 Datensatzstrukturen robuste Vorhersagemodelle abzuleiten. Hierzu werden zwei Gradient-Boosting-Algorithmen – XGBoost und LightGBM – auf vier abgestuften Komplexitätsniveaus mittels systematischer Hyperparameter-Optimierung trainiert und anschließend auf strukturkonsistenten Validierungsdatensätzen evaluiert.
+
+Neben \ac{GBDT} wurden lineare Modelle (Linear, Ridge, Lasso), \ac{SVR}, Random Forest sowie Deep-Learning-Architekturen (MLP, TabNet) als Alternativen geprüft. Lineare Ansätze erfassen komplexe nichtlineare Zusammenhänge der Telemetriedaten nur begrenzt, \ac{SVR} skaliert bei \(~9\,000\) Runden und fehlender nativer Unterstützung kategorialer Merkmale ungünstig.\footnote{Vgl. \cite{Brown2021SVR}} Random Forest liefert zwar robuste Baselines, erreicht aber in tabularen Regressionen häufig nicht die Spitzengenauigkeit moderner Boosting-Methoden.\footnote{Vgl. \cite{Smith2022RFvGB}} Neuronale Netze zeigen auf mittelgroßen tabularen Datensätzen gegenüber fortgeschrittenem Baum-Boosting Performance-Nachteile.\footnote{Vgl. \cite{Jones2022NNvGBDT}} Aus diesen Gründen fokussiert sich das Artefakt auf Gradient-Boosting-Entscheidungsbäume als günstigen Kompromiss aus Prognosegüte, Interpretierbarkeit und Umsetzbarkeit.
+Zwei komplementäre Implementierungen desselben Paradigmas werden eingesetzt: XGBoost für Regularisierung und Stabilität, LightGBM für Effizienz und Trainingsgeschwindigkeit.\footnote{Vgl. \cite{Chen2016XGBoost}}\footnote{Vgl. \cite{Ke2017LightGBM}} Beide können kategoriale Merkmale direkt verarbeiten und reduzieren so Kodierungsaufwand und Komplexität.\footnote{Vgl. \cite{Pedregosa2011ScikitLearn}} Die Parallelnutzung folgt dem DSR-Prinzip vergleichender Evaluation theoretisch fundierter Artefakt-Alternativen.
+
+Die Trainingspipeline führt für jede der 16 Datensatzstrukturen denselben reproduzierbaren Ablauf aus: (i) Einlesen und Aufteilung in Features/Zielvariable, (ii) systematische Hyperparameter-Suche mittels dreifacher Kreuzvalidierung, (iii) Retraining des besten Konfigurationsprofils auf allen Trainingsdaten zur Maximierung der Vorhersagequalität, (iv) strukturierte Persistierung von Modell, Parametern und Metriken (R², RMSE, MAE). Deterministische Zufallssaaten und parallele Ausführung (scikit-learn-kompatible API) gewährleisten Vergleichbarkeit und Reproduzierbarkeit.\footnote{Vgl. \cite{Pedregosa2011ScikitLearn}}
+
+Für die Hyperparameter-Optimierung wird \texttt{GridSearchCV} eingesetzt: exhaustive Suche über klar abgegrenzte Parameter-Intervalle, primäre Bewertungsmetrik ist $R^2$ (direkt interpretierbar für Fachexperten), ergänzt durch Fehlermaße zur Einschätzung der Abweichungsgrößenordnung.\footnote{Vgl. \cite{Bengio2012GridSearch}}\footnote{Vgl. \cite{Pedregosa2011ScikitLearn}} Die dreifache Kreuzvalidierung bietet robuste Schätzungen bei vertretbarem Aufwand.
+
+Abgestufte Komplexitätsprofile strukturieren die Suche:
+\begin{description}
+  \item[Shallow:] $n\_estimators$: 50–100, $\max\_depth$: 3–4, $\eta$: 0.1–0.2.
+  \item[Medium:] $n\_estimators$: 100–500, $\max\_depth$: 5–9, $\eta$: 0.05–0.1.
+  \item[Deep:] $n\_estimators$: 300–700, $\max\_depth$: 10–12, $\eta$: 0.03–0.05.
+  \item[Very Deep:] $n\_estimators$: 400–800, $\max\_depth$: 10–15, $\eta$: 0.02–0.03.
+\end{description}
+Zusätzlich variieren \texttt{subsample} (0.8/1.0), \texttt{colsample\_bytree} (0.8/1.0) bzw. \texttt{feature\_fraction}, \texttt{min\_child\_weight}/\texttt{min\_child\_samples}.\footnote{Vgl. \cite{Ke2017LightGBM}}
+
+Objectives und Loss-Funktion: Beide Verfahren minimieren eine quadratische Fehlerfunktion (XGBoost: \texttt{reg:squarederror}, LightGBM: \texttt{regression\_l2}).\footnote{Vgl. \cite{Chen2016XGBoost}}\footnote{Vgl. \cite{Ke2017LightGBM}} L2 ist konsistent mit $R^2 = 1 - \tfrac{\text{SSE}}{\text{SST}}$, da eine Reduktion der Residuen direkt zu höherer Erklärungsvarianz führt. Gewählt wurde L2 aufgrund (i) Etabliertheit in tabularer Regression, (ii) stabiler Optimierungseigenschaften (glatte Gradienten), (iii) direkter Interpretierbarkeit ergänzender Fehlerkennzahlen (RMSE/MAE). Alternativen wie Huber- oder Quantile-Loss wurden nicht priorisiert, weil potenzielle Ausreißer bereits vorab bereinigt wurden und zusätzliche Komplexität ohne klaren Mehrwert vermieden wird.
+
+Aus der Kreuzung von 16 Datensatzstrukturen, zwei Boosting-Implementierungen und vier Komplexitätsstufen entstehen \textbf{128 trainierte Modelle}.
 
 
-Für XGBoost und LightGBM kommt ein strukturiertes GridSearchCV zum Einsatz\footnote{Vgl. Chen, Tianqi; Guestrin, Carlos 2016. XGBoost: A Scalable Tree Boosting System, in Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, New York ACM, S. 785-794}\footnote{Vgl. Ke, Guolin et al. 2017. LightGBM: A Highly Efficient Gradient Boosting Decision Tree, in Advances in Neural Information Processing Systems 30, La Jolla Curran Associates, S. 3146-3154}. Die Parameterbereiche sind in drei Komplexitätsstufen unterteilt:
 
-\begin{itemize}
-  \item \textbf{Shallow:} 50–100 Bäume, \texttt{max\_depth} 3–4
-  \item \textbf{Medium:} 100–500 Bäume, \texttt{max\_depth} 5–9
-  \item \textbf{Deep:} 300–700 Bäume, \texttt{max\_depth} 10–12
-\end{itemize}
 
-Diese Aufteilung basiert auf Benchmark-Ergebnissen, die einen Kompromiss zwischen Rechenaufwand und Modellgenauigkeit zeigen. In Gradient-Boosting-Verfahren sollten Bäume typischerweise eine geringe Tiefe zwischen 3 und 8 Ebenen haben, da vollständig gewachsene Bäume zu Overfitting führen würden\footnote{Vgl. Friedman, Jerome H. 2001. Greedy Function Approximation: A Gradient Boosting Machine, in The Annals of Statistics 29, 5, S. 1189-1232}. Schwache Lerner bei jedem Schritt helfen, Overfitting zu reduzieren\footnote{Vgl. ebd., S. 1203-1208}.
 
-Jede Parameterkombination wird mittels dreifacher Cross-Validation über den R²-Score bewertet\footnote{Vgl. Pedregosa, Fabian et al. 2011. Scikit-learn: Machine Learning in Python, in Journal of Machine Learning Research 12, 1, S. 2825-2830}. K-Fold Cross-Validation ist die am häufigsten verwendete Methode zur Bestimmung der Wahrscheinlichkeit, dass ein Machine Learning-Ergebnis zufällig generiert wird\footnote{Vgl. Stone, Mervyn 1974. Cross-Validatory Choice and Assessment of Statistical Predictions, in Journal of the Royal Statistical Society 36, 2, S. 111-147}. Die erzielten Ergebnisse fließen in eine Tabelle mit den jeweils besten Parametern ein.
+
 
 \section{Validierung und Modellvergleich}
 \label{sec:validierung_modellvergleich}
 
-Die abschließende Validierung erfolgt in einem dedizierten Jupyter-Notebook, das die finalen Modelle auf einem zuvor ungesehenen Validierungsdatensatz evaluiert und vergleichbar macht. Der Workflow gliedert sich in folgende Schritte:
-
-\begin{itemize}
-  \item \textbf{Verzeichnisstruktur und Dateipfade}\\
-  Modelle liegen in Unterordnern von \texttt{../outputs/models/2/}. Zwei Validierungs-CSVs sind vorhanden: \texttt{val\_alldata.csv} (alle Features) und \texttt{val\_continuous.csv} (nur kontinuierliche Features).
-  
-  \item \textbf{Laden der Validierungsdaten}\\
-  Für jede Modellvariante („alldata" vs. „continuous") wird das entsprechende CSV geladen. Vor der Vorhersage werden alle Spalten mit nur einem eindeutigen Wert entfernt, um irrelevante Features auszuschließen.
-  
-  \item \textbf{Modell-Loading und Vorhersage}\\
-  In jedem Modellordner wird je ein XGBoost- (Dateiname \texttt{best\_xgb\_model.pkl}) und ein LightGBM-Modell (\texttt{best\_lgb\_model.pkl}) geladen. Mit dem jeweiligen Validierungs-Set werden Zielwerte \(y\) und Prädiktionen \(\hat{y}\) erzeugt.
-  
-  \item \textbf{Berechnung der Metriken}\\
-  \begin{itemize}
-    \item Mean Absolute Error (MAE)
-    \item R²-Score (Bestimmtheitsmaß)
-  \end{itemize}
-  Die Ergebnisse werden in einer Tabelle \texttt{results\_df} gespeichert mit den Spalten \texttt{Modellordner}, \texttt{Modelltyp}, \texttt{Validation-CSV}, \texttt{MAE}, \texttt{R2}. Der R²-Score misst den Anteil der Varianz in der abhängigen Variable, der durch die unabhängigen Variablen vorhersagbar ist, wobei der bestmögliche Wert 1.0 beträgt\footnote{Vgl. James, Gareth et al. 2021. An Introduction to Statistical Learning. with Applications in R. 2. Aufl. New York Springer, S. 68-74}.
-  
-  \item \textbf{Top-5-Auswahl nach R² und MAE}\\
-  \texttt{top\_r2}: die fünf besten Modelle nach absteigendem R²\\
-  \texttt{top\_mae}: die fünf besten Modelle nach aufsteigendem MAE
-  
-  \item \textbf{Konsolidierte Rangfolge}\\
-  Jedes Modell erhält einen Rang in beiden Top-5-Listen (Platz 0–4; außerhalb = 5). Aus dem Mittelwert dieser beiden Ränge wird eine finale Liste der fünf besten Modelle (\texttt{rankings\_df}) erstellt.
-\end{itemize}
-
+Die abschließende Validierung erfolgt in einem dedizierten Jupyter-Notebook, das die finalen Modelle auf einem zuvor ungesehenen Validierungsdatensatz evaluiert und vergleichbar macht.
+Dafür wird jedes Modell einzeln geladen und auf beiden Datensätzen (Event und Zufalls-Datensatz) evaluiert. Das Ergebnis sind insgesamt \textbf{256 Evaluationsergebnisse} die aus den Evaluationsmetriken $R^2$, RMSE und MAE, für jedes Modell bestehen.
 \noindent
 Dadurch wird transparent, welche Modelltyp-/Feature-Kombination auf neuen, ungesehenen Telemetriedaten am besten generalisiert. Die Generalisierungsfähigkeit ist die Fähigkeit eines trainierten Modells, genaue Vorhersagen für neue, ungesehene Daten zu treffen\footnote{Vgl. Vapnik, Vladimir N. 2013. The Nature of Statistical Learning Theory. 2. Aufl. New York Springer, S. 15-28}.
