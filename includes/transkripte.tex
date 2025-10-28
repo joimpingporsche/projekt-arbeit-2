@@ -1,6 +1,7 @@
 \anhangteil{Erstes Meeting mit Performance-Ingenieur (29.08.2025)}
 \label{transkript-meeting1}
 
+\linenumbers
 
 Interviewer: 
 Meeting mit Ingenieur, 29.08.2025 11 Uhr. 
@@ -18,7 +19,7 @@ Okay, sehr cool. Vielleicht stelle ich jetzt noch mal ganz kurz das vor, was wir
 
 
 Ingenieur: 
-Ich kann erst mal starten, es hilft. Performance-Ingenieur, Performance, die sind verantwortlich für die Performance vom Auto. Performance heißt, möglichst optimal das Auto auf der Strecke einzusetzen. Optimal bezüglich Rundenzeit logischerweise.  Das ist ein Thema. Und das zweite ist, was sie noch machen ist, sie gucken auch, dass das Auto sicher betrieben wird. Das heißt, sie schauen in Betrieb, zum Beispiel in die Bremstemperatur.  zu stark ansteigt und kritisch  dann heben sie die Hand und sagen, wir haben da Problem. Diskutieren dann mit Renningenieur zusammen, h olt das Auto rein und dann wird es repariert.  sie gucken, z.B. wenn die Fahrhöhe vorne zu niedrig ist, anders als erwartet, dann muss man auch die Hand heben und sagen, da passiert irgendwas nicht. Oder wenn das Bremspedal zu lang wird, weil Verschleiß oh  zu hoch ist. sind auch so sicherheitsrelevante Themen, was wir anschauen.  Idealer Weise tritt das nicht auf. Dann ist Ihre Aufgabe halt Setuparbeit, am Auto, du kannst ja ganz viel einstellen, viel mehr als beim Straßenauto. Du kannst deine Federn, Steifigkeiten ändern. Da gibt es ganz viele Optionen. Es gibt verschiedene Aero-Konfigurationen. Die Fahrwerke kannst du einstellen.   verschiedene Federkombinationen in Serie schalten, dass du verschiedene Charakteristiker hast und noch viel mehr. Das ist Ihre Aufgabe, das während des Rennwochenendes bis zum Rennen zu optimieren.   Zusammen mit dem Engenieur und natürlich auch mit dem Fahrer. Der Fahrer fährt ja nicht nur das Auto, nur im Kreis. Sondern nach jeder Änderung kriegt man Feedback von dem Fahrer, ob das ins Gute oder ins Schlecht war. Aus seiner Sicht und das fließt in die Entscheidung ein, was man als nächstes ändert am Auto.   Was man ändert am Auto, wie gesagt Fahrradfeedback ist wichtig und eben auch die Daten dazu.  Das Telemetrie oder Kabeldaten. WEC hat leider sehr wenig Telemetrie, per Reglement ist das vorgegeben. IMSA hat da mehr, da hat man Probleme, mit der Logging rate. Im Endeffekt, man guckt an Daten, macht die auf, schaut sich die Balance an vom Auto.  Balance heißt dass das Auto unter oder übersteuert. du schaust deine Fahrhöhen an, ob das Auto zu tief ist aufgesetzt oder zu hoch ist und du noch Potenzial hast tiefer zu gehen, je tiefer du bist, desto mehr Abtrieb hast du, was damit auch Rundenzeit bringt. Das ist so die Aufgabe von einem Performance Engineer. das Auto mit Renningenieur und Fahrer zu optimieren. Sie sind eine Verantwortung für das Setup vom Auto. Verstehe. 
+Ich kann erst mal starten, es hilft. Performance-Ingenieur, Performance, die sind verantwortlich für die Performance vom Auto. Performance heißt, möglichst optimal das Auto auf der Strecke einzusetzen. Optimal bezüglich Rundenzeit logischerweise.  Das ist ein Thema. Und das zweite ist, was sie noch machen ist, sie gucken auch, dass das Auto sicher betrieben wird. Das heißt, sie schauen in Betrieb, zum Beispiel in die Bremstemperatur.  zu stark ansteigt und kritisch  dann heben sie die Hand und sagen, wir haben da Problem. Diskutieren dann mit Renningenieur zusammen, holt das Auto rein und dann wird es repariert.  sie gucken, z.B. wenn die Fahrhöhe vorne zu niedrig ist, anders als erwartet, dann muss man auch die Hand heben und sagen, da passiert irgendwas nicht. Oder wenn das Bremspedal zu lang wird, weil Verschleiß oh  zu hoch ist. sind auch so sicherheitsrelevante Themen, was wir anschauen.  Idealer Weise tritt das nicht auf. Dann ist Ihre Aufgabe halt Setuparbeit, am Auto, du kannst ja ganz viel einstellen, viel mehr als beim Straßenauto. Du kannst deine Federn, Steifigkeiten ändern. Da gibt es ganz viele Optionen. Es gibt verschiedene Aero-Konfigurationen. Die Fahrwerke kannst du einstellen.   verschiedene Federkombinationen in Serie schalten, dass du verschiedene Charakteristiker hast und noch viel mehr. Das ist Ihre Aufgabe, das während des Rennwochenendes bis zum Rennen zu optimieren.   Zusammen mit dem Engenieur und natürlich auch mit dem Fahrer. Der Fahrer fährt ja nicht nur das Auto, nur im Kreis. Sondern nach jeder Änderung kriegt man Feedback von dem Fahrer, ob das ins Gute oder ins Schlecht war. Aus seiner Sicht und das fließt in die Entscheidung ein, was man als nächstes ändert am Auto.   Was man ändert am Auto, wie gesagt Fahrradfeedback ist wichtig und eben auch die Daten dazu.  Das Telemetrie oder Kabeldaten. WEC hat leider sehr wenig Telemetrie, per Reglement ist das vorgegeben. IMSA hat da mehr, da hat man Probleme, mit der Logging rate. Im Endeffekt, man guckt an Daten, macht die auf, schaut sich die Balance an vom Auto.  Balance heißt dass das Auto unter oder übersteuert. du schaust deine Fahrhöhen an, ob das Auto zu tief ist aufgesetzt oder zu hoch ist und du noch Potenzial hast tiefer zu gehen, je tiefer du bist, desto mehr Abtrieb hast du, was damit auch Rundenzeit bringt. Das ist so die Aufgabe von einem Performance Engineer. das Auto mit Renningenieur und Fahrer zu optimieren. Sie sind eine Verantwortung für das Setup vom Auto. Verstehe. 
 
 Interviewer: 
 Danke für die Einführung. Das war jetzt auf jeden Fall schon mal sehr hilfreich.  Kannst du mir noch einen kurzen Umriss geben, wie dann das Zusammenspiel an dem Wochenende vielleicht aussieht.  Ich stelle mir das gerade aktuell so vor, man hat die Fahrt in Teilen links.  Es werden Daten gesammelt, die Autos sind auf der Strecke, wie du schon beschrieben hast. Dann gibt es bei euch mehrere Performance Engineers, die sich die Daten angucken und wahrscheinlich auf verschiedene Dinge  achten auf Basis ihrer Erfahrungen oder wie das Team eingeteilt ist.   
@@ -67,9 +68,12 @@ Ja, ich glaube, gut, wenn du für das Meeting so bisschen aufmalst, wie du dir d
 Interviewer:
 Vielen Dank Fabian für deine Zeit. war wirklich sehr gut. Danke.
 
+\nolinenumbers
+
 \anhangteil{Zweites Meeting mit Performance-Ingenieur (12.09.2025)}
 \label{transkript-meeting2}
-
+\setcounter{linenumber}{1}
+\linenumbers
 
 Interviewer:
 Zweites Meeting mit Ingenieur am 12.09.2025 um  10.30 Uhr.
@@ -202,6 +206,8 @@ Ja, schon. Also es gibt verschiedene Ansätze. Du kannst natürlich sagen, ich b
 
 Interviewer: 
 Dann danke für das Gespräch, ich glaube es hat sehr geholfen.
+
+\nolinenumbers
 
 \subsubsection{Methodische Anmerkungen zu den Interviews}
 

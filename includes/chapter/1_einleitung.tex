@@ -1,39 +1,27 @@
 \chapter{Einleitung}
 
-\textbf{Einführung Motorsport bei Porsche}
+\section{Kontext: Datengetriebene Optimierung im modernen Motorsport}
 
-\section{Problemstellung und Motivation}
-Im Rennsport hängt die Fahrzeugbalance von zahlreichen, komplex miteinander verflochtenen Einflussgrößen, sodass Ingenieure aktuell nicht nachvollziehen können, welche Kombinationen dieser Parameter eine Balance-Änderung hervorrufen, und daher erst reaktiv handeln, wenn Abweichungen auftreten. Ziel ist es, zu verstehen, wie diese Einflussgrößen gemeinsam die Fahrzeugbalance steuern, um proaktiv fundierte Entscheidungen treffen zu können.
+Der Motorsport ist ein hochkompetitives Umfeld, in dem Verbesserungen der Fahrzeugperformance oft nur Bruchteile von Sekunden bringen, aber entscheidend sind. Moderne Rennfahrzeuge wie der Porsche LMDh sind mit Tausenden von Sensoren ausgestattet, die kontinuierlich Telemetriedaten erfassen und übertragen. Diese Datenmengen ermöglichen eine beispiellose Sichtbarkeit in Fahrzeugverhalten, Streckenbedingungen und Fahrerdynamik. Trotz dieser technologischen Verfügbarkeit verlässt sich die Telemetrie-Analyse in der Praxis stark auf manuelle Prozesse: Performance Engineers sichten Dashboards, identifizieren Auffälligkeiten und leiten daraus Setup-Anpassungen ab. Dies ist zeitintensiv und anfällig für Übersehungen subtiler Muster, die erst bei Kombination mehrerer Parameter sichtbar werden.
 
-\section{Zielsetzung und Forschungsfragen}
+Diese Situation repräsentiert ein klassisches Problem der angewandten Informatik: Ein großes Datenvolumen, klare Geschäftsziele, aber unzureichende Automatisierung zur systematischen Mustererkennung. Machine Learning verspricht hier die Fähigkeit, aus historischen Daten automatisch Muster zu erkennen und auf neue Situationen zu generalisieren.
 
-Ziel dieser Arbeit ist es zunächst, ein maschinelles Lernmodell zu entwickeln, das auf Basis der Parameter  
-\textit{Tracktemperatur, Reifentemperatur, Reifendruck, Fahrertyp, Mechanical Balance (Anti-Roll-Bar-Front/Rear),}  
-\textit{Reifenmischung, Reifenmileage, Softwareeinstellungen (Brake Balance, Traktionskontrolle)} und  
-\textit{Kraftstoffgewicht} die Fahrzeugbalance mit hoher Genauigkeit vorhersagt. Darauf aufbauend wird  
-mittels Explainable AI untersucht, wie diese Einflussgrößen gemeinsam die Zielvariable determinieren,  
-um Ingenieuren ein Verständnis der wirkenden Zusammenhänge zu ermöglichen.
+\section{Problemstellung}
 
-\paragraph{Forschungsfragen}
-\begin{enumerate}
-  \item Lässt sich ein ML-Modell konstruieren, das die Fahrzeugbalance zuverlässig prognostiziert?
-  \item Können Explainable-AI-Methoden wertvolle Einblicke darin liefern, wie die betrachteten Einflussfaktoren gemeinsam die Fahrzeugbalance bestimmen?
-\end{enumerate}
+Die Fahrzeugbalance ist eine Schlüsselgröße für Rennfahrer und Engineers. Sie beschreibt die Tendenz des Fahrzeugs, in Kurvenfahrt weniger oder stärker zu lenken als vom Fahrer über das Lenkrad eingegeben. Die Fahrzeugbalance beeinflusst direkt Fahrbarkeit, Sicherheit und Renngeschwindigkeit. Die Balance hängt von zahlreichen, komplex verflochtenen Einflussfaktoren ab: Fahrzeugsetup, Reifen-Eigenschaften, Umgebung, Fahrerdynamik und Fahrstil.
 
+Das zentrale Problem besteht darin, dass Performance Engineers diese Zusammenhänge derzeit nicht systematisch erfassen. Sie können nicht vorhersagen, welche spezifischen Parameterkombinationen zu welchen Balance-Änderungen führen. Dies zwingt sie zu reaktivem Handeln: Erst wenn Abweichungen in den Daten offensichtlich werden, werden Anpassungen vorgenommen. Ein proaktiver, vorhersagender Ansatz wäre wertvoll, da er die Fähigkeit bietet, frühzeitig zu signalisieren, dass sich die Balance-Charakteristik verschiebt und damit setup-Optimierungen proaktiv zu planen.
 
-\section{Aufbau der Arbeit}
-Die vorliegende Arbeit ist so strukturiert, dass beide Forschungsfragen systematisch beantwortet werden. 
+Damit ergibt sich die zentrale Forschungsmotivation: Können Machine-Learning-Modelle aus Telemetriedaten automatisch lernen, Fahrzeugbalance vorherzusagen? Und wenn ja, unter welchen Bedingungen generalisieren diese Modelle zuverlässig auf neue Renn-Events mit veränderten Kontexten?
 
-In Kapitel 2 werden zunächst die relevanten theoretischen Grundlagen vermittelt. Abschnitt 2.1 führt in die Design-Science-Research-Methodologie ein, mit der Frage 1 (Entwicklung eines Vorhersagemodells) begleitet wird. Abschnitt 2.2 beschreibt die Grundlagen zu maschinellen Lernverfahren für Regression und insbesondere XGBoost, die später in Kapitel 4 zur Realisierung des Modells eingesetzt werden. Abschnitt 2.3 gibt einen kompakten Überblick zu Explainable-AI-Techniken, die in Kapitel 7 zur Beantwortung von Frage 2 (Erkenntnisgewinn mittels Explainable AI) relevant sind.
+\section{Zielsetzung}
 
-Kapitel 3 widmet sich der Anforderungsanalyse und Problemdefinition im DSR Relevance Cycle. Hier werden die fachlichen, funktionalen und nicht-funktionalen Anforderungen abgeleitet, die notwendig sind, um Frage 1 zu beantworten: Die Festlegung von Zielgrößen wie \(R^2\ge0{,}85\) und die Varianz-Abdeckung durch die Top-10-Features sichert die Modellqualität.
+Diese Arbeit verfolgt das Ziel, ein Machine-Learning-Modell zur Vorhersage der Fahrzeugbalance auf Basis aggregierter Telemetrie-Metriken zu entwickeln und systematisch zu evaluieren. Das Modell soll dazu dienen, Performance Engineers zu unterstützen, indem es automatisiert Vorhersagen liefert, statt dass Ingenieure manuell Daten analysieren müssen.
 
-Kapitel 4 beschreibt das Design und die Implementierung des Vorhersagemodells (DSR Design \& Build Cycle). Dabei werden die Datenpipeline, das Training mit XGBoost und das Hyperparameter-Tuning detailliert dargestellt, um Frage 1 praktisch umzusetzen.
+Die Entwicklung folgt der Design Science Research (DSR) Methodologie, die in Kapitel 2 eingeführt wird. Dies bedeutet konkret: (1) Systematische Anforderungsanalyse aus der Anwendungsdomäne, (2) Rigorous Build des Artefakts, (3) Umfassende Evaluierung anhand wissenschaftlicher Metriken, und (4) Reflexion von Design Knowledge für die Wissensbasis.
 
-Kapitel 5 enthält die Evaluation des trainierten Modells (DSR Rigor Cycle). Quantitative Metriken wie R², RMSE und die kumulierte Varianz-Erklärung durch die Top-10-Features werden ausgewertet, um abschließend zu bestätigen, dass Frage 1 erfüllt ist.
+\section{Forschungsansatz und Aufbau der Arbeit}
 
-Kapitel 6 reflektiert das Modell-Artefakt und zieht Lessons Learned aus dem Entwicklungsprozess. Hier werden Design-Entscheidungen und Einschränkungen kritisch beleuchtet, bevor der Fokus auf Frage 2 wechselt.
+Die vorliegende Arbeit strukturiert sich in sechs Kapitel, die den DSR-Prozess vom Problem zur Lösung abbilden. Kapitel 2 vermittelt die theoretischen Grundlagen, Kapitel 3 analysiert Anforderungen, Kapitel 4 dokumentiert das Design und die Entwicklung des Artefakts, Kapitel 5 evaluiert das Modell-Artefakt und Kapitel 6 schließt den DSR-Zyklus mit Reflexion und Ausblick.
 
-Kapitel 7 ist dem Erkenntnisgewinn mittels Explainable AI gewidmet. Mit SHAP-Analysen und weiteren Interpretationsmethoden wird Frage 2 beantwortet: Es wird aufgezeigt, wie die betrachteten Einflussfaktoren gemeinsam die Fahrzeugbalance bestimmen und welche praktischen Einsichten Ingenieuren damit zur Verfügung stehen.
-
-Kapitel 8 fasst die Ergebnisse zusammen, beantwortet nochmals beide Forschungsfragen und gibt einen Ausblick auf mögliche weiterführende Arbeiten. Zudem enthält es eine kritische Selbsteinschätzung des DSR-Prozesses und des erzielten Nutzens.  
+Insgesamt leistet diese Arbeit einen doppelten Beitrag: Einerseits entwickelt sie ein Proof-of-Concept für datengetriebene Analyse im Motorsport. Andererseits werden durch systematische Evaluierung die Limitierungen identifiziert und Empfehlungen für zukünftige Arbeiten abgeleitet.

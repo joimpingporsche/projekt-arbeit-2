@@ -1,26 +1,71 @@
 \chapter{Anforderungsanalyse und Problemdefinition}
+
 \section{Problemdomäne und Use-Case-Identifikation}
 
-Im Rahmen dieses Projekts wird mit Telemetriedaten von den Porsche LMDh-Rennwagen \textbf{BILD?} gearbeitet. Diese Telemetriedaten werden über mehrere Tausend Sensoren erfasst und liefern während Trainings- und Rennsessions ununterbrochen Messwerte, die in Echtzeit in eine Cloud-Plattform übertragen werden.\footnote{Vgl. \cite{Experteninterview1}} Dort liegen sie als Zeitreihendaten vor und stehen Ingenieuren wahlweise direkt für Detailanalysen zur Verfügung oder werden in Form von Metriken aufbereitet. Unter Metriken versteht man statistische Kennzahlen wie den Durchschnitt, das Minimum oder Maximum über definierte Zeitabschnitte, zum Beispiel pro Runde oder pro Strecken-Sektion. Gerade diese Metriken bilden die Grundlage, auf der Performance Engineers ihre tägliche Arbeit aufbauen.\footnote{Vgl. \cite{Experteninterview2}}
-Im aktuellen Workflow prüfen Performance Engineers zunächst die Kennzahlen in Dashboards, um Auffälligkeiten zu erkennen. Das können Temperatursprünge in schnellen Kurven sein oder ungewöhnlich hoher Reifenverschleiß auf bestimmten Streckenabschnitten.\footnote{Vgl. \cite{Experteninterview1}} Allerdings fällt auf, dass diese Auswertung fast ausschließlich manuell erfolgt. Die Ingenieure verbringen pro Rennwochenende mehrere Stunden damit, Metriken zu sichten, Trends zusammenzuführen und in Setup-Empfehlungen zu übersetzen.\footnote{Vgl. \cite{Experteninterview1}} Das führt nicht nur zu Verzögerungen, sondern birgt auch das Risiko, subtilere Muster zu übersehen, etwa wenn ein Zusammenspiel aus Streckentemperatur, Gas- und Bremsprofil nur in Extremlagen auffällt.
-Aus dieser Ausgangslage ergibt sich ein Use Case, der direkt an das beschriebene Problem anschließt: die Vorhersage der Fahrzeugbalance, gemessen als Understeer, auf Basis der vorhandenen Telemetrie-Metriken.\footnote{Vgl. \cite{Experteninterview2}} Das Ziel ist nicht, sämtliche Sensorrohdaten in Echtzeit zu verarbeiten, sondern die bereits aggregierten Metriken zu nutzen, um eine Balance-Prognose zu erstellen. Auf diese Weise könnten Ingenieure statt langer manueller Durchsicht direkt fundierte Empfehlungen erhalten und proaktiv handeln.
-Mit der Fahrzeugbalance-Vorhersage würde sich der Arbeitsablauf von reaktivem Nachjustieren hin zu vorausschauender Optimierung verschieben. Ingenieure könnten Anpassungen bereits dann vornehmen, wenn sich ein akuter Über- oder Untersteuern-Trend ankündigt.\footnote{Vgl. \cite{Experteninterview2}} Darüber hinaus verspricht dieser Use Case eine objektivere Entscheidungsbasis: Anstelle persönlicher Einschätzungen stünden reproduzierbare Kennzahlenmodelle im Mittelpunkt. Damit würde das bestehende System von punktueller Datenansicht auf datengetriebene Automatisierung übergehen und den Zeitaufwand für Analyse sowie Setup-Änderungen deutlich verringern.
+Im Rahmen dieses Projekts wird mit Telemetriedaten von Porsche LMDh-Rennwagen gearbeitet. LMDh (Le Mans Daytona hybrid) ist eine Fahrzeugklasse für Langstreckenrennen, die in den Weltmeisterschaften IMSA WeatherTech SportsCar Championship und FIA World Endurance Championship (WEC) eingesetzt wird. 
 
-\textbf{Für längeren Text, erkläre LMDh, Cloud Plattform, Telemetriedaten, Metriken}
+Die Telemetriedaten werden über mehrere Tausend Sensoren erfasst und liefern während Trainings- und Rennsessions ununterbrochen Messwerte, die in Echtzeit in die Porsche Motorsport Cloud-Plattform übertragen werden.\footnote{Vgl. Experteninterview 1, 29.08.2025} Dort liegen sie als Zeitreihendaten vor und stehen Performance Engineers wahlweise direkt für Detailanalysen zur Verfügung oder werden in Form von Metriken aufbereitet. Unter Metriken versteht man statistische Kennzahlen wie Durchschnitt, Minimum oder Maximum über definierte Zeitabschnitte, zum Beispiel pro Runde oder pro Strecken-Sektion. Diese Metriken bilden die Grundlage, auf der Performance Engineers ihre tägliche Arbeit aufbauen.\footnote{Vgl. Experteninterview 2, 12.09.2025}
+
+Im aktuellen Workflow prüfen Performance Engineers zunächst die Kennzahlen in Dashboards, um Auffälligkeiten zu erkennen. Das können Temperatursprünge in schnellen Kurven sein oder ungewöhnlich hoher Reifenverschleiß auf bestimmten Streckenabschnitten.\footnote{Vgl. Experteninterview 1, 29.08.2025} Allerdings fällt auf, dass diese Auswertung fast ausschließlich manuell erfolgt. Die Ingenieure verbringen pro Rennwochenende mehrere Stunden damit, Metriken zu sichten, Trends zusammenzuführen und in Setup-Empfehlungen zu übersetzen. Das führt nicht nur zu Verzögerungen, sondern birgt auch das Risiko, subtilere Muster zu übersehen, etwa wenn ein Zusammenspiel aus Streckentemperatur, Gas- und Bremsprofil nur in Extremlagen auffällt.
+
+Aus dieser Ausgangslage ergibt sich ein Use Case, der direkt an das 
+beschriebene Problem anschließt: die Vorhersage der Fahrzeugbalance, 
+gemessen durch den \texttt{aUndersteer\_AVG}-Kanal, auf Basis der 
+vorhandenen Telemetrie-Metriken.\footnote{Vgl. Experteninterview 2, 
+12.09.2025} Diese Metrik quantifiziert die Fahrzeugbalance numerisch, 
+wobei positive Werte Untersteuern und negative Werte Übersteuern des 
+Fahrzeugs anzeigen. Das Ziel ist nicht, sämtliche Sensorrohdaten in 
+Echtzeit zu verarbeiten, sondern die bereits aggregierten Metriken zu 
+nutzen, um eine Balance-Prognose zu erstellen. Auf diese Weise könnten 
+Ingenieure statt langer manueller Durchsicht direkt fundierte 
+Empfehlungen erhalten und proaktiv handeln.
+
+Mit der Fahrzeugbalance-Vorhersage würde sich der Arbeitsablauf von reaktivem Nachjustieren hin zu vorausschauender Optimierung verschieben. Ingenieure könnten Anpassungen bereits dann vornehmen, wenn sich ein akuter Über- oder Untersteuern-Trend ankündigt. Darüber hinaus verspricht dieser Use Case eine objektivere Entscheidungsbasis: Anstelle persönlicher Einschätzungen stünden reproduzierbare Kennzahlenmodelle im Mittelpunkt. Damit würde das bestehende System von punktueller Datenansicht auf datengetriebene Automatisierung übergehen und den Zeitaufwand für Analyse sowie Setup-Änderungen deutlich verringern.
+
+
 
 \section{Anforderungsableitung und -bewertung}
 
+Aus den beiden Experteninterviews mit dem Performance Engineer am 29.08.2025 und 12.09.2025 lassen sich konkrete Anforderungen an das ML-Artefakt ableiten.
 
-Aus den beiden Gesprächen mit dem Performance Engineer am 29.08.2025 und 12.09.2025 (siehe Anhang A.1) lassen sich konkrete Anforderungen an das ML-Artefakt ableiten. Die funktionalen Anforderungen betreffen in erster Linie die Fähigkeit, die Fahrzeugbalance, gemessen als aUndersteer, auf Basis vorhandener Telemetrie-Metriken zuverlässig vorherzusagen. Dieses Ziel folgt direkt aus der Erkenntnis, dass manuelle Analysen mehrere Stunden pro Rennwochenende beanspruchen und dass frühe Hinweise auf Balanceabweichungen häufig erst verspätet offensichtlich werden.
+Die erste und primäre funktionale Anforderung betrifft die Fähigkeit, die Fahrzeugbalance auf Basis vorhandener Telemetrie-Metriken zuverlässig vorherzusagen. Dieses Ziel folgt direkt aus der Erkenntnis, dass manuelle Analysen mehrere Stunden pro Rennwochenende beanspruchen und dass frühe Hinweise auf Balanceabweichungen häufig erst verspätet offensichtlich werden.\footnote{Vgl. Experteninterview 1, 29.08.2025} Das Modell soll ohne manuelle Intervention vorhersagen können, welche Understeer-Werte für eine gegebene Kombination von Telemetrie-Inputs zu erwarten sind. Damit wird das Ziel einer automatisierten Understeer-Vorhersage definiert.
 
-Neben der reinen Vorhersagegenauigkeit muss das Modell nachvollziehbare Ergebnisse liefern. Ein hoher Erklärungsgrad ermöglicht es den Ingenieuren, die zugrundeliegenden Einflussfaktoren zu verstehen und Entscheidungen auf einer nachvollziehbaren Basis zu treffen. Aus diesem Grund wird der Einsatz von Explainable-AI-Methoden wie SHAP festgeschrieben. Solche Methoden erscheinen erst dann sinnvoll, wenn das zugrundeliegende Regressionsmodell eine gewisse Güte erreicht hat. Empirische Studien legen nahe, dass bei lokal interpretierten Surrogatmodellen ein \(\,R^2\)-Wert von mindestens 0,85 erforderlich ist, um die Zuverlässigkeit der Erklärungen sicherzustellen\footnote{Samek, Montavon, Bach 2021, S. 12–15}.
+Neben der reinen Funktionalität muss das Modell eine hinreichende 
+Vorhersagegenauigkeit aufweisen. In der Fahrzeugtechnik und 
+Ingenieurwissenschaften wird für Validierungsmodelle ein R²-Wert 
+von mindestens 0,7 angestrebt, um praktische Einsatzfähigkeit 
+zu gewährleisten.\footnote{Vgl. Salaani 2021; vgl. auch 365 Data Science 2023} 
+Unterhalb dieses Schwellenwerts ist die Prognose zu unsicher, 
+um darauf Setup-Entscheidungen zu stützen.
 
-Schließlich ist eine lückenlose Dokumentation aller Eingangsdaten, Vorverarbeitungs­schritte und Modellparameter vorgesehen. Nur so kann eine vollständige Reproduzierbarkeit gewährleistet werden, und die erstellten Prognosen bleiben validierbar.
+Die dritte Anforderung betrifft die Reproduzierbarkeit und Dokumentation. Eine lückenlose Dokumentation aller Eingangsdaten, Vorverarbeitungsschritte, Modellparameter und Evaluationsergebnisse ist vorgesehen. Nur so kann vollständige Reproduzierbarkeit gewährleistet werden, und die erstellten Prognosen bleiben validierbar.\footnote{Vgl. Venable, Pries-Heje, Baskerville 2016, S. 79} Diese Anforderung entspricht den Prinzipien der Design Science Research Methodologie, die eine nachvollziehbare Artefakt-Entwicklung fordert.
 
-Diese Anforderungen bilden die Grundlage für die spätere Modellarchitektur und das Evaluationsdesign in den folgenden Kapiteln.
+Bei der Priorisierung dieser Anforderungen zeigt sich folgende Hierarchie: Die erste und zweite Anforderung sind kritisch für die Zielerreichung. Ohne automatisierte Vorhersage und ausreichende Genauigkeit ist das Artefakt nicht einsetzbar. Die dritte Anforderung ist methodisch essentiell, stellt aber keine funktionale Begrenzung dar. Die Evaluation in Kapitel 5 wird zeigen, dass Anforderung 1 partiell, Anforderung 2 nicht und Anforderung 3 vollständig erfüllt wurden.
 
-\textbf{Bessere Begründung?}
+
 
 \section{Abgrenzung des DSR-Artefakts}
 
-\textbf{Nur für 2 Tracks, Es soll kein universelles ML Modell werden, sondern einen Proof of Concept für Porsche Motorsport, der zeigt dass es grundsätzlich möglich ist, mit ML die Fahrzeugbalance vorherzusagen. Deshalb beschränkt sich die Arbeit auf diese beiden Rennevent und nur auf die Rennsessions.}
+Das entwickelte Artefakt beschränkt sich auf ein Vorhersagemodell für Understeer-Werte, basierend auf aggregierten Telemetrie-Metriken pro Runde. Diese fokussierte Auslegung ermöglicht es, das Projekt im vorgesehenen Zeitrahmen vollständig durchzuführen.
+
+Hinsichtlich der Implementierung arbeitet das Modell auf rundenweise aggregierten Metriken, nicht auf Rohdaten-Sensorströmen. Dies reduziert die Komplexität erheblich und erlaubt fokussiertere Feature-Engineering-Strategien.\footnote{Vgl. Kap. 4.2} Eine Echtzeitvorhersage, die kontinuierlich auf Sensor-Einzelmessungen reagiert, wird damit nicht angestrebt.
+
+Bezüglich der Zielvariablen konzentriert sich das Modell ausschließlich auf Understeer. Andere Balance-Metriken wie Oversteer oder Aero-Balance werden nicht vorhergesagt. Dies beschränkt das Vorhersage-Problem auf eine univariate Regression und reduziert damit den Modellierungsaufwand.
+
+Schließlich liefert das Modell keine direkten Setup-Vorschläge, sondern ausschließlich Understeer-Prognosen. Die Ableitung von Setup-Änderungen aus diesen Prognosen bleibt in der Verantwortung der Performance Engineers und wird nicht automatisiert. Damit bleibt die Entscheidungshoheit bei den Ingenieuren, während das Modell als Entscheidungsunterstützungssystem fungiert.
+
+Diese Abgrenzung reduziert den Projektumfang auf ein klar definiertes Machine-Learning-Regressionsproblem und ermöglicht eine fokussierte Evaluation im DSR-Kontext.\footnote{Vgl. Hevner et al. 2004, S. 83}
+
+
+
+\section{Forschungsfragen}
+
+Aus der Problemdefinition und den Anforderungen ergeben sich drei zentrale Forschungsfragen, die das Projekt leiten und in den nachfolgenden Kapiteln beantwortet werden.
+
+Die erste Forschungsfrage adressiert die grundlegende Machbarkeit des Ansatzes: Können Gradient Boosting Decision Trees (GBDT) Understeer-Verhalten in Motorsport-Telemetriedaten vorhersagen? GBDT gelten als state-of-the-art für strukturierte Regressionsprobleme,\footnote{Vgl. Chen, Guestrin 2016, S. 785-794} aber ihre Anwendbarkeit auf Motorsport-Telemetriedaten ist bisher nicht systematisch untersucht. Diese Frage wird in Kapitel 5 und 6 umfassend beantwortet.
+
+Die zweite Forschungsfrage vergleicht zwei konkrete Algorithmen: Welcher Algorithmus (XGBoost vs. LightGBM) generalisiert besser auf unbekannte Rennevents? XGBoost und LightGBM implementieren unterschiedliche Wachstumsstrategien (level-wise vs. leaf-wise) und Optimierungen.\footnote{Vgl. Ke et al. 2017, S. 3146-3154} Welcher Algorithmus robuster generalisiert, ist unklar und wird durch systematischen Vergleich auf Event-basierten Validierungsdatensätzen beantwortet (Kapitel 5.2).
+
+Die dritte Forschungsfrage konzentriert sich auf die Inputseite des Modells: Wie wirken sich Datenvorbereitung (Feature-Engineering, Glättung, Aggregation) und Hyperparameter-Tuning auf die Vorhersagegenauigkeit aus? Verschiedene Vorverarbeitungsschritte, kategoriale Features, Zielvariablen-Glättung und Hyperparameter-Komplexitätsstufen werden getestet, um ihren Einfluss auf Performance zu quantifizieren (Kapitel 4.2, 4.3, 5.2).
+
+Diese drei Forschungsfragen strukturieren den Aufbau der Arbeit: Kapitel 4 entwickelt das Artefakt systematisch, Kapitel 5 evaluiert es anhand der Forschungsfragen, und Kapitel 6 synthetisiert die Erkenntnisse in Design Knowledge für zukünftige Arbeiten.

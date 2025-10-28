@@ -1,113 +1,54 @@
 \chapter{Theoretische Grundlagen}
-\section{Design Science Research Methodologie}
-\section{Experteninterviews}
-
-Im Rahmen der Relevance Cycle-Phase wurden zwei informelle Gespräche mit einem Performance Engineer vom Porsche Motorsport geführt, um praxisnahe Anforderungen an die Telemetriedatenanalyse zu ermitteln. Das erste Gespräch fand am 29.08.2025, das zweite am 12.09.2025 statt.
-
-Ziel der Unterhaltungen war es,  
-\begin{itemize}
-  \item die derzeitige Nutzung von Telemetrie-Metriken in Dashboards nachzuvollziehen,  
-  \item zentrale Einflussfaktoren auf die Fahrzeugbalance aus Ingenieurssicht zu identifizieren und  
-  \item Erwartungen an ein automatisiertes Vorhersagemodell hinsichtlich Genauigkeit und Erklärbarkeit zu skizzieren.  
-\end{itemize}
-
-Obwohl auf einen festen Leitfaden verzichtet wurde, entstanden klare Hinweise darauf, dass die manuelle Sichtung von Metriken mehrere Stunden pro Rennwochenende beansprucht und komplexe Zusammenhänge zwischen Parametern selten systematisch erfasst werden. Diese Erkenntnisse legen den Grundstein für die Anforderungsableitung in Kapitel 3.  
-
-\begin{itemize}
-  \item Methodologische Grundlagen qualitativer Experteninterviews
-  \item Expertenauswahl und Sampling basierend auf Domänenwissen (Motorsport-Engineering)
-  \item Durchführung und Dokumentation (Unstrukturierte Interviews, Transkription, ethische Aspekte)
-  \item Auswertung und Integration ins Artefakt-Design (z.B. Feature-Auswahl, Threshold-Definition)
-\end{itemize}
-
-Die vollständige Transkription ist im ~\ref{Transkripte} verfügbar.
-
-
-\textbf{Siehe Davids kapitel}
-
-
 
 \section{Design Science Research Methodologie}
-\begin{itemize}
-  \item Einführung in Design Science Research (DSR)
-  \begin{itemize}
-    \item Definition und Abgrenzung zu behavioralen Forschungsansätzen
-    \item Ziel: Entwicklung und Evaluation von Artefakten zur Lösung praktischer Probleme
-    \item Relevanz für Wirtschaftsinformatik und angewandte Forschung
-  \end{itemize}
-  \item DSR-Framework nach Hevner et al. (2004)
-  \begin{itemize}
-    \item Die sieben Richtlinien von Hevner et al.
-    \item Relevance Cycle: Anforderungen aus der Problemdomäne
-    \item Rigor Cycle: Fundierung durch wissenschaftliche Wissensbasis
-    \item Design Cycle: Iterative Build-Evaluate-Phasen
-  \end{itemize}
-  \item DSR-Phasen und Prozessmodell
-  \begin{itemize}
-    \item Problem Identification \& Motivation
-    \item Definition of Objectives
-    \item Design \& Development (Build)
-    \item Demonstration
-    \item Evaluation
-    \item Communication
-  \end{itemize}
-  \item Artefakt-Typen in DSR
-  \begin{itemize}
-    \item Constructs (Konzepte, Vokabular)
-    \item Models (Abstraktionen, Repräsentationen)
-    \item Methods (Algorithmen, Praktiken)
-    \item \textbf{Instantiations} (Implementierungen, Prototypen) -- relevant für ML-Pipeline
-  \end{itemize}
-  \item Evaluation in DSR
-  \begin{itemize}
-    \item Evaluationsmethoden: Observational, Analytical, Experimental, Testing, Descriptive
-    \item Metriken zur Artefakt-Bewertung
-    \item Iteration und Verfeinerung basierend auf Evaluationsergebnissen
-  \end{itemize}
-\end{itemize}
 
+Design Science Research (DSR) ist ein etablierter Forschungsansatz der Wirtschaftsinformatik, der sich grundlegend von deskriptiven Forschungsmethoden unterscheidet. Während traditionelle empirische Forschung primär darauf ausgerichtet ist, bestehende Phänomene zu verstehen und zu erklären, zielt DSR darauf ab, praktische Probleme durch systematische Entwicklung und rigorose Evaluierung von Artefakten zu lösen. Damit verbindet DSR technische und wissenschaftliche Rigor mit praktischer Relevanz.\footnote{Vgl. Hevner et al. 2004, S. 77-83}
 
-\section{Maschinelle Lernverfahren für Regression}
-\begin{itemize}
-  \item Grundlagen Maschinelles Lernen (Supervised vs. Unsupervised, Regression vs. Klassifikation, Bias-Variance Trade-off)
-  \item Datenvorverarbeitung
-  \begin{itemize}
-    \item Exploratory Data Analysis (EDA): Verteilung, Korrelation, Ausreißer
-    \item Data Cleaning: Missing Values, Outlier Detection, Threshold-Filtering
-    \item Feature Engineering: Feature Selection, Aggregation, Encoding kategorialer Variablen, Dimensionsreduktion
-    \item Zeitreihen-Glättung: Moving Averages
-  \end{itemize}
-  \item Überblick Regressionsalgorithmen
-  \begin{itemize}
-    \item Lineare Modelle: Linear Regression, Ridge, Lasso
-    \item Support Vector Regression (SVR)
-    \item Tree-based Models: Decision Trees, Random Forest
-    \item Ensemble-Methoden: Bagging, Boosting
-    \item Neuronale Netze (MLP) für tabulare Daten
-  \end{itemize}
-  \item Gradient Boosting Decision Trees (GBDT)
-  \begin{itemize}
-    \item Prinzipien: Sequential Ensemble, Residual Learning, Loss-Funktion, Gradient Descent
-    \item Entscheidungsbäume als Basis: Split-Kriterien, Baumtiefe, Leaf-wise vs. Level-wise Growth
-    \item XGBoost: Regulierung, Histogramm-Splitting, Native kategorische Feature-Unterstützung
-    \item LightGBM: Leaf-wise Growth, GOSS, Exclusive Feature Bundling, schnelleres Training
-    \item Vergleich XGBoost vs. LightGBM: Geschwindigkeit, Overfitting, Anwendungen
-    \item Empirische Performance auf strukturierten Daten
-  \end{itemize}
-  \item Hyperparameter-Tuning
-  \begin{itemize}
-    \item Bedeutung von Hyperparametern, Grid Search, Random Search, Bayesian Opt.
-    \item Cross-Validation (k-fold, stratified, leave-one-out)
-    \item Wichtige GBDT-Hyperparameter: n\_estimators, learning\_rate, max\_depth/num\_leaves, sample, reg\_lambda, min\_child\_weight
-  \end{itemize}
-  \item Trainings- und Validierungsdatensplit
-  \begin{itemize}
-    \item Standard-Splits, Zeitreihen-Splits, Leave-One-Group-Out
-    \item Strukturkonsistenz der Datensätze
-  \end{itemize}
-  \item Evaluationsmetriken
-  \begin{itemize}
-    \item MSE, RMSE, MAE, R², MAPE
-  \end{itemize}
-\end{itemize}
+Das Grundwerk von Hevner et al. (2004) prägt bis heute das Verständnis von DSR und etabliert ein Framework, das auf sieben präskriptiven Richtlinien basiert. Das Framework schreibt vor, dass DSR-Projekte in drei ineinandergreifenden Zyklen durchgeführt werden sollten: Der Relevance Cycle beginnt mit Problemidentifikation aus der Anwendungsdomäne; der Rigor Cycle verankert die Entwicklung in wissenschaftlichem Wissen und etablierten Theorien; der Design Cycle orchestriert iterative Phasen von Artefakt-Konzeption, Entwicklung und Evaluierung. Diese drei Zyklen ermöglichen eine systematische und nachvollziehbare Forschungsvorgehensweise, bei der wissenschaftliche Strenge nicht auf Kosten von Praxisrelevanz geht.\footnote{Vgl. Hevner et al. 2004, S. 77-92}
 
+Der DSR-Prozess gliedert sich typischerweise in sechs sequenzielle Phasen. Problem Identification and Motivation beginnt mit der Analyse der Problemdomäne und Begründung ihrer wissenschaftlichen und praktischen Relevanz. Definition of Objectives spezifiziert die Anforderungen, die das entwickelte Artefakt erfüllen muss. In der Design and Development Phase wird das Artefakt konzipiert und prototypisch implementiert. Die Demonstration Phase dokumentiert, dass das Artefakt das Problem tatsächlich lösen kann, typischerweise durch Fallstudien oder kontrollierte Szenarien. Die Evaluation Phase bewertet das Artefakt systematisch gegen die vordefinierten Anforderungen und Ziele. Abschließend erfolgt die Communication Phase, in der Erkenntnisse und Design Knowledge der wissenschaftlichen Gemeinschaft mitgeteilt werden.\footnote{Vgl. Prat et al. 2014, S. 1-16}
+
+Artefakte in DSR können verschiedene Formen annehmen. Constructs sind konzeptionelle Vokabularien und Abstraktionen, die Probleme präzise definieren. Models stellen Zusammenhänge und Strukturen in vereinfachter Form dar. Methods sind Algorithmen und systematische Verfahrensweisen zur Problemlösung. Instantiations schließlich sind konkrete Implementierungen oder Prototypen.\footnote{Vgl. Hevner et al. 2004, S. 80} In ML-Projekten ist die Instantiation typischerweise ein trainiertes Modell mit vollständiger Pipeline (Datenvorverarbeitung, Feature Engineering, trainierte Parameter). Die vorliegende Arbeit entwickelt eine Instantiation: ein evaluiertes Machine-Learning-Modell für Fahrzeugbalance-Vorhersage.
+
+Die Evaluierung in DSR erfüllt mehrere funktionale Rollen. Sie stellt fest, ob und inwieweit das Artefakt die definierten Anforderungen erfüllt. Sie identifiziert Verbesserungspotenziale für weitere Iterationen. Vor allem trägt sie zur wissenschaftlichen Wissensbasis bei, indem Design Principles und generalisierbare Lessons Learned dokumentiert werden.\footnote{Vgl. Venable et al. 2016, S. 77-89} Bewährte Evaluationsmethoden in DSR sind observational (Feldbeobachtung), analytical (logische Deduktion und Proof-of-Concept), experimental (kontrollierte Experimente mit Baseline-Vergleich), testing (systematische Funktionsprüfung) und descriptive (qualitative Bewertung durch Experten). Für Machine-Learning-Artefakte dominieren analytische und experimentelle Evaluationen mittels etablierter Performance-Metriken.
+
+\section{Experteninterviews zur Anforderungsermittlung}
+
+Die Anforderungsanalyse in Kapitel 3 basiert auf zwei informellen Gesprächen mit einem erfahrenen Performance Engineer aus dem Porsche Motorsport-Team. Das erste Gespräch fand am 29.08.2025 statt, das zweite am 12.09.2025. Ziel war es, durch offene Diskussion die tägliche Arbeitsweise im Telemetrie-Management nachzuvollziehen, zentrale technische Herausforderungen zu identifizieren und realistische Anforderungen an ein automatisiertes Vorhersagemodell zu formulieren.
+
+Beide Gespräche folgten einem offenen, exploratorischen Format ohne strukturierten Fragenkatalog, um eine natürliche Konversation zu fördern und implizites Wissen des Experten zugänglich zu machen. Die gewonnenen Erkenntnisse bestätigten, dass die aktuelle Telemetrie-Analyse stark manuell erfolgt und mehrere Stunden pro Rennwochenende erfordert. Dies validierte die Problemrelevanz und leitete die Anforderungsableitung in Kapitel 3.\footnote{Vgl. Experteninterview 1 und 2, dokumentiert in Anhang A.1} 
+\section{Maschinelle Lernverfahren für Regressionsprobleme}
+
+Machine Learning (ML) ist das Teilgebiet der künstlichen Intelligenz, das sich mit der automatischen Induktion von Modellen aus Daten befasst, ohne dass explizite Programmierung erforderlich ist.\footnote{Vgl. Mitchell 1997, S. 1-2} Im Kontext dieser Arbeit zielt das ML-Modell auf Regression ab: die Vorhersage einer kontinuierlichen Zielvariable aus einer Menge von kontinuierlichen und kategorialen Input-Features.
+
+Supervised Learning, bei dem jede Trainingsinstanz ein Label hat, wird hier angewendet. Der Bias-Variance Tradeoff ist ein fundamentales Konzept beim Modelllernen: Modelle mit niedriger Komplexität weisen hohen Bias (Underfitting) auf, während hochkomplexe Modelle hohe Varianz aufweisen (Overfitting).\footnote{Vgl. Hastie et al. 2009, S. 23-31} Ein gutes Modell balanciert beide Aspekte aus.
+
+Datenvorverarbeitung ist ein kritischer erster Schritt. Exploratory Data Analysis (EDA) untersucht Verteilungen, erkennt Korrelationen zwischen Features und identifiziert Ausreißer. Data Cleaning adressiert fehlende Werte, erkennt anomale Messwerte und setzt sachlogische Schwellwerte. Feature Engineering transformiert Rohdaten in aussagekräftige Prädiktoren: Feature Selection wählt relevante Variablen aus, Aggregation kombiniert hochkorrelierte Sensoren zu zusammengefassten Features, und Encoding wandelt kategoriale Variablen (etwa Track-Identifikatoren) in numerische Darstellungen um.\footnote{Vgl. Guyon, Elisseeff 2003, S. 1157-1182} Für Telemetriedaten ist insbesondere Zeitreihen-Glättung (beispielsweise Moving Averages) ein etabliertes Verfahren zur Reduktion hochfrequenten Rauschens.
+
+Die Auswahl des Regressionsalgorithmus beeinflusst wesentlich die Modellqualität. Lineare Modelle (Linear Regression, Ridge, Lasso) zeichnen sich durch hohe Interpretierbarkeit aus, können aber komplexe nichtlineare Muster nicht erfassen. Support Vector Regression nutzt Kernel-Tricks zur impliziten nichtlinearen Feature-Transformation. Tree-based Models (Decision Trees) sind intuitiv und robust, zeigen aber Anfälligkeit für Overfitting. Random Forests verbessern dies durch Ensemble-Averaging über viele Bäume.\footnote{Vgl. Breiman 2001, S. 5-32} Boosting-Methoden kombinieren schwache Lerner sequenziell zu stärkeren Modellen. Neuronale Netze können beliebig komplexe Funktionen approximieren, erfordern aber große Datenmengen und bieten weniger Interpretierbarkeit.\footnote{Vgl. Goodfellow et al. 2016, S. 164-223}
+
+\section{Gradient Boosting Decision Trees}
+
+Gradient Boosting Decision Trees (GBDT) sind eine sequenzielle Ensemble-Methode, bei der mehrere Decision Trees nacheinander trainiert werden, wobei jeder nachfolgende Baum systematisch die Residuen (Vorhersagefehler) des vorherigen Baums korrigiert.\footnote{Vgl. Friedman 2001, S. 1189-1232} Das zugrundeliegende Prinzip ist Residual Learning: Der $i$-te Baum wird trainiert, um die Vorhersagefehler von Baum $i-1$ zu minimieren. Die finale Vorhersage ergibt sich aus einer gewichteten Summe aller Baum-Ausgaben.
+
+Mathematisch werden die Bäume durch einen Gradient-Descent-Prozess auf die Minimierung einer Loss-Funktion (typischerweise Mean Squared Error) optimiert. Jeder neue Baum wird so angefittet, dass er den negativen Gradienten der Loss-Funktion verringert, was zu schnellerer Konvergenz gegenüber Standard-Ensemble-Methoden führt.\footnote{Vgl. Friedman 2001, S. 1200-1210}
+
+Zwei prominente Implementierungen sind XGBoost und LightGBM. XGBoost (eXtreme Gradient Boosting) bietet hochoptimierte Algorithmen mit integrierten Regularisierungsmechanismen, Histogram-basiertem Split-Finding für Geschwindigkeit und nativer Unterstützung kategorialer Features.\footnote{Vgl. Chen, Guestrin 2016, S. 785-794} LightGBM (Light Gradient Boosting Machine) differenziert sich durch Leaf-wise Baum-Wachstum (maximale Fehlerreduktion pro Blatt statt pro Level), Gradient-based One-Side Sampling zur Datensatzverkleinerung und Exclusive Feature Bundling zur Dimensionsreduktion.\footnote{Vgl. Ke et al. 2017, S. 3146-3154} Beide Implementierungen zeigen empirisch überlegene Performance auf strukturierten (tabularen) Daten im Vergleich zu tiefen neuronalen Netzen.\footnote{Vgl. Chen, Guestrin 2016, S. 788-792}
+
+\section{Hyperparameter-Optimierung und Modellvalidierung}
+
+Hyperparameter sind Konfigurationsparameter eines ML-Modells, die vor dem Training gesetzt werden und sich von Modell-Parametern unterscheiden, die während des Trainings gelernt werden.\footnote{Vgl. Bergstra, Bengio 2012, S. 281-305} Bei GBDT sind kritische Hyperparameter die Anzahl der Estimators (Baumanzahl), die Learning Rate (Schrittweite), die Max Depth (Baumtiefe) sowie Regularisierungsparameter wie L2-Penalisierung und Mindestanzahl Samples pro Blatt.
+
+Die Optimierung wird typischerweise durch Grid Search (systematische Durchsuchung eines vordefinierten Parameterraums), Random Search (stochastisches Sampling) oder Bayesian Optimization (probabilistische Modellierung) durchgeführt.\footnote{Vgl. Bergstra, Bengio 2012, S. 281-305}
+
+Cross-Validation ist eine Standardtechnik zur Bewertung der Modellgeneralisierung ohne separaten Validierungsdatensatz. k-fold Cross-Validation partitioniert die Daten in k Teile, trainiert k Modelle (jeweils mit einem anderen Teil als Validierung) und mittelt die Performance-Metriken.\footnote{Vgl. Kohavi 1995, S. 1137-1145} Bei Zeitreihendaten wird Time Series Cross-Validation verwendet, um das Forward-Chaining-Prinzip zu simulieren. Leave-One-Group-Out ist eine extreme Variante, bei der jede Gruppe (etwa ein Renn-Event) einmal als Validierungsmenge fungiert – ein besonders rigoros für die Evaluierung von Domänen-Generalisierung.\footnote{Vgl. Kapitel 4.1}
+
+\section{Evaluationsmetriken für Regression}
+
+Regressionsergebnisse werden durch mehrere etablierte Fehlermetriken quantifiziert. Der Mean Squared Error (MSE) berechnet das Durchschnitt der quadrierten Abweichungen zwischen Vorhersagen und Ist-Werten und bestraft größere Fehler überproportional. Der Root Mean Squared Error (RMSE) ist die Quadratwurzel des MSE und hat dieselbe Einheit wie die Zielvariable, was die Interpretation erleichtert.\footnote{Vgl. Hodson 2022, S. 5481-5482}
+
+Der Mean Absolute Error (MAE) quantifiziert den Durchschnitt der absoluten Abweichungen und ist robuster gegenüber Ausreißern, da er Fehler linear (nicht quadratisch) gewichtet.\footnote{Vgl. Chai, Draxler 2014, S. 1247-1250} Die Wahl zwischen RMSE und MAE sollte sich nach der erwarteten Fehlerverteilung richten: RMSE ist optimal bei normalverteilten Fehlern, MAE bei Laplace-verteilten Fehlern.
+
+Das Bestimmtheitsmaß R² (Coefficient of Determination) gibt an, welcher Anteil der Varianz der Zielvariable durch das Modell erklärt wird. R² = 1 signalisiert perfekte Vorhersagen, R² = 0 bedeutet, dass das Modell nicht besser als die Mittelwert-Baseline ist. Negative R²-Werte sind möglich und deuten auf schlechtere Performance als die Baseline hin.\footnote{Vgl. Hastie et al. 2009, S. 18-25} In der Ingenieurpraxis wird für Validierungsmodelle ein Schwellwert von R² $\geq$ 0,7 angestrebt, um praktische Einsatzfähigkeit zu gewährleisten.\footnote{Vgl. 365 Data Science 2023}
+
+Diese drei Metriken (RMSE, MAE, R²) bilden den internationalen Standard in der Regressionsanalyse und ermöglichen Vergleichbarkeit mit etablierten Benchmarks in der Fachliteratur.

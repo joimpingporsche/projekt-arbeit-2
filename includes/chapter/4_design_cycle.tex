@@ -119,15 +119,6 @@ Zur Adressierung dieser Problematik wurde eine Glättungsstrategie mittels gleit
 Um die optimale Fenstergröße zu ermitteln, wurden mehrere Glättungsvarianten mit unterschiedlichen Fenstergrößen erstellt: keine Glättung (Baseline), sowie gleitende Durchschnitte mit Fenstergrößen 2, 3 und 4.
 
 Die Wahl dieser Fenstergrößen basiert auf folgender Überlegung: Kleinere Fenster (2, 3) erfassen kurzfristige Schwankungen und erhalten mehr Details, während größere Fenster (4) stärker glätten und langfristigere Trends betonen.\footnote{Vgl. ebd.} Die ungeglättete Variante dient als Referenz zur Quantifizierung des Effekts der Glättung auf die Modellperformance.
-
-%TODO: Platzhalter für Visualisierung der Glättungseffekte
-\begin{figure}[H]
-  \centering
-  % \includegraphics[width=0.8\textwidth]{graphics/smoothing_comparison.png}
-  \caption{[TODO: Vergleich der Zielvariable ohne Glättung und mit verschiedenen Fenstergrößen]}
-  \label{fig:smoothing_comparison}
-\end{figure}
-
 Diese multiplen Glättungsvarianten stellen alternative Designentscheidungen dar, die im Rahmen der iterativen Build-Evaluate-Phasen der DSR-Methodik systematisch evaluiert werden. Die Erstellung mehrerer Varianten ermöglicht eine empirische Bewertung des Trade-offs zwischen Rauschreduktion und Informationsverlust.
 
 

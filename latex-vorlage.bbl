@@ -1280,6 +1280,69 @@
       \verb 10.1145/2939672.2939778
       \endverb
     \endentry
+    \entry{Salaani2021VehicleDynamics}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=47188ba3d8af8f8dbffca3fc099a3d20}{%
+           family={Salaani},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {NHTSA}%
+      }
+      \strng{namehash}{47188ba3d8af8f8dbffca3fc099a3d20}
+      \strng{fullhash}{47188ba3d8af8f8dbffca3fc099a3d20}
+      \strng{fullhashraw}{47188ba3d8af8f8dbffca3fc099a3d20}
+      \strng{bibnamehash}{47188ba3d8af8f8dbffca3fc099a3d20}
+      \strng{authorbibnamehash}{47188ba3d8af8f8dbffca3fc099a3d20}
+      \strng{authornamehash}{47188ba3d8af8f8dbffca3fc099a3d20}
+      \strng{authorfullhash}{47188ba3d8af8f8dbffca3fc099a3d20}
+      \strng{authorfullhashraw}{47188ba3d8af8f8dbffca3fc099a3d20}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An Applied Review of Simulation Validation Approaches for Vehicle Dynamics}
+      \field{year}{2021}
+      \true{nocite}
+    \endentry
+    \entry{365DataScience2023RSq}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=dc5439d5a36188794e13c6abb5a940a0}{%
+           family={Science},
+           familyi={S\bibinitperiod},
+           given={365\bibnamedelima Data},
+           giveni={3\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dc5439d5a36188794e13c6abb5a940a0}
+      \strng{fullhash}{dc5439d5a36188794e13c6abb5a940a0}
+      \strng{fullhashraw}{dc5439d5a36188794e13c6abb5a940a0}
+      \strng{bibnamehash}{dc5439d5a36188794e13c6abb5a940a0}
+      \strng{authorbibnamehash}{dc5439d5a36188794e13c6abb5a940a0}
+      \strng{authornamehash}{dc5439d5a36188794e13c6abb5a940a0}
+      \strng{authorfullhash}{dc5439d5a36188794e13c6abb5a940a0}
+      \strng{authorfullhashraw}{dc5439d5a36188794e13c6abb5a940a0}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Measuring Explanatory Power with R-squared}
+      \field{year}{2023}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://365datascience.com/tutorials/statistics-tutorials/r-squared/
+      \endverb
+      \verb{url}
+      \verb https://365datascience.com/tutorials/statistics-tutorials/r-squared/
+      \endverb
+    \endentry
     \entry{Smith2022RFvGB}{article}{}{}
       \name{author}{2}{}{%
         {{un=1,uniquepart=given,hash=5d0ddda3a367ceb26fbaeca02e391c22}{%
