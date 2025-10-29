@@ -9,15 +9,18 @@
 % \usepackage{showframe} % nur für Kontrolle der Ränder 
 \usepackage{float}
 \usepackage[left]{lineno}
+\usepackage{pdfpages}
 %%% Präambel einbinden (mit Festlegungen gemäß DHBW-Vorgaben) %%%
 \input{template/_dhbw_praeambel.tex}
 
 %%% Name der eigenen Literatur-Datenbank (ggf. anpassen) %%%
 \bibliography{includes/literatur-datenbank.bib}
 
+
 \begin{document}
 %%% Deckblatt gemäß DHBW-Vorgaben einbinden (keine Anpassung nötig) %%% 
 \input{template/_dhbw_deckblatt.tex}
+\includepdf[pages=1]{includes/Sperrvermerk_Abschlussarbeit.pdf}
 
 %%% Umstellung der Seiten-Nummerierung auf i, ii, iii ... %%%
 \pagenumbering{Roman} 

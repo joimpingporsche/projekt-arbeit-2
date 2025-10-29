@@ -1,9 +1,9 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces Übersicht der verwendeten Features und deren Channel-Namen}}{13}{table.59}%
-\contentsline {table}{\numberline {2}{\ignorespaces Domänenbasierte Schwellwerte für Ausreißererkennung}}{18}{table.72}%
-\contentsline {table}{\numberline {3}{\ignorespaces Algorithmus-Vergleich: Random-Validierung (alle Komplexitätsstufen)}}{25}{table.115}%
-\contentsline {table}{\numberline {4}{\ignorespaces Random-Validierung: Performance nach Hyperparameter-Komplexitätsstufe}}{26}{table.116}%
-\contentsline {table}{\numberline {5}{\ignorespaces Random-Validierung: Effekte der Datensatzstruktur-Varianten}}{26}{table.117}%
-\contentsline {table}{\numberline {6}{\ignorespaces Algorithmus-Vergleich: Event-Validierung (Leave-One-Event-Out)}}{27}{table.119}%
-\contentsline {table}{\numberline {7}{\ignorespaces Event-Validierung: Performance nach Komplexitätsstufe (Trend zu besserer Generalisierung)}}{27}{table.120}%
-\contentsline {table}{\numberline {8}{\ignorespaces Event-Validierung: Effekte der Datensatzstruktur-Varianten}}{28}{table.121}%
+\contentsline {table}{\numberline {1}{\ignorespaces Übersicht der verwendeten Features und deren Channel-Namen}}{15}{table.76}%
+\contentsline {table}{\numberline {2}{\ignorespaces Domänenbasierte Schwellwerte für Ausreißererkennung}}{20}{table.89}%
+\contentsline {table}{\numberline {3}{\ignorespaces Algorithmus-Vergleich: Random-Validierung (alle Komplexitätsstufen)}}{27}{table.132}%
+\contentsline {table}{\numberline {4}{\ignorespaces Random-Validierung: Performance nach Hyperparameter-Komplexitätsstufe}}{28}{table.133}%
+\contentsline {table}{\numberline {5}{\ignorespaces Random-Validierung: Effekte der Datensatzstruktur-Varianten}}{28}{table.134}%
+\contentsline {table}{\numberline {6}{\ignorespaces Algorithmus-Vergleich: Event-Validierung (Leave-One-Event-Out)}}{29}{table.136}%
+\contentsline {table}{\numberline {7}{\ignorespaces Event-Validierung: Performance nach Komplexitätsstufe (Trend zu besserer Generalisierung)}}{29}{table.137}%
+\contentsline {table}{\numberline {8}{\ignorespaces Event-Validierung: Effekte der Datensatzstruktur-Varianten}}{30}{table.138}%
