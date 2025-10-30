@@ -407,12 +407,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.e
 INPUT ./includes/chapter/4_design_cycle.tex
 INPUT ./includes/chapter/4_design_cycle.tex
 INPUT includes/chapter/4_design_cycle.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm
 INPUT ./tables/features_channels.tex
 INPUT ./tables/features_channels.tex
 INPUT ./tables/features_channels.tex
 INPUT ./tables/features_channels.tex
 INPUT tables/features_channels.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm
 INPUT ./graphics/understeer_nonfilt.png
 INPUT ./graphics/understeer_nonfilt.png
 INPUT ./graphics/understeer_nonfilt.png

@@ -25,7 +25,7 @@ Nach jeder Setup-Änderung ist das Feedback des Fahrers essenziell. Dieses flie�
 Wie sieht dieses Zusammenspiel an einem Rennwochenende genau aus? Es werden Daten gesammelt, die Autos sind auf der Strecke. Gibt es mehrere Performance Engineers, die spezifische Datenbereiche überwachen?
 
 \textbf{Ingenieur: Simulation und Validierung}
-Der Performance Engineer nutzt Simulationstools. Wenn ich beispielsweise die Feder ändere, simuliert das Tool, wie sich das auf Fahrhöhe oder Abtrieb auswirkt. Diese Theorie wird dann mit den Streckendaten abgeglichen. Der Performance Engineer bereitet sich intensiv vor und legt vorab eine Auswahl an Setups fest (einen "Blumenstrauß" an Optionen), die auf Erfahrungswerten und Fahrsimulatordaten basieren. An der Strecke werden diese Optionen gefahren, um die Theorie zu validieren und das beste Setup für das Qualifying und das Rennen auszuwählen.
+Der Performance Engineer nutzt Simulationstools. Wenn ich beispielsweise die Feder ändere, simuliert das Tool, wie sich das auf Fahrhöhe oder Abtrieb auswirkt. Diese Theorie wird dann mit den Streckendaten abgeglichen. Der Performance Engineer bereitet sich intensiv vor und legt vorab eine Auswahl an Setups fest (einen Blumenstrauß an Optionen), die auf Erfahrungswerten und Fahrsimulatordaten basieren. An der Strecke werden diese Optionen gefahren, um die Theorie zu validieren und das beste Setup für das Qualifying und das Rennen auszuwählen.
 
 \textbf{Ingenieur: Setup-Umsetzung}
 Der Performance Engineer definiert das Setup. Über ein Tablet erhalten die Mechaniker die Anweisung für die Setup-Änderungen (z.B. Federwechsel, Fahrhöhe anpassen). Der Chefmechaniker koordiniert die Umsetzung. Sobald die Änderungen umgesetzt sind, geht das Auto auf die Strecke, liefert neue Daten, und der Prozess der Optimierung läuft iterativ weiter.
@@ -49,28 +49,34 @@ Die Predicted Laptime haben wir bereits im Auto. Das ist ein simpler, aber gut f
 Wir generieren sehr viele Daten, auch Kennzahlen (KPIs). Die Schwierigkeit ist, die Zusammenhänge in kurzer Zeit zu verstehen. Zum Beispiel: Wie beeinflusst das aggressive Aufwärmen des Reifens in den ersten Runden den Grip in Runde 20? Oder die schnelle Entscheidung, welcher optimale Compound bei 40 Grad Streckentemperatur zu wählen ist.
 
 \textbf{Ingenieur: Fahrer-Feedback und Reifenüberhitzung}
-Ein sehr interessanter Ansatz wäre die Guidance für den Fahrer. Wenn der Fahrer durch zu viel Schlupf den Reifen überfährt und dieser dann abbaut, könnte das Modell ihm mitteilen: "Fahre konservativer, wir sehen in den Daten, du überfährst den Reifen gerade." Hierzu müssten wir den Schlupf oder die Reifentemperatur überwachen.
+Ein sehr interessanter Ansatz wäre die Guidance für den Fahrer. Wenn der Fahrer durch zu viel Schlupf den Reifen überfährt und dieser dann abbaut, könnte das Modell ihm mitteilen: Fahre konservativer, wir sehen in den Daten, du überfährst den Reifen gerade. Hierzu müssten wir den Schlupf oder die Reifentemperatur überwachen.
 
 \textbf{Interviewer: Potential des ML-Modells}
-Die Idee, aus verschiedenen Telemetrie-Channels den Output "überfahren / nicht überfahren" zu generieren, ist sehr vielversprechend. Hier liegt ein großer Benefit, da dies momentan auf jahrelanger Erfahrung und Bauchgefühl basiert und nicht einfach in Code abzubilden ist.
+Die Idee, aus verschiedenen Telemetrie-Channels den Output überfahren / nicht überfahren zu generieren, ist sehr vielversprechend. Hier liegt ein großer Benefit, da dies momentan auf jahrelanger Erfahrung und Bauchgefühl basiert und nicht einfach in Code abzubilden ist.
 
 \textbf{Ingenieur: Labelling als Problem und alternative Kennwerte}
-Das Hauptproblem wäre das Training und die Label-Generierung. Wir müssten definieren: "Hier, zu diesem Zeitpunkt wurde der Reifen überfahren." Wenn dieses Label nicht einfach aus den Telemetriedaten ableitbar ist, müsste jemand manuell die Daten durchsehen und markieren, was für euch nicht praktikabel ist.
+Das Hauptproblem wäre das Training und die Label-Generierung. Wir müssten definieren: Hier, zu diesem Zeitpunkt wurde der Reifen überfahren. Wenn dieses Label nicht einfach aus den Telemetriedaten ableitbar ist, müsste jemand manuell die Daten durchsehen und markieren, was für euch nicht praktikabel ist.
 
-\textbf{Ingenieur: Kennwert "Snaps"}
+\textbf{Ingenieur: Kennwert Snaps}
 Wir haben alternative Kennwerte. Zum Beispiel die Anzahl der Snaps pro Runde: wie häufig das Heck beim Beschleunigen ausbricht. Wenn der Reifen abgebaut ist, passiert dies häufiger.
 
 \textbf{Ingenieur: Long-Run-Daten und Lebensdauer-Prognose}
 Ein weiteres Kriterium ist die Rundenzeit über einen Long Run. Man sieht, wie die Rundenzeit mit der Anzahl der Runden schlechter wird. Hier könnte man visualisieren, wann der Reifen tatsächlich seine Leistung verliert.
 
 \textbf{Interviewer: Präzisierung der Prognose-Idee}
-Man könnte auf Basis des aktuellen Fahrverhaltens eine Lebensdauer prognostizieren. Beispiel: "Basierend auf den letzten zwei Sektoren hält der Reifen noch drei Runden." Fährt der Fahrer konservativer, steigt der Wert auf fünf.
+Man könnte auf Basis des aktuellen Fahrverhaltens eine Lebensdauer prognostizieren. Beispiel: Basierend auf den letzten zwei Sektoren hält der Reifen noch drei Runden. Fährt der Fahrer konservativer, steigt der Wert auf fünf.
 
 \textbf{Ingenieur: Einschränkung der Datenbasis}
 Gibt man dem Modell nur die Rundenzeit, weiß es nicht, *warum* die Zeit schlechter wird (war es das Setup, der Fahrer, der Fahrstil?). Das Modell benötigt auch Input über den Fahrer und die genauen Setup-Einstellungen.
 
 \textbf{Ingenieur: Empfehlung für Proof of Concept (POC)}
 Für den POC sollten wir Daten von Le Mans oder einem Dauerlauf verwenden, bei denen das Setup konstant war. Dann sind nur noch Fahrer- oder Fahrstilunterschiede relevant.
+
+\textbf{Interviewer: Fehlerhafte Temperatursensoren}
+Wir sehen in den Daten an manchen Stellen Ausreißer in der Reifentemperatur. Ist das nur auf Sensorfehler zurückzuführen, oder gibt es Grenzwerte, ab denen die Temperatur kritisch wird?
+
+\textbf{Ingenieur: Kritischer Grenzwert und Sensorfehler}
+Manche dieser Ausreißer können auf Sensorprobleme zurückzuführen sein. Die Infrarot-Sensoren zur Messung der Oberflächentemperatur fallen öfter aus, zum Beispiel, wenn Gummiabrieb an den Sensor gelangt und ihn beschädigt. Kritische Grenzwerte sind aber auch ein Thema: Alles, was Werte um die 300 Grad erreicht, deutet darauf hin, dass der Reifen zu schmelzen beginnt. Solche fehlerhaften oder extrem kritischen Werte lassen sich glücklicherweise mit einem einfachen Filter gut bereinigen.
 
 \textbf{Interviewer: Abschluss und nächster Termin}
 Die Idee mit dem Dauerlauf ist ein sehr guter Startpunkt für einen Proof of Concept. Ich werde mich jetzt einarbeiten und in zwei Wochen einen neuen Termin vorschlagen.
@@ -98,7 +104,7 @@ Vielen Dank für deine Zeit.
 Das Thema Reifendegradation ist sehr interessant, aber das Labeln ist eine zu große Hürde. Es ist zu wenig Zeit, um euer langjähriges Bauchgefühl in manuell definierte Schwellwerte zu überführen.
 
 \textbf{Interviewer: Neue Idee: Fahrerfeedback / Explainability AI}
-Die neue Idee ist, ein Modell zu trainieren, um Fahrerfeedback zu generieren. Wir trainieren das Modell auf die verschiedenen Fahrer und nutzen dann Explainability AI. Das würde die KI-Black-Box aufbrechen und zeigen, wie die KI zu ihrer Entscheidung kommt. Der Mehrwert: Die KI könnte die Unterschiede zwischen den Fahrern aufzeigen und erklären, warum Fahrer 1 in Sektor X schneller war. Der Vorteil für mich ist, dass das Label ("welcher Fahrer fährt gerade") einfach aus den Daten zu ziehen ist.
+Die neue Idee ist, ein Modell zu trainieren, um Fahrerfeedback zu generieren. Wir trainieren das Modell auf die verschiedenen Fahrer und nutzen dann Explainability AI. Das würde die KI-Black-Box aufbrechen und zeigen, wie die KI zu ihrer Entscheidung kommt. Der Mehrwert: Die KI könnte die Unterschiede zwischen den Fahrern aufzeigen und erklären, warum Fahrer 1 in Sektor X schneller war. Der Vorteil für mich ist, dass das Label (welcher Fahrer fährt gerade) einfach aus den Daten zu ziehen ist.
 
 \textbf{Ingenieur: Vorschlag: Fokus auf Fahrzeugbalance (Car Balance)}
 Was uns aktuell sehr beschäftigt, ist die Fahrzeugbalance. Ist das Auto eher neutral oder untersteuernd? Die Balance hängt von vielen Parametern ab, deren Zusammenhänge für uns Menschen schwierig zu verstehen sind.
@@ -112,7 +118,7 @@ Welche Tools verwendet ihr live an der Strecke? PowerBi Dashboard oder die genau
 \textbf{Ingenieur: Balance-Definition und Metriken}
 Beides. Wintax ist der reine Telemetriedatenstrom. Zusätzlich haben wir Auswertungen und Kennwerte. Wir haben Cluster für den Kurveneingang, die Kurvenmitte und den Kurvenausgang, und dazu die Balance als Mittelwert über alle Kurven.
 
-\textbf{Interviewer: Definition "Balance"}
+\textbf{Interviewer: Definition Balance}
 Was genau ist diese Balance?
 
 \textbf{Ingenieur: Erklärung der Car Balance}
@@ -122,7 +128,7 @@ Die Balance beschreibt, ob das Auto viel Untersteuern hat. Mathematisch hängt e
 Interessant ist: Das ist unser Y (die Balance), aber wir verstehen nicht, warum dieser Zustand eintritt. Liegt es daran, dass der Fahrer etwas verstellt hat, sich die Streckentemperatur geändert hat oder der Reifen mehr Kilometer Laufleistung hat? Das ist die Frage, die uns am Ende interessiert.
 
 \textbf{Ingenieur: Beispiel Streckentemperatur}
-Wenn wir den Einfluss der Streckentemperatur auf die Balance wüssten, wäre das hilfreich. Sagt der Fahrer im FP2 (20 Grad heißer) die Balance sei schlecht, könnten wir sagen: "Das liegt an der Strecke. Im Rennen wird es kälter, das passt dann alles."
+Wenn wir den Einfluss der Streckentemperatur auf die Balance wüssten, wäre das hilfreich. Sagt der Fahrer im FP2 (20 Grad heißer) die Balance sei schlecht, könnten wir sagen: Das liegt an der Strecke. Im Rennen wird es kälter, das passt dann alles.
 
 \textbf{Interviewer: Bewertung des Car Balance Themas}
 Verstehe. Hier hätten wir das Labeling (die Balance) also schon. Das ist ein komplett anderes, aber sehr vielversprechendes Thema.
@@ -139,7 +145,7 @@ Die Car Balance ist ein guter Ansatz für den POC. Das wäre die Zielvariable, z
 \textbf{Ingenieur: Empfehlung für POC-Umfang}
 Ich würde vorschlagen, es pro Auto zu machen, da die Setups unterschiedlich sind. Man könnte auch die Daten aller Autos zusammenwerfen, um generelle Regeln zu finden, aber man sollte mit einem Auto starten.
 
-\textbf{Ingenieur: Datenverfügbarkeit und "Mileage"}
+\textbf{Ingenieur: Datenverfügbarkeit und Mileage}
 Wir haben fast alle benötigten Inputs (X-Werte) im Dashboard, außer die Mileage (Laufleistung des Reifens), die aber wichtig ist und als Anzahl der gefahrenen Runden in den Daten existiert.
 
 \textbf{Ingenieur: Allgemeiner Problemkern}
@@ -151,9 +157,9 @@ Vielen Dank für das Gespräch, ich glaube, das hat sehr geholfen.
 \pagebreak
 \nolinenumbers
 
-\subsubsection{Methodische Anmerkungen zu den Interviews}
+\anhangteil{Methodische Anmerkungen zu den Interviews}
 
-Die Interviews wurden als unstrukturierte Experteninterviews geführt und digital aufgezeichnet. Die vorliegenden Transkripte sind Rohtranskripte, die zur besseren Lesbarkeit minimal geglättet wurden, jedoch den originalen Gesprächsinhalt und -verlauf authentisch wiedergeben. Die beibehaltenen Zeilennummern dienen der präzisen Zitierfähigkeit.
+Die Interviews wurden als unstrukturierte Experteninterviews geführt und digital aufgezeichnet. Die vorliegenden Transkripte sind Rohtranskripte, die zur besseren Lesbarkeit geglättet wurden, jedoch den originalen Gesprächsinhalt und -verlauf authentisch wiedergeben. Die beibehaltenen Zeilennummern dienen der präzisen Zitierfähigkeit.
 
 Die Gespräche dienten der:
 \begin{itemize}

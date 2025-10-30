@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  30 OCT 2025 12:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  30 OCT 2025 14:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1163,11 +1163,6 @@ Overfull \hbox (5.26006pt too wide) in paragraph at lines 11--16
 [10
 
 ]
-Overfull \hbox (22.81473pt too wide) in paragraph at lines 45--46
-[]\T1/cmr/m/n/10.95 Schlieÿlich lie-fert das Mo-dell kei-ne di-rek-ten Setup-Vorschläge, son-dern aus-schlieÿ-lich Fahrzeugbalance-
- []
-
-
 
 [11]) (./includes/chapter/4_design_cycle.tex
 
@@ -1179,9 +1174,6 @@ Package acronym Info: Label `acro:WEC' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
 Package acronym Info: Label `acro:KQL' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
-
-LaTeX Warning: Citation 'Experteninterview2' on page 13 undefined on input line 9.
-
 (./tables/features_channels.tex
 Underfull \hbox (badness 10000) in paragraph at lines 44--44
 []\T1/cmr/m/n/9 Reifen-
@@ -1207,13 +1199,9 @@ Underfull \hbox (badness 5316) in paragraph at lines 66--67
 [13
 
 ]
-Overfull \hbox (7.46034pt too wide) in paragraph at lines 13--14
-[]\T1/cmr/m/n/10.95 Als Ziel-va-ria-ble dient der durch-schnitt-li-che Fahrzeugbalance-Wert pro Run-de (aUn-ders-teer_AVG),
- []
-
 Package acronym Info: Label `acro:EDA' newly defined as it shall be overridden
 although it is yet undefined on input line 15.
-<graphics/understeer_nonfilt.png, id=395, 859.2903pt x 426.393pt>
+<graphics/understeer_nonfilt.png, id=401, 859.2903pt x 426.393pt>
 File: graphics/understeer_nonfilt.png Graphic file (type png)
 <use graphics/understeer_nonfilt.png>
 Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 18.
@@ -1221,71 +1209,58 @@ Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 18.
 
 
 [14]
-
-LaTeX Warning: Citation 'Experteninterview1' on page 15 undefined on input line 25.
-
-<graphics/TempPlot.png, id=404, 859.2903pt x 426.393pt>
+<graphics/TempPlot.png, id=411, 859.2903pt x 426.393pt>
 File: graphics/TempPlot.png Graphic file (type png)
 <use graphics/TempPlot.png>
 Package pdftex.def Info: graphics/TempPlot.png  used on input line 28.
 (pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
-<graphics/DruckPlot.png, id=406, 859.2903pt x 426.393pt>
+
+
+[15 <./graphics/understeer_nonfilt.png>]
+<graphics/DruckPlot.png, id=420, 859.2903pt x 426.393pt>
 File: graphics/DruckPlot.png Graphic file (type png)
 <use graphics/DruckPlot.png>
 Package pdftex.def Info: graphics/DruckPlot.png  used on input line 36.
 (pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
-
-
-[15 <./graphics/understeer_nonfilt.png> <./graphics/TempPlot.png>]
-<graphics/korrelations_matrix_top.png, id=414, 794.97pt x 734.2632pt>
+<graphics/korrelations_matrix_top.png, id=421, 794.97pt x 734.2632pt>
 File: graphics/korrelations_matrix_top.png Graphic file (type png)
 <use graphics/korrelations_matrix_top.png>
 Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input line 44.
 (pdftex.def)             Requested size: 364.19667pt x 336.38708pt.
 
 
-[16 <./graphics/DruckPlot.png>]
+[16 <./graphics/TempPlot.png> <./graphics/DruckPlot.png>]
 
 [17 <./graphics/korrelations_matrix_top.png>]
 
-LaTeX Warning: Citation 'Dash2023' on page 18 undefined on input line 69.
-
-
-LaTeX Warning: Citation 'Experteninterview1' on page 18 undefined on input line 73.
-
-
-LaTeX Warning: Citation 'Alan2011' on page 18 undefined on input line 73.
-
-
-
 [18]
 
-LaTeX Warning: Citation 'Tsanas2022' on page 19 undefined on input line 93.
+LaTeX Warning: Citation 'Tsanas2022' on page 19 undefined on input line 95.
 
 
-LaTeX Warning: Citation 'Farek2024' on page 19 undefined on input line 94.
+LaTeX Warning: Citation 'Farek2024' on page 19 undefined on input line 96.
 
 
-LaTeX Warning: Citation 'Tsanas2022' on page 19 undefined on input line 103.
+LaTeX Warning: Citation 'Tsanas2022' on page 19 undefined on input line 105.
 
 
 
 [19]
 
-LaTeX Warning: Citation 'Brownlee2020' on page 20 undefined on input line 117.
+LaTeX Warning: Citation 'Brownlee2020' on page 20 undefined on input line 119.
 
 
 
 [20]
-Overfull \hbox (11.76053pt too wide) in paragraph at lines 131--132
+Overfull \hbox (11.76053pt too wide) in paragraph at lines 133--134
 []\T1/cmr/bx/n/10.95 Feature-Reduktion: \T1/cmr/m/n/10.95 ag-gre-gier-te Fea-tu-res mit Ent-fer-nung hoch-kor-re-lier-ter Original-Features
  []
 
 
-LaTeX Warning: Citation 'Baheti2021' on page 21 undefined on input line 142.
+LaTeX Warning: Citation 'Baheti2021' on page 21 undefined on input line 144.
 
 
-Overfull \hbox (12.75015pt too wide) in paragraph at lines 144--146
+Overfull \hbox (12.75015pt too wide) in paragraph at lines 146--148
 []\T1/cmr/m/n/10.95 Für bei-de Va-li-die-rungs-stra-te-gi-en wur-den Da-ten-sät-ze ent-spre-chend der zwei Feature-Konfigurationen
  []
 
@@ -1295,48 +1270,48 @@ Overfull \hbox (12.75015pt too wide) in paragraph at lines 144--146
 
 [22]
 Package acronym Info: Label `acro:GBDT' newly defined as it shall be overridden
-although it is yet undefined on input line 163.
+although it is yet undefined on input line 165.
 Package acronym Info: Label `acro:SVR' newly defined as it shall be overridden
-although it is yet undefined on input line 163.
+although it is yet undefined on input line 165.
 
 
-LaTeX Warning: Citation 'Brown2021SVR' on page 23 undefined on input line 163.
+LaTeX Warning: Citation 'Brown2021SVR' on page 23 undefined on input line 165.
 
 
-LaTeX Warning: Citation 'Smith2022RFvGB' on page 23 undefined on input line 163.
+LaTeX Warning: Citation 'Smith2022RFvGB' on page 23 undefined on input line 165.
 
 
-LaTeX Warning: Citation 'Jones2022NNvGBDT' on page 23 undefined on input line 163.
+LaTeX Warning: Citation 'Jones2022NNvGBDT' on page 23 undefined on input line 165.
 
 
-LaTeX Warning: Citation 'Chen2016XGBoost' on page 23 undefined on input line 164.
+LaTeX Warning: Citation 'Chen2016XGBoost' on page 23 undefined on input line 166.
 
 
-LaTeX Warning: Citation 'Ke2017LightGBM' on page 23 undefined on input line 164.
-
-
-LaTeX Warning: Citation 'Pedregosa2011ScikitLearn' on page 23 undefined on input line 164.
+LaTeX Warning: Citation 'Ke2017LightGBM' on page 23 undefined on input line 166.
 
 
 LaTeX Warning: Citation 'Pedregosa2011ScikitLearn' on page 23 undefined on input line 166.
 
 
-LaTeX Warning: Citation 'Bengio2012GridSearch' on page 23 undefined on input line 168.
-
-
 LaTeX Warning: Citation 'Pedregosa2011ScikitLearn' on page 23 undefined on input line 168.
+
+
+LaTeX Warning: Citation 'Bengio2012GridSearch' on page 23 undefined on input line 170.
+
+
+LaTeX Warning: Citation 'Pedregosa2011ScikitLearn' on page 23 undefined on input line 170.
 
 
 
 [23]
 
-LaTeX Warning: Citation 'Ke2017LightGBM' on page 24 undefined on input line 177.
-
-
-LaTeX Warning: Citation 'Chen2016XGBoost' on page 24 undefined on input line 179.
-
-
 LaTeX Warning: Citation 'Ke2017LightGBM' on page 24 undefined on input line 179.
+
+
+LaTeX Warning: Citation 'Chen2016XGBoost' on page 24 undefined on input line 181.
+
+
+LaTeX Warning: Citation 'Ke2017LightGBM' on page 24 undefined on input line 181.
 
 ) (./includes/chapter/5_rigor_cycle.tex
 
@@ -1441,28 +1416,30 @@ Overfull \hbox (31.62563pt too wide) in paragraph at lines 39--41
 
 [38]
 
-[39]) (./includes/model_ergebnisse.tex
+[39]
 
-[40]
+[40]) (./includes/model_ergebnisse.tex
 
 [41]
 
-[42])
+[42]
 
-[43]
+[43])
 
 [44]
 
-[45])
+[45]
 
-[46]
+[46])
 
-[47
+[47]
+
+[48
 
 
 ]
 
-[48] (./includes/erklaerung_ki.tex
+[49] (./includes/erklaerung_ki.tex
 Overfull \hbox (1.558pt too wide) in paragraph at lines 130--130
 []\T1/cmr/m/n/10.95 mich ak-tiv über die Leis-tungs-fä-hig-keit und Be-schrän-kun-gen der oben ge-nann-ten KI-Systeme
  []
@@ -1484,20 +1461,20 @@ Underfull \hbox (badness 7631) in paragraph at lines 130--130
 
 
 
-[49
+[50
 
 
 
 ]) (./template/_dhbw_erklaerung.tex
 
-[50]
+[51]
 Overfull \hbox (26.9081pt too wide) in paragraph at lines 13--14
 []\T1/cmr/m/n/10.95 Ich ver-si-che-re hier-mit, dass ich die vor-lie-gen-de Ar-beit mit dem The-ma: \T1/cmr/m/it/10.95 Au-to-ma-ti-sier-te Fahrzeugbalance-
  []
 
 )
 
-[51
+[52
 
 ] (./latex-vorlage.aux)
  ***********
@@ -1520,18 +1497,18 @@ Package logreq Info: Writing requests to 'latex-vorlage.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30859 strings out of 473190
- 606479 string characters out of 5715800
- 1619069 words of memory out of 5000000
- 53378 multiletter control sequences out of 15000+600000
+ 30850 strings out of 473190
+ 606111 string characters out of 5715800
+ 1619057 words of memory out of 5000000
+ 53365 multiletter control sequences out of 15000+600000
  583391 words of font info for 88 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,18n,127p,10968b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on latex-vorlage.pdf (58 pages, 1528039 bytes).
+Output written on latex-vorlage.pdf (59 pages, 1528898 bytes).
 PDF statistics:
- 1014 PDF objects out of 1200 (max. 8388607)
- 863 compressed objects within 9 object streams
- 251 named destinations out of 1000 (max. 500000)
+ 1035 PDF objects out of 1200 (max. 8388607)
+ 883 compressed objects within 9 object streams
+ 255 named destinations out of 1000 (max. 500000)
  372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

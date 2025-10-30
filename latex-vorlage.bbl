@@ -516,6 +516,42 @@
       \verb 10.17705/1jais.00129
       \endverb
     \endentry
+    \entry{Guyon2003}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=284a778b6c8e17f1aae38e288dc06036}{%
+           family={Guyon},
+           familyi={G\bibinitperiod},
+           given={Isabelle},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=af1237fe610213b60eefaf767e506435}{%
+           family={Elisseeff},
+           familyi={E\bibinitperiod},
+           given={André},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{975fa6513949a08fe98fc5ebc01f3ed8}
+      \strng{fullhash}{975fa6513949a08fe98fc5ebc01f3ed8}
+      \strng{fullhashraw}{975fa6513949a08fe98fc5ebc01f3ed8}
+      \strng{bibnamehash}{975fa6513949a08fe98fc5ebc01f3ed8}
+      \strng{authorbibnamehash}{975fa6513949a08fe98fc5ebc01f3ed8}
+      \strng{authornamehash}{975fa6513949a08fe98fc5ebc01f3ed8}
+      \strng{authorfullhash}{975fa6513949a08fe98fc5ebc01f3ed8}
+      \strng{authorfullhashraw}{975fa6513949a08fe98fc5ebc01f3ed8}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{title}{An Introduction to Variable and Feature Selection}
+      \field{volume}{3}
+      \field{year}{2003}
+      \field{pages}{1157\bibrangedash 1182}
+      \range{pages}{26}
+    \endentry
     \entry{Hevner2004}{article}{}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=e054261c7f1739e1ba1db0a45e385c1b}{%

@@ -30,11 +30,11 @@ Neben der reinen Funktionalität muss das Modell eine hinreichende
 Vorhersagegenauigkeit aufweisen. In der Fahrzeugtechnik und 
 Ingenieurwissenschaften wird für Validierungsmodelle ein R²-Wert 
 von mindestens 0,7 angestrebt, um praktische Einsatzfähigkeit 
-zu gewährleisten.\footnote{Vgl. Salaani 2021; vgl. auch 365 Data Science 2023} 
+zu gewährleisten.\footnote{Vgl. \cite{ODonnell2024}, S. 1-10} 
 Unterhalb dieses Schwellenwerts ist die Prognose zu unsicher, 
 um darauf Setup-Entscheidungen zu stützen.
 
-Die dritte Anforderung betrifft die Reproduzierbarkeit und Dokumentation. Eine lückenlose Dokumentation aller Eingangsdaten, Vorverarbeitungsschritte, Modellparameter und Evaluationsergebnisse ist vorgesehen. Nur so kann vollständige Reproduzierbarkeit gewährleistet werden, und die erstellten Prognosen bleiben validierbar.\footnote{Vgl. Venable, Pries-Heje, Baskerville 2016, S. 79} Diese Anforderung entspricht den Prinzipien der Design Science Research Methodologie, die eine nachvollziehbare Artefakt-Entwicklung fordert.
+Die dritte Anforderung betrifft die Reproduzierbarkeit und Dokumentation. Eine lückenlose Dokumentation aller Eingangsdaten, Vorverarbeitungsschritte, Modellparameter und Evaluationsergebnisse ist vorgesehen. Nur so kann vollständige Reproduzierbarkeit gewährleistet werden, und die erstellten Prognosen bleiben validierbar.\footnote{Vgl. \cite{Venable2016}, S. 79} Diese Anforderung entspricht den Prinzipien der Design Science Research Methodologie, die eine nachvollziehbare Artefakt-Entwicklung fordert.
 
 \section{Abgrenzung des DSR-Artefakts}
 
@@ -42,7 +42,7 @@ Das entwickelte Artefakt beschränkt sich auf ein Vorhersagemodell für Fahrzeug
 
 Hinsichtlich der Implementierung arbeitet das Modell auf rundenweise aggregierten Metriken, nicht auf Rohdaten-Sensorströmen. Dies reduziert die Komplexität erheblich und erlaubt fokussiertere Feature-Engineering-Strategien.\footnote{Vgl. Kap. 4.2} Eine Echtzeitvorhersage, die kontinuierlich auf Sensor-Einzelmessungen reagiert, wird damit nicht angestrebt.
 
-Schließlich liefert das Modell keine direkten Setup-Vorschläge, sondern ausschließlich Fahrzeugbalance-Prognosen. Die Ableitung von Setup-Änderungen aus diesen Prognosen bleibt in der Verantwortung der Performance Engineers und wird nicht automatisiert. Damit bleibt die Entscheidungshoheit bei den Ingenieuren, während das Modell als Entscheidungsunterstützungssystem fungiert.
+Schließlich liefert das Modell keine direkten Setup-Vorschläge, sondern ausschließlich Fahrzeug\-balance-Prognosen. Die Ableitung von Setup-Änderungen aus diesen Prognosen bleibt in der Verantwortung der Performance Engineers und wird nicht automatisiert. Damit bleibt die Entscheidungshoheit bei den Ingenieuren, während das Modell als Entscheidungsunterstützungssystem fungiert.
 
 Diese Abgrenzung reduziert den Projektumfang auf ein klar definiertes \ac{ML}-Regressionsproblem und ermöglicht eine fokussierte Evaluation im DSR-Kontext.\footnote{Vgl. \cite{Hevner2004}, S. 83}
 
@@ -52,9 +52,9 @@ Diese Abgrenzung reduziert den Projektumfang auf ein klar definiertes \ac{ML}-Re
 
 Aus der Problemdefinition und den Anforderungen ergeben sich drei zentrale Forschungsfragen, die das Projekt leiten und in den nachfolgenden Kapiteln beantwortet werden.
 
-Die erste Forschungsfrage adressiert die grundlegende Machbarkeit des Ansatzes: Können Gradient Boosting Decision Trees (GBDT) Fahrzeugbalance-Verhalten in Motorsport-Telemetriedaten vorhersagen? GBDT gelten als state-of-the-art für strukturierte Regressionsprobleme,\footnote{Vgl. Chen, Guestrin 2016, S. 785-794} aber ihre Anwendbarkeit auf Motorsport-Telemetriedaten ist bisher nicht systematisch untersucht. Diese Frage wird in Kapitel 5 und 6 umfassend beantwortet.
+Die erste Forschungsfrage adressiert die grundlegende Machbarkeit des Ansatzes: Können Gradient Boosting Decision Trees (GBDT) Fahrzeugbalance-Verhalten in Motorsport-Telemetriedaten vorhersagen? GBDT gelten als state-of-the-art für strukturierte Regressionsprobleme,\footnote{Vgl. \cite{Chen2016}, S. 785-794} aber ihre Anwendbarkeit auf Motorsport-Telemetriedaten ist bisher nicht systematisch untersucht. Diese Frage wird in Kapitel 5 und 6 umfassend beantwortet.
 
-Die zweite Forschungsfrage vergleicht zwei konkrete Algorithmen: Welcher Algorithmus (XGBoost vs. LightGBM) generalisiert besser auf unbekannte Rennevents? XGBoost und LightGBM implementieren unterschiedliche Wachstumsstrategien (level-wise vs. leaf-wise) und Optimierungen.\footnote{Vgl. Ke et al. 2017, S. 3146-3154} Welcher Algorithmus robuster generalisiert, ist unklar und wird durch systematischen Vergleich auf Event-basierten Validierungsdatensätzen beantwortet (Kapitel 5.2).
+Die zweite Forschungsfrage vergleicht zwei konkrete Algorithmen: Welcher Algorithmus (XGBoost vs. LightGBM) generalisiert besser auf unbekannte Rennevents? XGBoost und LightGBM implementieren unterschiedliche Wachstumsstrategien (level-wise vs. leaf-wise) und Optimierungen.\footnote{Vgl. \cite{Ke2017}, S. 1-10} Welcher Algorithmus robuster generalisiert, ist unklar und wird durch systematischen Vergleich auf Event-basierten Validierungsdatensätzen beantwortet (Kapitel 5.2).
 
 Die dritte Forschungsfrage konzentriert sich auf die Inputseite des Modells: Wie wirken sich Datenvorbereitung (Feature-Engineering, Glättung, Aggregation) und Hyperparameter-Tuning auf die Vorhersagegenauigkeit aus? Verschiedene Vorverarbeitungsschritte, kategoriale Features, Zielvariablen-Glättung und Hyperparameter-Komplexitätsstufen werden getestet, um ihren Einfluss auf Performance zu quantifizieren (Kapitel 4.2, 4.3, 5.2).
 
