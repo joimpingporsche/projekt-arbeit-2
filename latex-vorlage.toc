@@ -1,7 +1,7 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {chapter}{Abkürzungsverzeichnis}{II}{chapter*.1}%
-\contentsline {chapter}{Abbildungsverzeichnis}{III}{section*.2}%
-\contentsline {chapter}{Tabellenverzeichnis}{IV}{section*.3}%
+\contentsline {chapter}{Abkürzungsverzeichnis}{III}{chapter*.1}%
+\contentsline {chapter}{Abbildungsverzeichnis}{IV}{section*.2}%
+\contentsline {chapter}{Tabellenverzeichnis}{V}{section*.3}%
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.4}%
 \contentsline {section}{\numberline {1.1}Problemstellung}{1}{section.5}%
 \contentsline {section}{\numberline {1.2}Zielsetzung}{1}{section.6}%
@@ -9,36 +9,36 @@
 \contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{3}{chapter.8}%
 \contentsline {section}{\numberline {2.1}Design Science Research Methodologie}{3}{section.9}%
 \contentsline {section}{\numberline {2.2}Experteninterviews zur Anforderungsermittlung}{4}{section.17}%
-\contentsline {section}{\numberline {2.3}Maschinelle Lernverfahren für Regressionsprobleme}{4}{section.19}%
-\contentsline {section}{\numberline {2.4}Gradient Boosting Decision Trees: Theorie und Implementierungen}{6}{section.36}%
-\contentsline {section}{\numberline {2.5}Hyperparameter-Optimierung und Modellvalidierung}{7}{section.42}%
-\contentsline {section}{\numberline {2.6}Evaluationsmetriken für Regression}{9}{section.52}%
-\contentsline {chapter}{\numberline {3}Anforderungsanalyse und Problemdefinition}{10}{chapter.57}%
-\contentsline {section}{\numberline {3.1}Problemdomäne und Use-Case-Identifikation}{10}{section.58}%
-\contentsline {section}{\numberline {3.2}Anforderungsableitung und -bewertung}{11}{section.63}%
-\contentsline {section}{\numberline {3.3}Abgrenzung des DSR-Artefakts}{12}{section.67}%
-\contentsline {section}{\numberline {3.4}Forschungsfragen}{12}{section.70}%
-\contentsline {chapter}{\numberline {4}Artefakt-Design und Entwicklung}{14}{chapter.73}%
-\contentsline {section}{\numberline {4.1}Datensammlung und Analyse}{14}{section.74}%
-\contentsline {section}{\numberline {4.2}Datenvorbereitung und Feature-Engineering}{18}{section.82}%
-\contentsline {subsection}{\numberline {4.2.1}Ableitung der Vorverarbeitungsanforderungen}{18}{subsection.83}%
-\contentsline {subsection}{\numberline {4.2.2}Datenbereinigung und Filterung}{19}{subsection.85}%
-\contentsline {subsection}{\numberline {4.2.3}Feature-Engineering und Dimensionsreduktion}{20}{subsection.90}%
-\contentsline {subsection}{\numberline {4.2.4}Zielvariablen-Glättung als experimentelle Designvariante}{21}{subsection.98}%
-\contentsline {subsection}{\numberline {4.2.5}Datensatz-Aufteilung und Validierungsstrategie}{22}{subsection.101}%
-\contentsline {subsection}{\numberline {4.2.6}Technische Implementierung}{23}{subsection.107}%
-\contentsline {section}{\numberline {4.3}Modelltraining und Hyperparameter-Optimierung}{24}{section.108}%
-\contentsline {section}{\numberline {4.4}Validierung und Modellvergleich}{25}{section.121}%
-\contentsline {chapter}{\numberline {5}Evaluation und Interpretation des Vorhersagemodells}{26}{chapter.123}%
-\contentsline {section}{\numberline {5.1}Evaluationskonzept und -methodik}{26}{section.126}%
-\contentsline {section}{\numberline {5.2}Quantitative Leistungsanalyse}{27}{section.129}%
-\contentsline {subsection}{\numberline {5.2.1}Performance auf Zufalls-Validierungsdatensätzen}{27}{subsection.130}%
-\contentsline {subsection}{\numberline {5.2.2}Performance auf Event-Validierungsdatensätzen}{28}{subsection.135}%
-\contentsline {subsection}{\numberline {5.2.3}Interpretation des Gesamtergebnisses}{30}{subsection.139}%
-\contentsline {chapter}{\numberline {6}Fazit, Erkenntnisse und Forschungsausblick}{32}{chapter.140}%
-\contentsline {section}{\numberline {6.1}Erfüllung der Anforderungen und Beantwortung der Forschungsfragen}{32}{section.141}%
-\contentsline {section}{\numberline {6.2}Beantwortung der Forschungsfragen}{33}{section.144}%
-\contentsline {section}{\numberline {6.3}Design Knowledge und kritische Selbsteinschätzung}{34}{section.149}%
-\contentsline {chapter}{Anhang}{35}{chapter*.152}%
-\contentsline {subsubsection}{\nonumberline Methodische Anmerkungen zu den Interviews}{50}{subsubsection*.161}%
-\contentsline {chapter}{Literaturverzeichnis}{58}{section*.168}%
+\contentsline {section}{\numberline {2.3}Maschinelle Lernverfahren für Regressionsprobleme}{5}{section.20}%
+\contentsline {section}{\numberline {2.4}Gradient Boosting Decision Trees}{6}{section.37}%
+\contentsline {section}{\numberline {2.5}Hyperparameter-Optimierung und Modellvalidierung}{8}{section.43}%
+\contentsline {section}{\numberline {2.6}Evaluationsmetriken für Regression}{9}{section.49}%
+\contentsline {chapter}{\numberline {3}Anforderungsanalyse und Problemdefinition}{10}{chapter.54}%
+\contentsline {section}{\numberline {3.1}Problemdomäne und Use-Case-Identifikation}{10}{section.55}%
+\contentsline {section}{\numberline {3.2}Anforderungsableitung}{11}{section.62}%
+\contentsline {section}{\numberline {3.3}Abgrenzung des DSR-Artefakts}{11}{section.66}%
+\contentsline {section}{\numberline {3.4}Forschungsfragen}{12}{section.69}%
+\contentsline {chapter}{\numberline {4}Artefakt-Design und Entwicklung}{13}{chapter.72}%
+\contentsline {section}{\numberline {4.1}Datensammlung und Analyse}{13}{section.73}%
+\contentsline {section}{\numberline {4.2}Datenvorbereitung und Feature-Engineering}{17}{section.81}%
+\contentsline {subsection}{\numberline {4.2.1}Ableitung der Vorverarbeitungsanforderungen}{17}{subsection.82}%
+\contentsline {subsection}{\numberline {4.2.2}Datenbereinigung und Filterung}{18}{subsection.84}%
+\contentsline {subsection}{\numberline {4.2.3}Feature-Engineering und Dimensionsreduktion}{19}{subsection.89}%
+\contentsline {subsection}{\numberline {4.2.4}Zielvariablen-Glättung als experimentelle Designvariante}{20}{subsection.97}%
+\contentsline {subsection}{\numberline {4.2.5}Datensatz-Aufteilung und Validierungsstrategie}{21}{subsection.100}%
+\contentsline {subsection}{\numberline {4.2.6}Technische Implementierung}{22}{subsection.106}%
+\contentsline {section}{\numberline {4.3}Modelltraining und Hyperparameter-Optimierung}{22}{section.107}%
+\contentsline {section}{\numberline {4.4}Validierung und Modellvergleich}{24}{section.120}%
+\contentsline {chapter}{\numberline {5}Evaluation und Interpretation des Vorhersagemodells}{25}{chapter.122}%
+\contentsline {section}{\numberline {5.1}Evaluationskonzept und -methodik}{25}{section.125}%
+\contentsline {section}{\numberline {5.2}Quantitative Leistungsanalyse}{26}{section.128}%
+\contentsline {subsection}{\numberline {5.2.1}Performance auf Zufalls-Validierungsdatensätzen}{26}{subsection.129}%
+\contentsline {subsection}{\numberline {5.2.2}Performance auf Event-Validierungsdatensätzen}{27}{subsection.134}%
+\contentsline {subsection}{\numberline {5.2.3}Interpretation des Gesamtergebnisses}{29}{subsection.138}%
+\contentsline {chapter}{\numberline {6}Fazit, Erkenntnisse und Forschungsausblick}{31}{chapter.139}%
+\contentsline {section}{\numberline {6.1}Erfüllung der Anforderungen und Beantwortung der Forschungsfragen}{31}{section.140}%
+\contentsline {section}{\numberline {6.2}Beantwortung der Forschungsfragen}{32}{section.143}%
+\contentsline {section}{\numberline {6.3}Design Knowledge und kritische Selbsteinschätzung}{33}{section.148}%
+\contentsline {chapter}{Anhang}{34}{chapter*.151}%
+\contentsline {subsubsection}{\nonumberline Methodische Anmerkungen zu den Interviews}{40}{subsubsection*.160}%
+\contentsline {chapter}{Literaturverzeichnis}{47}{section*.167}%

@@ -1,0 +1,17 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'latex-vorlage.blg'
+[41] biber-darwin:340> INFO - === Thu Oct 30, 2025, 11:35:25
+[52] Biber.pm:420> INFO - Reading 'latex-vorlage.bcf'
+[99] Biber.pm:991> INFO - Using all citekeys in bib section 0
+[106] Biber.pm:4463> INFO - Processing section 0
+[114] Biber.pm:4654> INFO - Looking for bibtex file 'includes/literatur-datenbank.bib' for section 0
+[115] bibtex.pm:1713> INFO - LaTeX decoding ...
+[126] bibtex.pm:1519> INFO - Found BibTeX data source 'includes/literatur-datenbank.bib'
+[231] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[231] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[231] Biber.pm:4283> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[231] Biber.pm:4289> INFO - No sort tailoring available for locale 'de-DE'
+[248] bbl.pm:676> INFO - Writing 'latex-vorlage.bbl' with encoding 'UTF-8'
+[254] bbl.pm:779> INFO - Output to latex-vorlage.bbl
+[254] Biber.pm:131> WARN - legacy month field 'February' in entry 'Bergstra2012' is not an integer - this will probably not sort properly.
+[255] Biber.pm:133> INFO - WARNINGS: 1

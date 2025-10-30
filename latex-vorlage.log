@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  29 OCT 2025 12:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  30 OCT 2025 12:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -954,4 +954,584 @@ Package lscapeenhanced Info: \landscape patched to make \textheight change optio
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-\c@lstlisting=
+\c@lstlisting=\count499
+Package tocbasic Info: setting babel extension for `lol' on input line 20.
+\scr@dte@lstlisting@maxnumwidth=\skip141
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includefoot 
+* h-part:(L,W,R)=(99.58464pt, 455.24411pt, 42.67912pt)
+* v-part:(T,H,B)=(71.13188pt, 717.00946pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=682.86617pt
+* \oddsidemargin=27.31465pt
+* \evensidemargin=27.31465pt
+* \topmargin=-38.53812pt
+* \headheight=17.0pt
+* \headsep=20.40001pt
+* \topskip=11.0pt
+* \footskip=34.1433pt
+* \marginparwidth=59.7508pt
+* \marginparsep=12.8401pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
+File: ngerman.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout3 = `latex-vorlage.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'latex-vorlage.bbl' found.
+ (./latex-vorlage.bbl)
+Package biblatex Info: Reference section=0 on input line 20.
+Package biblatex Info: Reference segment=0 on input line 20.
+Package hyperref Info: Link coloring OFF on input line 20.
+ (./latex-vorlage.out) (./latex-vorlage.out)
+\@outlinefile=\write4
+\openout4 = `latex-vorlage.out'.
+
+Class scrreprt Info: loading recommended package `bookmark'.
+(scrreprt)           Using `bookmark' together with `hyperref' is recommended,
+(scrreprt)           because of handling of possible bookmark level gaps.
+(scrreprt)           You can avoid loading `bookmark' with KOMA-Script option
+(scrreprt)           `bookmarkpackage=false' before \begin{document} and
+(scrreprt)           you can avoid this message adding:
+(scrreprt)             \usepackage{bookmark}
+(scrreprt)           before \begin{document} on input line 20.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
+\BKM@id=\count500
+))
+Package scrbase Info: activating ngerman \refname on input line 20.
+Package scrbase Info: activating ngerman \figurename on input line 20.
+Package scrbase Info: activating ngerman \tablename on input line 20.
+ (./template/_dhbw_deckblatt.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+<includes/Sperrvermerk_Abschlussarbeit.pdf, id=4, 597.19112pt x 845.55902pt>
+File: includes/Sperrvermerk_Abschlussarbeit.pdf Graphic file (type pdf)
+<use includes/Sperrvermerk_Abschlussarbeit.pdf>
+Package pdftex.def Info: includes/Sperrvermerk_Abschlussarbeit.pdf  used on input line 23.
+(pdftex.def)             Requested size: 597.18967pt x 845.55696pt.
+<includes/Sperrvermerk_Abschlussarbeit.pdf, id=6, page=1, 597.19112pt x 845.55902pt>
+File: includes/Sperrvermerk_Abschlussarbeit.pdf Graphic file (type pdf)
+<use includes/Sperrvermerk_Abschlussarbeit.pdf, page 1>
+Package pdftex.def Info: includes/Sperrvermerk_Abschlussarbeit.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.18967pt x 845.55696pt.
+File: includes/Sperrvermerk_Abschlussarbeit.pdf Graphic file (type pdf)
+<use includes/Sperrvermerk_Abschlussarbeit.pdf, page 1>
+Package pdftex.def Info: includes/Sperrvermerk_Abschlussarbeit.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.217pt x 845.59566pt.
+
+
+[1
+
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+File: includes/Sperrvermerk_Abschlussarbeit.pdf Graphic file (type pdf)
+<use includes/Sperrvermerk_Abschlussarbeit.pdf, page 1>
+Package pdftex.def Info: includes/Sperrvermerk_Abschlussarbeit.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.217pt x 845.59566pt.
+File: includes/Sperrvermerk_Abschlussarbeit.pdf Graphic file (type pdf)
+<use includes/Sperrvermerk_Abschlussarbeit.pdf, page 1>
+Package pdftex.def Info: includes/Sperrvermerk_Abschlussarbeit.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.217pt x 845.59566pt.
+
+
+File: includes/Sperrvermerk_Abschlussarbeit.pdf Graphic file (type pdf)
+<use includes/Sperrvermerk_Abschlussarbeit.pdf, page 1>
+Package pdftex.def Info: includes/Sperrvermerk_Abschlussarbeit.pdf , page1 used on input line 23.
+(pdftex.def)             Requested size: 597.217pt x 845.59566pt.
+[2
+
+ <./includes/Sperrvermerk_Abschlussarbeit.pdf>] (./latex-vorlage.toc
+
+[1])
+\tf@toc=\write5
+\openout5 = `latex-vorlage.toc'.
+
+
+
+[2] (./includes/abkuerzungen.tex)
+
+[3
+
+
+] (./latex-vorlage.lof)
+\tf@lof=\write6
+\openout6 = `latex-vorlage.lof'.
+
+
+
+[4
+
+] (./latex-vorlage.lot)
+\tf@lot=\write7
+\openout7 = `latex-vorlage.lot'.
+
+
+
+[5
+
+] (./includes/chapter/1_einleitung.tex
+chapter 1.
+Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
+although it is yet undefined on input line 6.
+Package acronym Info: Label `acro:DSR' newly defined as it shall be overridden
+although it is yet undefined on input line 17.
+
+
+[1
+
+
+
+]) (./includes/chapter/2_grundlagen.tex
+
+[2]
+chapter 2.
+
+
+[3
+
+]
+
+[4]
+
+[5]
+
+[6]
+
+[7]
+Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
+although it is yet undefined on input line 92.
+Package acronym Info: Label `acro:RMSE' newly defined as it shall be overridden
+although it is yet undefined on input line 92.
+
+
+[8]
+Package acronym Info: Label `acro:MAE' newly defined as it shall be overridden
+although it is yet undefined on input line 94.
+) (./includes/chapter/3_relevance_cycle.tex
+
+[9{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+chapter 3.
+
+Overfull \hbox (5.26006pt too wide) in paragraph at lines 11--16
+[]\T1/cmr/m/n/10.95 Die Te-le-me-trie-da-ten wer-den über meh-re-re Tau-send Sen-so-ren er-fasst und lie-fern wäh-rend Trainings-
+ []
+
+
+
+[10
+
+]
+Overfull \hbox (22.81473pt too wide) in paragraph at lines 45--46
+[]\T1/cmr/m/n/10.95 Schlieÿlich lie-fert das Mo-dell kei-ne di-rek-ten Setup-Vorschläge, son-dern aus-schlieÿ-lich Fahrzeugbalance-
+ []
+
+
+
+[11]) (./includes/chapter/4_design_cycle.tex
+
+[12]
+chapter 4.
+Package acronym Info: Label `acro:IMSA' newly defined as it shall be overridden
+although it is yet undefined on input line 7.
+Package acronym Info: Label `acro:WEC' newly defined as it shall be overridden
+although it is yet undefined on input line 7.
+Package acronym Info: Label `acro:KQL' newly defined as it shall be overridden
+although it is yet undefined on input line 7.
+
+LaTeX Warning: Citation 'Experteninterview2' on page 13 undefined on input line 9.
+
+(./tables/features_channels.tex
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[]\T1/cmr/m/n/9 Reifen-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+\T1/cmr/m/n/9 Umgebungstemperatur
+ []
+
+
+Underfull \hbox (badness 1888) in paragraph at lines 46--46
+[]\T1/cmr/m/n/9 Reifentemperatur Gra-di-ent
+ []
+
+
+Underfull \hbox (badness 5316) in paragraph at lines 66--67
+[]\T1/cmr/m/n/9 Durchschnittlicher Untersteer-Wert pro
+ []
+
+)
+
+[13
+
+]
+Overfull \hbox (7.46034pt too wide) in paragraph at lines 13--14
+[]\T1/cmr/m/n/10.95 Als Ziel-va-ria-ble dient der durch-schnitt-li-che Fahrzeugbalance-Wert pro Run-de (aUn-ders-teer_AVG),
+ []
+
+Package acronym Info: Label `acro:EDA' newly defined as it shall be overridden
+although it is yet undefined on input line 15.
+<graphics/understeer_nonfilt.png, id=395, 859.2903pt x 426.393pt>
+File: graphics/understeer_nonfilt.png Graphic file (type png)
+<use graphics/understeer_nonfilt.png>
+Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 18.
+(pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
+
+
+[14]
+
+LaTeX Warning: Citation 'Experteninterview1' on page 15 undefined on input line 25.
+
+<graphics/TempPlot.png, id=404, 859.2903pt x 426.393pt>
+File: graphics/TempPlot.png Graphic file (type png)
+<use graphics/TempPlot.png>
+Package pdftex.def Info: graphics/TempPlot.png  used on input line 28.
+(pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
+<graphics/DruckPlot.png, id=406, 859.2903pt x 426.393pt>
+File: graphics/DruckPlot.png Graphic file (type png)
+<use graphics/DruckPlot.png>
+Package pdftex.def Info: graphics/DruckPlot.png  used on input line 36.
+(pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
+
+
+[15 <./graphics/understeer_nonfilt.png> <./graphics/TempPlot.png>]
+<graphics/korrelations_matrix_top.png, id=414, 794.97pt x 734.2632pt>
+File: graphics/korrelations_matrix_top.png Graphic file (type png)
+<use graphics/korrelations_matrix_top.png>
+Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input line 44.
+(pdftex.def)             Requested size: 364.19667pt x 336.38708pt.
+
+
+[16 <./graphics/DruckPlot.png>]
+
+[17 <./graphics/korrelations_matrix_top.png>]
+
+LaTeX Warning: Citation 'Dash2023' on page 18 undefined on input line 69.
+
+
+LaTeX Warning: Citation 'Experteninterview1' on page 18 undefined on input line 73.
+
+
+LaTeX Warning: Citation 'Alan2011' on page 18 undefined on input line 73.
+
+
+
+[18]
+
+LaTeX Warning: Citation 'Tsanas2022' on page 19 undefined on input line 93.
+
+
+LaTeX Warning: Citation 'Farek2024' on page 19 undefined on input line 94.
+
+
+LaTeX Warning: Citation 'Tsanas2022' on page 19 undefined on input line 103.
+
+
+
+[19]
+
+LaTeX Warning: Citation 'Brownlee2020' on page 20 undefined on input line 117.
+
+
+
+[20]
+Overfull \hbox (11.76053pt too wide) in paragraph at lines 131--132
+[]\T1/cmr/bx/n/10.95 Feature-Reduktion: \T1/cmr/m/n/10.95 ag-gre-gier-te Fea-tu-res mit Ent-fer-nung hoch-kor-re-lier-ter Original-Features
+ []
+
+
+LaTeX Warning: Citation 'Baheti2021' on page 21 undefined on input line 142.
+
+
+Overfull \hbox (12.75015pt too wide) in paragraph at lines 144--146
+[]\T1/cmr/m/n/10.95 Für bei-de Va-li-die-rungs-stra-te-gi-en wur-den Da-ten-sät-ze ent-spre-chend der zwei Feature-Konfigurationen
+ []
+
+
+
+[21]
+
+[22]
+Package acronym Info: Label `acro:GBDT' newly defined as it shall be overridden
+although it is yet undefined on input line 163.
+Package acronym Info: Label `acro:SVR' newly defined as it shall be overridden
+although it is yet undefined on input line 163.
+
+
+LaTeX Warning: Citation 'Brown2021SVR' on page 23 undefined on input line 163.
+
+
+LaTeX Warning: Citation 'Smith2022RFvGB' on page 23 undefined on input line 163.
+
+
+LaTeX Warning: Citation 'Jones2022NNvGBDT' on page 23 undefined on input line 163.
+
+
+LaTeX Warning: Citation 'Chen2016XGBoost' on page 23 undefined on input line 164.
+
+
+LaTeX Warning: Citation 'Ke2017LightGBM' on page 23 undefined on input line 164.
+
+
+LaTeX Warning: Citation 'Pedregosa2011ScikitLearn' on page 23 undefined on input line 164.
+
+
+LaTeX Warning: Citation 'Pedregosa2011ScikitLearn' on page 23 undefined on input line 166.
+
+
+LaTeX Warning: Citation 'Bengio2012GridSearch' on page 23 undefined on input line 168.
+
+
+LaTeX Warning: Citation 'Pedregosa2011ScikitLearn' on page 23 undefined on input line 168.
+
+
+
+[23]
+
+LaTeX Warning: Citation 'Ke2017LightGBM' on page 24 undefined on input line 177.
+
+
+LaTeX Warning: Citation 'Chen2016XGBoost' on page 24 undefined on input line 179.
+
+
+LaTeX Warning: Citation 'Ke2017LightGBM' on page 24 undefined on input line 179.
+
+) (./includes/chapter/5_rigor_cycle.tex
+
+[24]
+chapter 5.
+
+Overfull \hbox (2.39764pt too wide) in paragraph at lines 10--11
+\T1/cmr/m/n/10.95 Die Eva-lua-ti-onss-tra-te-gie folgt dem FEDS-Framework und adres-siert vier zen-tra-le Fra-gen: \T1/cmr/bx/n/10.95 Warum
+ []
+
+
+Overfull \hbox (32.00133pt too wide) in paragraph at lines 16--17
+[]\T1/cmr/m/n/10.95 Die Eva-lua-ti-on un-ter-sucht sys-te-ma-tisch (i) die Prä-dik-ti-ons-ge-nau-ig-keit auf bei-den Validierungsdatensatz-
+ []
+
+
+
+[25
+
+]
+
+[26]
+
+[27]
+
+[28]
+Overfull \hbox (7.99356pt too wide) in paragraph at lines 172--173
+[]\T1/cmr/m/n/10.95 Diese feh-len-den Fak-to-ren er-klä-ren, warum das Mo-dell ei-ne ho-he Random-Validierungs-Performance
+ []
+
+
+
+[29]) (./includes/chapter/6_ergebnisse_diskussion.tex
+
+[30]
+chapter 6.
+
+Overfull \hbox (12.68448pt too wide) in paragraph at lines 9--10
+\T1/cmr/m/n/10.95 trie-da-ten zu ent-wi-ckeln, ist par-ti-ell er-füllt. Das bes-te Mo-dell auf dem Random-Validierungsdatensatz
+ []
+
+
+Overfull \hbox (19.8322pt too wide) in paragraph at lines 13--14
+\T1/cmr/m/n/10.95 Modell er-reicht R\TS1/cmr/m/n/10.95 ² \T1/cmr/m/n/10.95 = 0,657, knapp un-ter-halb der Ziel-vor-ga-be, schei-tert aber bei Event-Generalisierung
+ []
+
+
+
+[31
+
+]
+Overfull \hbox (13.96022pt too wide) in paragraph at lines 29--30
+[]\T1/cmr/m/n/10.95 Der gröÿ-te Ef-fekt stammt nicht aus Hyperparameter-Tuning, son-dern aus der Feature-Konfiguration,
+ []
+
+
+
+[32]) (./includes/anhang.tex
+
+[33] (./latex-vorlage.app)
+\tf@app=\write8
+\openout8 = `latex-vorlage.app'.
+
+
+
+[34
+
+] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2024/09/23 1.10c listings language file
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+) (./includes/transkripte.tex
+
+[35
+
+]
+Overfull \hbox (31.62563pt too wide) in paragraph at lines 39--41
+[]\T1/cmr/bx/n/10.95 Interviewer: Er-läu-te-rung ML-Typen (Re-gres-sion/Vor-her-sa-ge) \T1/cmr/m/n/10.95 Der zwei-te Typ sind Vorhersage-
+ []
+
+
+
+[36]
+
+[37]
+
+[38]
+
+[39]) (./includes/model_ergebnisse.tex
+
+[40]
+
+[41]
+
+[42])
+
+[43]
+
+[44]
+
+[45])
+
+[46]
+
+[47
+
+
+]
+
+[48] (./includes/erklaerung_ki.tex
+Overfull \hbox (1.558pt too wide) in paragraph at lines 130--130
+[]\T1/cmr/m/n/10.95 mich ak-tiv über die Leis-tungs-fä-hig-keit und Be-schrän-kun-gen der oben ge-nann-ten KI-Systeme
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+\T1/cmr/bx/n/10.95 wis-sen-schaft-li-chen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+[]\T1/cmr/bx/n/10.95 Eingesetzte(s)
+ []
+
+
+Underfull \hbox (badness 7631) in paragraph at lines 130--130
+[]\T1/cmr/m/n/10.95 Perplexity, Goo-
+ []
+
+
+
+[49
+
+
+
+]) (./template/_dhbw_erklaerung.tex
+
+[50]
+Overfull \hbox (26.9081pt too wide) in paragraph at lines 13--14
+[]\T1/cmr/m/n/10.95 Ich ver-si-che-re hier-mit, dass ich die vor-lie-gen-de Ar-beit mit dem The-ma: \T1/cmr/m/it/10.95 Au-to-ma-ti-sier-te Fahrzeugbalance-
+ []
+
+)
+
+[51
+
+] (./latex-vorlage.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2020/03/25>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `latex-vorlage.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                latex-vorlage
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'latex-vorlage.run.xml'.
+\openout1 = `latex-vorlage.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 30859 strings out of 473190
+ 606479 string characters out of 5715800
+ 1619069 words of memory out of 5000000
+ 53378 multiletter control sequences out of 15000+600000
+ 583391 words of font info for 88 fonts, out of 8000000 for 9000
+ 1143 hyphenation exceptions out of 8191
+ 108i,18n,127p,10968b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on latex-vorlage.pdf (58 pages, 1528039 bytes).
+PDF statistics:
+ 1014 PDF objects out of 1200 (max. 8388607)
+ 863 compressed objects within 9 object streams
+ 251 named destinations out of 1000 (max. 500000)
+ 372 words of extra memory for PDF output out of 10000 (max. 10000000)
+

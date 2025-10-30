@@ -6,11 +6,11 @@ Die Entwicklung des Artefakts folgte einem strukturierten Prozess, der sicherste
 
   Die vorliegende Arbeit nutzt Telemetriedaten aus der Porsche Motorsport Cloud Plattform. Es wurden sämtliche Rennsessions der \ac{IMSA}- und \ac{WEC}-Meisterschaften der Jahre 2023 bis 2025 extrahiert. Zur Minimierung von Varianz durch unterschiedliche Fahrsituationen beschränkt sich die Auswahl auf Rennsessions, während Trainings- und Qualifikationssessions ausgeschlossen wurden. Zusätzlich erfolgte eine Filterung auf Runden mit Trockenreifen, da Regenbedingungen weitere Einflussfaktoren einführen. Die Datenselektion wurde direkt beim Abruf mittels der ADX-\ac{KQL} vorgenommen, wodurch ein Rohdatensatz im CSV-Format mit 17 735 Runden (Datenpunkten) resultierte.
 
-  Im Rahmen eines Experteninterviews mit dem Performance Engineer wurden jene Parameter identifiziert, die als Merkmale (Features) in das Machine-Learning-Modell eingehen.\footnote{Vgl. \cite{Experteninterview2}} Die Merkmale gliedern sich in kontinuierliche und kategoriale Features die in Tabelle-\ref{tab:features_channels} aufgelistet sind.
+  Im Rahmen eines Experteninterviews mit dem Performance Engineer wurden jene Parameter identifiziert, die als Merkmale (Features) in das \ac{ML}-Modell eingehen.\footnote{Vgl. \cite{Experteninterview2}} Die Merkmale gliedern sich in kontinuierliche und kategoriale Features die in Tabelle-\ref{tab:features_channels} aufgelistet sind.
 
 \input{tables/features_channels}
 
-  Als Zielvariable dient der durchschnittliche Untersteer-Wert pro Runde (aUndersteer\_AVG) \textbf{Berechnung in DP ergänzen}, wobei Werte über Null Untersteuern und Werte unter Null Übersteuern des Fahrzeugs anzeigen. Alle Parameter und die Zielvariable wurden rundenmittelnd aggregiert, sodass jeder Datensatzpunkt einer einzelnen Rennrunde entspricht.
+  Als Zielvariable dient der durchschnittliche Fahrzeugbalance-Wert pro Runde (aUndersteer\_AVG), wobei Werte über Null Untersteuern und Werte unter Null Übersteuern des Fahrzeugs anzeigen. Dieser Wert wird in der Datenplattform bereits auf Basis physikalischer Formeln berechnet. Diese Berechnung wird aus Umfangsgründen nicht näher erläutert. Alle Parameter und die Zielvariable wurden rundenmittelnd aggregiert, sodass jeder Datensatzpunkt einer einzelnen Rennrunde entspricht.
 
 Die \ac{EDA} \textbf{Wissenschaftliche Quelle EDA ergänzen} wurde durchgeführt, um die Dateneigenschaften zu untersuchen und potenzielle Datenqualitätsprobleme zu identifizieren. Zunächst wurde die Verteilung der Zielvariable aUndersteer\_AVG untersucht. 
 \begin{figure}[H]
@@ -57,9 +57,9 @@ Basierend auf den EDA-Erkenntnissen werden nachfolgend die systematischen Vorver
 
 \subsection{Ableitung der Vorverarbeitungsanforderungen}
 
-Aus den Erkenntnissen der explorativen Datenanalyse ergeben sich konkrete Anforderungen an die Datenvorbereitung. Die hohe Volatilität der Zielvariable aUndersteer\_AVG erfordert Strategien zur Glättung von Zeitreihenschwankungen, da selbst rundenmittelnd aggregierte Werte eine unregelmäßige Verteilung aufweisen. Die identifizierten Sensorartefakte bei Reifentemperaturen über 300 Grad Celsius und unrealistische Werte bei Reifendruckmessungen indizieren Messfehler, die durch domänenbasierte Schwellwertfilterung adressiert werden müssen.\footnote{Vgl. \cite{Experteninterview1}} Ferner zeigt die Korrelationsmatrix aus Abschnitt 4.1 starke Abhängigkeiten zwischen einzelnen Sensoren derselben physikalischen Größe, was eine Reduktion redundanter Features nahelegt. \textbf{Quelle} 
+Aus den Erkenntnissen der explorativen Datenanalyse ergeben sich konkrete Anforderungen an die Datenvorbereitung. Die hohe Volatilität der Zielvariable aUndersteer\_AVG erfordert Strategien zur Glättung von Zeitreihenschwankungen, da selbst rundenmittelnd aggregierte Werte eine unregelmäßige Verteilung aufweisen. Die identifizierten Sensorartefakte bei Reifentemperaturen über 300 Grad Celsius und unrealistische Werte bei Reifendruckmessungen indizieren Messfehler, die durch domänenbasierte Schwellwertfilterung adressiert werden müssen.\footnote{Vgl. Experteninterview 2, 12.09.2025, Z. 42-53} Ferner zeigt die Korrelationsmatrix aus Abschnitt 4.1 starke Abhängigkeiten zwischen einzelnen Sensoren derselben physikalischen Größe, was eine Reduktion redundanter Features nahelegt. \textbf{Quelle} 
 
-Diese Anforderungen entsprechen den Design Requirements für das Datenartefakt im Sinne der DSR-Methodik. Die Vorverarbeitungsentscheidungen werden transparent dokumentiert und auf drei Quellen zurückgeführt: (i) datengetriebene Erkenntnisse der EDA, (ii) domänengetriebene Validierung durch Experteninterviews sowie (iii) theoriegetriebene Fundierung durch etablierte Machine-Learning-Literatur zu Datenvorverarbeitung und Ausreißererkennung.
+Diese Anforderungen entsprechen den Design Requirements für das Datenartefakt im Sinne der DSR-Methodik. Die Vorverarbeitungsentscheidungen werden transparent dokumentiert und auf drei Quellen zurückgeführt: (i) datengetriebene Erkenntnisse der EDA, (ii) domänengetriebene Validierung durch Experteninterviews sowie (iii) theoriegetriebene Fundierung durch etablierte \ac{ML}-Literatur zu Datenvorverarbeitung und Ausreißererkennung.
 
 
 \subsection{Datenbereinigung und Filterung}
@@ -70,7 +70,7 @@ Eine weitere Quelle von Varianz sind Extremereignisse während des Rennens, wie 
 
 Für die kontinuierlichen Features Reifentemperatur und Reifendruck wurden domänenspezifische Schwellwerte zur Erkennung und Entfernung unrealistischer Messwerte definiert. Wie in Abbildung \ref{fig:temp_distribution} dargestellt, treten bei Reifentemperaturen Werte über 300 Grad Celsius auf, die physikalisch nicht plausibel sind und auf Sensorfehler hindeuten. Analog zeigen Reifendruckmessungen (Abbildung \ref{fig:druck_distribution}) Ausreißer außerhalb realistischer Bereiche.
 
-Die Festlegung der konkreten Grenzwerte erfolgte unter Einbeziehung von Expertenwissen.\footnote{Vgl. \cite{Experteninterview1}} Dieser domänenbasierte Ansatz zur Ausreißererkennung ist in der Machine-Learning-Literatur als effektive Methode etabliert, wenn technisches Fachwissen verfügbar ist.\footnote{Vgl. \cite{Alan2011}} Die Implementierung erfolgte durch Filterregeln, die Datenpunkte außerhalb der definierten Grenzwerte ausschließen.
+Die Festlegung der konkreten Grenzwerte erfolgte unter Einbeziehung von Expertenwissen.\footnote{Vgl. \cite{Experteninterview1}} Dieser domänenbasierte Ansatz zur Ausreißererkennung ist in der \ac{ML}-Literatur als effektive Methode etabliert, wenn technisches Fachwissen verfügbar ist.\footnote{Vgl. \cite{Alan2011}} Die Implementierung erfolgte durch Filterregeln, die Datenpunkte außerhalb der definierten Grenzwerte ausschließen.
 
 \begin{table}[H]
   \centering
@@ -90,7 +90,7 @@ Die Festlegung der konkreten Grenzwerte erfolgte unter Einbeziehung von Experten
 
 \subsection{Feature-Engineering und Dimensionsreduktion}
 
-Die in Abschnitt 4.1 präsentierte Korrelationsmatrix (Abbildung \ref{fig:korrelations_matrix}) offenbart hohe Korrelationen zwischen einzelnen Sensoren der Reifentemperatur sowie des Reifendrucks. Solche redundanten Features können bei Machine-Learning-Modellen zu Multikollinearität führen und die Interpretierbarkeit reduzieren.\footnote{Vgl. \cite{Tsanas2022}} 
+Die in Abschnitt 4.1 präsentierte Korrelationsmatrix (Abbildung \ref{fig:korrelations_matrix}) offenbart hohe Korrelationen zwischen einzelnen Sensoren der Reifentemperatur sowie des Reifendrucks. Solche redundanten Features können bei \ac{ML}-Modellen zu Multikollinearität führen und die Interpretierbarkeit reduzieren.\footnote{Vgl. \cite{Tsanas2022}} 
 Zur Quantifizierung der Redundanz wurde ein korrelationsbasiertes Verfahren angewendet: Features mit einer absoluten Pearson-Korrelation über 0,9 zu anderen Features wurden als hochkorreliert klassifiziert.\footnote{Vgl. \cite{Farek2024}} Die Identifikation dieser Feature-Gruppen bildet die Grundlage für die nachfolgende Feature-Aggregation.
 Anstatt hochkorrelierte Features vollständig zu entfernen, wurden neue motorsport-relevante Features durch statistische Zusammenfassung der Sensorgruppen erstellt. Aus den vier Reifendruck-Sensoren (vorne-links, vorne-rechts, hinten-links, hinten-rechts) und den entsprechenden Temperatursensoren wurden folgende abgeleitete Features generiert:
 
@@ -139,10 +139,10 @@ Die Validierung der entwickelten Modelle erfordert separate Validierungsdatensä
 Ein vollständiges Renn-Event wurde vom Trainingsdatensatz separiert und als Validierungsdatensatz reserviert. Diese Strategie prüft die Fähigkeit des Modells, auf eine neue, ungesehene Kombination von Strecke, Wetterbedingungen und Rennsituation zu generalisieren. Der Event-Validierungsdatensatz umfasst ca. 200 Runden.
 
 \textbf{Zufällige Validierung:}
-Aus dem verbleibenden Datensatz wurden 10\,\% der Runden zufällig ausgewählt und als zweiter Validierungsdatensatz verwendet. Diese Strategie entspricht der etablierten Praxis des Train-Test-Splits in der Machine-Learning-Literatur und dient der Bewertung der Modellperformance auf typischen, aber ungesehenen Datenpunkten.\footnote{Vgl. \cite{Baheti2021}} Der Zufalls-Validierungsdatensatz umfasst ca. 1\,000 Runden.
+Aus dem verbleibenden Datensatz wurden 10\,\% der Runden zufällig ausgewählt und als zweiter Validierungsdatensatz verwendet. Diese Strategie entspricht der etablierten Praxis des Train-Test-Splits in der \ac{ML}-Literatur und dient der Bewertung der Modellperformance auf typischen, aber ungesehenen Datenpunkten.\footnote{Vgl. \cite{Baheti2021}} Der Zufalls-Validierungsdatensatz umfasst ca. 1\,000 Runden.
 
 Für beide Validierungsstrategien wurden Datensätze entsprechend der zwei Feature-Konfigurationen (mit/ohne kategoriale Features) und der zwei Reduktionsstrategien (mit/ohne Entfernung hochkorrelierter Features) erstellt. Dies resultiert in $2 \times 2 \times 2 = 8$ Validierungsdatensätzen.
-Die zweifache Validierungsstrategie ermöglicht eine differenzierte Robustheitsbewertung: Die Event-basierte Validierung testet die Extrapolationsfähigkeit auf vollständig neue Kontexte, während die zufällige Validierung die Interpolationsfähigkeit innerhalb der Verteilung der Trainingsdaten bewertet. Diese Kombination entspricht best practices im Machine Learning und erhöht die Aussagekraft der Modellbewertung.\footnote{Vgl. ebd.}
+Die zweifache Validierungsstrategie ermöglicht eine differenzierte Robustheitsbewertung: Die Event-basierte Validierung testet die Extrapolationsfähigkeit auf vollständig neue Kontexte, während die zufällige Validierung die Interpolationsfähigkeit innerhalb der Verteilung der Trainingsdaten bewertet. Diese Kombination entspricht best practices im \ac{ML} und erhöht die Aussagekraft der Modellbewertung.\footnote{Vgl. ebd.}
 
 
 \subsection{Technische Implementierung}
@@ -176,7 +176,7 @@ Abgestufte Komplexitätsprofile strukturieren die Suche:
 \end{description}
 Zusätzlich variieren \texttt{subsample} (0.8/1.0), \texttt{colsample\_bytree} (0.8/1.0) bzw. \texttt{feature\_fraction}, \texttt{min\_child\_weight}/\texttt{min\_child\_samples}.\footnote{Vgl. \cite{Ke2017LightGBM}}
 
-Objectives und Loss-Funktion: Beide Verfahren minimieren eine quadratische Fehlerfunktion (XGBoost: \texttt{reg:squarederror}, LightGBM: \texttt{regression\_l2}).\footnote{Vgl. \cite{Chen2016XGBoost}}\footnote{Vgl. \cite{Ke2017LightGBM}} L2 ist konsistent mit $R^2 = 1 - \tfrac{\text{SSE}}{\text{SST}}$, da eine Reduktion der Residuen direkt zu höherer Erklärungsvarianz führt. Gewählt wurde L2 aufgrund (i) Etabliertheit in tabularer Regression, (ii) stabiler Optimierungseigenschaften (glatte Gradienten), (iii) direkter Interpretierbarkeit ergänzender Fehlerkennzahlen (RMSE/MAE). Alternativen wie Huber- oder Quantile-Loss wurden nicht priorisiert, weil potenzielle Ausreißer bereits vorab bereinigt wurden und zusätzliche Komplexität ohne klaren Mehrwert vermieden wird.
+Beide Verfahren haben das Ziel, eine quadratische Fehlerfunktion zu minimieren (XGBoost: \texttt{reg:squarederror}, LightGBM: \texttt{regression\_l2}).\footnote{Vgl. \cite{Chen2016XGBoost}}\footnote{Vgl. \cite{Ke2017LightGBM}} L2 ist konsistent mit $R^2 = 1 - \tfrac{\text{SSE}}{\text{SST}}$, da eine Reduktion der Residuen direkt zu höherer Erklärungsvarianz führt. Gewählt wurde L2 aufgrund (i) Etabliertheit in tabularer Regression, (ii) stabiler Optimierungseigenschaften (glatte Gradienten), (iii) direkter Interpretierbarkeit ergänzender Fehlerkennzahlen (RMSE/MAE). Alternativen wie Huber- oder Quantile-Loss wurden nicht priorisiert, weil potenzielle Ausreißer bereits vorab bereinigt wurden und zusätzliche Komplexität ohne klaren Mehrwert vermieden wird.
 
 Aus der Kreuzung von 16 Datensatzstrukturen, zwei Boosting-Implementierungen und vier Komplexitätsstufen entstehen \textbf{128 trainierte Modelle}.
 
