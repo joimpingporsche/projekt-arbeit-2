@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  31 OCT 2025 11:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  31 OCT 2025 12:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1263,36 +1263,16 @@ chapter 5.
 [27]
 
 [28]
-Overfull \hbox (7.99356pt too wide) in paragraph at lines 170--171
-[]\T1/cmr/m/n/10.95 Diese feh-len-den Fak-to-ren er-klä-ren, warum das Mo-dell ei-ne ho-he Random-Validierungs-Performance
- []
-
-
 
 [29]) (./includes/chapter/6_ergebnisse_diskussion.tex
 
 [30]
 chapter 6.
 
-Overfull \hbox (12.68448pt too wide) in paragraph at lines 9--10
-\T1/cmr/m/n/10.95 trie-da-ten zu ent-wi-ckeln, ist par-ti-ell er-füllt. Das bes-te Mo-dell auf dem Random-Validierungsdatensatz
- []
-
-
-Overfull \hbox (19.8322pt too wide) in paragraph at lines 13--14
-\T1/cmr/m/n/10.95 Modell er-reicht R\TS1/cmr/m/n/10.95 ² \T1/cmr/m/n/10.95 = 0,657, knapp un-ter-halb der Ziel-vor-ga-be, schei-tert aber bei Event-Generalisierung
- []
-
-
 
 [31
 
 ]
-Overfull \hbox (13.96022pt too wide) in paragraph at lines 29--30
-[]\T1/cmr/m/n/10.95 Der gröÿ-te Ef-fekt stammt nicht aus Hyperparameter-Tuning, son-dern aus der Feature-Konfiguration,
- []
-
-
 
 [32]) (./includes/anhang.tex
 
@@ -1372,75 +1352,79 @@ Overfull \hbox (16.61552pt too wide) in paragraph at lines 72--72
 [49]
 
 [50] (./includes/erklaerung_ki.tex
-Overfull \hbox (1.558pt too wide) in paragraph at lines 130--130
+Overfull \hbox (1.558pt too wide) in paragraph at lines 125--125
 []\T1/cmr/m/n/10.95 mich ak-tiv über die Leis-tungs-fä-hig-keit und Be-schrän-kun-gen der oben ge-nann-ten KI-Systeme
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--130
-\T1/cmr/bx/n/10.95 wis-sen-schaft-li-chen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--130
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
 []\T1/cmr/bx/n/10.95 Eingesetzte(s)
  []
 
 
-Underfull \hbox (badness 7631) in paragraph at lines 130--130
+Underfull \hbox (badness 7631) in paragraph at lines 125--125
 []\T1/cmr/m/n/10.95 Perplexity, Goo-
  []
 
 
+Overfull \hbox (7.54721pt too wide) in paragraph at lines 125--126
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Overfull \hbox (1.85811pt too wide) in paragraph at lines 130--134
+ [] 
+ []
+
+) (./template/_dhbw_erklaerung.tex
 
 [51
 
 
 
-]) (./template/_dhbw_erklaerung.tex
+]
+Overfull \hbox (6.4986pt too wide) in paragraph at lines 13--14
+[]\T1/cmr/m/n/10.95 Ich ver-si-che-re hier-mit, dass ich die vor-lie-gen-de Ar-beit mit dem The-ma: \T1/cmr/m/it/10.95 Fahrzeugbalance-Vorhersage
+ []
 
-[52]
-Overfull \hbox (26.9081pt too wide) in paragraph at lines 13--14
-[]\T1/cmr/m/n/10.95 Ich ver-si-che-re hier-mit, dass ich die vor-lie-gen-de Ar-beit mit dem The-ma: \T1/cmr/m/it/10.95 Au-to-ma-ti-sier-te Fahrzeugbalance-
+
+Overfull \hbox (1.85811pt too wide) in paragraph at lines 18--22
+ [] 
  []
 
 )
 
-[53
+[52
 
 ] (./latex-vorlage.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `latex-vorlage.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                latex-vorlage
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'latex-vorlage.run.xml'.
 \openout1 = `latex-vorlage.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30927 strings out of 473190
- 608111 string characters out of 5715800
- 1619512 words of memory out of 5000000
+ 30926 strings out of 473190
+ 608104 string characters out of 5715800
+ 1619503 words of memory out of 5000000
  53437 multiletter control sequences out of 15000+600000
  583391 words of font info for 88 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,18n,127p,10968b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on latex-vorlage.pdf (60 pages, 1528328 bytes).
+Output written on latex-vorlage.pdf (59 pages, 1527844 bytes).
 PDF statistics:
- 1074 PDF objects out of 1200 (max. 8388607)
- 920 compressed objects within 10 object streams
- 260 named destinations out of 1000 (max. 500000)
+ 1070 PDF objects out of 1200 (max. 8388607)
+ 917 compressed objects within 10 object streams
+ 259 named destinations out of 1000 (max. 500000)
  372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -24,7 +24,7 @@ Die kompletten Ergebnisse der Validierung sind im Anhang \ref{Modell-Ergebnisse}
 \subsection{Performance auf Zufalls-Validierungsdatensätzen}
 
 Die Zufalls-Validierung gibt Aufschluss über die Modellqualität auf typischen, aber ungesehenen Daten innerhalb der trainierten Verteilung. Die Ergebnisse sind substantiell positiv und zeigen, dass das entwickelte Artefakt unter Standardbedingungen akzeptable Vorhersagefähigkeit aufweist.
-Durchschnittlich erreicht das Modellportfolio eine R² von $0.308$ (±$0.197$), mit einer Range von $-0.338$ bis $0.657$. Dies bedeutet, dass das durchschnittliche Modell etwa ein Drittel der Varianz in der Zielvariable erklären kann. Die mittlere RMSE-Abweichung liegt bei $0.328$ (±$0.049$), was einer durchschnittlichen Vorhersageabweichung von etwa $0.33$ Understeer-Einheiten entspricht.\footnote{Vgl. \cite{Hodson2022}, S. 5481-5482} Damit liegen die Modelle in der praktischen Größenordnung, die für Engineering-Fragestellungen relevant ist. XGBoost dominiert deutlich die Random-Validierungsperformance mit einem Durchschnitts-R² von $0.380$ (±$0.235$), während LightGBM mit $0.237$ (±$0.112$) deutlich dahinter liegt. XGBoost zeigt auch überlegene Stabilität mit geringerer Standardabweichung.
+Durchschnittlich erreicht das Modellportfolio eine R² von $0.308$ (±$0.197$), mit einer Range von $-0.338$ bis $0.657$. Dies bedeutet, dass das durchschnittliche Modell etwa ein Drittel der Varianz in der Zielvariable erklären kann. Die mittlere RMSE-Abweichung liegt bei $0.328$ (±$0.049$), was einer durchschnittlichen Vorhersageabweichung von etwa $0.33$ Understeer-Einheiten entspricht.\footnote{Vgl. \cite{Hodson2022}, S. 5481-5482} Damit liegen die Modelle in der praktischen Größenordnung, die für Engineering-Fragestellungen relevant ist. XGBoost dominiert deutlich die Zualls-Validierungsperformance mit einem Durchschnitts-R² von $0.380$ (±$0.235$), während LightGBM mit $0.237$ (±$0.112$) deutlich dahinter liegt. XGBoost zeigt auch überlegene Stabilität mit geringerer Standardabweichung.
 
 \begin{table}[H]
   \centering
@@ -38,11 +38,11 @@ Durchschnittlich erreicht das Modellportfolio eine R² von $0.308$ (±$0.197$), 
     \textbf{Vorteil XGB} & \textbf{+0.143} & \textbf{-0.038} & \textbf{-0.039} & \textbf{--} \\
     \bottomrule
   \end{tabular}
-  \caption{Algorithmus-Vergleich: Random-Validierung (alle Komplexitätsstufen)}
+  \caption{Algorithmus-Vergleich: Zufalls-Validierung (alle Komplexitätsstufen)}
   \label{tab:algo_random}
 \end{table}
 
-Die beste Modell-Konfiguration in der Random-Validierung ist ein XGBoost-Modell mit Very Deep-Komplexität, ohne kategoriale Features, mit Feature-Aggregation und ohne Zielvariablen-Glättung. Dieses Modell erreicht ein $R^2$ von $0{,}657$, RMSE von $0{,}233$ und MAE von $0{,}176$. Dies deutet darauf hin, dass XGBoost unter Bedingungen mit ausreichender Komplexität und geeigneter Feature-Konfiguration starke Vorhersagefähigkeit entwickelt. Bemerkenswerterweise ist die mittlere Komplexität nicht universell optimal. Medium und Very Deep erzielen ähnlich gute Durchschnittswerte (R² von $0.336$ bzw. $0.328$), während Shallow mit $0.245$ deutlich schlechter abschneidet. Dies deutet darauf hin, dass eine Mindest-Modellkapazität erforderlich ist, dass aber zu tiefe Modelle auf Random-Daten nicht zusätzlich helfen.
+Die beste Modell-Konfiguration in der Zufalls-Validierung ist ein XGBoost-Modell mit Very Deep-Komplexität, ohne kategoriale Features, mit Feature-Aggregation und ohne Zielvariablen-Glättung. Dieses Modell erreicht ein $R^2$ von $0{,}657$, RMSE von $0{,}233$ und MAE von $0{,}176$. Dies deutet darauf hin, dass XGBoost unter Bedingungen mit ausreichender Komplexität und geeigneter Feature-Konfiguration starke Vorhersagefähigkeit entwickelt. Bemerkenswerterweise ist die mittlere Komplexität nicht universell optimal. Medium und Very Deep erzielen ähnlich gute Durchschnittswerte (R² von $0.336$ bzw. $0.328$), während Shallow mit $0.245$ deutlich schlechter abschneidet. Dies deutet darauf hin, dass eine Mindest-Modellkapazität erforderlich ist, dass aber zu tiefe Modelle auf Zufalls-Daten nicht zusätzlich helfen.
 
 \begin{table}[H]
   \centering
@@ -56,11 +56,11 @@ Die beste Modell-Konfiguration in der Random-Validierung ist ein XGBoost-Modell 
     Very Deep & 0.328 & 0.186 & 0.323 & 32 \\
     \bottomrule
   \end{tabular}
-  \caption{Random-Validierung: Performance nach Hyperparameter-Komplexitätsstufe}
+  \caption{Zufalls-Validierung: Performance nach Hyperparameter-Komplexitätsstufe}
   \label{tab:complexity_random}
 \end{table}
 
-Die Glättungsvarianten zeigen eine optimale Performance bei Fenstergrößen von 2–3, mit Fenstergröße 3 leicht vorne (R² $0.324$). Fenstergröße 4 verschlechtert die Performance (R² $0.297$). Feature-Aggregation liefert einen konsistenten, wenn auch moderaten Vorteil ($+0.024$ R²). Überraschenderweise profitieren Random-Validierungsergebnisse deutlich von der Abwesenheit kategorialer Features: Modelle ohne kategoriale Features erreichen R² $0.466$ gegenüber R² $0.150$ mit kategorialen Features eine Differenz von 0.316. Dies ist ein starker Indikator für Overfitting auf kategoriale Variablen.
+Die Glättungsvarianten zeigen eine optimale Performance bei Fenstergrößen von 2–3, mit Fenstergröße 3 leicht vorne (R² $0.324$). Fenstergröße 4 verschlechtert die Performance (R² $0.297$). Feature-Aggregation liefert einen konsistenten, wenn auch moderaten Vorteil ($+0.024$ R²). Überraschenderweise profitieren Zufalls-Validierungsergebnisse deutlich von der Abwesenheit kategorialer Features: Modelle ohne kategoriale Features erreichen R² $0.466$ gegenüber R² $0.150$ mit kategorialen Features eine Differenz von 0.316. Dies ist ein starker Indikator für Overfitting auf kategoriale Variablen.
 
 \begin{table}[H]
   \centering
@@ -83,7 +83,7 @@ Die Glättungsvarianten zeigen eine optimale Performance bei Fenstergrößen von
     Fenster 4 & 0.297 & 0.197 & 0.331 & 32 \\
     \bottomrule
   \end{tabular}
-  \caption{Random-Validierung: Effekte der Datensatzstruktur-Varianten}
+  \caption{Zufalls-Validierung: Effekte der Datensatzstruktur-Varianten}
   \label{tab:structure_random}
 \end{table}
 
@@ -112,7 +112,7 @@ Die Event-basierte Validierung wendet das trainierte Modell auf ein vollständig
 
 Die beste Modell-Konfiguration in der Event-Validierung ist ein LightGBM-Modell mit Very Deep-Komplexität, mit kategorialen Features, ohne Feature-Aggregation und ohne Zielvariablen-Glättung. Dieses Modell erreicht R² $0.093$, RMSE $0.272$ und MAE $0.212$. Auch diese beste Konfiguration bleibt problematisch niedrig.
 
-Tiefere Modelle zeigen relativ bessere Event-Generalisierung: Very Deep (R² $-0.232$) übertrifft Shallow (R² $-0.405$) um $0.173$ Punkte. Dies deutet darauf hin, dass höhere Modellkomplexität das Generalisierungsproblem nicht verschärft. Allerdings sind \textbf{alle Komplexitätsstufen im absoluten Sinne unzureichend}. Der beobachtete Trend sollte daher nicht als Beleg für robustere Modelle interpretiert werden, sondern lediglich als Hinweis, dass Overfitting durch Komplexität in diesem Fall nicht der limitierende Faktor ist.
+Tiefere Modelle zeigen relativ bessere Event-Generalisierung: Very Deep (R² $-0.232$) übertrifft Shallow (R² $-0.405$) um $0.173$ Punkte. Dies deutet darauf hin, dass höhere Modellkomplexität das Generalisierungsproblem nicht verschärft. Allerdings sind alle Komplexitätsstufen im absoluten Sinne unzureichend. Der beobachtete Trend sollte daher nicht als Beleg für robustere Modelle interpretiert werden, sondern lediglich als Hinweis, dass Overfitting durch Komplexität in diesem Fall nicht der limitierende Faktor ist.
 
 \begin{table}[H]
   \centering
@@ -163,10 +163,10 @@ Die Event-Validierung offenbart ein fundamentales Generalisierungsproblem. Mit d
 
 \subsection{Interpretation des Gesamtergebnisses}
 
-Die massive Diskrepanz zwischen Random- (R²-Mittel $0.308$) und Event-Validierung (R²-Mittel $-0.306$) ist nicht auf typisches Overfitting zurückzuführen, sondern offenbart ein fundamentales Problem der Domänen-Generalisierung. Im Folgenden werden die wahrscheinlichen Ursachen und Implikationen dieser Diskrepanz erörtert.
+Die massive Diskrepanz zwischen Zufalls- (R²-Mittel $0.308$) und Event-Validierung (R²-Mittel $-0.306$) ist nicht auf typisches Overfitting zurückzuführen, sondern offenbart ein fundamentales Problem der Domänen-Generalisierung. Im Folgenden werden die wahrscheinlichen Ursachen und Implikationen dieser Diskrepanz erörtert.
 
 Ein zentrales Problem besteht darin, dass die Telemetriedaten ausschließlich Fahrzeugzustände und Sensorwerte erfassen, jedoch die entscheidenden Kontextfaktoren, die das Understeer maßgeblich beeinflussen, nicht berücksichtigen. So sind beispielsweise individuelle Fahrereffekte wie Lenk-Aggression, Bremspunkt-Variabilität oder die Wahl der Fahrlinie in den Rohdaten mit physikalischen Fahrzeug-Eigenschaften vermischt und lassen sich nicht voneinander trennen. Das Modell erlernt dadurch eine Kombination aus Fahrzeugverhalten und Fahrercharakteristik, die bei neuen Fahrern nicht übertragbar ist. Hinzu kommt, dass das Fahrzeug-Setup, etwa Chassis-Steifigkeit, Aero-Balance oder Federung, sich zwischen den Events und sogar innerhalb eines Events verändert. Diese Parameter sind in den Telemetriedaten nicht explizit enthalten und können allenfalls indirekt über die Reaktion des Fahrzeugs auf die Fahrbahn abgeleitet werden, was jedoch eine unzureichende und wenig robuste Methode darstellt. Darüber hinaus spielen Umgebungsfaktoren wie Streckentemperatur, Luftdichte, Feuchtigkeit und Windverhältnisse eine fundamentale Rolle für Aerodynamik und Reifenverhalten. Da diese Einflussgrößen im Datensatz nicht enthalten sind, können sie auch nicht rekonstruiert werden. Insgesamt erklärt das Fehlen dieser Kontextfaktoren, weshalb das Modell zwar auf bekannten Daten eine hohe Performance erzielt, jedoch beim Transfer auf neue Events deutlich an Vorhersagekraft verliert.
 
-Diese fehlenden Faktoren erklären, warum das Modell eine hohe Random-Validierungs-Performance erreicht (es memoriert Training-Event-Muster) aber bei Event-Transfer kollabiert (neue Kombinationen aus Fahrer, Setup, Reifen, Umwelt sind unbekannt).
+Diese fehlenden Faktoren erklären, warum das Modell eine hohe Performance auf dem Zufallsdatensatz erreicht (es memoriert Training-Event-Muster) aber bei Event-Transfer kollabiert (neue Kombinationen aus Fahrer, Setup, Reifen, Umwelt sind unbekannt).
 
 Das zentrale Problem ist ein Covariate-Shift: Die Verteilung der Eingabedaten unterscheidet sich zwischen Training und Event-Test, während das Modell unter der Annahme konstanter Kontextfaktoren trainiert wurde. Bei neuen Fahrern, Setups oder Umwelteinflüssen versagt diese Annahme, und die Generalisierung bricht ein. Der Event-Validierungsdatensatz dient somit als Stress-Test für echte Domain Generalization. Für zukünftige \ac{ML}-Projekte gilt: Die Datenqualität ist entscheidender als die Wahl des Algorithmus, und die Verwendung kategorialer Features sollte mit Blick auf die Ziel-Domäne erfolgen. Robustere Generalisierung erfordert gezieltes Feature-Engineering und Transfer-Learning-Ansätze, da Modelle ohne explizite Berücksichtigung neuer Kontexte nicht zuverlässig auf unbekannte Strecken übertragbar sind.
