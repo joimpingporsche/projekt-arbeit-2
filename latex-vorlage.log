@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  31 OCT 2025 12:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  31 OCT 2025 13:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1113,10 +1113,10 @@ Package pdftex.def Info: includes/Sperrvermerk_Abschlussarbeit.pdf , page1 used 
 
 ] (./includes/chapter/1_einleitung.tex
 chapter 1.
-Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
-although it is yet undefined on input line 6.
 Package acronym Info: Label `acro:DSR' newly defined as it shall be overridden
-although it is yet undefined on input line 17.
+although it is yet undefined on input line 2.
+Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
+although it is yet undefined on input line 7.
 
 
 [1
@@ -1141,23 +1141,24 @@ chapter 2.
 
 [7]
 Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
-although it is yet undefined on input line 92.
+although it is yet undefined on input line 91.
 Package acronym Info: Label `acro:RMSE' newly defined as it shall be overridden
-although it is yet undefined on input line 92.
+although it is yet undefined on input line 91.
 
 
 [8]
 Package acronym Info: Label `acro:MAE' newly defined as it shall be overridden
-although it is yet undefined on input line 94.
+although it is yet undefined on input line 93.
 ) (./includes/chapter/3_relevance_cycle.tex
 
 [9{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 chapter 3.
-
-Overfull \hbox (5.26006pt too wide) in paragraph at lines 11--16
-[]\T1/cmr/m/n/10.95 Die Te-le-me-trie-da-ten wer-den über meh-re-re Tau-send Sen-so-ren er-fasst und lie-fern wäh-rend Trainings-
- []
-
+Package acronym Info: Label `acro:LMDh' newly defined as it shall be overridden
+although it is yet undefined on input line 6.
+Package acronym Info: Label `acro:IMSA' newly defined as it shall be overridden
+although it is yet undefined on input line 8.
+Package acronym Info: Label `acro:WEC' newly defined as it shall be overridden
+although it is yet undefined on input line 8.
 
 
 [10
@@ -1168,10 +1169,6 @@ Overfull \hbox (5.26006pt too wide) in paragraph at lines 11--16
 
 [12]
 chapter 4.
-Package acronym Info: Label `acro:IMSA' newly defined as it shall be overridden
-although it is yet undefined on input line 7.
-Package acronym Info: Label `acro:WEC' newly defined as it shall be overridden
-although it is yet undefined on input line 7.
 Package acronym Info: Label `acro:KQL' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
 (./tables/features_channels.tex
@@ -1200,36 +1197,36 @@ Underfull \hbox (badness 5316) in paragraph at lines 66--67
 
 ]
 Package acronym Info: Label `acro:EDA' newly defined as it shall be overridden
-although it is yet undefined on input line 15.
+although it is yet undefined on input line 14.
 <graphics/understeer_nonfilt.png, id=403, 859.2903pt x 426.393pt>
 File: graphics/understeer_nonfilt.png Graphic file (type png)
 <use graphics/understeer_nonfilt.png>
-Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 18.
+Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 17.
 (pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
 
 
 [14]
-<graphics/TempPlot.png, id=413, 859.2903pt x 426.393pt>
+<graphics/TempPlot.png, id=414, 859.2903pt x 426.393pt>
 File: graphics/TempPlot.png Graphic file (type png)
 <use graphics/TempPlot.png>
-Package pdftex.def Info: graphics/TempPlot.png  used on input line 28.
+Package pdftex.def Info: graphics/TempPlot.png  used on input line 27.
 (pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
-
-
-[15 <./graphics/understeer_nonfilt.png>]
-<graphics/DruckPlot.png, id=423, 859.2903pt x 426.393pt>
+<graphics/DruckPlot.png, id=416, 859.2903pt x 426.393pt>
 File: graphics/DruckPlot.png Graphic file (type png)
 <use graphics/DruckPlot.png>
-Package pdftex.def Info: graphics/DruckPlot.png  used on input line 36.
+Package pdftex.def Info: graphics/DruckPlot.png  used on input line 35.
 (pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
-<graphics/korrelations_matrix_top.png, id=424, 794.97pt x 734.2632pt>
+
+
+[15 <./graphics/understeer_nonfilt.png> <./graphics/TempPlot.png>]
+<graphics/korrelations_matrix_top.png, id=425, 794.97pt x 734.2632pt>
 File: graphics/korrelations_matrix_top.png Graphic file (type png)
 <use graphics/korrelations_matrix_top.png>
-Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input line 44.
+Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input line 43.
 (pdftex.def)             Requested size: 364.19667pt x 336.38708pt.
 
 
-[16 <./graphics/TempPlot.png> <./graphics/DruckPlot.png>]
+[16 <./graphics/DruckPlot.png>]
 
 [17 <./graphics/korrelations_matrix_top.png>]
 
@@ -1241,9 +1238,9 @@ Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input lin
 
 [21]
 Package acronym Info: Label `acro:GBDT' newly defined as it shall be overridden
-although it is yet undefined on input line 159.
+although it is yet undefined on input line 158.
 Package acronym Info: Label `acro:SVR' newly defined as it shall be overridden
-although it is yet undefined on input line 159.
+although it is yet undefined on input line 158.
 
 
 [22]
@@ -1413,18 +1410,18 @@ Package logreq Info: Writing requests to 'latex-vorlage.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30926 strings out of 473190
- 608104 string characters out of 5715800
- 1619503 words of memory out of 5000000
- 53437 multiletter control sequences out of 15000+600000
+ 30930 strings out of 473190
+ 608162 string characters out of 5715800
+ 1620577 words of memory out of 5000000
+ 53442 multiletter control sequences out of 15000+600000
  583391 words of font info for 88 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,18n,127p,10968b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on latex-vorlage.pdf (59 pages, 1527844 bytes).
+Output written on latex-vorlage.pdf (59 pages, 1529262 bytes).
 PDF statistics:
- 1070 PDF objects out of 1200 (max. 8388607)
- 917 compressed objects within 10 object streams
- 259 named destinations out of 1000 (max. 500000)
+ 1066 PDF objects out of 1200 (max. 8388607)
+ 913 compressed objects within 10 object streams
+ 258 named destinations out of 1000 (max. 500000)
  372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

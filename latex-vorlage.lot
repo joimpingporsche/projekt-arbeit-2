@@ -4,6 +4,6 @@
 \contentsline {table}{\numberline {3}{\ignorespaces Algorithmus-Vergleich: Zufalls-Validierung (alle Komplexitätsstufen)}}{26}{table.127}%
 \contentsline {table}{\numberline {4}{\ignorespaces Zufalls-Validierung: Performance nach Hyperparameter-Komplexitätsstufe}}{27}{table.128}%
 \contentsline {table}{\numberline {5}{\ignorespaces Zufalls-Validierung: Effekte der Datensatzstruktur-Varianten}}{27}{table.129}%
-\contentsline {table}{\numberline {6}{\ignorespaces Algorithmus-Vergleich: Event-Validierung (Leave-One-Out)}}{28}{table.131}%
-\contentsline {table}{\numberline {7}{\ignorespaces Event-Validierung: Performance nach Komplexitätsstufe (Trend zu besserer Generalisierung)}}{28}{table.132}%
+\contentsline {table}{\numberline {6}{\ignorespaces Algorithmus-Vergleich: Event-Validierung (alle Komplexitätsstufen)}}{28}{table.131}%
+\contentsline {table}{\numberline {7}{\ignorespaces Event-Validierung: Performance nach Hyperparameter-Komplexitätsstufe}}{28}{table.132}%
 \contentsline {table}{\numberline {8}{\ignorespaces Event-Validierung: Effekte der Datensatzstruktur-Varianten}}{29}{table.133}%

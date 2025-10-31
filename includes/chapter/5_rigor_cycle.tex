@@ -1,8 +1,8 @@
 \chapter{Evaluation und Interpretation des Vorhersagemodells}
 
-Die vorangegangenen Kapitel dokumentierten die systematische Entwicklung von 128 Modellkonfigurationen basierend auf 16 Datensatzstrukturen nach der Design Science Research Methodik. Das vorliegende Kapitel bildet die Evaluate- und Reflect-Phase des Design Cycle und wertet die Modellperformance systematisch aus sowie interpretiert die Ursachen identifizierter Leistungsgrenzen. Im Kontext der DSR-Methodik müssen drei zentrale Dimensionen nachgewiesen werden: \textit{Utility} (der praktische Nutzen des Modells), \textit{Quality} (die Robustheit und Zuverlässigkeit) sowie \textit{Efficacy} (die Problemlösung und Anforderungserfüllung).\footnote{Vgl. \cite{Venable2016}, S. 79-82}
+Die vorangegangenen Kapitel dokumentierten die systematische Entwicklung von 128 Modellkonfigurationen basierend auf 16 Datensatzstrukturen nach der \ac{DSR}-Methodik. Das vorliegende Kapitel bildet die Evaluate- und Reflect-Phase des Design Cycle und wertet die Modellperformance systematisch aus sowie interpretiert die Ursachen identifizierter Leistungsgrenzen. Im Kontext der \ac{DSR}-Methodik müssen drei zentrale Dimensionen nachgewiesen werden: \textit{Utility} (der praktische Nutzen des Modells), \textit{Quality} (die Robustheit und Zuverlässigkeit) sowie \textit{Efficacy} (die Problemlösung und Anforderungserfüllung).\footnote{Vgl. \cite{Venable2016}, S. 79-82}
 
-Die Evaluation erfolgt primär als artificial Evaluation durch quantitative Metriken auf strukturkonsistenten Validierungsdatensätzen.\footnote{Vgl. \cite{Venable2016}, S. 80-87} Eine naturalistic Evaluation durch Expertenfeedback wird bewusst nicht in diesem Kapitel durchgeführt, da die Modellperformance auf Event-Validierungsdatensätzen bereits zeigt, dass das Artefakt nicht für produktiven Einsatz geeignet ist. Stattdessen fokussiert die Analyse auf die technische Ursachenforschung, um generalisierbares Design Knowledge für zukünftige \ac{ML}-Projekte im Motorsport abzuleiten. Die anschließende Interpretation der Evaluationsergebnisse identifiziert Wurzelursachen beobachteter Leistungsgrenzen und schließt damit den Rigor Cycle der DSR-Methodik.
+Die Evaluation erfolgt primär als artificial Evaluation durch quantitative Metriken auf strukturkonsistenten Validierungsdatensätzen.\footnote{Vgl. \cite{Venable2016}, S. 80-87} Eine naturalistic Evaluation durch Expertenfeedback wird bewusst nicht in diesem Kapitel durchgeführt, da die Modellperformance auf Event-Validierungsdatensätzen bereits zeigt, dass das Artefakt nicht für produktiven Einsatz geeignet ist. Stattdessen fokussiert die Analyse auf die technische Ursachenforschung, um generalisierbares Design Knowledge für zukünftige \ac{ML}-Projekte im Motorsport abzuleiten. Die anschließende Interpretation der Evaluationsergebnisse identifiziert Wurzelursachen beobachteter Leistungsgrenzen und schließt damit den Rigor Cycle der \ac{DSR}-Methodik.
 
 
 \section{Evaluationskonzept und -methodik}
@@ -106,7 +106,7 @@ Die Event-basierte Validierung wendet das trainierte Modell auf ein vollständig
     \textbf{Vorteil LGB} & \textbf{+0.075} & \textbf{+0.064} & \textbf{-0.010} & -- \\
     \bottomrule
   \end{tabular}
-  \caption{Algorithmus-Vergleich: Event-Validierung (Leave-One-Out)}
+  \caption{Algorithmus-Vergleich: Event-Validierung (alle Komplexitätsstufen)}
   \label{tab:algo_event}
 \end{table}
 
@@ -126,7 +126,7 @@ Tiefere Modelle zeigen relativ bessere Event-Generalisierung: Very Deep (R² $-0
     Very Deep & -0.232 & 0.204 & 0.317 & 32 \\
     \bottomrule
   \end{tabular}
-  \caption{Event-Validierung: Performance nach Komplexitätsstufe (Trend zu besserer Generalisierung)}
+  \caption{Event-Validierung: Performance nach Hyperparameter-Komplexitätsstufe}
   \label{tab:complexity_event}
 \end{table}
 

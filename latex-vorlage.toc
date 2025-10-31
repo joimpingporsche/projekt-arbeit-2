@@ -4,10 +4,10 @@
 \contentsline {chapter}{Tabellenverzeichnis}{V}{section*.3}%
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.4}%
 \contentsline {section}{\numberline {1.1}Problemstellung}{1}{section.5}%
-\contentsline {section}{\numberline {1.2}Zielsetzung}{1}{section.6}%
+\contentsline {section}{\numberline {1.2}Zielsetzung}{2}{section.6}%
 \contentsline {section}{\numberline {1.3}Forschungsansatz und Aufbau der Arbeit}{2}{section.7}%
 \contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{3}{chapter.8}%
-\contentsline {section}{\numberline {2.1}Design Science Research Methodologie}{3}{section.9}%
+\contentsline {section}{\numberline {2.1}Design Science Research Methodik}{3}{section.9}%
 \contentsline {section}{\numberline {2.2}Experteninterviews zur Anforderungsermittlung}{4}{section.17}%
 \contentsline {section}{\numberline {2.3}Maschinelle Lernverfahren für Regressionsprobleme}{5}{section.20}%
 \contentsline {section}{\numberline {2.4}Gradient Boosting Decision Trees}{6}{section.37}%
@@ -16,7 +16,7 @@
 \contentsline {chapter}{\numberline {3}Anforderungsanalyse und Problemdefinition}{10}{chapter.54}%
 \contentsline {section}{\numberline {3.1}Problemdomäne und Use-Case-Identifikation}{10}{section.55}%
 \contentsline {section}{\numberline {3.2}Anforderungsableitung}{11}{section.62}%
-\contentsline {section}{\numberline {3.3}Abgrenzung des DSR-Artefakts}{11}{section.66}%
+\contentsline {section}{\numberline {3.3}Abgrenzung des Design Science Research Artefakts}{11}{section.66}%
 \contentsline {section}{\numberline {3.4}Forschungsfragen}{12}{section.69}%
 \contentsline {chapter}{\numberline {4}Artefakt-Design und Entwicklung}{13}{chapter.72}%
 \contentsline {section}{\numberline {4.1}Datensammlung und Analyse}{13}{section.73}%
@@ -38,6 +38,6 @@
 \contentsline {chapter}{\numberline {6}Fazit, Erkenntnisse und Forschungsausblick}{31}{chapter.135}%
 \contentsline {section}{\numberline {6.1}Erfüllung der Anforderungen und Beantwortung der Forschungsfragen}{31}{section.136}%
 \contentsline {section}{\numberline {6.2}Beantwortung der Forschungsfragen}{32}{section.139}%
-\contentsline {section}{\numberline {6.3}Design Knowledge und kritische Selbsteinschätzung}{33}{section.144}%
-\contentsline {chapter}{Anhang}{34}{chapter*.147}%
-\contentsline {chapter}{Literaturverzeichnis}{48}{section*.163}%
+\contentsline {section}{\numberline {6.3}Design Knowledge und kritische Selbsteinschätzung}{33}{section.143}%
+\contentsline {chapter}{Anhang}{34}{chapter*.146}%
+\contentsline {chapter}{Literaturverzeichnis}{48}{section*.162}%

@@ -2,14 +2,13 @@
 
 Zur Entwicklung eines \ac{ML}-Modells für Motorsport-Telemetrie-Analyse 
 müssen mehrere ineinandergreifende Konzepte verstanden werden. Dieses Kapitel 
-vermittelt zunächst methodologische Grundlagen (Design Science Research, 
-Datenvorverarbeitung), dann die Theorie von Regressionsproblemen und speziell 
+vermittelt zunächst methodische Grundlagen zu Design Science Research und Experteninterviews, dann die Theorie von Regressionsproblemen und speziell 
 Gradient Boosting Decision Trees, und abschließend praktische Aspekte von 
 Optimierung und Validierung. Diese Grundlagen bilden die wissenschaftliche Basis 
 für die in Kapitel 4 beschriebene Artefakt-Entwicklung.
 
 
-\section{Design Science Research Methodologie}
+\section{Design Science Research Methodik}
 
 \ac{DSR} ist ein etablierter Forschungsansatz der Wirtschaftsinformatik, der sich grundlegend von deskriptiven Forschungsmethoden unterscheidet. Während traditionelle empirische Forschung primär darauf ausgerichtet ist, bestehende Phänomene zu verstehen und zu erklären, zielt \ac{DSR} darauf ab, praktische Probleme durch systematische Entwicklung und rigorose Evaluierung von Artefakten zu lösen. Damit schafft \ac{DSR} eine Brücke zwischen wissenschaftlicher Fundierung und praktischer Problemlösung.\footnote{Vgl. \cite{Hevner2004}, S. 77-83}
 
@@ -76,9 +75,9 @@ Empirisch zeigen beide Implementierungen überlegene Performance auf strukturier
 
 \section{Hyperparameter-Optimierung und Modellvalidierung}
 
-Um ein GBDT-Modell zu trainieren, müssen vor dem Training viele Hyperparameter gesetzt werden. Hyperparameter unterscheiden sich fundamental von Modell-Parametern, den internen Gewichten des Modells, die während Training gelernt werden. Hyperparameter sind konfigurierbare Knöpfe, die Architekt oder Architektin des Modells kontrolliert.\footnote{Vgl. Bergstra, Bengio 2012, S. 281-305}
+Um ein GBDT-Modell zu trainieren, müssen vor dem Training viele Hyperparameter gesetzt werden. Hyperparameter unterscheiden sich fundamental von Modell-Parametern, den internen Gewichten des Modells, die während Training gelernt werden. Hyperparameter sind konfigurierbare Stellschrauben, die der Entwickler vor dem Training definiert und die das Lernverhalten des Algorithmus steuern.\footnote{Vgl. Bergstra, Bengio 2012, S. 281-305}
 
-Für GBDT sind mehrere Hyperparameter besonders wichtig: Die Anzahl der Estimators bestimmt, wie viele Bäume insgesamt trainiert werden, während die Learning Rate als Schrittweite beim Gradientenverfahren fungiert – kleine Werte führen zu langsameren, stabileren Verbesserungen, große Werte zu schnellerem, aber riskanterem Lernen. Die Max Depth definiert die maximale Tiefe jedes Baums und erhöht mit steigenden Werten die Modellkomplexität. Das Min Child Weight (bzw. die Mindestanzahl an Samples pro Blatt) bewirkt bei höheren Werten konservativere Splits und damit weniger Overfitting, während Subsample den Anteil der Trainingsinstanzen pro Baum festlegt (z. B. 0{,}8 für 80\%). Schließlich kontrollieren Regularisierungsparameter wie L2-Penalisierung die Modellkomplexität.\footnote{Vgl. \cite{Chen2016}, S. 787–788}
+Für GBDT sind mehrere Hyperparameter besonders wichtig: Die Anzahl der Estimators bestimmt, wie viele Bäume insgesamt trainiert werden, während die Learning Rate als Schrittweite beim Gradientenverfahren fungiert – kleine Werte führen zu langsameren, stabileren Verbesserungen, große Werte zu schnellerem, aber riskanterem Lernen. Die Max Depth definiert die maximale Tiefe jedes Baums und erhöht mit steigenden Werten die Modellkomplexität. Das Min Child Weight (bzw. die Mindestanzahl an Samples pro Blatt) bewirkt bei höheren Werten konservativere Splits und damit weniger Overfitting, während Subsample den Anteil der Trainingsinstanzen pro Baum festlegt. Schließlich kontrollieren Regularisierungsparameter wie L2-Penalisierung die Modellkomplexität.\footnote{Vgl. \cite{Chen2016}, S. 787–788}
 Da manuelle Anpassung dieser Parameter ineffizient ist, nutzt man systematische Hyperparameter-Optimierung. Grid Search definiert ein vorgegebenes Gitter von Parameterwerten und probiert alle Kombinationen systematisch durch, garantiert zwar eine gründliche Suche, führt aber zu exponentiellem Rechenaufwand mit der Anzahl der Parameter.\footnote{Vgl. Bergstra, Bengio 2012, S. 281-305; vgl. dazu auch \cite{Chen2016}, S. 787–788}
 Nach der Hyperparameter-Optimierung ergibt sich eine weitere zentrale Herausforderung: Generalisiert das Modell auf unbekannte Daten? Diese wird durch Modellvalidierung beantwortet. Der Standard k-fold Cross-Validation partitioniert den Datensatz in k gleiche Teile und trainiert das Modell k-mal, jeweils mit k minus eins Teilen als Training und einem Teil als Validierung. Die gemittelten k Validierungs-Scores geben eine robuste Schätzung der Generalisierungsperformance mit geringerer Varianz als ein einzelner Train-Test-Split.\footnote{Vgl. Kohavi 1995, S. 1137-1145}
 

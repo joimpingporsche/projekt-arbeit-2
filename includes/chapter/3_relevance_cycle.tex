@@ -1,14 +1,14 @@
 \chapter{Anforderungsanalyse und Problemdefinition}
+Auf Grundlage der in Kapitel 1 dargestellten Problemstellung werden in diesem Kapitel die konkreten Anforderungen an das zu entwickelnde Artefakt systematisch abgeleitet. Als Basis dafür dienen neben einschlägiger Literatur auch Experteninterviews mit einem Motorsport-Ingenieur. Dieses Kapitel konkretisiert die Problemstellung zu spezifischen, messbaren Anforderungen und präzisiert die Forschungsfragen, die als Evaluationskriterien für die später entwickelte Lösung dienen. Damit erfüllt dieses Kapitel die systematische \textit{Definition of Objectives} Phase des DSR-Prozesses.
 
 \section{Problemdomäne und Use-Case-Identifikation}
 
-Im Rahmen dieses Projekts wird mit Telemetriedaten von Porsche LMDh-Rennwagen 
-gearbeitet. LMDh (Le Mans Daytona hybrid) ist eine Fahrzeugklasse für 
-Langstreckenrennen, die in den Weltmeisterschaften IMSA WeatherTech SportsCar 
-Championship und FIA World Endurance Championship (WEC) eingesetzt wird.\footnote{Vgl. 
+Im Rahmen dieses Projekts wird mit Telemetriedaten von Porsche \ac{LMDh}-Rennwagen 
+gearbeitet.  \ac{LMDh} ist eine Fahrzeugklasse für 
+Langstreckenrennen, die in den Weltmeisterschaften \ac{IMSA} und \ac{WEC} eingesetzt wird.\footnote{Vgl. 
 \cite{Porsche2023LMDh}; vgl. auch \cite{24hLeMans2025Classes}}
 
-Die Telemetriedaten werden über mehrere Tausend Sensoren erfasst und liefern 
+Die Telemetriedaten werden über mehrere Tausend Sensoren in den Rennwagen erfasst und liefern 
 während Trainings- und Rennsessions ununterbrochen Messwerte, die in Echtzeit 
 in die Porsche Motorsport Cloud-Plattform übertragen werden.\footnote{Vgl. 
 Experteninterview 2, 12.09.2025, Z. 19-22}
@@ -34,9 +34,9 @@ zu gewährleisten.\footnote{Vgl. \cite{ODonnell2024}, S. 1-10}
 Unterhalb dieses Schwellenwerts ist die Prognose zu unsicher, 
 um darauf Setup-Entscheidungen zu stützen.
 
-Die dritte Anforderung betrifft die Reproduzierbarkeit und Dokumentation. Eine lückenlose Dokumentation aller Eingangsdaten, Vorverarbeitungsschritte, Modellparameter und Evaluationsergebnisse ist vorgesehen. Nur so kann vollständige Reproduzierbarkeit gewährleistet werden, und die erstellten Prognosen bleiben validierbar.\footnote{Vgl. \cite{Venable2016}, S. 79} Diese Anforderung entspricht den Prinzipien der Design Science Research Methodologie, die eine nachvollziehbare Artefakt-Entwicklung fordert.
+Die dritte Anforderung betrifft die Reproduzierbarkeit und Dokumentation. Eine lückenlose Dokumentation aller Eingangsdaten, Vorverarbeitungsschritte, Modellparameter und Evaluationsergebnisse ist vorgesehen. Nur so kann vollständige Reproduzierbarkeit gewährleistet werden, und die erstellten Prognosen bleiben validierbar.\footnote{Vgl. \cite{Venable2016}, S. 79} Diese Anforderung entspricht den Prinzipien der \ac{DSR}-Methodik, die eine nachvollziehbare Artefakt-Entwicklung fordert.
 
-\section{Abgrenzung des DSR-Artefakts}
+\section{Abgrenzung des Design Science Research Artefakts}
 
 Das entwickelte Artefakt beschränkt sich auf ein Vorhersagemodell für Fahrzeugbalance-Werte, basierend auf aggregierten Telemetrie-Metriken pro Runde. Diese fokussierte Auslegung ermöglicht es, das Projekt im vorgesehenen Zeitrahmen vollständig durchzuführen.
 
@@ -44,7 +44,7 @@ Hinsichtlich der Implementierung arbeitet das Modell auf rundenweise aggregierte
 
 Schließlich liefert das Modell keine direkten Setup-Vorschläge, sondern ausschließlich Fahrzeug\-balance-Prognosen. Die Ableitung von Setup-Änderungen aus diesen Prognosen bleibt in der Verantwortung der Performance Engineers und wird nicht automatisiert. Damit bleibt die Entscheidungshoheit bei den Ingenieuren, während das Modell als Entscheidungsunterstützungssystem fungiert.
 
-Diese Abgrenzung reduziert den Projektumfang auf ein klar definiertes \ac{ML}-Regressionsproblem und ermöglicht eine fokussierte Evaluation im DSR-Kontext.\footnote{Vgl. \cite{Hevner2004}, S. 83}
+Diese Abgrenzung reduziert den Projektumfang auf ein klar definiertes \ac{ML}-Regressionsproblem und ermöglicht eine fokussierte Evaluation im \ac{DSR}-Kontext.\footnote{Vgl. \cite{Hevner2004}, S. 83}
 
 
 
