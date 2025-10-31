@@ -1,9 +1,9 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {table}{\numberline {1}{\ignorespaces Übersicht der verwendeten Features und deren Channel-Namen}}{14}{table.75}%
 \contentsline {table}{\numberline {2}{\ignorespaces Domänenbasierte Schwellwerte für Ausreißererkennung}}{19}{table.90}%
-\contentsline {table}{\numberline {3}{\ignorespaces Algorithmus-Vergleich: Random-Validierung (alle Komplexitätsstufen)}}{26}{table.133}%
-\contentsline {table}{\numberline {4}{\ignorespaces Random-Validierung: Performance nach Hyperparameter-Komplexitätsstufe}}{27}{table.134}%
-\contentsline {table}{\numberline {5}{\ignorespaces Random-Validierung: Effekte der Datensatzstruktur-Varianten}}{27}{table.135}%
-\contentsline {table}{\numberline {6}{\ignorespaces Algorithmus-Vergleich: Event-Validierung (Leave-One-Event-Out)}}{28}{table.137}%
-\contentsline {table}{\numberline {7}{\ignorespaces Event-Validierung: Performance nach Komplexitätsstufe (Trend zu besserer Generalisierung)}}{28}{table.138}%
-\contentsline {table}{\numberline {8}{\ignorespaces Event-Validierung: Effekte der Datensatzstruktur-Varianten}}{29}{table.139}%
+\contentsline {table}{\numberline {3}{\ignorespaces Algorithmus-Vergleich: Random-Validierung (alle Komplexitätsstufen)}}{26}{table.127}%
+\contentsline {table}{\numberline {4}{\ignorespaces Random-Validierung: Performance nach Hyperparameter-Komplexitätsstufe}}{27}{table.128}%
+\contentsline {table}{\numberline {5}{\ignorespaces Random-Validierung: Effekte der Datensatzstruktur-Varianten}}{27}{table.129}%
+\contentsline {table}{\numberline {6}{\ignorespaces Algorithmus-Vergleich: Event-Validierung (Leave-One-Out)}}{28}{table.131}%
+\contentsline {table}{\numberline {7}{\ignorespaces Event-Validierung: Performance nach Komplexitätsstufe (Trend zu besserer Generalisierung)}}{28}{table.132}%
+\contentsline {table}{\numberline {8}{\ignorespaces Event-Validierung: Effekte der Datensatzstruktur-Varianten}}{29}{table.133}%

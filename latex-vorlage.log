@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  30 OCT 2025 14:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  31 OCT 2025 11:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1201,7 +1201,7 @@ Underfull \hbox (badness 5316) in paragraph at lines 66--67
 ]
 Package acronym Info: Label `acro:EDA' newly defined as it shall be overridden
 although it is yet undefined on input line 15.
-<graphics/understeer_nonfilt.png, id=401, 859.2903pt x 426.393pt>
+<graphics/understeer_nonfilt.png, id=403, 859.2903pt x 426.393pt>
 File: graphics/understeer_nonfilt.png Graphic file (type png)
 <use graphics/understeer_nonfilt.png>
 Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 18.
@@ -1209,7 +1209,7 @@ Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 18.
 
 
 [14]
-<graphics/TempPlot.png, id=411, 859.2903pt x 426.393pt>
+<graphics/TempPlot.png, id=413, 859.2903pt x 426.393pt>
 File: graphics/TempPlot.png Graphic file (type png)
 <use graphics/TempPlot.png>
 Package pdftex.def Info: graphics/TempPlot.png  used on input line 28.
@@ -1217,12 +1217,12 @@ Package pdftex.def Info: graphics/TempPlot.png  used on input line 28.
 
 
 [15 <./graphics/understeer_nonfilt.png>]
-<graphics/DruckPlot.png, id=420, 859.2903pt x 426.393pt>
+<graphics/DruckPlot.png, id=423, 859.2903pt x 426.393pt>
 File: graphics/DruckPlot.png Graphic file (type png)
 <use graphics/DruckPlot.png>
 Package pdftex.def Info: graphics/DruckPlot.png  used on input line 36.
 (pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
-<graphics/korrelations_matrix_top.png, id=421, 794.97pt x 734.2632pt>
+<graphics/korrelations_matrix_top.png, id=424, 794.97pt x 734.2632pt>
 File: graphics/korrelations_matrix_top.png Graphic file (type png)
 <use graphics/korrelations_matrix_top.png>
 Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input line 44.
@@ -1235,98 +1235,23 @@ Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input lin
 
 [18]
 
-LaTeX Warning: Citation 'Tsanas2022' on page 19 undefined on input line 95.
-
-
-LaTeX Warning: Citation 'Farek2024' on page 19 undefined on input line 96.
-
-
-LaTeX Warning: Citation 'Tsanas2022' on page 19 undefined on input line 105.
-
-
-
 [19]
 
-LaTeX Warning: Citation 'Brownlee2020' on page 20 undefined on input line 119.
-
-
-
 [20]
-Overfull \hbox (11.76053pt too wide) in paragraph at lines 133--134
-[]\T1/cmr/bx/n/10.95 Feature-Reduktion: \T1/cmr/m/n/10.95 ag-gre-gier-te Fea-tu-res mit Ent-fer-nung hoch-kor-re-lier-ter Original-Features
- []
-
-
-LaTeX Warning: Citation 'Baheti2021' on page 21 undefined on input line 144.
-
-
-Overfull \hbox (12.75015pt too wide) in paragraph at lines 146--148
-[]\T1/cmr/m/n/10.95 Für bei-de Va-li-die-rungs-stra-te-gi-en wur-den Da-ten-sät-ze ent-spre-chend der zwei Feature-Konfigurationen
- []
-
-
 
 [21]
+Package acronym Info: Label `acro:GBDT' newly defined as it shall be overridden
+although it is yet undefined on input line 159.
+Package acronym Info: Label `acro:SVR' newly defined as it shall be overridden
+although it is yet undefined on input line 159.
+
 
 [22]
-Package acronym Info: Label `acro:GBDT' newly defined as it shall be overridden
-although it is yet undefined on input line 165.
-Package acronym Info: Label `acro:SVR' newly defined as it shall be overridden
-although it is yet undefined on input line 165.
 
-
-LaTeX Warning: Citation 'Brown2021SVR' on page 23 undefined on input line 165.
-
-
-LaTeX Warning: Citation 'Smith2022RFvGB' on page 23 undefined on input line 165.
-
-
-LaTeX Warning: Citation 'Jones2022NNvGBDT' on page 23 undefined on input line 165.
-
-
-LaTeX Warning: Citation 'Chen2016XGBoost' on page 23 undefined on input line 166.
-
-
-LaTeX Warning: Citation 'Ke2017LightGBM' on page 23 undefined on input line 166.
-
-
-LaTeX Warning: Citation 'Pedregosa2011ScikitLearn' on page 23 undefined on input line 166.
-
-
-LaTeX Warning: Citation 'Pedregosa2011ScikitLearn' on page 23 undefined on input line 168.
-
-
-LaTeX Warning: Citation 'Bengio2012GridSearch' on page 23 undefined on input line 170.
-
-
-LaTeX Warning: Citation 'Pedregosa2011ScikitLearn' on page 23 undefined on input line 170.
-
-
-
-[23]
-
-LaTeX Warning: Citation 'Ke2017LightGBM' on page 24 undefined on input line 179.
-
-
-LaTeX Warning: Citation 'Chen2016XGBoost' on page 24 undefined on input line 181.
-
-
-LaTeX Warning: Citation 'Ke2017LightGBM' on page 24 undefined on input line 181.
-
-) (./includes/chapter/5_rigor_cycle.tex
+[23]) (./includes/chapter/5_rigor_cycle.tex
 
 [24]
 chapter 5.
-
-Overfull \hbox (2.39764pt too wide) in paragraph at lines 10--11
-\T1/cmr/m/n/10.95 Die Eva-lua-ti-onss-tra-te-gie folgt dem FEDS-Framework und adres-siert vier zen-tra-le Fra-gen: \T1/cmr/bx/n/10.95 Warum
- []
-
-
-Overfull \hbox (32.00133pt too wide) in paragraph at lines 16--17
-[]\T1/cmr/m/n/10.95 Die Eva-lua-ti-on un-ter-sucht sys-te-ma-tisch (i) die Prä-dik-ti-ons-ge-nau-ig-keit auf bei-den Validierungsdatensatz-
- []
-
 
 
 [25
@@ -1338,7 +1263,7 @@ Overfull \hbox (32.00133pt too wide) in paragraph at lines 16--17
 [27]
 
 [28]
-Overfull \hbox (7.99356pt too wide) in paragraph at lines 172--173
+Overfull \hbox (7.99356pt too wide) in paragraph at lines 170--171
 []\T1/cmr/m/n/10.95 Diese feh-len-den Fak-to-ren er-klä-ren, warum das Mo-dell ei-ne ho-he Random-Validierungs-Performance
  []
 
@@ -1433,13 +1358,20 @@ Overfull \hbox (31.62563pt too wide) in paragraph at lines 39--41
 [46])
 
 [47]
+Overfull \hbox (16.61552pt too wide) in paragraph at lines 72--72
+[][]\T1/cmr/m/n/10.95 Gradient Boos-ting vs Ran-dom Fo-rest (2024). In: \T1/cmr/m/it/10.95 Ge-eks-for-Ge-eks\T1/cmr/m/n/10.95 . \T1/cmr/m/sc/10.95 url\T1/cmr/m/n/10.95 : []$\T1/cmtt/m/n/10.95 https : / / www . geeksforgeeks .
+ []
+
+
 
 [48
 
 
 ]
 
-[49] (./includes/erklaerung_ki.tex
+[49]
+
+[50] (./includes/erklaerung_ki.tex
 Overfull \hbox (1.558pt too wide) in paragraph at lines 130--130
 []\T1/cmr/m/n/10.95 mich ak-tiv über die Leis-tungs-fä-hig-keit und Be-schrän-kun-gen der oben ge-nann-ten KI-Systeme
  []
@@ -1461,20 +1393,20 @@ Underfull \hbox (badness 7631) in paragraph at lines 130--130
 
 
 
-[50
+[51
 
 
 
 ]) (./template/_dhbw_erklaerung.tex
 
-[51]
+[52]
 Overfull \hbox (26.9081pt too wide) in paragraph at lines 13--14
 []\T1/cmr/m/n/10.95 Ich ver-si-che-re hier-mit, dass ich die vor-lie-gen-de Ar-beit mit dem The-ma: \T1/cmr/m/it/10.95 Au-to-ma-ti-sier-te Fahrzeugbalance-
  []
 
 )
 
-[52
+[53
 
 ] (./latex-vorlage.aux)
  ***********
@@ -1497,18 +1429,18 @@ Package logreq Info: Writing requests to 'latex-vorlage.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30850 strings out of 473190
- 606111 string characters out of 5715800
- 1619057 words of memory out of 5000000
- 53365 multiletter control sequences out of 15000+600000
+ 30927 strings out of 473190
+ 608111 string characters out of 5715800
+ 1619512 words of memory out of 5000000
+ 53437 multiletter control sequences out of 15000+600000
  583391 words of font info for 88 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,18n,127p,10968b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on latex-vorlage.pdf (59 pages, 1528898 bytes).
+Output written on latex-vorlage.pdf (60 pages, 1528328 bytes).
 PDF statistics:
- 1035 PDF objects out of 1200 (max. 8388607)
- 883 compressed objects within 9 object streams
- 255 named destinations out of 1000 (max. 500000)
+ 1074 PDF objects out of 1200 (max. 8388607)
+ 920 compressed objects within 10 object streams
+ 260 named destinations out of 1000 (max. 500000)
  372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

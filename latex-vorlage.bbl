@@ -90,9 +90,38 @@
       \field{title}{Random Search for Hyper-Parameter Optimization}
       \field{volume}{13}
       \field{year}{2012}
-      \true{nocite}
       \field{pages}{281\bibrangedash 305}
       \range{pages}{25}
+    \endentry
+    \entry{Borisov2021}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0d01891f2b7ffd8f394336b5286dabcc}{%
+           family={Borisov},
+           familyi={B\bibinitperiod},
+           given={Vadim},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{478657656b05c6000096dace986e7df7}
+      \strng{fullhash}{478657656b05c6000096dace986e7df7}
+      \strng{fullhashraw}{478657656b05c6000096dace986e7df7}
+      \strng{bibnamehash}{478657656b05c6000096dace986e7df7}
+      \strng{authorbibnamehash}{478657656b05c6000096dace986e7df7}
+      \strng{authornamehash}{478657656b05c6000096dace986e7df7}
+      \strng{authorfullhash}{478657656b05c6000096dace986e7df7}
+      \strng{authorfullhashraw}{478657656b05c6000096dace986e7df7}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2110.01889}
+      \field{title}{Deep Neural Networks and Tabular Data: A Survey}
+      \field{year}{2021}
+      \true{nocite}
     \endentry
     \entry{Box2015}{book}{}{}
       \name{author}{4}{}{%
@@ -476,6 +505,22 @@
       \field{year}{2016}
       \true{nocite}
     \endentry
+    \entry{Geeks2024}{article}{}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GeeksforGeeks}
+      \field{title}{Gradient Boosting vs Random Forest}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.geeksforgeeks.org/machine-learning/gradient-boosting-vs-random-forest/
+      \endverb
+      \verb{url}
+      \verb https://www.geeksforgeeks.org/machine-learning/gradient-boosting-vs-random-forest/
+      \endverb
+    \endentry
     \entry{Gregor2007}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=6cb3773d13196927d56a5877ea24b6a2}{%
@@ -551,6 +596,86 @@
       \field{year}{2003}
       \field{pages}{1157\bibrangedash 1182}
       \range{pages}{26}
+    \endentry
+    \entry{Hall1999}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=48886300ee5ed4036a16bffd394ea065}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={Mark\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {University of Waikato}%
+      }
+      \list{location}{1}{%
+        {Hamilton, New Zealand}%
+      }
+      \strng{namehash}{48886300ee5ed4036a16bffd394ea065}
+      \strng{fullhash}{48886300ee5ed4036a16bffd394ea065}
+      \strng{fullhashraw}{48886300ee5ed4036a16bffd394ea065}
+      \strng{bibnamehash}{48886300ee5ed4036a16bffd394ea065}
+      \strng{authorbibnamehash}{48886300ee5ed4036a16bffd394ea065}
+      \strng{authornamehash}{48886300ee5ed4036a16bffd394ea065}
+      \strng{authorfullhash}{48886300ee5ed4036a16bffd394ea065}
+      \strng{authorfullhashraw}{48886300ee5ed4036a16bffd394ea065}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Correlation-based Feature Selection for Machine Learning}
+      \field{type}{phdthesis}
+      \field{year}{1999}
+      \field{pages}{51\bibrangedash 103}
+      \range{pages}{53}
+    \endentry
+    \entry{Hastie2009}{book}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0cb8fe4210baa81c4b0e67913b4d2768}{%
+           family={Hastie},
+           familyi={H\bibinitperiod},
+           given={Trevor},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=88eea600247d798f8b2ce0b2dc614492}{%
+           family={Tibshirani},
+           familyi={T\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=971cf69058b64a94326dea0f2a8bbcce}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={Jerome},
+           giveni={J\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{7ca1bfe876d5e037b6aed69704221267}
+      \strng{fullhash}{7ca1bfe876d5e037b6aed69704221267}
+      \strng{fullhashraw}{7ca1bfe876d5e037b6aed69704221267}
+      \strng{bibnamehash}{7ca1bfe876d5e037b6aed69704221267}
+      \strng{authorbibnamehash}{7ca1bfe876d5e037b6aed69704221267}
+      \strng{authornamehash}{7ca1bfe876d5e037b6aed69704221267}
+      \strng{authorfullhash}{7ca1bfe876d5e037b6aed69704221267}
+      \strng{authorfullhashraw}{7ca1bfe876d5e037b6aed69704221267}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{isbn}{978-0387848570}
+      \field{title}{The Elements of Statistical Learning: Data Mining, Inference, and Prediction}
+      \field{year}{2009}
+      \field{pages}{587\bibrangedash 590}
+      \range{pages}{4}
     \endentry
     \entry{Hevner2004}{article}{}{}
       \name{author}{4}{}{%
@@ -632,12 +757,60 @@
       \field{title}{Root-mean-square error (RMSE) or mean absolute error (MAE): when to use them or not}
       \field{volume}{15}
       \field{year}{2022}
-      \true{nocite}
       \field{pages}{5481\bibrangedash 5492}
       \range{pages}{12}
       \verb{doi}
       \verb 10.5194/gmd-15-5481-2022
       \endverb
+    \endentry
+    \entry{James2021}{book}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=df184c5fa522ac8a515ec4de13aef234}{%
+           family={James},
+           familyi={J\bibinitperiod},
+           given={Gareth},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1ab16961e0de50711fa6bd9425f9b4a6}{%
+           family={Witten},
+           familyi={W\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0cb8fe4210baa81c4b0e67913b4d2768}{%
+           family={Hastie},
+           familyi={H\bibinitperiod},
+           given={Trevor},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=88eea600247d798f8b2ce0b2dc614492}{%
+           family={Tibshirani},
+           familyi={T\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f8f737f83d9e451c1afaa13cdc120516}
+      \strng{fullhash}{da61646157a6be769f34984f5cb603b0}
+      \strng{fullhashraw}{da61646157a6be769f34984f5cb603b0}
+      \strng{bibnamehash}{da61646157a6be769f34984f5cb603b0}
+      \strng{authorbibnamehash}{da61646157a6be769f34984f5cb603b0}
+      \strng{authornamehash}{f8f737f83d9e451c1afaa13cdc120516}
+      \strng{authorfullhash}{da61646157a6be769f34984f5cb603b0}
+      \strng{authorfullhashraw}{da61646157a6be769f34984f5cb603b0}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{isbn}{978-1071614174}
+      \field{title}{An Introduction to Statistical Learning}
+      \field{year}{2021}
     \endentry
     \entry{Ke2017}{inproceedings}{}{}
       \name{author}{8}{}{%
@@ -781,6 +954,87 @@
       \verb 10.1201/9781315108230
       \endverb
     \endentry
+    \entry{McElfresh2023}{article}{}{}
+      \name{author}{9}{}{%
+        {{un=0,uniquepart=base,hash=581f1d97dcd02ae3d920d09fdc0a31b2}{%
+           family={McElfresh},
+           familyi={M\bibinitperiod},
+           given={Duncan},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc15fb09e78d0915f5a1002741acf435}{%
+           family={Khandagale},
+           familyi={K\bibinitperiod},
+           given={Sujay},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d80d60014cb8fab5ec80246d8b7214e}{%
+           family={Valverde},
+           familyi={V\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bff4df057dc6c2c1ae6e58acd14e7128}{%
+           family={Prasad},
+           familyi={P\bibinitperiod},
+           given={Vishak},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=420a618ecc626f3c19a1a8d6e9566a9c}{%
+           family={Feuer},
+           familyi={F\bibinitperiod},
+           given={Benjamin},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2edc4108b4aef67fe73f9c0369572451}{%
+           family={Hegde},
+           familyi={H\bibinitperiod},
+           given={Chinmay},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=106fd4cb860cb09d04b330642aca41dc}{%
+           family={Ramakrishnan},
+           familyi={R\bibinitperiod},
+           given={Ganesh},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=60a7228eec51bdb9b0688a11bd6c8e6c}{%
+           family={Goldblum},
+           familyi={G\bibinitperiod},
+           given={Micah},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=06b08277491e42a0282f55e671cd7327}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{11defeac5da7d50b71407ede08bf8e89}
+      \strng{fullhash}{1afbc07c227bc1ae4e90fc1fe85216fa}
+      \strng{fullhashraw}{1afbc07c227bc1ae4e90fc1fe85216fa}
+      \strng{bibnamehash}{1afbc07c227bc1ae4e90fc1fe85216fa}
+      \strng{authorbibnamehash}{1afbc07c227bc1ae4e90fc1fe85216fa}
+      \strng{authornamehash}{11defeac5da7d50b71407ede08bf8e89}
+      \strng{authorfullhash}{1afbc07c227bc1ae4e90fc1fe85216fa}
+      \strng{authorfullhashraw}{1afbc07c227bc1ae4e90fc1fe85216fa}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2305.02997}
+      \field{title}{When Do Neural Nets Outperform Boosted Trees on Tabular Data?}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2305.02997
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2305.02997
+      \endverb
+    \endentry
     \entry{ODonnell2024}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -814,6 +1068,156 @@
       \verb{doi}
       \verb 10.1115/1.4063003
       \endverb
+    \endentry
+    \entry{Pasaribu2024}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=bb96716d5a484c68e05d2ad8a9e1c362}{%
+           family={Pasaribu},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bb96716d5a484c68e05d2ad8a9e1c362}
+      \strng{fullhash}{bb96716d5a484c68e05d2ad8a9e1c362}
+      \strng{fullhashraw}{bb96716d5a484c68e05d2ad8a9e1c362}
+      \strng{bibnamehash}{bb96716d5a484c68e05d2ad8a9e1c362}
+      \strng{authorbibnamehash}{bb96716d5a484c68e05d2ad8a9e1c362}
+      \strng{authornamehash}{bb96716d5a484c68e05d2ad8a9e1c362}
+      \strng{authorfullhash}{bb96716d5a484c68e05d2ad8a9e1c362}
+      \strng{authorfullhashraw}{bb96716d5a484c68e05d2ad8a9e1c362}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{Tabular Data Classification and Regression}
+      \field{volume}{12}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+    \endentry
+    \entry{Pedregosa2011}{article}{}{}
+      \name{author}{16}{}{%
+        {{un=0,uniquepart=base,hash=bab4e5caee2d67831e464ce575022b37}{%
+           family={Pedregosa},
+           familyi={P\bibinitperiod},
+           given={Fabian},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cfa3239dded54488f9a82a5718d5b927}{%
+           family={Varoquaux},
+           familyi={V\bibinitperiod},
+           given={Gaël},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=12ebe424e1c87de156c57e8fa7683f46}{%
+           family={Gramfort},
+           familyi={G\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=504ea1986689f1047a6f0beda2cb3822}{%
+           family={Michel},
+           familyi={M\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0f3fc06fb9fcbb01b9cc0985eaf0a71c}{%
+           family={Thirion},
+           familyi={T\bibinitperiod},
+           given={Bertrand},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=721be0317527f44db425f7a97dcab15e}{%
+           family={Grisel},
+           familyi={G\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d3b6c8582cea4e8b6576137b6a72cadc}{%
+           family={Blondel},
+           familyi={B\bibinitperiod},
+           given={Mathieu},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=86e647e5c801f3ce733927f75f029463}{%
+           family={Prettenhofer},
+           familyi={P\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=89d698773eaf2fae761ff0008031c7be}{%
+           family={Weiss},
+           familyi={W\bibinitperiod},
+           given={Ron},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b255e99d411f28c789a231829f765c64}{%
+           family={Dubourg},
+           familyi={D\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a08a00cf90823600b731a138afc28949}{%
+           family={Vanderplas},
+           familyi={V\bibinitperiod},
+           given={Jake},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=afb9a37bec11b531f1f0f33793a7f1fe}{%
+           family={Passos},
+           familyi={P\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9fd9ed8466bbb96364ae008f2a665e6e}{%
+           family={Cournapeau},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d81317387b2b9be0257e1f3dbdc20e05}{%
+           family={Brucher},
+           familyi={B\bibinitperiod},
+           given={Mathieu},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=23403cde972dddbdb48efe2bcc07dc3c}{%
+           family={Perrot},
+           familyi={P\bibinitperiod},
+           given={Matthieu},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e2f7a458c7c1f0d13cbcaad5c415ad54}{%
+           family={Duchesnay},
+           familyi={D\bibinitperiod},
+           given={Édouard},
+           giveni={É\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9ec95d747bac3417f92265a9a44f8bb4}
+      \strng{fullhash}{0b5216d4c661ed5bfaefac87b28b00c1}
+      \strng{fullhashraw}{0b5216d4c661ed5bfaefac87b28b00c1}
+      \strng{bibnamehash}{0b5216d4c661ed5bfaefac87b28b00c1}
+      \strng{authorbibnamehash}{0b5216d4c661ed5bfaefac87b28b00c1}
+      \strng{authornamehash}{9ec95d747bac3417f92265a9a44f8bb4}
+      \strng{authorfullhash}{0b5216d4c661ed5bfaefac87b28b00c1}
+      \strng{authorfullhashraw}{0b5216d4c661ed5bfaefac87b28b00c1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{title}{Scikit-learn: Machine Learning in Python}
+      \field{volume}{12}
+      \field{year}{2011}
+      \field{pages}{2825\bibrangedash 2830}
+      \range{pages}{6}
     \endentry
     \entry{Peffers2007}{article}{}{}
       \name{author}{4}{}{%
@@ -978,6 +1382,83 @@
       \verb{doi}
       \verb 10.1057/ejis.2014.36
       \endverb
+    \endentry
+    \entry{Willmott2005}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7e389034db1c4f1ba99047863db850eb}{%
+           family={Willmott},
+           familyi={W\bibinitperiod},
+           given={Cort\bibnamedelima J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=683ecc9a84dc4c42d3b77ac983b771ca}{%
+           family={Matsuura},
+           familyi={M\bibinitperiod},
+           given={Kenji},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{62fb2205b9983b6df20c51349d89b32d}
+      \strng{fullhash}{62fb2205b9983b6df20c51349d89b32d}
+      \strng{fullhashraw}{62fb2205b9983b6df20c51349d89b32d}
+      \strng{bibnamehash}{62fb2205b9983b6df20c51349d89b32d}
+      \strng{authorbibnamehash}{62fb2205b9983b6df20c51349d89b32d}
+      \strng{authornamehash}{62fb2205b9983b6df20c51349d89b32d}
+      \strng{authorfullhash}{62fb2205b9983b6df20c51349d89b32d}
+      \strng{authorfullhashraw}{62fb2205b9983b6df20c51349d89b32d}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Climate Research}
+      \field{number}{1}
+      \field{title}{Advantages of the mean absolute error (MAE) over the root mean square error (RMSE) in assessing average model performance}
+      \field{volume}{30}
+      \field{year}{2005}
+      \field{pages}{79\bibrangedash 82}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.3354/cr030079
+      \endverb
+    \endentry
+    \entry{YuLiu2004}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2c466f963663fac7a97926815c50fa18}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a83f8cd28a9f36e43dd5d017cd7fc8f4}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Huan},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d6aee52deb46815a947d621118dfb12d}
+      \strng{fullhash}{d6aee52deb46815a947d621118dfb12d}
+      \strng{fullhashraw}{d6aee52deb46815a947d621118dfb12d}
+      \strng{bibnamehash}{d6aee52deb46815a947d621118dfb12d}
+      \strng{authorbibnamehash}{d6aee52deb46815a947d621118dfb12d}
+      \strng{authornamehash}{d6aee52deb46815a947d621118dfb12d}
+      \strng{authorfullhash}{d6aee52deb46815a947d621118dfb12d}
+      \strng{authorfullhashraw}{d6aee52deb46815a947d621118dfb12d}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{number}{October}
+      \field{title}{Efficient Feature Selection via Analysis of Relevance and Redundancy}
+      \field{volume}{5}
+      \field{year}{2004}
+      \field{pages}{1205\bibrangedash 1224}
+      \range{pages}{20}
     \endentry
   \enddatalist
 \endrefsection

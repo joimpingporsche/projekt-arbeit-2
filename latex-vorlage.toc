@@ -24,20 +24,20 @@
 \contentsline {subsection}{\numberline {4.2.1}Ableitung der Vorverarbeitungsanforderungen}{17}{subsection.83}%
 \contentsline {subsection}{\numberline {4.2.2}Datenbereinigung und Filterung}{18}{subsection.86}%
 \contentsline {subsection}{\numberline {4.2.3}Feature-Engineering und Dimensionsreduktion}{19}{subsection.91}%
-\contentsline {subsection}{\numberline {4.2.4}Zielvariablen-Glättung als experimentelle Designvariante}{20}{subsection.99}%
-\contentsline {subsection}{\numberline {4.2.5}Datensatz-Aufteilung und Validierungsstrategie}{21}{subsection.102}%
+\contentsline {subsection}{\numberline {4.2.4}Zielvariablen-Glättung}{20}{subsection.98}%
+\contentsline {subsection}{\numberline {4.2.5}Datensatz-Aufteilung und Validierungsstrategie}{21}{subsection.101}%
 \contentsline {subsection}{\numberline {4.2.6}Technische Implementierung}{22}{subsection.108}%
 \contentsline {section}{\numberline {4.3}Modelltraining und Hyperparameter-Optimierung}{22}{section.109}%
-\contentsline {section}{\numberline {4.4}Validierung und Modellvergleich}{24}{section.122}%
-\contentsline {chapter}{\numberline {5}Evaluation und Interpretation des Vorhersagemodells}{25}{chapter.124}%
-\contentsline {section}{\numberline {5.1}Evaluationskonzept und -methodik}{25}{section.127}%
-\contentsline {section}{\numberline {5.2}Quantitative Leistungsanalyse}{26}{section.130}%
-\contentsline {subsection}{\numberline {5.2.1}Performance auf Zufalls-Validierungsdatensätzen}{26}{subsection.131}%
-\contentsline {subsection}{\numberline {5.2.2}Performance auf Event-Validierungsdatensätzen}{27}{subsection.136}%
-\contentsline {subsection}{\numberline {5.2.3}Interpretation des Gesamtergebnisses}{29}{subsection.140}%
-\contentsline {chapter}{\numberline {6}Fazit, Erkenntnisse und Forschungsausblick}{31}{chapter.141}%
-\contentsline {section}{\numberline {6.1}Erfüllung der Anforderungen und Beantwortung der Forschungsfragen}{31}{section.142}%
-\contentsline {section}{\numberline {6.2}Beantwortung der Forschungsfragen}{32}{section.145}%
-\contentsline {section}{\numberline {6.3}Design Knowledge und kritische Selbsteinschätzung}{33}{section.150}%
-\contentsline {chapter}{Anhang}{34}{chapter*.153}%
-\contentsline {chapter}{Literaturverzeichnis}{48}{section*.169}%
+\contentsline {section}{\numberline {4.4}Validierung und Modellvergleich}{24}{section.117}%
+\contentsline {chapter}{\numberline {5}Evaluation und Interpretation des Vorhersagemodells}{25}{chapter.118}%
+\contentsline {section}{\numberline {5.1}Evaluationskonzept und -methodik}{25}{section.121}%
+\contentsline {section}{\numberline {5.2}Quantitative Leistungsanalyse}{26}{section.124}%
+\contentsline {subsection}{\numberline {5.2.1}Performance auf Zufalls-Validierungsdatensätzen}{26}{subsection.125}%
+\contentsline {subsection}{\numberline {5.2.2}Performance auf Event-Validierungsdatensätzen}{27}{subsection.130}%
+\contentsline {subsection}{\numberline {5.2.3}Interpretation des Gesamtergebnisses}{29}{subsection.134}%
+\contentsline {chapter}{\numberline {6}Fazit, Erkenntnisse und Forschungsausblick}{31}{chapter.135}%
+\contentsline {section}{\numberline {6.1}Erfüllung der Anforderungen und Beantwortung der Forschungsfragen}{31}{section.136}%
+\contentsline {section}{\numberline {6.2}Beantwortung der Forschungsfragen}{32}{section.139}%
+\contentsline {section}{\numberline {6.3}Design Knowledge und kritische Selbsteinschätzung}{33}{section.144}%
+\contentsline {chapter}{Anhang}{34}{chapter*.147}%
+\contentsline {chapter}{Literaturverzeichnis}{48}{section*.163}%
