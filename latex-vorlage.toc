@@ -32,8 +32,8 @@
 \contentsline {chapter}{\numberline {5}Evaluation und Interpretation des Vorhersagemodells}{25}{chapter.118}%
 \contentsline {section}{\numberline {5.1}Evaluationskonzept und -methodik}{25}{section.121}%
 \contentsline {section}{\numberline {5.2}Quantitative Leistungsanalyse}{26}{section.124}%
-\contentsline {subsection}{\numberline {5.2.1}Performance auf Zufalls-Validierungsdatensätzen}{26}{subsection.125}%
-\contentsline {subsection}{\numberline {5.2.2}Performance auf Event-Validierungsdatensätzen}{27}{subsection.130}%
+\contentsline {subsection}{\numberline {5.2.1}Modell-Performance auf Zufalls-Validierungsdatensätzen}{26}{subsection.125}%
+\contentsline {subsection}{\numberline {5.2.2}Modell-Performance auf Event-Validierungsdatensätzen}{27}{subsection.130}%
 \contentsline {subsection}{\numberline {5.2.3}Interpretation des Gesamtergebnisses}{29}{subsection.134}%
 \contentsline {chapter}{\numberline {6}Fazit, Erkenntnisse und Forschungsausblick}{31}{chapter.135}%
 \contentsline {section}{\numberline {6.1}Erfüllung der Anforderungen und Beantwortung der Forschungsfragen}{31}{section.136}%

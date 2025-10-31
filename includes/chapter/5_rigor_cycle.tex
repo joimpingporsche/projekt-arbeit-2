@@ -21,7 +21,7 @@ Die Evaluation untersucht systematisch (i) die Prädiktionsgenauigkeit auf beide
 Die Evaluation der 128 trainierten Modelle auf zwei strukturkonsistenten Validierungsdatensätzen zeigt eine stark zweigeteilte Leistungslandschaft, die erhebliche Implikationen für die praktische Einsatzfähigkeit des Artefakts hat. Im Folgenden werden zunächst die positiven Ergebnisse auf dem Zufalls-Validierungsdatensatz dargestellt, anschließend die kritischen Befunde der Event-basierten Validierung erörtert und abschließend die Generalisierungsproblematik analysiert.
 Die kompletten Ergebnisse der Validierung sind im Anhang \ref{Modell-Ergebnisse} dokumentiert.
 
-\subsection{Performance auf Zufalls-Validierungsdatensätzen}
+\subsection{Modell-Performance auf Zufalls-Validierungsdatensätzen}
 
 Die Zufalls-Validierung gibt Aufschluss über die Modellqualität auf typischen, aber ungesehenen Daten innerhalb der trainierten Verteilung. Die Ergebnisse sind substantiell positiv und zeigen, dass das entwickelte Artefakt unter Standardbedingungen akzeptable Vorhersagefähigkeit aufweist.
 Durchschnittlich erreicht das Modellportfolio eine R² von $0.308$ (±$0.197$), mit einer Range von $-0.338$ bis $0.657$. Dies bedeutet, dass das durchschnittliche Modell etwa ein Drittel der Varianz in der Zielvariable erklären kann. Die mittlere RMSE-Abweichung liegt bei $0.328$ (±$0.049$), was einer durchschnittlichen Vorhersageabweichung von etwa $0.33$ Understeer-Einheiten entspricht.\footnote{Vgl. \cite{Hodson2022}, S. 5481-5482} Damit liegen die Modelle in der praktischen Größenordnung, die für Engineering-Fragestellungen relevant ist. XGBoost dominiert deutlich die Zualls-Validierungsperformance mit einem Durchschnitts-R² von $0.380$ (±$0.235$), während LightGBM mit $0.237$ (±$0.112$) deutlich dahinter liegt. XGBoost zeigt auch überlegene Stabilität mit geringerer Standardabweichung.
@@ -90,7 +90,7 @@ Die Glättungsvarianten zeigen eine optimale Performance bei Fenstergrößen von
 Auf dem Zufalls-Validierungsdatensatz demonstriert das beste Modell (XGBoost Very Deep, $R^2 = 0.657$) starke Vorhersagefähigkeit. Der Durchschnitt über alle Modelle liegt bei akzeptablen R² $0.308$. Diese Befunde suggerieren, dass das entwickelte Artefakt unter bekannten Datenverteilungen verlässliche Prognosen liefert.
 
 
-\subsection{Performance auf Event-Validierungsdatensätzen}
+\subsection{Modell-Performance auf Event-Validierungsdatensätzen}
 
 Die Event-basierte Validierung wendet das trainierte Modell auf ein vollständig unbekanntes Renn-Event an und prüft damit die echte Generalisierungsfähigkeit auf neue Rennkontexte, Fahrzeugkonfigurationen und Streckeneigenschaften. Die Befunde in diesem Szenario sind fundamental kritisch. Die durchschnittliche R² beträgt $-0.306$ (±$0.256$), eine deutlich negative Zahl. Dies bedeutet, dass das durchschnittliche Modell schlechter abschneidet als eine triviale Baseline (z.B. Mittelwert-Vorhersage). Die Range erstreckt sich von $-1.135$ bis $0.093$, wobei 25 von 128 Modellen ein R² unter $-0.5$ aufweisen, ein Indikator extremer Fehlvorhersagen. Zusätzlich beträgt die RMSE durchschnittlich $0.325$ (±$0.032$), was zwar der Random-Validierung ähnelt, aber auf Grund der negativen R²-Werte nicht aussagekräftig ist. LightGBM zeigt eine überlegene Event-Generalisierbarkeit mit R² $-0.268$ (±$0.277$) gegenüber XGBoost mit $-0.343$ (±$0.229$). Der beste LightGBM-Event-Score (R² $0.093$) ist deutlich höher als der beste XGBoost-Event-Score (R² $0.029$).
 
