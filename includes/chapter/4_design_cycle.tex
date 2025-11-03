@@ -69,7 +69,7 @@ Zur Minimierung systematischer Verzerrungen wurden zunächst alle Out-Laps (Rund
 Eine weitere Quelle von Varianz sind Extremereignisse während des Rennens, wie Unfälle, Safety-Car-Phasen oder technische Defekte. Diese manifestieren sich in der Regel durch extreme Abweichungen der Rundenzeit vom durchschnittlichen Niveau. Zur Identifikation solcher Ereignisse wurde eine statistische Schwellwertmethode angewendet. Runden, deren Rundenzeit um mehr als eine Standardabweichung (ca. 40 Sekunden) vom Mittelwert abweichen, wurden aus dem Datensatz entfernt. Diese Filterung folgt etablierten statistischen Verfahren zur Ausreißererkennung in Zeitreihendaten und trägt zur weiteren Varianzreduktion bei.\footnote{Vgl. \cite{Box2015}, S. 408 ff.}
 
 Für die kontinuierlichen Features Reifentemperatur und Reifendruck wurden domänenspezifische Schwellwerte zur Erkennung und Entfernung unrealistischer Messwerte definiert. Wie in Abbildung \ref{fig:temp_distribution} dargestellt, treten bei Reifentemperaturen Werte über 300 Grad Celsius auf, die physikalisch nicht plausibel sind und auf Sensorfehler hindeuten. Analog zeigen Reifendruckmessungen (Abbildung \ref{fig:druck_distribution}) Ausreißer außerhalb realistischer Bereiche. 
-Die Festlegung der konkreten Grenzwerte erfolgte unter Einbeziehung von Expertenwissen.\footnote{Vgl. Experteninterview 1, 29.08.2025, Z. 97-105} 
+Die Festlegung der konkreten Grenzwerte erfolgte unter Einbeziehung von Expert*innenwissen.\footnote{Vgl. Experteninterview 1, 29.08.2025, Z. 97-105} 
 Dieser domänenbasierte Ansatz zur Ausreißererkennung ist in der \ac{ML}-Literatur als effektive Methode etabliert, wenn technisches Fachwissen verfügbar ist.\footnote{Vgl. \cite{Kuhn2019}, S. 73 f.} Die Implementierung erfolgte durch Filterregeln, die Datenpunkte außerhalb der definierten Grenzwerte ausschließen.
 
 \begin{table}[H]
@@ -146,7 +146,7 @@ Die beschriebenen Vorverarbeitungsschritte wurden in einem Python-Skript impleme
 
 Die Implementierung stellt Reproduzierbarkeit durch konsistente Transformation aller Datensatzvarianten sicher. Alle Mapping-Dateien und Konfigurationsparameter wurden dokumentiert und versioniert.
 
-Im Kontext der \ac{DSR}-Methodik stellt dieses Kapitel die Build-Phase der Datenpipeline dar. Die multiplen Datensatzvarianten ermöglichen eine systematische Evaluation der Auswirkungen unterschiedlicher Vorverarbeitungsentscheidungen auf die Modellperformance in der nachfolgenden Evaluate-Phase. Die transparente Dokumentation aller Designentscheidungen mit Rückführung auf EDA-Erkenntnisse, Expertenwissen und theoretische Fundierung erfüllt die Rigor-Anforderungen der \ac{DSR}-Methodik.
+Im Kontext der \ac{DSR}-Methodik stellt dieses Kapitel die Build-Phase der Datenpipeline dar. Die multiplen Datensatzvarianten ermöglichen eine systematische Evaluation der Auswirkungen unterschiedlicher Vorverarbeitungsentscheidungen auf die Modellperformance in der nachfolgenden Evaluate-Phase. Die transparente Dokumentation aller Designentscheidungen mit Rückführung auf EDA-Erkenntnisse, Expert*innenwissen und theoretische Fundierung erfüllt die Rigor-Anforderungen der \ac{DSR}-Methodik.
 Die vorbereiteten Datensätze bilden die Grundlage für die Modellentwicklung und Hyperparameter-Optimierung im nachfolgenden Abschnitt 4.3.
 
 
@@ -160,7 +160,7 @@ Zwei komplementäre Implementierungen desselben Paradigmas werden eingesetzt: XG
 
 Die Trainingspipeline führt für jede der 16 Datensatzstrukturen denselben reproduzierbaren Ablauf aus: (i) Einlesen und Aufteilung in Features/Zielvariable, (ii) systematische Hyperparameter-Suche mittels dreifacher Kreuzvalidierung, (iii) Retraining des besten Konfigurationsprofils auf allen Trainingsdaten zur Maximierung der Vorhersagequalität, (iv) strukturierte Persistierung von Modell, Parametern und Metriken (R², RMSE, MAE). Deterministische Zufallssaaten und parallele Ausführung (scikit-learn-kompatible API) gewährleisten Vergleichbarkeit und Reproduzierbarkeit.\footnote{Vgl. \cite{Pedregosa2011}, S. 2825 ff.}
 
-Für die Hyperparameter-Optimierung wird \texttt{GridSearchCV} eingesetzt: exhaustive Suche über klar abgegrenzte Parameter-Intervalle, primäre Bewertungsmetrik ist $R^2$ (direkt interpretierbar für Fachexperten), ergänzt durch Fehlermaße zur Einschätzung der Abweichungsgrößenordnung.\footnote{Vgl. \cite{Bergstra2012}, S. 281 ff.; vgl. dazu auch \cite{Pedregosa2011}, S. 2828 f.} Die dreifache Kreuzvalidierung bietet robuste Schätzungen bei vertretbarem Aufwand.
+Für die Hyperparameter-Optimierung wird \texttt{GridSearchCV} eingesetzt: exhaustive Suche über klar abgegrenzte Parameter-Intervalle, primäre Bewertungsmetrik ist $R^2$ (direkt interpretierbar für Fachexpert*innen), ergänzt durch Fehlermaße zur Einschätzung der Abweichungsgrößenordnung.\footnote{Vgl. \cite{Bergstra2012}, S. 281 ff.; vgl. dazu auch \cite{Pedregosa2011}, S. 2828 f.} Die dreifache Kreuzvalidierung bietet robuste Schätzungen bei vertretbarem Aufwand.
 
 Abgestufte Komplexitätsprofile strukturieren die Suche:
 \begin{description}

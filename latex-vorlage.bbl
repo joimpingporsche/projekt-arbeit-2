@@ -282,6 +282,33 @@
       \verb 10.1080/01621459.1979.10481038
       \endverb
     \endentry
+    \entry{Döringer2021}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=52f6ca4794bd09ccfafb231278583d8e}{%
+           family={Döringer},
+           familyi={D\bibinitperiod},
+           given={Stefanie},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{52f6ca4794bd09ccfafb231278583d8e}
+      \strng{fullhash}{52f6ca4794bd09ccfafb231278583d8e}
+      \strng{fullhashraw}{52f6ca4794bd09ccfafb231278583d8e}
+      \strng{bibnamehash}{52f6ca4794bd09ccfafb231278583d8e}
+      \strng{authorbibnamehash}{52f6ca4794bd09ccfafb231278583d8e}
+      \strng{authornamehash}{52f6ca4794bd09ccfafb231278583d8e}
+      \strng{authorfullhash}{52f6ca4794bd09ccfafb231278583d8e}
+      \strng{authorfullhashraw}{52f6ca4794bd09ccfafb231278583d8e}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geography and Regional Research}
+      \field{title}{'The problem-centred expert interview'. Combining qualitative interviewing approaches for investigating implicit expert knowledge}
+      \field{year}{2021}
+    \endentry
     \entry{Friedman2009}{book}{}{}
       \name{author}{3}{}{%
         {{un=1,uniquepart=given,hash=971cf69058b64a94326dea0f2a8bbcce}{%
@@ -399,7 +426,6 @@
       \field{isbn}{9780262035613}
       \field{title}{Deep Learning}
       \field{year}{2016}
-      \true{nocite}
     \endentry
     \entry{Gregor2007}{article}{}{}
       \name{author}{2}{}{%

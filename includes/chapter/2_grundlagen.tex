@@ -67,9 +67,9 @@ analytische und experimentelle Evaluationen mittels etablierter Performance-Metr
 
 \section{Experteninterviews zur Anforderungsermittlung}
 
-Die Anforderungsanalyse in Kapitel 3 basiert auf zwei informellen Gesprächen mit einem erfahrenen Renningenieur aus dem Porsche Motorsport-Team. Das erste Gespräch fand am 29.08.2025 statt, das zweite am 12.09.2025. Ziel war es, durch offene Diskussion die tägliche Arbeitsweise der Renningenieure nachzuvollziehen, zentrale technische Herausforderungen zu identifizieren und realistische Anforderungen an ein Vorhersagemodell zu formulieren.
-Der interviewte Experte agiert als Teamleiter der Performance-Abteilung im Porsche \ac{LMDh}-Programm und ist verantwortlich für die Fahrzeugentwicklung, Simulationsmodellierung und insbesondere die datenbasierte Optimierung des Rennwagen-Setups während des operativen Betriebs, wodurch er über tiefgehendes, direkt anwendbares Wissen im Telemetrie-Management verfügt.\footnote{Vgl. Experteninterview 1, 29.08.2025, Z. 3-27}
-Beide Gespräche folgten einem offenen, exploratorischen Format ohne strukturierten Fragenkatalog, um eine natürliche Konversation zu fördern und implizites Wissen des Experten zugänglich zu machen. Die gewonnenen Erkenntnisse bestätigten, dass die aktuelle Telemetrie-Analyse stark manuell erfolgt. Dies validierte die Problemrelevanz und leitete die Anforderungsableitung in Kapitel 3.\footnote{Vgl. Experteninterview 1 und 2, dokumentiert in Anhang A.1} 
+Die Anforderungsanalyse in Kapitel 3 basiert auf zwei informellen Gesprächen mit einer erfahrenen Renningenieur*in aus dem Porsche Motorsport-Team. Das erste Gespräch fand am 29.08.2025 statt, das zweite am 12.09.2025. Ziel war es, durch offene Diskussion die tägliche Arbeitsweise der Renningenieur*innen nachzuvollziehen, zentrale technische Herausforderungen zu identifizieren und realistische Anforderungen an ein Vorhersagemodell zu formulieren.
+Die interviewte Expert*in agiert als Teamleiter*in der Performance-Abteilung im Porsche \ac{LMDh}-Programm und ist verantwortlich für die Fahrzeugentwicklung, Simulationsmodellierung und insbesondere die datenbasierte Optimierung des Rennwagen-Setups während des operativen Betriebs, wodurch sie über tiefgehendes, direkt anwendbares Wissen im Telemetrie-Management verfügt.\footnote{Vgl. Experteninterview 1, 29.08.2025, Z. 3-27}
+Beide Gespräche folgten einem offenen, exploratorischen Format ohne strukturierten Fragenkatalog, um eine natürliche Konversation zu fördern und implizites Wissen der Expert*in zugänglich zu machen.\footnote{Vgl. \cite{Döringer2021}, S. 2 ff.} Die gewonnenen Erkenntnisse bestätigten, dass die aktuelle Telemetrie-Analyse stark manuell erfolgt. Dies validierte die Problemrelevanz und leitete die Anforderungsableitung in Kapitel 3.\footnote{Vgl. Experteninterview 1 und 2, dokumentiert in Anhang A.1} 
 
 
 
@@ -86,8 +86,21 @@ Im nächsten Abschnitt wird die Methode der Gradient Boosting Decision Trees (GB
 Gradient Boosting Decision Trees (GBDT) sind eine Ensemble-Methode, die sequenzielle schwache Lerner, das heißt einfache Decision Trees, zu einem starken Vorhersagemodell kombiniert.\footnote{Vgl. \cite{Friedman2001}, S. 1189 ff.} Das Kernprinzip ist Residual Learning: Der erste Baum wird auf die Rohdaten trainiert. Der zweite Baum wird trainiert, um die Fehler des ersten Baums vorherzusagen, die sogenannten Residuen. Der dritte Baum korrigiert dann die kombinierten Fehler von Baum 1 und 2, und so weiter. Die finale Vorhersage ergibt sich aus einer gewichteten Summe aller Baum-Ausgaben.
 Formalisiert wird dies durch Gradient Descent: Eine Loss-Funktion, typischerweise Mean Squared Error für Regression, quantifiziert, wie schlecht die Vorhersagen sind. Jeder neue Baum wird so konstruiert, dass er in Richtung des negativen Gradienten dieser Loss-Funktion läuft, also gezielt Fehler reduziert.\footnote{Vgl. \cite{Friedman2001}, S. 1200 ff.} Dieser Gradient-Ansatz führt zu schnellerer Konvergenz als alternatives Ensemble-Averaging.
 
-Gradient Boosting Decision Trees (GBDTs) haben sich als besonders geeignet für Regressionsprobleme erwiesen. Sie erfassen nichtlineare Zusammenhänge zwischen Eingabemerkmalen und Zielvariable, was über klassische lineare Modelle hinausgeht. Gleichzeitig funktionieren sie effizient auf Datensätzen moderater Größe, im Gegensatz zu neuronalen Netzen, die oft große Datenmengen benötigen. GBDTs sind zudem vergleichsweise schnell zu trainieren und bieten Interpretierbarkeit durch Feature-Importance-Schätzungen, die aufzeigen, welche Telemetrie-Signale besonders stark zur Vorhersage der Fahrzeugbalance beitragen.
-Zwei verbreitete Implementierungen von Gradient Boosting sind XGBoost und LightGBM. Beide verfolgen dasselbe Grundprinzip, unterscheiden sich aber in technischen Details und Optimierungen.
+Gradient Boosting Decision Trees (GBDTs) haben sich als besonders geeignet für 
+Regressionsprobleme erwiesen.\footnote{Vgl. \cite{Friedman2001}, S. 1189 ff.; 
+vgl. dazu auch \cite{Chen2016}, S. 785 ff.} Sie erfassen nichtlineare 
+Zusammenhänge zwischen Eingabemerkmalen und Zielvariable, was über klassische 
+lineare Modelle hinausgeht.\footnote{Vgl. \cite{Hastie2009}, S. 58 ff.} Gleichzeitig funktionieren sie 
+effizient auf Datensätzen moderater Größe, im Gegensatz zu neuronalen Netzen, die 
+oft große Datenmengen benötigen.\footnote{Vgl. \cite{Goodfellow2016}, S. 164 ff.} GBDTs sind zudem vergleichsweise schnell zu trainieren 
+und bieten Interpretierbarkeit durch Feature-Importance-Schätzungen, die aufzeigen, 
+welche Telemetrie-Signale besonders stark zur Vorhersage der Fahrzeugbalance 
+beitragen.\footnote{Vgl. \cite{Chen2016}, S. 788 ff.}
+
+Zwei verbreitete Implementierungen von Gradient Boosting sind XGBoost und 
+LightGBM.\footnote{Vgl. \cite{Chen2016}, S. 785 ff.; vgl. dazu auch \cite{Ke2017}, S. 3146 ff.} Beide verfolgen dasselbe Grundprinzip – sequenzielles 
+Trainieren von Bäumen zur Fehlerkorrektur – unterscheiden sich aber in technischen 
+Details und Optimierungen.
 
 XGBoost ist eine etablierte und vielseitige Bibliothek, die sich durch robuste Regularisierung und gute Performance auszeichnet.\footnote{Vgl. \cite{Chen2016}, S. 785 ff.}
 LightGBM wurde später entwickelt und ist besonders auf Geschwindigkeit und Effizienz bei großen Datensätzen ausgelegt.\footnote{Vgl. \cite{Ke2017}, S. 3146 ff.}
@@ -99,7 +112,7 @@ Empirisch zeigen beide Implementierungen überlegene Performance auf strukturier
 
 \section{Hyperparameter-Optimierung und Modellvalidierung}
 
-Um ein GBDT-Modell zu trainieren, müssen vor dem Training viele Hyperparameter gesetzt werden. Hyperparameter unterscheiden sich fundamental von Modell-Parametern, den internen Gewichten des Modells, die während Training gelernt werden. Hyperparameter sind konfigurierbare Stellschrauben, die der Entwickler vor dem Training definiert und die das Lernverhalten des Algorithmus steuern.\footnote{Vgl. \cite{Bergstra2012}, S. 281 ff.}
+Um ein GBDT-Modell zu trainieren, müssen vor dem Training viele Hyperparameter gesetzt werden. Hyperparameter unterscheiden sich fundamental von Modell-Parametern, den internen Gewichten des Modells, die während Training gelernt werden. Hyperparameter sind konfigurierbare Stellschrauben, die Entwickler*innen vor dem Training definieren und die das Lernverhalten des Algorithmus steuern.\footnote{Vgl. \cite{Bergstra2012}, S. 281 ff.}
 
 Für GBDT sind mehrere Hyperparameter besonders wichtig: Die Anzahl der Estimators bestimmt, wie viele Bäume insgesamt trainiert werden, während die Learning Rate als Schrittweite beim Gradientenverfahren fungiert – kleine Werte führen zu langsameren, stabileren Verbesserungen, große Werte zu schnellerem, aber riskanterem Lernen. Die Max Depth definiert die maximale Tiefe jedes Baums und erhöht mit steigenden Werten die Modellkomplexität. Das Min Child Weight (bzw. die Mindestanzahl an Samples pro Blatt) bewirkt bei höheren Werten konservativere Splits und damit weniger Overfitting, während Subsample den Anteil der Trainingsinstanzen pro Baum festlegt. Schließlich kontrollieren Regularisierungsparameter wie L2-Penalisierung die Modellkomplexität.\footnote{Vgl. \cite{Chen2016}, S. 787 f.}
 Da manuelle Anpassung dieser Parameter ineffizient ist, nutzt man systematische Hyperparameter-Optimierung. Grid Search definiert ein vorgegebenes Gitter von Parameterwerten und probiert alle Kombinationen systematisch durch, garantiert zwar eine gründliche Suche, führt aber zu exponentiellem Rechenaufwand mit der Anzahl der Parameter.\footnote{Vgl. \cite{Bergstra2012}, S. 281 ff.; vgl. dazu auch \cite{Chen2016}, S. 787 f.}
@@ -112,7 +125,7 @@ Diese drei Komponenten Hyperparameter-Optimierung, Cross-Validation Strategie un
 
 \section{Evaluationsmetriken für Regression}
 
-Regressionsergebnisse werden durch mehrere etablierte Fehlermetriken quantifiziert. Der \ac{MSE} berechnet das Durchschnitt der quadrierten Abweichungen zwischen Vorhersagen und Ist-Werten und bestraft größere Fehler überproportional. Der \ac{RMSE} ist die Quadratwurzel des MSE und hat dieselbe Einheit wie die Zielvariable, was die Interpretation erleichtert.\footnote{Vgl. \cite{Hodson2022}, S. 5481 f.}
+Regressionsergebnisse werden durch mehrere etablierte Fehlermetriken quantifiziert. Der \ac{MSE} berechnet den Durchschnitt der quadrierten Abweichungen zwischen Vorhersagen und Ist-Werten und bestraft größere Fehler überproportional. Der \ac{RMSE} ist die Quadratwurzel des MSE und hat dieselbe Einheit wie die Zielvariable, was die Interpretation erleichtert.\footnote{Vgl. \cite{Hodson2022}, S. 5481 f.}
 
 Der \ac{MAE} quantifiziert den Durchschnitt der absoluten Abweichungen und ist robuster gegenüber Ausreißern, da er Fehler linear (nicht quadratisch) gewichtet.\footnote{Vgl. \cite{ChaiDraxler2014}, S. 1247 ff.} Die Wahl zwischen RMSE und MAE sollte sich nach der erwarteten Fehlerverteilung richten: RMSE ist optimal bei normalverteilten Fehlern, MAE bei Laplace-verteilten Fehlern.
 

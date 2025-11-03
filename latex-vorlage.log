@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  3 NOV 2025 11:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  3 NOV 2025 12:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1141,15 +1141,14 @@ although it is yet undefined on input line 71.
 [5]
 
 [6]
-Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
-although it is yet undefined on input line 115.
-Package acronym Info: Label `acro:RMSE' newly defined as it shall be overridden
-although it is yet undefined on input line 115.
-
 
 [7]
+Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
+although it is yet undefined on input line 128.
+Package acronym Info: Label `acro:RMSE' newly defined as it shall be overridden
+although it is yet undefined on input line 128.
 Package acronym Info: Label `acro:MAE' newly defined as it shall be overridden
-although it is yet undefined on input line 117.
+although it is yet undefined on input line 130.
 ) (./includes/chapter/3_relevance_cycle.tex
 
 [8{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
@@ -1197,7 +1196,7 @@ Underfull \hbox (badness 5316) in paragraph at lines 66--67
 ]
 Package acronym Info: Label `acro:EDA' newly defined as it shall be overridden
 although it is yet undefined on input line 14.
-<graphics/understeer_nonfilt.png, id=405, 859.2903pt x 426.393pt>
+<graphics/understeer_nonfilt.png, id=428, 859.2903pt x 426.393pt>
 File: graphics/understeer_nonfilt.png Graphic file (type png)
 <use graphics/understeer_nonfilt.png>
 Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 17.
@@ -1205,12 +1204,12 @@ Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 17.
 
 
 [13]
-<graphics/TempPlot.png, id=416, 859.2903pt x 426.393pt>
+<graphics/TempPlot.png, id=439, 859.2903pt x 426.393pt>
 File: graphics/TempPlot.png Graphic file (type png)
 <use graphics/TempPlot.png>
 Package pdftex.def Info: graphics/TempPlot.png  used on input line 27.
 (pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
-<graphics/DruckPlot.png, id=418, 859.2903pt x 426.393pt>
+<graphics/DruckPlot.png, id=441, 859.2903pt x 426.393pt>
 File: graphics/DruckPlot.png Graphic file (type png)
 <use graphics/DruckPlot.png>
 Package pdftex.def Info: graphics/DruckPlot.png  used on input line 35.
@@ -1218,7 +1217,7 @@ Package pdftex.def Info: graphics/DruckPlot.png  used on input line 35.
 
 
 [14 <./graphics/understeer_nonfilt.png> <./graphics/TempPlot.png>]
-<graphics/korrelations_matrix_top.png, id=426, 794.97pt x 734.2632pt>
+<graphics/korrelations_matrix_top.png, id=449, 794.97pt x 734.2632pt>
 File: graphics/korrelations_matrix_top.png Graphic file (type png)
 <use graphics/korrelations_matrix_top.png>
 Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input line 43.
@@ -1248,6 +1247,16 @@ although it is yet undefined on input line 158.
 
 [23]
 chapter 5.
+
+Overfull \hbox (3.37115pt too wide) in paragraph at lines 5--6
+\T1/cmr/m/n/10.95 kon-sis-ten-ten Va-li-die-rungs-da-ten-sät-zen.[][][] Ei-ne na-tu-ra-li-stic Eva-lua-ti-on durch Ex-pert*innenfeedback
+ []
+
+
+Overfull \hbox (72.40028pt too wide) in paragraph at lines 5--6
+\T1/cmr/m/n/10.95 wird be-wusst nicht in die-sem Ka-pi-tel durch-ge-führt, da die Mo-dell-per-for-man-ce auf Event-Validierungsdatensätzen
+ []
+
 
 
 [24
@@ -1340,7 +1349,9 @@ Overfull \hbox (31.62563pt too wide) in paragraph at lines 39--41
 
 ]
 
-[48] (./includes/erklaerung_ki.tex
+[48]
+
+[49] (./includes/erklaerung_ki.tex
 Overfull \hbox (1.558pt too wide) in paragraph at lines 125--125
 []\T1/cmr/m/n/10.95 mich ak-tiv über die Leis-tungs-fä-hig-keit und Be-schrän-kun-gen der oben ge-nann-ten KI-Systeme
  []
@@ -1372,7 +1383,7 @@ Overfull \hbox (1.85811pt too wide) in paragraph at lines 130--134
 
 ) (./template/_dhbw_erklaerung.tex
 
-[49
+[50
 
 
 
@@ -1388,7 +1399,7 @@ Overfull \hbox (1.85811pt too wide) in paragraph at lines 18--22
 
 )
 
-[50
+[51
 
 ] (./latex-vorlage.aux)
  ***********
@@ -1402,18 +1413,18 @@ Package logreq Info: Writing requests to 'latex-vorlage.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30930 strings out of 473190
- 608045 string characters out of 5715800
- 1619641 words of memory out of 5000000
- 53448 multiletter control sequences out of 15000+600000
+ 30946 strings out of 473190
+ 608371 string characters out of 5715800
+ 1619770 words of memory out of 5000000
+ 53460 multiletter control sequences out of 15000+600000
  583391 words of font info for 88 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,18n,127p,10968b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on latex-vorlage.pdf (57 pages, 1524030 bytes).
+Output written on latex-vorlage.pdf (58 pages, 1525989 bytes).
 PDF statistics:
- 1053 PDF objects out of 1200 (max. 8388607)
- 902 compressed objects within 10 object streams
- 252 named destinations out of 1000 (max. 500000)
+ 1072 PDF objects out of 1200 (max. 8388607)
+ 920 compressed objects within 10 object streams
+ 256 named destinations out of 1000 (max. 500000)
  372 words of extra memory for PDF output out of 10000 (max. 10000000)
 
