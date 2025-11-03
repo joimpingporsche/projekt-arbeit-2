@@ -384,9 +384,6 @@ OUTPUT latex-vorlage.lot
 INPUT ./includes/chapter/1_einleitung.tex
 INPUT ./includes/chapter/1_einleitung.tex
 INPUT includes/chapter/1_einleitung.tex
-INPUT ./includes/chapter/2_grundlagen.tex
-INPUT ./includes/chapter/2_grundlagen.tex
-INPUT includes/chapter/2_grundlagen.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
@@ -399,12 +396,15 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
+INPUT ./includes/chapter/2_grundlagen.tex
+INPUT ./includes/chapter/2_grundlagen.tex
+INPUT includes/chapter/2_grundlagen.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
 INPUT ./includes/chapter/3_relevance_cycle.tex
 INPUT ./includes/chapter/3_relevance_cycle.tex
 INPUT includes/chapter/3_relevance_cycle.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti1095.tfm
 INPUT ./includes/chapter/4_design_cycle.tex
 INPUT ./includes/chapter/4_design_cycle.tex
 INPUT includes/chapter/4_design_cycle.tex

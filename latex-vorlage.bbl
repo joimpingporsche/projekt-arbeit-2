@@ -19,42 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global/global}
-    \entry{24hLeMans2025Classes}{online}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=97e92d0061138b84e0c8d3704d1fa498}{%
-           family={{24 Hours of Le Mans}},
-           familyi={2\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {24h Le Mans}%
-      }
-      \strng{namehash}{97e92d0061138b84e0c8d3704d1fa498}
-      \strng{fullhash}{97e92d0061138b84e0c8d3704d1fa498}
-      \strng{fullhashraw}{97e92d0061138b84e0c8d3704d1fa498}
-      \strng{bibnamehash}{97e92d0061138b84e0c8d3704d1fa498}
-      \strng{authorbibnamehash}{97e92d0061138b84e0c8d3704d1fa498}
-      \strng{authornamehash}{97e92d0061138b84e0c8d3704d1fa498}
-      \strng{authorfullhash}{97e92d0061138b84e0c8d3704d1fa498}
-      \strng{authorfullhashraw}{97e92d0061138b84e0c8d3704d1fa498}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Classes: Le Mans Hypercar and LMDh}
-      \field{urlday}{30}
-      \field{urlmonth}{10}
-      \field{urlyear}{2025}
-      \field{year}{2025}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.24h-lemans.com/en/lemans/classes
-      \endverb
-      \verb{url}
-      \verb https://www.24h-lemans.com/en/lemans/classes
-      \endverb
-    \endentry
     \entry{Bergstra2012}{article}{}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=0bc66fe902c838c216bd3175dfeb045b}{%
@@ -240,78 +204,11 @@
       \field{title}{Root mean square error (RMSE) or mean absolute error (MAE)? Arguments against avoiding RMSE in the literature}
       \field{volume}{7}
       \field{year}{2014}
-      \true{nocite}
       \field{pages}{1247\bibrangedash 1250}
       \range{pages}{4}
       \verb{doi}
       \verb 10.5194/gmd-7-1247-2014
       \endverb
-    \endentry
-    \entry{Chapman2000}{report}{}{}
-      \name{author}{7}{}{%
-        {{un=0,uniquepart=base,hash=6e42f1026173c2e52fdda7fdd636f359}{%
-           family={Chapman},
-           familyi={C\bibinitperiod},
-           given={Pete},
-           giveni={P\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=f37a206983a831906b78d21c7d52eaad}{%
-           family={Clinton},
-           familyi={C\bibinitperiod},
-           given={Julian},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=7c25b09dcdc549eef103243260ef9097}{%
-           family={Kerber},
-           familyi={K\bibinitperiod},
-           given={Randy},
-           giveni={R\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=ad3964a47e85a21d4e37e96bdc189722}{%
-           family={Khabaza},
-           familyi={K\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=0837e07a12ac06f6572ab8dbb4dbdc8b}{%
-           family={Reinartz},
-           familyi={R\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=3a4e3f5f408e7cfa7e86f42b4a99fe8b}{%
-           family={Shearer},
-           familyi={S\bibinitperiod},
-           given={Colin},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=93c4571a5818e3fd7fe299eb7352e55d}{%
-           family={Wirth},
-           familyi={W\bibinitperiod},
-           given={Rüdiger},
-           giveni={R\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{organization}{1}{%
-        {CRISP-DM Consortium}%
-      }
-      \strng{namehash}{e4568ace118615d389c03c0583880045}
-      \strng{fullhash}{d560794ae5df2373c2ca62a2e9265a57}
-      \strng{fullhashraw}{d560794ae5df2373c2ca62a2e9265a57}
-      \strng{bibnamehash}{d560794ae5df2373c2ca62a2e9265a57}
-      \strng{authorbibnamehash}{d560794ae5df2373c2ca62a2e9265a57}
-      \strng{authornamehash}{e4568ace118615d389c03c0583880045}
-      \strng{authorfullhash}{d560794ae5df2373c2ca62a2e9265a57}
-      \strng{authorfullhashraw}{d560794ae5df2373c2ca62a2e9265a57}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{CRISP-DM 1.0: Step-by-step data mining guide}
-      \field{type}{techreport}
-      \field{year}{2000}
     \endentry
     \entry{Chen2016}{inproceedings}{}{}
       \name{author}{2}{}{%
@@ -455,7 +352,6 @@
       \field{title}{Greedy Function Approximation: A Gradient Boosting Machine}
       \field{volume}{29}
       \field{year}{2001}
-      \true{nocite}
       \field{pages}{1189\bibrangedash 1232}
       \range{pages}{44}
       \verb{doi}
@@ -504,22 +400,6 @@
       \field{title}{Deep Learning}
       \field{year}{2016}
       \true{nocite}
-    \endentry
-    \entry{Geeks2024}{article}{}{}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{GeeksforGeeks}
-      \field{title}{Gradient Boosting vs Random Forest}
-      \field{year}{2024}
-      \verb{urlraw}
-      \verb https://www.geeksforgeeks.org/machine-learning/gradient-boosting-vs-random-forest/
-      \endverb
-      \verb{url}
-      \verb https://www.geeksforgeeks.org/machine-learning/gradient-boosting-vs-random-forest/
-      \endverb
     \endentry
     \entry{Gregor2007}{article}{}{}
       \name{author}{2}{}{%
@@ -880,6 +760,8 @@
       \field{booktitle}{Proceedings of NIPS 2017}
       \field{title}{LightGBM: A Highly Efficient Gradient Boosting Decision Tree}
       \field{year}{2017}
+      \field{pages}{3146\bibrangedash 3154}
+      \range{pages}{9}
     \endentry
     \entry{Kohavi1995}{inproceedings}{}{}
       \name{author}{1}{}{%
@@ -910,7 +792,6 @@
       \field{booktitle}{Proceedings of the 14th International Joint Conference on Artificial Intelligence (IJCAI-95)}
       \field{title}{A Study of Cross-Validation and Bootstrap for Accuracy Estimation and Model Selection}
       \field{year}{1995}
-      \true{nocite}
       \field{pages}{1137\bibrangedash 1145}
       \range{pages}{9}
     \endentry
@@ -1033,6 +914,141 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/abs/2305.02997
+      \endverb
+    \endentry
+    \entry{Mitchell1997}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=857bb126aea77bda379643836e48b425}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={Thomas\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill}%
+      }
+      \strng{namehash}{857bb126aea77bda379643836e48b425}
+      \strng{fullhash}{857bb126aea77bda379643836e48b425}
+      \strng{fullhashraw}{857bb126aea77bda379643836e48b425}
+      \strng{bibnamehash}{857bb126aea77bda379643836e48b425}
+      \strng{authorbibnamehash}{857bb126aea77bda379643836e48b425}
+      \strng{authornamehash}{857bb126aea77bda379643836e48b425}
+      \strng{authorfullhash}{857bb126aea77bda379643836e48b425}
+      \strng{authorfullhashraw}{857bb126aea77bda379643836e48b425}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0070428077}
+      \field{title}{Machine Learning}
+      \field{year}{1997}
+    \endentry
+    \entry{Porsche2023LMDh}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4353cfcbb3e2e700a10ee3278596bbab}{%
+           family={{o. V.}},
+           familyi={o\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Porsche Newsroom}%
+      }
+      \strng{namehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{fullhash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{fullhashraw}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{bibnamehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authorbibnamehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authornamehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authorfullhash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authorfullhashraw}{4353cfcbb3e2e700a10ee3278596bbab}
+      \field{extraname}{1}
+      \field{sortinit}{o}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{LMDh-Reglement: Beginn einer neuen Ära im Langstrecken-Motorsport}
+      \field{urlday}{30}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://newsroom.porsche.com/de/pressemappen/le-mans-2023/LMDh-Reglement--Beginn-einer-neuen-Ära-im-Langstrecken-Motorsport.html
+      \endverb
+      \verb{url}
+      \verb https://newsroom.porsche.com/de/pressemappen/le-mans-2023/LMDh-Reglement--Beginn-einer-neuen-%C3%84ra-im-Langstrecken-Motorsport.html
+      \endverb
+    \endentry
+    \entry{Geeks2024}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4353cfcbb3e2e700a10ee3278596bbab}{%
+           family={{o. V.}},
+           familyi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{fullhash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{fullhashraw}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{bibnamehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authorbibnamehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authornamehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authorfullhash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authorfullhashraw}{4353cfcbb3e2e700a10ee3278596bbab}
+      \field{extraname}{2}
+      \field{sortinit}{o}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GeeksforGeeks}
+      \field{title}{Gradient Boosting vs Random Forest}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.geeksforgeeks.org/machine-learning/gradient-boosting-vs-random-forest/
+      \endverb
+      \verb{url}
+      \verb https://www.geeksforgeeks.org/machine-learning/gradient-boosting-vs-random-forest/
+      \endverb
+    \endentry
+    \entry{24hLeMans2025Classes}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4353cfcbb3e2e700a10ee3278596bbab}{%
+           family={{o. V.}},
+           familyi={o\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {24h Le Mans}%
+      }
+      \strng{namehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{fullhash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{fullhashraw}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{bibnamehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authorbibnamehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authornamehash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authorfullhash}{4353cfcbb3e2e700a10ee3278596bbab}
+      \strng{authorfullhashraw}{4353cfcbb3e2e700a10ee3278596bbab}
+      \field{extraname}{3}
+      \field{sortinit}{o}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Classes: Le Mans Hypercar and LMDh}
+      \field{urlday}{30}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.24h-lemans.com/en/lemans/classes
+      \endverb
+      \verb{url}
+      \verb https://www.24h-lemans.com/en/lemans/classes
       \endverb
     \endentry
     \entry{ODonnell2024}{article}{}{}
@@ -1218,94 +1234,6 @@
       \field{year}{2011}
       \field{pages}{2825\bibrangedash 2830}
       \range{pages}{6}
-    \endentry
-    \entry{Peffers2007}{article}{}{}
-      \name{author}{4}{}{%
-        {{un=0,uniquepart=base,hash=3127efe8cdd4557b7228a8724f568529}{%
-           family={Peffers},
-           familyi={P\bibinitperiod},
-           given={Ken},
-           giveni={K\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=8b17b21a3e4c61d1302f46cba38c6e50}{%
-           family={Tuunanen},
-           familyi={T\bibinitperiod},
-           given={Tuure},
-           giveni={T\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=33ad207ea3031c6d744a31f5bc43c547}{%
-           family={Rothenberger},
-           familyi={R\bibinitperiod},
-           given={Marcus\bibnamedelima A.},
-           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=edf3e165ce4429b30d49e353a7d1417a}{%
-           family={Chatterjee},
-           familyi={C\bibinitperiod},
-           given={Samir},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{4ccaed1d47a4875e5f027cdf2d20bbca}
-      \strng{fullhash}{0d82c455b50c2b184d97697dac2e8660}
-      \strng{fullhashraw}{0d82c455b50c2b184d97697dac2e8660}
-      \strng{bibnamehash}{0d82c455b50c2b184d97697dac2e8660}
-      \strng{authorbibnamehash}{0d82c455b50c2b184d97697dac2e8660}
-      \strng{authornamehash}{4ccaed1d47a4875e5f027cdf2d20bbca}
-      \strng{authorfullhash}{0d82c455b50c2b184d97697dac2e8660}
-      \strng{authorfullhashraw}{0d82c455b50c2b184d97697dac2e8660}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Management Information Systems}
-      \field{number}{3}
-      \field{title}{A Design Science Research Methodology for Information Systems Research}
-      \field{volume}{24}
-      \field{year}{2007}
-      \field{pages}{45\bibrangedash 77}
-      \range{pages}{33}
-      \verb{doi}
-      \verb 10.2753/MIS0742-1222240302
-      \endverb
-    \endentry
-    \entry{Porsche2023LMDh}{online}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=a9cebc93656593cd5cbc14b60e83a312}{%
-           family={Porsche},
-           familyi={P\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Porsche Newsroom}%
-      }
-      \strng{namehash}{a9cebc93656593cd5cbc14b60e83a312}
-      \strng{fullhash}{a9cebc93656593cd5cbc14b60e83a312}
-      \strng{fullhashraw}{a9cebc93656593cd5cbc14b60e83a312}
-      \strng{bibnamehash}{a9cebc93656593cd5cbc14b60e83a312}
-      \strng{authorbibnamehash}{a9cebc93656593cd5cbc14b60e83a312}
-      \strng{authornamehash}{a9cebc93656593cd5cbc14b60e83a312}
-      \strng{authorfullhash}{a9cebc93656593cd5cbc14b60e83a312}
-      \strng{authorfullhashraw}{a9cebc93656593cd5cbc14b60e83a312}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{LMDh-Reglement: Beginn einer neuen Ära im Langstrecken-Motorsport}
-      \field{urlday}{30}
-      \field{urlmonth}{10}
-      \field{urlyear}{2025}
-      \field{year}{2023}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://newsroom.porsche.com/de/pressemappen/le-mans-2023/LMDh-Reglement--Beginn-einer-neuen-Ära-im-Langstrecken-Motorsport.html
-      \endverb
-      \verb{url}
-      \verb https://newsroom.porsche.com/de/pressemappen/le-mans-2023/LMDh-Reglement--Beginn-einer-neuen-%C3%84ra-im-Langstrecken-Motorsport.html
-      \endverb
     \endentry
     \entry{Tukey1977}{book}{}{}
       \name{author}{1}{}{%
