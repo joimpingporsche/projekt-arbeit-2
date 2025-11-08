@@ -130,7 +130,7 @@ Die vollständige Kombination dieser Dimensionen ergibt $2 \times 2 \times 4 = 1
 
 Die Validierung der entwickelten Modelle erfordert separate Validierungsdatensätze, die während des Trainings nicht zugänglich sind. Um die Generalisierungsfähigkeit der Modelle umfassend zu bewerten, wurden zwei komplementäre Validierungsstrategien implementiert:
 
-\textbf{Event-basierte Validierung (Leave-One-Out):}
+\textbf{Event-basierte Validierung:}
 Ein vollständiges Renn-Event wurde vom Trainingsdatensatz separiert und als Validierungsdatensatz reserviert. Diese Strategie prüft die Fähigkeit des Modells, auf eine neue, ungesehene Kombination von Strecke, Wetterbedingungen und Rennsituation zu generalisieren.\footnote{Vgl. \cite{James2021}, S. 185 ff.} Der Event-Validierungsdatensatz umfasst ca. 200 Runden.
 
 \textbf{Zufällige Validierung:}
@@ -153,14 +153,14 @@ Die vorbereiteten Datensätze bilden die Grundlage für die Modellentwicklung un
 
 \section{Modelltraining und Hyperparameter-Optimierung}
 
-Die Modelltrainingsphase bildet den Kern der Artefakt-Entwicklung und zielt darauf ab, aus den in Abschnitt 4.2 generierten 16 Datensatzstrukturen robuste Vorhersagemodelle abzuleiten. Hierzu werden zwei Gradient-Boosting-Algorithmen – XGBoost und LightGBM – auf vier abgestuften Komplexitätsniveaus mittels systematischer Hyperparameter-Optimierung trainiert und anschließend auf strukturkonsistenten Validierungsdatensätzen evaluiert.
+Die Modelltrainingsphase bildet den Kern der Artefakt-Entwicklung und zielt darauf ab, aus den in Abschnitt 4.2 generierten 16 Datensatzstrukturen robuste Vorhersagemodelle abzuleiten. Hierzu werden zwei Gradient-Boosting-Algorithmen (XGBoost und LightGBM) auf vier abgestuften Komplexitätsniveaus mittels systematischer Hyperparameter-Optimierung trainiert und anschließend auf strukturkonsistenten Validierungsdatensätzen evaluiert.
 
 Neben \ac{GBDT} wurden lineare Modelle (Linear, Ridge, Lasso), \ac{SVR}, Random Forest sowie Deep-Learning-Architekturen (MLP, TabNet) als Alternativen geprüft. Lineare Ansätze erfassen komplexe nichtlineare Zusammenhänge der Telemetriedaten nur begrenzt, \ac{SVR} skaliert bei \(~9\,000\) Runden und fehlender nativer Unterstützung kategorialer Merkmale ungünstig.\footnote{Vgl. \cite{Pasaribu2024}, S. 3 f.} Random Forest liefert zwar robuste Baselines, erreicht aber in tabularen Regressionen häufig nicht die Spitzengenauigkeit moderner Boosting-Methoden.\footnote{Vgl. \cite{Geeks2024}, S. 4 ff.; vgl. dazu auch \cite{Hastie2009}, S. 587 ff.} Neuronale Netze zeigen auf mittelgroßen tabularen Datensätzen gegenüber fortgeschrittenem Baum-Boosting Performance-Nachteile.\footnote{Vgl. \cite{McElfresh2023}, S. 1 ff.} Aus diesen Gründen fokussiert sich das Artefakt auf Gradient-Boosting-Entscheidungsbäume als günstigen Kompromiss aus Prognosegüte, Interpretierbarkeit und Umsetzbarkeit.
 Zwei komplementäre Implementierungen desselben Paradigmas werden eingesetzt: XGBoost für Regularisierung und Stabilität, LightGBM für Effizienz und Trainingsgeschwindigkeit. Beide können kategoriale Merkmale direkt verarbeiten und reduzieren so Kodierungsaufwand und Komplexität.\footnote{Vgl. \cite{Chen2016}, S. 785 ff.; vgl dazu auch \cite{Ke2017}, S. 3146 ff.} Die Parallelnutzung folgt dem \ac{DSR}-Prinzip vergleichender Evaluation theoretisch fundierter Artefakt-Alternativen.
 
 Die Trainingspipeline führt für jede der 16 Datensatzstrukturen denselben reproduzierbaren Ablauf aus: (i) Einlesen und Aufteilung in Features/Zielvariable, (ii) systematische Hyperparameter-Suche mittels dreifacher Kreuzvalidierung, (iii) Retraining des besten Konfigurationsprofils auf allen Trainingsdaten zur Maximierung der Vorhersagequalität, (iv) strukturierte Persistierung von Modell, Parametern und Metriken (R², RMSE, MAE). Deterministische Zufallssaaten und parallele Ausführung (scikit-learn-kompatible API) gewährleisten Vergleichbarkeit und Reproduzierbarkeit.\footnote{Vgl. \cite{Pedregosa2011}, S. 2825 ff.}
 
-Für die Hyperparameter-Optimierung wird \texttt{GridSearchCV} eingesetzt: exhaustive Suche über klar abgegrenzte Parameter-Intervalle, primäre Bewertungsmetrik ist $R^2$ (direkt interpretierbar für Fachexpert*innen), ergänzt durch Fehlermaße zur Einschätzung der Abweichungsgrößenordnung.\footnote{Vgl. \cite{Bergstra2012}, S. 281 ff.; vgl. dazu auch \cite{Pedregosa2011}, S. 2828 f.} Die dreifache Kreuzvalidierung bietet robuste Schätzungen bei vertretbarem Aufwand.
+Für die Hyperparameter-Optimierung wird \texttt{GridSearchCV} eingesetzt: vollständige Suche über klar abgegrenzte Parameter-Intervalle, primäre Bewertungsmetrik ist $R^2$ (direkt interpretierbar für Fachexpert*innen), ergänzt durch Fehlermaße zur Einschätzung der Abweichungsgrößenordnung.\footnote{Vgl. \cite{Bergstra2012}, S. 281 ff.; vgl. dazu auch \cite{Pedregosa2011}, S. 2828 f.} Die dreifache Kreuzvalidierung bietet robuste Schätzungen bei vertretbarem Aufwand.
 
 Abgestufte Komplexitätsprofile strukturieren die Suche:
 \begin{description}
