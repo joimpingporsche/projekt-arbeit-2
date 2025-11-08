@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber latex-vorlage"] 1762167387.13063 "latex-vorlage.bcf" "latex-vorlage.bbl" "latex-vorlage" 1762593353.19321 0
+["biber latex-vorlage"] 1762167387.13063 "latex-vorlage.bcf" "latex-vorlage.bbl" "latex-vorlage" 1762593604.05616 0
   "includes/literatur-datenbank.bib" 1762167142.09694 9507 273cd10b8ed5c7e16db548804f94d418 ""
-  "latex-vorlage.bcf" 1762593352.93794 114079 6fd8440e24349a6f25227c66081b9165 "pdflatex"
+  "latex-vorlage.bcf" 1762593603.86999 114079 6fd8440e24349a6f25227c66081b9165 "pdflatex"
   (generated)
   "latex-vorlage.bbl"
   "latex-vorlage.blg"
   (rewritten before read)
-["pdflatex"] 1762593348.86855 "/Users/D93YQ46/Desktop/latex-vorlage_v2.1/latex-vorlage.tex" "latex-vorlage.pdf" "latex-vorlage" 1762593353.19467 0
+["pdflatex"] 1762593600.69168 "/Users/D93YQ46/Desktop/latex-vorlage_v2.1/latex-vorlage.tex" "latex-vorlage.pdf" "latex-vorlage" 1762593604.0565 0
   "/Users/D93YQ46/Desktop/latex-vorlage_v2.1/latex-vorlage.tex" 1761734786.35287 2510 cf9e31c4c46196a0bb45f9f48e12222d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -227,21 +227,21 @@
   "includes/chapter/2_grundlagen.tex" 1762590905.80417 17193 1ff80da295a7aca8ff7f740c25ef70ba ""
   "includes/chapter/3_relevance_cycle.tex" 1762166301.12525 8056 9e907c1a4570123edad5e130577a8208 ""
   "includes/chapter/4_design_cycle.tex" 1762591960.39126 25543 11f64010046428a90a782cccb0b86231 ""
-  "includes/chapter/5_rigor_cycle.tex" 1762593348.351 16066 6cabd8ec21fd0194fa9225022d702881 ""
+  "includes/chapter/5_rigor_cycle.tex" 1762593600.49752 16068 b9b6781afe8c5ba6e53f35101698dae6 ""
   "includes/chapter/6_ergebnisse_diskussion.tex" 1762591869.96501 8156 d6d01fdf7a65baff4a6cf2485f13ec13 ""
   "includes/config.tex" 1761911516.86404 3040 d026b3a5e4a0ac7bb18daed46ab41971 ""
   "includes/erklaerung_ki.tex" 1761908600.0269 5137 39ccdee88ad72f1527491c0509ed5ec7 ""
   "includes/model_ergebnisse.tex" 1761559794.8918 11905 19f8e6c0d8d38bd91150efe07307dfcd ""
   "includes/transkripte.tex" 1761828547.87954 15245 f0692ffc6c62a01f5219c2692a72ecb3 ""
-  "latex-vorlage.app" 1762593352.94695 766 7c0dcde7ac99d59c532d778390c5ae85 "pdflatex"
-  "latex-vorlage.aux" 1762593352.92126 42944 ae2d2a0bc073c9595a81317c8c19f4a2 "pdflatex"
+  "latex-vorlage.app" 1762593603.87132 766 7c0dcde7ac99d59c532d778390c5ae85 "pdflatex"
+  "latex-vorlage.aux" 1762593603.85847 42944 ae2d2a0bc073c9595a81317c8c19f4a2 "pdflatex"
   "latex-vorlage.bbl" 1762167388.84583 58037 144cebf14178a9225e9eb19b5dab4099 "biber latex-vorlage"
-  "latex-vorlage.lof" 1762593352.9446 494 eb5dc71c375c14bd9a3c352d41b9649b "pdflatex"
-  "latex-vorlage.lot" 1762593352.94577 1103 2b058c4f3c22c84e0824c33f7b5b9d54 "pdflatex"
-  "latex-vorlage.out" 1762593351.16541 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "latex-vorlage.run.xml" 1762593352.94103 2428 2d119b512bd1d4ff1381f82b4891beaf "pdflatex"
+  "latex-vorlage.lof" 1762593603.87123 494 eb5dc71c375c14bd9a3c352d41b9649b "pdflatex"
+  "latex-vorlage.lot" 1762593603.87127 1103 2b058c4f3c22c84e0824c33f7b5b9d54 "pdflatex"
+  "latex-vorlage.out" 1762593602.23483 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "latex-vorlage.run.xml" 1762593603.87103 2428 2d119b512bd1d4ff1381f82b4891beaf "pdflatex"
   "latex-vorlage.tex" 1761734786.35287 2510 cf9e31c4c46196a0bb45f9f48e12222d ""
-  "latex-vorlage.toc" 1762593352.94341 3946 137690bd8e77ec82aafeab1653e02045 "pdflatex"
+  "latex-vorlage.toc" 1762593603.87118 3946 137690bd8e77ec82aafeab1653e02045 "pdflatex"
   "tables/features_channels.tex" 1760514526.35859 3187 5abb90ba7c571ea31efaadf8d9c76305 ""
   "template/_dhbw_biblatex-config.tex" 1759416752.07209 5747 aedf712ad662de76d4d5d3741a83f2eb ""
   "template/_dhbw_deckblatt.tex" 1761908786.50199 2389 d1e60105213bd1a7b30d1fed387a3aac ""
