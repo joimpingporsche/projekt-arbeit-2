@@ -11,7 +11,7 @@ Die Anforderung, ein \ac{ML}-Modell zur Vorhersage von Understeer-Werten auf Bas
 
 \textbf{Anforderung 2: Hohe Vorhersagegenauigkeit}
 
-Die angestrebte Vorhersagegenauigkeit von R² > 0,7 wurde nicht erreicht. Das beste Zufalls-Modell erreicht R² = 0,657, knapp unterhalb der Zielvorgabe, scheitert aber bei Event-Generali-\\sierung (R² = 0,093). Die Ursachenanalyse in Kapitel 5.3 identifiziert als Primärproblem nicht algorithmische Limitationen, sondern fehlende Kontextfaktoren: Fahrercharakteristiken, Setup-Parameter, Reifen-Degradation und Umgebungsdaten sind in den verfügbaren Telemetriedaten nicht erfasst und können nicht aus Sensorwerten rekonstruiert werden. Diese fehlenden Variablen determinieren das Understeer-Verhalten fundamental und liefern eine mögliche Erklärung für die schwache Event-Generalisierung.
+Die angestrebte Vorhersagegenauigkeit von R² > 0,7 wurde nicht erreicht. Das beste Zufalls-Modell erreicht R² = 0,657, knapp unterhalb der Zielvorgabe, scheitert aber bei Event-Generali-\\sierung (R² = 0,093). Die Ursachenanalyse in Kapitel 5.2.3 identifiziert als Primärproblem nicht algorithmische Limitationen, sondern fehlende Kontextfaktoren: Fahrercharakteristiken, Setup-Parameter, Reifen-Degradation und Umgebungsdaten sind in den verfügbaren Telemetriedaten nicht erfasst und können nicht aus Sensorwerten rekonstruiert werden. Diese fehlenden Variablen determinieren das Understeer-Verhalten fundamental und liefern eine mögliche Erklärung für die schwache Event-Generalisierung.
 
 
 
@@ -23,7 +23,7 @@ Die Antwort lautet: Teilweise ja, aber nur unter stark einschränkenden Bedingun
 
 \textbf{Forschungsfrage 2: Welcher Algorithmus (XGBoost vs. LightGBM) generalisiert besser?}
 
-Weder XGBoost noch LightGBM zeigt konsistente Überlegenheit. Bei Event-Generalisierung ist LightGBM leicht besser (durchschnittliche R² = -0,268 vs. XGBoost -0,343), mit dem besten Event-Modell bei R² = 0,093 (LightGBM) vs. R² = 0,029 (XGBoost). Bei Zufalls-Validierung dominiert XGBoost deutlich (durchschnittliche R² = 0,380 vs. LightGBM 0,237), mit dem besten Modell bei R² = 0,657 (XGBoost) vs. R² = 0,458 (LightGBM). Diese gegensätzliche Leistung unterstreicht, dass algorithmische Wahl sekundär ist. Beide Algorithmen leiden unter denselben fundamentalen Limitationen: fehlende Kontextfaktoren.
+Weder XGBoost noch LightGBM zeigt konsistente Überlegenheit. Bei Event-Generalisierung ist LightGBM leicht besser (durchschnittliche R² = -0,268 vs. XGBoost -0,343), mit dem besten Event-Modell bei R² = 0,093 (LightGBM) vs. R² = 0,029 (XGBoost). Bei Zufalls-Validierung dominiert XGBoost deutlich (durchschnittliche R² = 0,380 vs. LightGBM 0,237), mit dem besten Modell bei R² = 0,657 (XGBoost) vs. R² = 0,458 (LightGBM). Diese gegensätzliche Leistung unterstreicht, dass algorithmische Wahl sekundär ist. Beide Algorithmen leiden unter denselben fundamentalen Limitationen der fehlende Kontextfaktoren.
 
 \textbf{Forschungsfrage 3: Wie wirken sich Datenvorbereitung und Hyperparameter-Tuning auf die Performance aus?}
 
