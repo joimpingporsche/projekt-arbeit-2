@@ -11,12 +11,13 @@ Die Entwicklung des Artefakts folgte einem strukturierten Prozess, der sicherste
 \input{tables/features_channels}
 
   Als Zielvariable dient der durchschnittliche Fahrzeugbalance-Wert pro Rennrunde (aUndersteer\_AVG), wobei Werte über Null Untersteuern und Werte unter Null Übersteuern des Fahrzeugs anzeigen. Dieser Wert wird in der Datenplattform bereits auf Basis folgender Formeln berechnet. 
-  \begin{align*}
-\text{Fahrzeugbalance} = \frac{L \cdot a_y}{v^2} - \delta
-\end{align*}
+\begin{equation*}
+\text{Fahrzeugbalance} = \left| \alpha_f \right| - \left| \alpha_r \right|
+\label{eq:balance_slip_angle}
+\end{equation*}
 
-$L$ ist der Radstand in [m], $a_y$ ist die Querbeschleunigung in [m/s$^2$], 
-$v$ ist die Fahrtgeschwindigkeit in [m/s] und $\delta$ ist der Lenkwinkel in [rad].
+wobei $\alpha_f$ der Schräglaufwinkel der Vorderachse und $\alpha_r$ der 
+Schräglaufwinkel der Hinterachse sind. Der Schräglaufwinkel beschreibt dabei den Winkel zwischen der Fahrtrichtung eines Reifens und der Richtung, in die das Rad zeigt. Dieser entsteht durch die auf den Reifen wirkenden Seitenkräfte beim Kurvenfahren.\footnote{Vgl. \cite{Milliken1995}, S. 131 ff.}
 
   Alle Parameter und die Zielvariable wurden rundenmittelnd aggregiert, sodass jeder Datensatzpunkt einer einzelnen Rennrunde entspricht.
   Die \ac{EDA} wurde durchgeführt, um die Dateneigenschaften zu untersuchen und potenzielle Datenqualitätsprobleme zu identifizieren. Zunächst wurde die Verteilung der Zielvariable aUndersteer\_AVG untersucht.\footnote{Vgl. \cite{Tukey1977}, S. 125 ff.}

@@ -21,7 +21,7 @@ Die angestrebte Vorhersagegenauigkeit von R² > 0,7 wurde nicht erreicht. Das be
 
 Die Antwort lautet: Teilweise ja, aber nur unter stark einschränkenden Bedingungen. GBDT-Modelle funktionieren auf trainierten Datensätzen gut (durchschnittliche Zufalls-Validierung: R² = 0,308) und zeigen damit, dass Understeer grundsätzlich aus Telemetriedaten extrahierbar ist. Allerdings generalisieren diese Modelle nicht auf unbekannte Rennkontexte (durchschnittliche Event-Validierung: R² = -0,306). Das Problem liegt nicht in der Algorithmuswahl, sondern in der fehlenden Datengrundlage. GBDT memorisieren Muster aus trainierten Events (Track-spezifische Telemetrie-Signaturen), können diese aber nicht auf neue Tracks, neue Fahrer*innen oder neue Setup-Konfigurationen übertragen.
 
-\textbf{Forschungsfrage 2: Welcher Algorithmus (XGBoost vs. LightGBM) generalisiert besser?}
+\textbf{Forschungsfrage 2: Welcher Algorithmus (XGBoost vs. LightGBM) generalisiert \\besser?}
 
 Weder XGBoost noch LightGBM zeigt konsistente Überlegenheit. Bei Event-Generalisierung ist LightGBM leicht besser (durchschnittliche R² = -0,268 vs. XGBoost -0,343), mit dem besten Event-Modell bei R² = 0,093 (LightGBM) vs. R² = 0,029 (XGBoost). Bei Zufalls-Validierung dominiert XGBoost deutlich (durchschnittliche R² = 0,380 vs. LightGBM 0,237), mit dem besten Modell bei R² = 0,657 (XGBoost) vs. R² = 0,458 (LightGBM). Diese gegensätzliche Leistung unterstreicht, dass algorithmische Wahl sekundär ist. Beide Algorithmen leiden unter denselben fundamentalen Limitationen der fehlende Kontextfaktoren.
 
