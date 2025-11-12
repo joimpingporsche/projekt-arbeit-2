@@ -1,15 +1,45 @@
 \chapter{Einleitung}
-Die vorliegende Arbeit adressiert ein praktisches Problem an der Schnittstelle von Motorsport-Ingenieurwesen und Datenanalyse. Telemetriedaten stehen in großem Umfang verfügbar, werden aber überwiegend manuell analysiert. Dieses Kapitel beschreibt die Notwendigkeit einer automatisierten Fahrzeugbalance-Vorhersage und etabliert die zentralen Forschungsmotivation, die diese Arbeit im Kontext der Design Science Research Methodik beantworten wird. Es bildet damit den Relevance Cycle des \ac{DSR}-Prozesses und verankert die nachfolgenden Kapitel in einer klar definierten Problemdomäne.
+Die vorliegende Arbeit adressiert ein praktisches Problem an der Schnittstelle von Motorsport-Ingenieurwesen und Datenanalyse. Telemetriedaten stehen in großem Umfang verfügbar, werden aber überwiegend manuell analysiert. Dieses Kapitel beschreibt die Notwendigkeit einer automatisierten Fahrzeugbalance-Vorhersage und etabliert die zentrale Forschungsmotivation, die diese Arbeit im Kontext der Design Science Research Methodik beantworten wird. Es bildet damit den Relevance Cycle des \ac{DSR}-Prozesses und verankert die nachfolgenden Kapitel in einer klar definierten Problemdomäne.
 
 \section{Problemstellung}
 
-Der Motorsport ist ein hochkompetitives Umfeld, in dem Verbesserungen der Fahrzeugperformance oft nur Bruchteile von Sekunden bringen, aber entscheidend sind. Moderne Rennfahrzeuge sind mit Tausenden von Sensoren ausgestattet, die kontinuierlich Telemetriedaten erfassen und übertragen. Diese Datenmengen ermöglichen eine beispiellose Sichtbarkeit in Fahrzeugverhalten, Streckenbedingungen und Fahrerdynamik. Trotz dieser technologischen Verfügbarkeit verlässt sich die Telemetrie-Analyse in der Praxis stark auf manuelle Prozesse: Renningenieur*innen sichten Dashboards, identifizieren Auffälligkeiten und leiten daraus Anpassungen der Rennstrategie oder des Fahrzeug-Setups ab. Dies ist zeitintensiv und anfällig für Übersehungen subtiler Muster, die erst bei Kombination mehrerer Parameter sichtbar werden.
+Der Motorsport ist ein hochkompetitives Umfeld, in dem Verbesserungen der Fahrzeugperformance oft nur Bruchteile von Sekunden bringen, aber entscheidend sind. Moderne Rennfahrzeuge sind mit Tausenden von Sensoren ausgestattet, die kontinuierlich Telemetriedaten erfassen und übertragen. Diese Datenmengen ermöglichen eine beispiellose Einsicht in Fahrzeugverhalten, Streckenbedingungen und Fahrerdynamik. Trotz dieser technologischen Verfügbarkeit verlässt sich die Telemetrie-Analyse in der Praxis stark auf manuelle Prozesse: Renningenieur*innen sichten Dashboards, identifizieren Auffälligkeiten und leiten daraus Optimierungen der Rennstrategie oder des Fahrzeug-Setups ab. Dies ist zeitintensiv und anfällig für Übersehungen subtiler Muster, die erst bei Kombination mehrerer Parameter sichtbar werden.
 Diese Situation repräsentiert ein klassisches Problem: Ein großes Datenvolumen, klare Geschäftsziele, aber unzureichende Automatisierung zur systematischen Mustererkennung. \ac{ML} verspricht hier die Fähigkeit, aus historischen Daten Muster zu erkennen und auf neue Situationen zu generalisieren.
 
-Die Fahrzeugbalance ist eine Schlüsselgröße für Rennfahrer*innen und Renningenieur*innen. Sie beschreibt die Tendenz des Fahrzeugs, in Kurvenfahrt weniger oder stärker zu lenken als vom Fahrer über das Lenkrad eingegeben. Die Fahrzeugbalance beeinflusst direkt Fahrbarkeit, Sicherheit und Renngeschwindigkeit. Die Balance hängt von zahlreichen, komplex verflochtenen Einflussfaktoren ab.
-Das zentrale Problem besteht darin, dass Renningenieur*innen diese Zusammenhänge derzeit nicht systematisch erfassen. Sie können nicht vorhersagen, welche spezifischen Parameterkombinationen zu welchen Balance-Änderungen führen. Dies zwingt sie zu reaktivem Handeln: Erst wenn Abweichungen in den Daten offensichtlich werden, werden Anpassungen vorgenommen. Ein proaktiver, vorhersagender Ansatz wäre wertvoll, da er die Fähigkeit bietet, frühzeitig zu signalisieren, dass sich die Balance-Charakteristik verschiebt und damit Setup-Optimierungen vorzeitig zu planen.
+Die Fahrzeugbalance ist eine Schlüsselgröße für Rennfahrer*innen und 
+Renningenieur*innen. Sie wird definiert als das Verhältnis der 
+Seitenführungskräfte zwischen Vorder- und Hinterachse und beschreibt damit 
+das dynamische Gleichgewicht des Fahrzeugs in der Kurvenfahrt. 
+Bei konstant gehaltenem Lenkwinkelinput ändert sich nicht die Lenktendenz 
+des Fahrzeugs selbst, sondern resultiert vielmehr eine veränderte 
+Fahrdynamik, die sich beispielsweise in unterschiedlichen Schräulaufwinkeln 
+oder Gierraten manifestiert. Diese Balance beeinflusst wesentlich die 
+Fahrbarkeit, Sicherheit und Rundenzeit, da sie bestimmt, wie 
+responsiv und präzise das Fahrzeug auf Lenkkommandos reagiert.\footnote{Vgl. \cite{Milliken1995}, S. 53 ff.}
+Die Balance hängt von zahlreichen, komplex verflochtenen Einflussfaktoren ab.
+Das zentrale Problem besteht darin, dass die physikalischen Zusammenhänge 
+zwischen Umgebungsparametern, indirekten Faktoren (wie Reifentemperatur und 
+Reifenabnutzung) und der resultierenden Fahrzeugbalance zu komplex sind, um 
+sie analytisch zu modellieren. Obwohl alle diese Größen kontinuierlich live 
+telemetrisch messbar sind, können Renningenieur*innen daraus nicht intuitiv 
+ableiten, wie sich verändernde Umgebungsbedingungen und Reifenzustände auf 
+die Balance auswirken werden. Sie können nicht vorhersagen, welche spezifische 
+Kombinationen aus Umgebungsparametern und indirekten Faktoren zu welchen 
+Balance-Änderungen führen und damit nicht proaktiv reagieren.
 
-Damit ergibt sich die zentrale Forschungsmotivation: Können \ac{ML}-Modelle aus Telemetriedaten lernen, die Fahrzeugbalance vorherzusagen? Und wenn ja, unter welchen Bedingungen generalisieren diese Modelle zuverlässig auf neue Renn-Events mit veränderten Kontexten? Die daraus folgenden Forschungsfragen werden in Kapitel 3.4 präzisiert.
+Dies zwingt sie oft zu reaktivem Handeln: Erst wenn Abweichungen in den Messdaten 
+offensichtlich werden, werden Anpassungen vorgenommen. Ein proaktiver Ansatz 
+basierend auf Vorhersagen wäre wertvoll, da er die Fähigkeit bietet, frühzeitig 
+zu signalisieren, dass sich die Balance-Charakteristik verschiebt und damit 
+Setup-Optimierungen vorzeitig zu planen.
+
+Damit ergibt sich die zentrale Forschungsmotivation: Können ML-Modelle aus 
+beobachteten Mustern in gemessenen Telemetriedaten lernen, die 
+Fahrzeugbalance vorherzusagen, ohne die zugrundeliegenden physikalischen 
+Kausalitäten explizit modellieren zu müssen? Und wenn ja, unter welchen 
+Bedingungen generalisieren diese Modelle zuverlässig auf neue Renn-Events 
+mit veränderten Kontexten? Die daraus folgenden Forschungsfragen werden 
+in Kapitel 3.4 präzisiert.
 
 \section{Zielsetzung}
 

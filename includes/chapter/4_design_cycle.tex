@@ -4,13 +4,21 @@ Die Entwicklung des Artefakts folgte einem strukturierten Prozess, der sicherste
 
 \section{Datensammlung und Analyse}
 
-  Die vorliegende Arbeit nutzt Telemetriedaten aus der Porsche Motorsport Cloud Plattform. Es wurden sämtliche Rennsessions der \ac{IMSA}- und \ac{WEC}-Meisterschaften der Jahre 2023 bis 2025 extrahiert. Zur Minimierung von Varianz durch unterschiedliche Fahrsituationen beschränkt sich die Auswahl auf Rennsessions, während Trainings- und Qualifikationssessions ausgeschlossen wurden. Zusätzlich erfolgte eine Filterung auf Runden mit Trockenreifen, da Regenbedingungen weitere Einflussfaktoren einführen. Die Datenselektion wurde direkt beim Abruf mittels der ADX-\ac{KQL} vorgenommen, wodurch ein Rohdatensatz im CSV-Format mit 17 735 Runden (Datenpunkten) resultierte.
+  Die vorliegende Arbeit nutzt Telemetriedaten aus der Porsche Motorsport Data Plattform, die in der Azure-Cloud gehostet wird. Es wurden sämtliche Rennsessions der \ac{IMSA}- und \ac{WEC}-Meisterschaften der Jahre 2023 bis 2025 extrahiert. Zur Minimierung von Varianz durch unterschiedliche Fahrsituationen beschränkt sich die Auswahl auf Rennsessions, während Trainings- und Qualifikationssessions ausgeschlossen wurden. Zusätzlich erfolgte eine Filterung auf Runden mit Trockenreifen, da Regenbedingungen weitere Einflussfaktoren einführen. Die Datenselektion wurde direkt beim Abruf mittels der \ac{ADX}-\ac{KQL} vorgenommen, wodurch ein Rohdatensatz im CSV-Format mit 17 735 Runden (Datenpunkten) resultierte. ADX ist eine Cloud Datenbank aus der mittels KQL-Abfragen Daten abgerufen werden können.
 
-  Im Rahmen eines Experteninterviews mit dem Performance Engineer wurden jene Parameter identifiziert, die als Merkmale (Features) in das \ac{ML}-Modell eingehen.\footnote{Vgl. Experteninterview 2, 12.09.2025, Z. 37-53} Die Merkmale gliedern sich in kontinuierliche und kategoriale Features die in Tabelle-\ref{tab:features_channels} aufgelistet sind.
+  Im Rahmen eines Experteninterviews mit der Renningenieur*in wurden jene Parameter identifiziert, die als Merkmale (Features) in das \ac{ML}-Modell eingehen.\footnote{Vgl. Experteninterview 2, 12.09.2025, Z. 37-53} Die Merkmale gliedern sich in kontinuierliche und kategoriale Features die in Tabelle-\ref{tab:features_channels} aufgelistet sind.
 
 \input{tables/features_channels}
 
-  Als Zielvariable dient der durchschnittliche Fahrzeugbalance-Wert pro Rennrunde (aUndersteer\_AVG), wobei Werte über Null Untersteuern und Werte unter Null Übersteuern des Fahrzeugs anzeigen. Dieser Wert wird in der Datenplattform bereits auf Basis physikalischer Formeln berechnet. Diese Berechnung wird aus Umfangsgründen nicht näher erläutert. Alle Parameter und die Zielvariable wurden rundenmittelnd aggregiert, sodass jeder Datensatzpunkt einer einzelnen Rennrunde entspricht.
+  Als Zielvariable dient der durchschnittliche Fahrzeugbalance-Wert pro Rennrunde (aUndersteer\_AVG), wobei Werte über Null Untersteuern und Werte unter Null Übersteuern des Fahrzeugs anzeigen. Dieser Wert wird in der Datenplattform bereits auf Basis folgender Formeln berechnet. 
+  \begin{align*}
+\text{Fahrzeugbalance} = \frac{L \cdot a_y}{v^2} - \delta
+\end{align*}
+
+$L$ ist der Radstand in [m], $a_y$ ist die Querbeschleunigung in [m/s$^2$], 
+$v$ ist die Fahrtgeschwindigkeit in [m/s] und $\delta$ ist der Lenkwinkel in [rad].
+
+  Alle Parameter und die Zielvariable wurden rundenmittelnd aggregiert, sodass jeder Datensatzpunkt einer einzelnen Rennrunde entspricht.
   Die \ac{EDA} wurde durchgeführt, um die Dateneigenschaften zu untersuchen und potenzielle Datenqualitätsprobleme zu identifizieren. Zunächst wurde die Verteilung der Zielvariable aUndersteer\_AVG untersucht.\footnote{Vgl. \cite{Tukey1977}, S. 125 ff.}
 \begin{figure}[H]
   \centering
@@ -64,7 +72,7 @@ Diese Anforderungen entsprechen den Design Requirements für das Datenartefakt i
 
 \subsection{Datenbereinigung und Filterung}
 
-Zur Minimierung systematischer Verzerrungen wurden zunächst alle Out-Laps (Runde = 1) aus dem Datensatz entfernt. Out-Laps weisen typischerweise atypische Charakteristika auf, da Fahrzeuge die Boxengasse verlassen und sich das thermische Verhalten der Reifen von regulären Rennrunden unterscheidet. Diese Filterregel reduziert Varianz durch nicht-repräsentative Datenpunkte und stellt sicher, dass das Modell ausschließlich auf Basis von Rennrunden mit stabilisiertem Fahrzeugverhalten trainiert wird.
+Zur Minimierung systematischer Verzerrungen wurden zunächst alle Out-Laps aus dem Datensatz entfernt. Out-Laps sind Runden, in denen Fahrzeuge die Boxengasse verlassen, und weisen häufig atypische Charakteristika auf, da sich das thermische Verhalten der Reifen von regulären Rennrunden unterscheidet. Diese Filterregel reduziert Varianz durch nicht-repräsentative Datenpunkte und stellt sicher, dass das Modell ausschließlich auf Basis von Rennrunden mit stabilisiertem Fahrzeugverhalten trainiert wird.
 
 Eine weitere Quelle von Varianz sind Extremereignisse während des Rennens, wie Unfälle, Safety-Car-Phasen oder technische Defekte. Diese manifestieren sich in der Regel durch extreme Abweichungen der Rundenzeit vom durchschnittlichen Niveau. Zur Identifikation solcher Ereignisse wurde eine statistische Schwellwertmethode angewendet. Runden, deren Rundenzeit um mehr als eine Standardabweichung (ca. 40 Sekunden) vom Mittelwert abweichen, wurden aus dem Datensatz entfernt. Diese Filterung folgt etablierten statistischen Verfahren zur Ausreißererkennung in Zeitreihendaten und trägt zur weiteren Varianzreduktion bei.\footnote{Vgl. \cite{Box2015}, S. 408 ff.}
 

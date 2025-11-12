@@ -942,6 +942,44 @@
       \verb https://arxiv.org/abs/2305.02997
       \endverb
     \endentry
+    \entry{Milliken1995}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=34816c0e6523ad37e0c8f41e7a895241}{%
+           family={Milliken},
+           familyi={M\bibinitperiod},
+           given={William\bibnamedelima F.},
+           giveni={W\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=1}}%
+        {{un=1,uniquepart=given,hash=47b8767120ee00a8532963c06b1ce897}{%
+           family={Milliken},
+           familyi={M\bibinitperiod},
+           given={Douglas\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{location}{1}{%
+        {Warrendale, PA}%
+      }
+      \list{publisher}{1}{%
+        {Society of Automotive Engineers}%
+      }
+      \strng{namehash}{a9311211c8b19c54559d149faeead1ae}
+      \strng{fullhash}{a9311211c8b19c54559d149faeead1ae}
+      \strng{fullhashraw}{a9311211c8b19c54559d149faeead1ae}
+      \strng{bibnamehash}{a9311211c8b19c54559d149faeead1ae}
+      \strng{authorbibnamehash}{a9311211c8b19c54559d149faeead1ae}
+      \strng{authornamehash}{a9311211c8b19c54559d149faeead1ae}
+      \strng{authorfullhash}{a9311211c8b19c54559d149faeead1ae}
+      \strng{authorfullhashraw}{a9311211c8b19c54559d149faeead1ae}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Race Car Vehicle Dynamics}
+      \field{year}{1995}
+    \endentry
     \entry{Mitchell1997}{book}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=857bb126aea77bda379643836e48b425}{%
@@ -1260,6 +1298,56 @@
       \field{year}{2011}
       \field{pages}{2825\bibrangedash 2830}
       \range{pages}{6}
+    \endentry
+    \entry{QuioneroCandela2009}{book}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=1e7acce449f04faa0c0721ed0837545b}{%
+           family={Quionero-Candela},
+           familyi={Q\bibinithyphendelim C\bibinitperiod},
+           given={Joaquin},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=39334f77cbd67c8922133952b8095d89}{%
+           family={Sugiyama},
+           familyi={S\bibinitperiod},
+           given={Masashi},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=371fbfa28695e3e8ed81cc6f13f06299}{%
+           family={Schwaighofer},
+           familyi={S\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f83d1b861ef00c2c1e490eb5f7360434}{%
+           family={Lawrence},
+           familyi={L\bibinitperiod},
+           given={Neil\bibnamedelima D.},
+           giveni={N\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{29250eb6863823f6eef4173a063b530b}
+      \strng{fullhash}{195e3eb46428046bb2c5dd9b5e4acc40}
+      \strng{fullhashraw}{195e3eb46428046bb2c5dd9b5e4acc40}
+      \strng{bibnamehash}{195e3eb46428046bb2c5dd9b5e4acc40}
+      \strng{authorbibnamehash}{195e3eb46428046bb2c5dd9b5e4acc40}
+      \strng{authornamehash}{29250eb6863823f6eef4173a063b530b}
+      \strng{authorfullhash}{195e3eb46428046bb2c5dd9b5e4acc40}
+      \strng{authorfullhashraw}{195e3eb46428046bb2c5dd9b5e4acc40}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Dataset Shift in Machine Learning}
+      \field{year}{2009}
     \endentry
     \entry{Tukey1977}{book}{}{}
       \name{author}{1}{}{%

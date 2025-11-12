@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  10 NOV 2025 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.10.2)  12 NOV 2025 12:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1144,11 +1144,11 @@ although it is yet undefined on input line 71.
 
 [7]
 Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
-although it is yet undefined on input line 128.
+although it is yet undefined on input line 139.
 Package acronym Info: Label `acro:RMSE' newly defined as it shall be overridden
-although it is yet undefined on input line 128.
+although it is yet undefined on input line 139.
 Package acronym Info: Label `acro:MAE' newly defined as it shall be overridden
-although it is yet undefined on input line 130.
+although it is yet undefined on input line 141.
 ) (./includes/chapter/3_relevance_cycle.tex
 
 [8{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
@@ -1167,6 +1167,8 @@ although it is yet undefined on input line 8.
 
 [11]
 chapter 4.
+Package acronym Info: Label `acro:ADX' newly defined as it shall be overridden
+although it is yet undefined on input line 7.
 Package acronym Info: Label `acro:KQL' newly defined as it shall be overridden
 although it is yet undefined on input line 7.
 (./tables/features_channels.tex
@@ -1184,47 +1186,42 @@ Underfull \hbox (badness 1888) in paragraph at lines 46--46
 []\T1/cmr/m/n/9 Reifentemperatur Gra-di-ent
  []
 
-
-Underfull \hbox (badness 5316) in paragraph at lines 66--67
-[]\T1/cmr/m/n/9 Durchschnittlicher Untersteer-Wert pro
- []
-
 )
 
 [12
 
 ]
 Package acronym Info: Label `acro:EDA' newly defined as it shall be overridden
-although it is yet undefined on input line 14.
-<graphics/understeer_nonfilt.png, id=428, 859.2903pt x 426.393pt>
+although it is yet undefined on input line 22.
+<graphics/understeer_nonfilt.png, id=438, 859.2903pt x 426.393pt>
 File: graphics/understeer_nonfilt.png Graphic file (type png)
 <use graphics/understeer_nonfilt.png>
-Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 17.
+Package pdftex.def Info: graphics/understeer_nonfilt.png  used on input line 25.
 (pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
 
 
 [13]
-<graphics/TempPlot.png, id=439, 859.2903pt x 426.393pt>
+<graphics/TempPlot.png, id=452, 859.2903pt x 426.393pt>
 File: graphics/TempPlot.png Graphic file (type png)
 <use graphics/TempPlot.png>
-Package pdftex.def Info: graphics/TempPlot.png  used on input line 27.
+Package pdftex.def Info: graphics/TempPlot.png  used on input line 35.
 (pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
-<graphics/DruckPlot.png, id=441, 859.2903pt x 426.393pt>
+
+
+[14 <./graphics/understeer_nonfilt.png>]
+<graphics/DruckPlot.png, id=461, 859.2903pt x 426.393pt>
 File: graphics/DruckPlot.png Graphic file (type png)
 <use graphics/DruckPlot.png>
-Package pdftex.def Info: graphics/DruckPlot.png  used on input line 35.
+Package pdftex.def Info: graphics/DruckPlot.png  used on input line 43.
 (pdftex.def)             Requested size: 364.19667pt x 180.71689pt.
-
-
-[14 <./graphics/understeer_nonfilt.png> <./graphics/TempPlot.png>]
-<graphics/korrelations_matrix_top.png, id=449, 794.97pt x 734.2632pt>
+<graphics/korrelations_matrix_top.png, id=462, 794.97pt x 734.2632pt>
 File: graphics/korrelations_matrix_top.png Graphic file (type png)
 <use graphics/korrelations_matrix_top.png>
-Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input line 43.
+Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input line 51.
 (pdftex.def)             Requested size: 364.19667pt x 336.38708pt.
 
 
-[15 <./graphics/DruckPlot.png>]
+[15 <./graphics/TempPlot.png> <./graphics/DruckPlot.png>]
 
 [16 <./graphics/korrelations_matrix_top.png>]
 
@@ -1236,9 +1233,9 @@ Package pdftex.def Info: graphics/korrelations_matrix_top.png  used on input lin
 
 [20]
 Package acronym Info: Label `acro:GBDT' newly defined as it shall be overridden
-although it is yet undefined on input line 158.
+although it is yet undefined on input line 166.
 Package acronym Info: Label `acro:SVR' newly defined as it shall be overridden
-although it is yet undefined on input line 158.
+although it is yet undefined on input line 166.
 
 
 [21]
@@ -1398,18 +1395,18 @@ Package logreq Info: Writing requests to 'latex-vorlage.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30945 strings out of 473190
- 608358 string characters out of 5715800
- 1620778 words of memory out of 5000000
- 53460 multiletter control sequences out of 15000+600000
+ 30968 strings out of 473190
+ 608923 string characters out of 5715800
+ 1621018 words of memory out of 5000000
+ 53478 multiletter control sequences out of 15000+600000
  583391 words of font info for 88 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,18n,127p,10968b,2369s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on latex-vorlage.pdf (58 pages, 1525812 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on latex-vorlage.pdf (58 pages, 1537365 bytes).
 PDF statistics:
- 1070 PDF objects out of 1200 (max. 8388607)
- 918 compressed objects within 10 object streams
- 255 named destinations out of 1000 (max. 500000)
+ 1086 PDF objects out of 1200 (max. 8388607)
+ 932 compressed objects within 10 object streams
+ 260 named destinations out of 1000 (max. 500000)
  372 words of extra memory for PDF output out of 10000 (max. 10000000)
 
