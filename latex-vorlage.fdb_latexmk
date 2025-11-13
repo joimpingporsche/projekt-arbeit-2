@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber latex-vorlage"] 1762950422.97544 "latex-vorlage.bcf" "latex-vorlage.bbl" "latex-vorlage" 1762950441.57426 0
+["biber latex-vorlage"] 1762950422.97544 "latex-vorlage.bcf" "latex-vorlage.bbl" "latex-vorlage" 1763018134.74668 0
   "includes/literatur-datenbank.bib" 1762950411.86785 9981 6704b20bb35ee303b9a998a28baf0a59 ""
-  "latex-vorlage.bcf" 1762950441.3907 114290 0ebea476441dfab08773f38775acb97e "pdflatex"
+  "latex-vorlage.bcf" 1763018134.56356 114290 0ebea476441dfab08773f38775acb97e "pdflatex"
   (generated)
   "latex-vorlage.bbl"
   "latex-vorlage.blg"
   (rewritten before read)
-["pdflatex"] 1762950438.18533 "/Users/D93YQ46/Desktop/latex-vorlage_v2.1/latex-vorlage.tex" "latex-vorlage.pdf" "latex-vorlage" 1762950441.57466 0
+["pdflatex"] 1763018130.94717 "/Users/D93YQ46/Desktop/latex-vorlage_v2.1/latex-vorlage.tex" "latex-vorlage.pdf" "latex-vorlage" 1763018134.747 0
   "/Users/D93YQ46/Desktop/latex-vorlage_v2.1/latex-vorlage.tex" 1761734786.35287 2510 cf9e31c4c46196a0bb45f9f48e12222d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -225,7 +225,7 @@
   "includes/abkuerzungen.tex" 1762947371.99706 635 47e6527a6c1931cba8663700754fd617 ""
   "includes/anhang.tex" 1761827072.02053 285 597231f6ba3ee92746afb092427ac032 ""
   "includes/chapter/1_einleitung.tex" 1762944615.69068 5556 55d52b122f986319e60ffd38e06154bb ""
-  "includes/chapter/2_grundlagen.tex" 1762946686.47484 17967 1bd80cbdc13b4b5a680a040b17171943 ""
+  "includes/chapter/2_grundlagen.tex" 1763018127.07245 17965 b958058a86ffddbcf61b33d6c3a98413 ""
   "includes/chapter/3_relevance_cycle.tex" 1762946988.48617 8072 61145818b4007149fc8225892be4ad44 ""
   "includes/chapter/4_design_cycle.tex" 1762950437.98057 26196 b8c0d5ab883b0c4174180efeb8c5b32a ""
   "includes/chapter/5_rigor_cycle.tex" 1762771297.19924 16019 2b5269bb77750228ef9cff6f4c5bd151 ""
@@ -234,15 +234,15 @@
   "includes/erklaerung_ki.tex" 1761908600.0269 5137 39ccdee88ad72f1527491c0509ed5ec7 ""
   "includes/model_ergebnisse.tex" 1761559794.8918 11905 19f8e6c0d8d38bd91150efe07307dfcd ""
   "includes/transkripte.tex" 1762772123.72209 15342 500d7f295cf85c72b0f74e07920b88fc ""
-  "latex-vorlage.app" 1762950441.39194 774 095dce3d06e41c3c8c86d260505ad859 "pdflatex"
-  "latex-vorlage.aux" 1762950441.37898 43704 1f17c8d3c409c0c457f3f82d0d0359fc "pdflatex"
+  "latex-vorlage.app" 1763018134.56469 774 095dce3d06e41c3c8c86d260505ad859 "pdflatex"
+  "latex-vorlage.aux" 1763018134.55233 43704 40ae561aae4b49809b96ae290a747709 "pdflatex"
   "latex-vorlage.bbl" 1762950424.52905 61617 1f14d4e3475fa03e86e9d368130c2437 "biber latex-vorlage"
-  "latex-vorlage.lof" 1762950441.39187 494 c82a4723cddd111974d540a3a9a7dbad "pdflatex"
-  "latex-vorlage.lot" 1762950441.39191 1103 ab31c4aeb89acecd49e42494e187e7a0 "pdflatex"
-  "latex-vorlage.out" 1762950439.72387 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "latex-vorlage.run.xml" 1762950441.39173 2428 e7cd8e2d35e9f98ae1f9940df86411cf "pdflatex"
+  "latex-vorlage.lof" 1763018134.56463 494 c82a4723cddd111974d540a3a9a7dbad "pdflatex"
+  "latex-vorlage.lot" 1763018134.56466 1103 ab31c4aeb89acecd49e42494e187e7a0 "pdflatex"
+  "latex-vorlage.out" 1763018132.87762 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "latex-vorlage.run.xml" 1763018134.56451 2428 e7cd8e2d35e9f98ae1f9940df86411cf "pdflatex"
   "latex-vorlage.tex" 1761734786.35287 2510 cf9e31c4c46196a0bb45f9f48e12222d ""
-  "latex-vorlage.toc" 1762950441.39184 3947 af0234803fdff891f27e94226de3eab3 "pdflatex"
+  "latex-vorlage.toc" 1763018134.56459 3947 af0234803fdff891f27e94226de3eab3 "pdflatex"
   "tables/features_channels.tex" 1762947319.33692 3196 f5215ea238d62139a4685f0f1fde3019 ""
   "template/_dhbw_biblatex-config.tex" 1759416752.07209 5747 aedf712ad662de76d4d5d3741a83f2eb ""
   "template/_dhbw_deckblatt.tex" 1761908786.50199 2389 d1e60105213bd1a7b30d1fed387a3aac ""
